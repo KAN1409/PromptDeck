@@ -1,5 +1,5 @@
-# Rebuild after curated photo source integration
-name: Build PromptDeck v0.7.2
+# Rebuild after curated photo result-preview integration
+name: Build PromptDeck v0.7.3
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ on:
       - '.github/workflows/build-v070.yml'
       - 'tools/**'
       - 'android/app/build.gradle'
+      - 'android/app/src/main/AndroidManifest.xml'
       - 'android/app/src/main/java/com/kareem/promptdeck/**'
       - 'android/app/src/main/assets/**'
 
@@ -37,10 +38,12 @@ jobs:
           assert len(core)==2160, len(core)
           assert len(photo)==198, len(photo)
           assert all(x.get('command') and x.get('instruction') and x.get('subcategory') for x in photo)
+          assert sum(1 for x in photo if x.get('example_mode'))==198
+          assert sum(1 for x in photo if x.get('example_urls'))>0
           print('Integrated prompt data verified:',len(core),'+',len(photo))
           PY
 
-      - name: Apply integrated categories, navigation and photo sources
+      - name: Apply categories, navigation and result previews
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
@@ -59,10 +62,13 @@ jobs:
             for i,line in enumerate(s.splitlines(),1):
               if re.search(r'[\u0600-\u06FF]',line):bad.append(f'{p}:{i}:{line[:160]}')
           if bad: raise SystemExit('Arabic visible UI text remains:\n'+'\n'.join(bad[:50]))
-          print('English-only visible UI audit passed')
+          main=paths[0].read_text(encoding='utf-8')
+          assert 'void renderExamples(Cmd c' in main
+          assert 'void loadRemoteImage(String url' in main
+          print('English-only UI and example-preview audit passed')
           PY
 
-      - name: Commit generated canonical v0.7.2 source
+      - name: Commit generated canonical v0.7.3 source
         run: |
           git config user.name 'PromptDeck Bot'
           git config user.email 'actions@users.noreply.github.com'
@@ -70,7 +76,7 @@ jobs:
                   android/app/src/main/assets/curated_photo_prompts.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate 198 curated photo prompts into categories'
+            git commit -m 'Integrate curated photo prompts with in-app result previews'
             git push origin HEAD:main
           fi
 
@@ -100,13 +106,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.2.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.2.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.3.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.3.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.2-build
+          name: PromptDeck-v0.7.3-build
           path: |
-            /tmp/PromptDeck-v0.7.2.apk
-            /tmp/PromptDeck-v0.7.2.sha256
+            /tmp/PromptDeck-v0.7.3.apk
+            /tmp/PromptDeck-v0.7.3.sha256
           if-no-files-found: error

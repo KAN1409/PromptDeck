@@ -1,0 +1,102 @@
+name: Build PromptDeck v0.7.0
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/build-v070.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PromptDeck
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build 2,160-prompt library
+        run: |
+          curl -L --fail --retry 3 \
+            https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv \
+            -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 - <<'PY'
+          import json
+          p='android/app/src/main/assets/prompts_library.json'
+          d=json.load(open(p,encoding='utf-8'))
+          assert len(d)==2160, len(d)
+          assert all(x.get('title') and x.get('prompt') and x.get('category') and x.get('description') for x in d)
+          print('Prompt library verified:',len(d))
+          PY
+
+      - name: Apply v0.7 English UI and library integration
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          paths=[
+            Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java'),
+            Path('android/app/src/main/java/com/kareem/promptdeck/PromptLibraryActivity.java'),
+            Path('android/app/src/main/res/values/strings.xml')
+          ]
+          bad=[]
+          for p in paths:
+            s=p.read_text(encoding='utf-8')
+            for i,line in enumerate(s.splitlines(),1):
+              if re.search(r'[\u0600-\u06FF]',line):bad.append(f'{p}:{i}:{line[:160]}')
+          if bad: raise SystemExit('Arabic visible UI text remains:\n'+'\n'.join(bad[:50]))
+          print('English-only visible UI audit passed')
+          PY
+
+      - name: Commit generated canonical v0.7 source
+        run: |
+          git config user.name 'PromptDeck Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add android/app/src/main/assets/prompts_library.json \
+                  android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
+          if ! git diff --cached --quiet; then
+            git commit -m 'Integrate 2,160 categorized prompts and English-only UI'
+            git push origin HEAD:main
+          fi
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
+      - name: Verify APK
+        run: |
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          test -f "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
+          cp "$APK" /tmp/PromptDeck-v0.7.0.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.0.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.7.0-build
+          path: |
+            /tmp/PromptDeck-v0.7.0.apk
+            /tmp/PromptDeck-v0.7.0.sha256
+          if-no-files-found: error

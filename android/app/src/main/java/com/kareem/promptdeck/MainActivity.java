@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
 
   String autoDescription(String prompt,String category){
     if(prompt==null)return "Custom prompt";
-    String t=prompt.replaceAll("\s+"," ").trim();
+    String t=prompt.replaceAll("\\s+"," ").trim();
     t=t.replaceAll("(?i)^(please\\s+|create\\s+|generate\\s+|make\\s+|use\\s+|turn\\s+this\\s+into\\s+)","");
     String lower=t.toLowerCase(Locale.ROOT);
     if(category.toLowerCase(Locale.ROOT).contains("photo")){
@@ -350,7 +350,7 @@ public class MainActivity extends Activity {
 
   int[] parseBulkCommands(String raw,String category){
     int added=0,skipped=0;
-    java.util.regex.Pattern header=java.util.regex.Pattern.compile("^\s*(?:\d+[.)]\s*)?/([A-Za-z0-9_-]+)(?:\s*(?:→|->|—|–|:|\\||=)\s*(.*))?\s*$");
+    java.util.regex.Pattern header=java.util.regex.Pattern.compile("^\\s*(?:\\d+[.)]\\s*)?/([A-Za-z0-9_-]+)(?:\\s*(?:→|->|—|–|:|\\\\||=)\\s*(.*))?\\s*$");
     String currentName=null,currentInline=null;StringBuilder body=new StringBuilder();
     ArrayList<String[]> blocks=new ArrayList<>();
     for(String line:raw.split("\\r?\\n")){
@@ -358,8 +358,7 @@ public class MainActivity extends Activity {
       if(m.matches()){
         if(currentName!=null)blocks.add(new String[]{currentName,currentInline==null?"":currentInline,body.toString().trim()});
         currentName=m.group(1);currentInline=m.group(2)==null?"":m.group(2).trim();body.setLength(0);
-      }else if(currentName!=null){if(body.length()>0)body.append("
-");body.append(line);}
+      }else if(currentName!=null){if(body.length()>0)body.append('\n');body.append(line);}
     }
     if(currentName!=null)blocks.add(new String[]{currentName,currentInline==null?"":currentInline,body.toString().trim()});
     for(String[] b:blocks){String name=b[0],inline=b[1],full=b[2];String instruction=!full.isEmpty()?full:inline;if(instruction==null||instruction.trim().isEmpty()){skipped++;continue;}boolean duplicate=false;for(Cmd c:all)if(c.command.equalsIgnoreCase(name)){duplicate=true;break;}if(duplicate){skipped++;continue;}String desc=!inline.isEmpty()&&!full.isEmpty()?inline:autoDescription(instruction,category);if(!inline.isEmpty()&&full.isEmpty())desc=inline;try{JSONObject o=new JSONObject();o.put("id",nextId());o.put("command",name);o.put("category",category);o.put("description",category.toLowerCase(Locale.ROOT).contains("photo")?photoDescription(desc):desc);o.put("instruction",instruction);all.add(new Cmd(o,true));added++;}catch(Exception e){skipped++;}}

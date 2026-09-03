@@ -1,4 +1,4 @@
-# Rebuild after large-CSV parser fix
+# Rebuild after exact 2,160-library normalization
 name: Build PromptDeck v0.7.0
 
 on:

@@ -23,13 +23,13 @@ public class MainActivity extends Activity {
   static final int SATIN_TOP=Color.rgb(27,31,39), SATIN_BOTTOM=Color.rgb(16,19,25), SATIN_EDGE=Color.rgb(52,61,75);
 
   static class Cmd {
-    int id; String command,category,description,instruction; boolean custom;
+    int id; String command,category,subcategory,description,instruction; boolean custom;
     Cmd(JSONObject o, boolean custom) throws JSONException {
-      id=o.optInt("id",0); command=clean(o.optString("command","")); category=o.optString("category","Custom").trim();
+      id=o.optInt("id",0); command=clean(o.optString("command","")); category=o.optString("category","Custom").trim(); subcategory=o.optString("subcategory","").trim();
       description=o.optString("description",o.optString("description_ar","")).trim(); instruction=o.optString("instruction","").trim(); this.custom=custom;
       if(command.isEmpty()||instruction.isEmpty()) throw new JSONException("command and instruction are required");
     }
-    JSONObject json() throws JSONException { JSONObject o=new JSONObject();o.put("id",id);o.put("command",command);o.put("category",category);o.put("description",description);o.put("instruction",instruction);return o; }
+    JSONObject json() throws JSONException { JSONObject o=new JSONObject();o.put("id",id);o.put("command",command);o.put("category",category);if(subcategory!=null&&!subcategory.isEmpty())o.put("subcategory",subcategory);o.put("description",description);o.put("instruction",instruction);return o; }
     static String clean(String s){s=s==null?"":s.trim();while(s.startsWith("/"))s=s.substring(1);return s.replaceAll("[^A-Za-z0-9_-]","");}
   }
   static class Group { String title,sub,icon; String[] names; Group(String icon,String title,String sub,String...names){this.icon=icon;this.title=title;this.sub=sub;this.names=names;} }
@@ -48,6 +48,11 @@ public class MainActivity extends Activity {
     new Group("△","Content Creation","Hooks, scripts, social content and storytelling","hook","caption","script","carousel","reel","viral","cta","story","headline"),
     new Group("⚙","Problem Solving & Technical","Diagnose, fix, test and improve solutions","rootcause","debug","fix","check","optimize","better","edgecases","refactor","tests","security","rubric","score"),
     new Group("▦","Data & Formatting","Structure, transform and present information","table","bullets","outline","format","json","csv","schema","template","prompt"),
+    new Group("✧","AI & Prompting","AI roles, prompt patterns, agents and model workflows"),
+    new Group("▤","Business & Marketing","Business, strategy, marketing, sales and finance roles"),
+    new Group("♡","Health & Wellness","Medical, mental wellness, fitness and nutrition roles"),
+    new Group("⌂","Lifestyle & Personal","Travel, food, home, relationships and personal-life roles"),
+    new Group("◆","Specialist Roles","Specialized expert roles that do not fit another category"),
     new Group("◉","Photo Editing & Image Generation","Image editing, visual styles and generation presets","NeonCity","GoldenHour","MiniWorld","Fog","LuxuryAd","LowAngleHero","VintageFilm","DroneView","Magazine","RainyNight","ProHeadshot","SnowWorld","DoubleExposure","OldMoney","StudioPro","Autumn","MovieScene","hdreal","cinematicportrait","doubleexposureviral","Travelstory","storymytravel","cinematicTravel","documentrytravel","Travelvlog","FixFaceResolution")
   };
 
@@ -62,7 +67,51 @@ public class MainActivity extends Activity {
     super.onBackPressed();
   }
 
-  void load(){all.clear();try{JSONArray a=new JSONArray(readAsset("commands.json"));for(int i=0;i<a.length();i++)all.add(new Cmd(a.getJSONObject(i),false));JSONArray c=new JSONArray(getSharedPreferences(PREFS,MODE_PRIVATE).getString(CUSTOM,"[]"));for(int i=0;i<c.length();i++)try{all.add(new Cmd(c.getJSONObject(i),true));}catch(Exception ignored){}}catch(Exception e){throw new RuntimeException(e);}seedPhotoCommands();seedExtraPhotoCommands();englishizeDescriptions();}
+  void load(){all.clear();try{JSONArray a=new JSONArray(readAsset("commands.json"));for(int i=0;i<a.length();i++)all.add(new Cmd(a.getJSONObject(i),false));loadCommunityPrompts();JSONArray c=new JSONArray(getSharedPreferences(PREFS,MODE_PRIVATE).getString(CUSTOM,"[]"));for(int i=0;i<c.length();i++)try{all.add(new Cmd(c.getJSONObject(i),true));}catch(Exception ignored){}}catch(Exception e){throw new RuntimeException(e);}seedPhotoCommands();seedExtraPhotoCommands();englishizeDescriptions();}
+
+  void loadCommunityPrompts(){
+    try{
+      JSONArray a=new JSONArray(readAsset("prompts_library.json"));
+      for(int i=0;i<a.length();i++){
+        JSONObject x=a.getJSONObject(i);
+        String title=x.optString("title","").trim(), prompt=x.optString("prompt","").trim();
+        if(title.isEmpty()||prompt.isEmpty())continue;
+        String slug=librarySlug(title);
+        String baseSlug=slug;int n=2;while(find(slug)!=null)slug=baseSlug+(n++);
+        JSONObject o=new JSONObject();
+        o.put("id",30000+i);
+        o.put("command",slug);
+        o.put("category",mapLibraryCategory(x.optString("category","Other Expert Roles")));
+        o.put("subcategory",x.optString("subcategory","Specialist Roles"));
+        o.put("description",x.optString("description",title));
+        o.put("instruction",prompt);
+        try{all.add(new Cmd(o,false));}catch(Exception ignored){}
+      }
+    }catch(Exception ignored){}
+  }
+
+  String librarySlug(String title){
+    String s=title.replaceAll("(?i)^act as (an? )?","").replaceAll("[^A-Za-z0-9]+","").trim();
+    if(s.isEmpty())s="ExpertPrompt";
+    if(s.length()>38)s=s.substring(0,38);
+    return s;
+  }
+
+  String mapLibraryCategory(String source){
+    if(source==null)return"Specialist Roles";
+    if(source.equals("Writing & Language"))return"Writing & Rewriting";
+    if(source.equals("Research & Analysis"))return"Research & Analysis";
+    if(source.equals("Work & Career"))return"Work & Career";
+    if(source.equals("Learning & Education"))return"Learning & Study";
+    if(source.equals("Creative & Content"))return"Content Creation";
+    if(source.equals("Technology & Development"))return"Problem Solving & Technical";
+    if(source.equals("Tools & Simulations"))return"Data & Formatting";
+    if(source.equals("AI & Prompting"))return"AI & Prompting";
+    if(source.equals("Business & Marketing"))return"Business & Marketing";
+    if(source.equals("Health & Wellness"))return"Health & Wellness";
+    if(source.equals("Lifestyle & Personal"))return"Lifestyle & Personal";
+    return"Specialist Roles";
+  }
 
   void seedPhotoCommands(){
     String[][] defs=new String[][]{
@@ -163,11 +212,11 @@ public class MainActivity extends Activity {
 
   void home(){
     page="home"; currentGroup=null;
-    base("Choose a category","Browse prompt tools by category. Open any category, choose a prompt, review what it does, then add it to your Stack.",true);
+    base("Choose a category","All built-in and full prompts live inside these categories. Open a category, choose a prompt, review it, then add it to your Stack.",true);
     for(Group g:groups){View c=groupCard(g);c.setOnClickListener(v->group(g));root.addView(c);} spacer(8);
-    View fullLibrary=menuCard("⌕","Prompt Library","Browse 2,160 full prompts by category or search");fullLibrary.setOnClickListener(v->startActivityForResult(new Intent(this,PromptLibraryActivity.class),LIBRARY_PICK_REQ));root.addView(fullLibrary);spacer(8);View library=menuCard("＋","My Prompt Library","Add, import or export your own prompts");library.setOnClickListener(v->library());root.addView(library);
+    View library=menuCard("＋","My Prompts","Add, import or export your own prompts");library.setOnClickListener(v->library());root.addView(library);
     if(!selected.isEmpty()){spacer(10);Button compose=primary("Build prompt from "+selected.size()+" selected command"+(selected.size()==1?"":"s"));compose.setOnClickListener(v->stack());root.addView(compose);}
-    TextView foot=text("120 built-in prompt operators  •  local library  •  no API required",11,false,MUTED);foot.setGravity(Gravity.CENTER);foot.setPadding(0,dp(24),0,0);root.addView(foot);
+    TextView foot=text(all.size()+" prompts integrated into categories  •  local  •  no API required",11,false,MUTED);foot.setGravity(Gravity.CENTER);foot.setPadding(0,dp(24),0,0);root.addView(foot);
   }
 
   View groupCard(Group g){
@@ -182,7 +231,7 @@ public class MainActivity extends Activity {
   void group(Group g){
     page="group"; currentGroup=g;
     base(g.title,g.sub,true);
-    LinkedHashMap<String,ArrayList<Cmd>> subs=new LinkedHashMap<>();for(String n:g.names){Cmd c=find(n);if(c!=null){String sc=subcat(c.command,g.title);if(!subs.containsKey(sc))subs.put(sc,new ArrayList<>());subs.get(sc).add(c);}}for(Cmd c:all){if(!c.custom||!c.category.equalsIgnoreCase(g.title))continue;String sc=g.title.contains("Photo Editing")?"Imported Photo Prompts":"Custom";if(!subs.containsKey(sc))subs.put(sc,new ArrayList<>());subs.get(sc).add(c);}
+    LinkedHashMap<String,ArrayList<Cmd>> subs=new LinkedHashMap<>();LinkedHashSet<Cmd> seen=new LinkedHashSet<>();for(String n:g.names){Cmd c=find(n);if(c!=null){String sc=subcat(c.command,g.title);if(!subs.containsKey(sc))subs.put(sc,new ArrayList<>());subs.get(sc).add(c);seen.add(c);}}for(Cmd c:all){if(seen.contains(c)||!c.category.equalsIgnoreCase(g.title))continue;String sc=(c.subcategory!=null&&!c.subcategory.isEmpty())?c.subcategory:(c.custom?"Custom":"More prompts");if(!subs.containsKey(sc))subs.put(sc,new ArrayList<>());subs.get(sc).add(c);}
     for(Map.Entry<String,ArrayList<Cmd>> en:subs.entrySet()){
       root.addView(section(en.getKey(),en.getValue().size()));
       LinearLayout block=vbox(); block.setBackground(satinShape(SATIN_TOP,SATIN_BOTTOM,SATIN_EDGE,12));block.setElevation(dp(2)); block.setPadding(0,dp(2),0,dp(2));

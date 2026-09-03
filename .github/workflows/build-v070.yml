@@ -1,5 +1,5 @@
-# Rebuild after category browser integration
-name: Build PromptDeck v0.7.1
+# Rebuild after curated photo source integration
+name: Build PromptDeck v0.7.2
 
 on:
   workflow_dispatch:
@@ -23,26 +23,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build 2,160-prompt library
+      - name: Build integrated prompt data
         run: |
           curl -L --fail --retry 3 \
             https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv \
             -o /tmp/prompts.csv
           python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
           python3 - <<'PY'
           import json
-          p='android/app/src/main/assets/prompts_library.json'
-          d=json.load(open(p,encoding='utf-8'))
-          assert len(d)==2160, len(d)
-          assert all(x.get('title') and x.get('prompt') and x.get('category') and x.get('description') for x in d)
-          print('Prompt library verified:',len(d))
+          core=json.load(open('android/app/src/main/assets/prompts_library.json',encoding='utf-8'))
+          photo=json.load(open('android/app/src/main/assets/curated_photo_prompts.json',encoding='utf-8'))
+          assert len(core)==2160, len(core)
+          assert len(photo)==198, len(photo)
+          assert all(x.get('command') and x.get('instruction') and x.get('subcategory') for x in photo)
+          print('Integrated prompt data verified:',len(core),'+',len(photo))
           PY
 
-      - name: Apply integrated categories and navigation
+      - name: Apply integrated categories, navigation and photo sources
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
           python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -59,14 +62,15 @@ jobs:
           print('English-only visible UI audit passed')
           PY
 
-      - name: Commit generated canonical v0.7.1 source
+      - name: Commit generated canonical v0.7.2 source
         run: |
           git config user.name 'PromptDeck Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add android/app/src/main/assets/prompts_library.json \
+                  android/app/src/main/assets/curated_photo_prompts.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate library into category browser with subcategories and search'
+            git commit -m 'Integrate 198 curated photo prompts into categories'
             git push origin HEAD:main
           fi
 
@@ -96,13 +100,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.1.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.1.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.2.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.2.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.1-build
+          name: PromptDeck-v0.7.2-build
           path: |
-            /tmp/PromptDeck-v0.7.1.apk
-            /tmp/PromptDeck-v0.7.1.sha256
+            /tmp/PromptDeck-v0.7.2.apk
+            /tmp/PromptDeck-v0.7.2.sha256
           if-no-files-found: error

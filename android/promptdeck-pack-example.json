@@ -1,0 +1,13 @@
+{
+  "format": "promptdeck-pack",
+  "version": 1,
+  "name": "My Prompt Operators",
+  "commands": [
+    {
+      "command": "architectreview",
+      "category": "Custom",
+      "description": "يراجع التصميم من ناحية المنطق والتنفيذ",
+      "instruction": "Review the proposed design for goals, constraints, contradictions, implementation risks, maintainability, and missing decisions. Then propose the smallest set of concrete improvements."
+    }
+  ]
+}

@@ -1,0 +1,842 @@
+[
+  {
+    "id": 1,
+    "command": "eli5",
+    "category": "Explain",
+    "description": "يشرح أي حاجة ببساطة جدًا",
+    "instruction": "Explain the topic as if teaching a curious 5-year-old. Use very simple language, concrete examples, and avoid unexplained jargon."
+  },
+  {
+    "id": 2,
+    "command": "summarize",
+    "category": "Transform",
+    "description": "يلخص النص بسرعة",
+    "instruction": "Summarize the material concisely, preserving the key points, decisions, facts, and caveats."
+  },
+  {
+    "id": 3,
+    "command": "rewrite",
+    "category": "Writing",
+    "description": "يعيد كتابة النص",
+    "instruction": "Rewrite the text for clarity, flow, and impact while preserving the original meaning."
+  },
+  {
+    "id": 4,
+    "command": "humanize",
+    "category": "Writing",
+    "description": "يجعل النص طبيعيًا",
+    "instruction": "Make the text sound natural, human, and conversational. Remove robotic or formulaic phrasing."
+  },
+  {
+    "id": 5,
+    "command": "simplify",
+    "category": "Explain",
+    "description": "يبسط الكلام جدًا",
+    "instruction": "Simplify the content without losing important meaning. Prefer short sentences and familiar words."
+  },
+  {
+    "id": 6,
+    "command": "brainstorm",
+    "category": "Ideation",
+    "description": "يولد أفكارًا كثيرة",
+    "instruction": "Generate a broad set of distinct ideas. Prioritize variety first, then usefulness."
+  },
+  {
+    "id": 7,
+    "command": "ideas",
+    "category": "Ideation",
+    "description": "يعطيك أفكارًا جديدة",
+    "instruction": "Suggest fresh, practical ideas relevant to the goal, including a few non-obvious options."
+  },
+  {
+    "id": 8,
+    "command": "hook",
+    "category": "Content",
+    "description": "يصنع بداية جذابة",
+    "instruction": "Create a strong opening hook that captures attention quickly without clickbait."
+  },
+  {
+    "id": 9,
+    "command": "professional",
+    "category": "Writing",
+    "description": "يجعل النص احترافيًا",
+    "instruction": "Rewrite in a polished professional tone with precise wording and clean structure."
+  },
+  {
+    "id": 10,
+    "command": "translate",
+    "category": "Transform",
+    "description": "يترجم النص",
+    "instruction": "Translate accurately while preserving meaning, tone, terminology, and formatting. State any ambiguous phrase briefly."
+  },
+  {
+    "id": 11,
+    "command": "explain",
+    "category": "Explain",
+    "description": "يشرح الموضوع بوضوح",
+    "instruction": "Explain the topic clearly from first principles, defining important terms before using them."
+  },
+  {
+    "id": 12,
+    "command": "steps",
+    "category": "Planning",
+    "description": "يشرحه خطوة بخطوة",
+    "instruction": "Convert the solution into clear ordered steps. Include prerequisites and expected outcome for each major step."
+  },
+  {
+    "id": 13,
+    "command": "critique",
+    "category": "Analysis",
+    "description": "ينتقد فكرتك بصدق",
+    "instruction": "Critique the idea rigorously. Identify weaknesses, unsupported assumptions, risks, and what would make it stronger."
+  },
+  {
+    "id": 14,
+    "command": "improve",
+    "category": "Analysis",
+    "description": "يحسن النتيجة الحالية",
+    "instruction": "Improve the current result materially. Keep what works, fix weaknesses, and explain the most important changes."
+  },
+  {
+    "id": 15,
+    "command": "compare",
+    "category": "Decision",
+    "description": "يقارن بين الأشياء",
+    "instruction": "Compare the options using consistent criteria. Highlight meaningful differences and trade-offs."
+  },
+  {
+    "id": 16,
+    "command": "proscons",
+    "category": "Decision",
+    "description": "يقارن المميزات والعيوب",
+    "instruction": "List the most important advantages and disadvantages, weighted by practical impact rather than count."
+  },
+  {
+    "id": 17,
+    "command": "examples",
+    "category": "Explain",
+    "description": "يعطي أمثلة عملية",
+    "instruction": "Give practical examples that progress from simple to realistic, and explain why each example works."
+  },
+  {
+    "id": 18,
+    "command": "analogy",
+    "category": "Explain",
+    "description": "يصنع تشبيهًا مبسطًا",
+    "instruction": "Use a simple analogy to explain the concept, then state where the analogy stops being accurate."
+  },
+  {
+    "id": 19,
+    "command": "shorten",
+    "category": "Transform",
+    "description": "يقصر النص جدًا",
+    "instruction": "Shorten the text aggressively while preserving the essential meaning and key details."
+  },
+  {
+    "id": 20,
+    "command": "expand",
+    "category": "Transform",
+    "description": "يوسع الفكرة",
+    "instruction": "Expand the idea with useful detail, implications, examples, and missing context without padding."
+  },
+  {
+    "id": 21,
+    "command": "caption",
+    "category": "Content",
+    "description": "يكتب كابشن جذاب",
+    "instruction": "Write an engaging caption suited to the topic and audience. Keep it natural and easy to scan."
+  },
+  {
+    "id": 22,
+    "command": "script",
+    "category": "Content",
+    "description": "يحولها لسكريبت فيديو",
+    "instruction": "Turn the idea into a video script with hook, flow, key beats, and closing."
+  },
+  {
+    "id": 23,
+    "command": "carousel",
+    "category": "Content",
+    "description": "يحولها لكاروسيل",
+    "instruction": "Turn the idea into a slide-by-slide carousel with a strong first slide and concise progression."
+  },
+  {
+    "id": 24,
+    "command": "reel",
+    "category": "Content",
+    "description": "يحولها لفكرة ريل",
+    "instruction": "Turn the idea into a short-form reel concept with hook, scene beats, on-screen text, and CTA."
+  },
+  {
+    "id": 25,
+    "command": "viral",
+    "category": "Content",
+    "description": "يقترح صياغة قابلة للانتشار",
+    "instruction": "Reframe the idea for strong shareability while staying accurate and avoiding manipulative clickbait."
+  },
+  {
+    "id": 26,
+    "command": "cta",
+    "category": "Content",
+    "description": "يصنع دعوة للتفاعل",
+    "instruction": "Write a clear call to action aligned with the goal and audience, with 3 tone options."
+  },
+  {
+    "id": 27,
+    "command": "story",
+    "category": "Content",
+    "description": "يحولها إلى قصة",
+    "instruction": "Turn the material into a coherent story with setup, tension, progression, and payoff."
+  },
+  {
+    "id": 28,
+    "command": "headline",
+    "category": "Content",
+    "description": "يصنع عنوانًا قويًا",
+    "instruction": "Create several strong headline options with different angles. Avoid vague hype."
+  },
+  {
+    "id": 29,
+    "command": "angles",
+    "category": "Ideation",
+    "description": "يقترح زوايا مختلفة",
+    "instruction": "Suggest multiple distinct angles for approaching or presenting the topic, including non-obvious perspectives."
+  },
+  {
+    "id": 30,
+    "command": "alternative",
+    "category": "Decision",
+    "description": "يقترح بدائل أخرى",
+    "instruction": "Suggest credible alternatives and explain when each alternative is preferable."
+  },
+  {
+    "id": 31,
+    "command": "plan",
+    "category": "Planning",
+    "description": "يبني لك خطة",
+    "instruction": "Build a practical plan with objectives, milestones, dependencies, and next actions."
+  },
+  {
+    "id": 32,
+    "command": "strategy",
+    "category": "Planning",
+    "description": "يبني استراتيجية مناسبة",
+    "instruction": "Develop a strategy that connects the goal, constraints, choices, trade-offs, and success measures."
+  },
+  {
+    "id": 33,
+    "command": "roadmap",
+    "category": "Planning",
+    "description": "يبني خريطة طريق",
+    "instruction": "Create a phased roadmap with milestones, sequencing, dependencies, and decision points."
+  },
+  {
+    "id": 34,
+    "command": "checklist",
+    "category": "Planning",
+    "description": "يحولها لقائمة مهام",
+    "instruction": "Convert the material into an actionable checklist with clear completion criteria."
+  },
+  {
+    "id": 35,
+    "command": "todo",
+    "category": "Planning",
+    "description": "يستخرج المهام المطلوبة",
+    "instruction": "Extract concrete tasks, owners if stated, dependencies, and deadlines if available."
+  },
+  {
+    "id": 36,
+    "command": "priority",
+    "category": "Decision",
+    "description": "يحدد أهم المهام",
+    "instruction": "Prioritize the items by impact, urgency, dependency, and effort. Explain the top choices briefly."
+  },
+  {
+    "id": 37,
+    "command": "workflow",
+    "category": "Planning",
+    "description": "ينظم طريقة العمل",
+    "instruction": "Design a repeatable workflow with inputs, steps, decision gates, outputs, and feedback loops."
+  },
+  {
+    "id": 38,
+    "command": "timeline",
+    "category": "Planning",
+    "description": "يرتب الأحداث زمنيًا",
+    "instruction": "Arrange events or tasks chronologically and surface key dates, durations, and dependencies."
+  },
+  {
+    "id": 39,
+    "command": "action",
+    "category": "Planning",
+    "description": "يحولها لخطوات تنفيذية",
+    "instruction": "Turn the analysis into concrete executable actions, starting with the smallest useful next step."
+  },
+  {
+    "id": 40,
+    "command": "template",
+    "category": "Writing",
+    "description": "ينشئ قالبًا جاهزًا",
+    "instruction": "Create a reusable template with placeholders, instructions, and a short example."
+  },
+  {
+    "id": 41,
+    "command": "study",
+    "category": "Study",
+    "description": "يحوله لوضع الدراسة",
+    "instruction": "Transform the material into a structured study guide with concepts, definitions, examples, and review points."
+  },
+  {
+    "id": 42,
+    "command": "quiz",
+    "category": "Study",
+    "description": "يختبر معلوماتك",
+    "instruction": "Create a quiz that tests understanding rather than memorization. Include answers after the questions."
+  },
+  {
+    "id": 43,
+    "command": "flashcards",
+    "category": "Study",
+    "description": "يصنع بطاقات للمراجعة",
+    "instruction": "Create concise question-answer flashcards covering the most important concepts and likely confusions."
+  },
+  {
+    "id": 44,
+    "command": "teach",
+    "category": "Study",
+    "description": "يعلمك الموضوع تدريجيًا",
+    "instruction": "Teach the topic progressively, checking foundational understanding before moving to harder concepts."
+  },
+  {
+    "id": 45,
+    "command": "hint",
+    "category": "Study",
+    "description": "يعطيك تلميحًا فقط",
+    "instruction": "Give only the smallest useful hint needed to make progress. Do not reveal the full solution unless asked."
+  },
+  {
+    "id": 46,
+    "command": "test",
+    "category": "Study",
+    "description": "ينشئ اختبارًا تدريبيًا",
+    "instruction": "Create a realistic practice test with mixed difficulty and a separate answer key."
+  },
+  {
+    "id": 47,
+    "command": "review",
+    "category": "Study",
+    "description": "يراجع المعلومات معك",
+    "instruction": "Review the material by identifying key concepts, likely weak spots, and short recall questions."
+  },
+  {
+    "id": 48,
+    "command": "memorize",
+    "category": "Study",
+    "description": "يساعدك على الحفظ",
+    "instruction": "Create a memorization plan using chunking, associations, retrieval practice, and spaced review."
+  },
+  {
+    "id": 49,
+    "command": "mistakes",
+    "category": "Analysis",
+    "description": "يحدد أخطاءك الشائعة",
+    "instruction": "Identify mistakes, recurring error patterns, likely causes, and how to prevent each one."
+  },
+  {
+    "id": 50,
+    "command": "explain",
+    "category": "Research",
+    "description": "يشرح الموضوع بوضوح وبعمق",
+    "instruction": "Explain the topic analytically, covering mechanisms, context, edge cases, and common misunderstandings."
+  },
+  {
+    "id": 51,
+    "command": "research",
+    "category": "Research",
+    "description": "يبحث عن المعلومات",
+    "instruction": "Research the question systematically. Separate established facts, uncertainty, and interpretation."
+  },
+  {
+    "id": 52,
+    "command": "verify",
+    "category": "Research",
+    "description": "يتحقق من المعلومات",
+    "instruction": "Verify important claims against reliable evidence. Flag anything uncertain, outdated, or unsupported."
+  },
+  {
+    "id": 53,
+    "command": "sources",
+    "category": "Research",
+    "description": "يطلب مصادر موثوقة",
+    "instruction": "Provide the strongest relevant sources and briefly state what each source supports."
+  },
+  {
+    "id": 54,
+    "command": "deepdive",
+    "category": "Research",
+    "description": "يتعمق في الموضوع",
+    "instruction": "Go deep into the topic: background, mechanisms, competing views, edge cases, and practical implications."
+  },
+  {
+    "id": 55,
+    "command": "evidence",
+    "category": "Research",
+    "description": "يبحث عن الأدلة",
+    "instruction": "Assess the evidence for and against the claim, including evidence quality and major limitations."
+  },
+  {
+    "id": 56,
+    "command": "facts",
+    "category": "Research",
+    "description": "يستخرج الحقائق المهمة",
+    "instruction": "Extract the most decision-relevant facts and distinguish them from opinions or assumptions."
+  },
+  {
+    "id": 57,
+    "command": "insights",
+    "category": "Analysis",
+    "description": "يستخرج أهم الاستنتاجات",
+    "instruction": "Derive the most useful non-obvious insights from the material and show what supports each insight."
+  },
+  {
+    "id": 58,
+    "command": "trends",
+    "category": "Analysis",
+    "description": "يكتشف الاتجاهات الرئيسية",
+    "instruction": "Identify meaningful trends, shifts, patterns, and possible drivers without over-interpreting noise."
+  },
+  {
+    "id": 59,
+    "command": "data",
+    "category": "Analysis",
+    "description": "يستخرج البيانات المهمة",
+    "instruction": "Extract important quantitative or structured data and organize it for easy comparison."
+  },
+  {
+    "id": 60,
+    "command": "summary",
+    "category": "Transform",
+    "description": "يعطيك خلاصة مركزة",
+    "instruction": "Produce an executive-style summary focused on the core conclusion, evidence, implications, and next steps."
+  },
+  {
+    "id": 61,
+    "command": "grammar",
+    "category": "Writing",
+    "description": "يصحح أخطاء اللغة",
+    "instruction": "Correct grammar, spelling, punctuation, and usage while preserving the writer’s voice."
+  },
+  {
+    "id": 62,
+    "command": "proofread",
+    "category": "Writing",
+    "description": "يراجع النص كاملًا",
+    "instruction": "Proofread the entire text for grammar, spelling, punctuation, consistency, and obvious clarity issues."
+  },
+  {
+    "id": 63,
+    "command": "paraphrase",
+    "category": "Writing",
+    "description": "يغير صياغة الكلام",
+    "instruction": "Paraphrase the text substantially while preserving meaning and factual content."
+  },
+  {
+    "id": 64,
+    "command": "rephrase",
+    "category": "Writing",
+    "description": "يعيد صياغة الجملة",
+    "instruction": "Rephrase the sentence or passage with cleaner wording while staying close to the original meaning."
+  },
+  {
+    "id": 65,
+    "command": "polish",
+    "category": "Writing",
+    "description": "يحسن جودة النص",
+    "instruction": "Polish the text for clarity, rhythm, precision, consistency, and presentation."
+  },
+  {
+    "id": 66,
+    "command": "clarify",
+    "category": "Writing",
+    "description": "يوضح الكلام الغامض",
+    "instruction": "Rewrite ambiguous parts so the intended meaning becomes explicit. Flag ambiguity that cannot be safely resolved."
+  },
+  {
+    "id": 67,
+    "command": "tone",
+    "category": "Writing",
+    "description": "يغير نبرة الكلام",
+    "instruction": "Adjust the tone to match the specified audience and intent while preserving content."
+  },
+  {
+    "id": 68,
+    "command": "formal",
+    "category": "Writing",
+    "description": "يجعل الأسلوب رسميًا",
+    "instruction": "Rewrite in a formal, professional register without sounding stiff or archaic."
+  },
+  {
+    "id": 69,
+    "command": "casual",
+    "category": "Writing",
+    "description": "يجعل النص عفويًا",
+    "instruction": "Rewrite in a relaxed, natural conversational style without losing clarity."
+  },
+  {
+    "id": 70,
+    "command": "arabic",
+    "category": "Transform",
+    "description": "يحول النص للعربية",
+    "instruction": "Render the content in clear natural Arabic, preserving technical English terms when that improves clarity."
+  },
+  {
+    "id": 71,
+    "command": "email",
+    "category": "Work",
+    "description": "يكتب بريدًا احترافيًا",
+    "instruction": "Draft a professional email with clear subject, purpose, context, request, and appropriate closing."
+  },
+  {
+    "id": 72,
+    "command": "reply",
+    "category": "Work",
+    "description": "يكتب ردًا مناسبًا",
+    "instruction": "Draft an appropriate reply that directly addresses the message, tone, and requested action."
+  },
+  {
+    "id": 73,
+    "command": "followup",
+    "category": "Work",
+    "description": "يكتب رسالة متابعة",
+    "instruction": "Write a concise follow-up that references the prior context, asks for the needed update, and stays courteous."
+  },
+  {
+    "id": 74,
+    "command": "request",
+    "category": "Work",
+    "description": "يصيغ طلبًا محترمًا",
+    "instruction": "Draft a respectful, specific request that explains what is needed, why, and by when if relevant."
+  },
+  {
+    "id": 75,
+    "command": "apology",
+    "category": "Work",
+    "description": "يكتب اعتذارًا مناسبًا",
+    "instruction": "Write a sincere apology that acknowledges impact, avoids excuses, and states the corrective next step."
+  },
+  {
+    "id": 76,
+    "command": "resume",
+    "category": "Career",
+    "description": "يحسن السيرة الذاتية",
+    "instruction": "Improve the resume for clarity, impact, relevance, measurable achievements, and ATS readability."
+  },
+  {
+    "id": 77,
+    "command": "coverletter",
+    "category": "Career",
+    "description": "يكتب خطاب تقديم",
+    "instruction": "Draft a tailored cover letter connecting the candidate’s evidence to the role’s actual needs."
+  },
+  {
+    "id": 78,
+    "command": "interview",
+    "category": "Career",
+    "description": "يحضر أسئلة مقابلة",
+    "instruction": "Prepare realistic interview questions, strong answer frameworks, and likely follow-up questions."
+  },
+  {
+    "id": 79,
+    "command": "meeting",
+    "category": "Work",
+    "description": "يجهزك للاجتماع",
+    "instruction": "Prepare the meeting: objective, agenda, key questions, decisions needed, risks, and desired outcome."
+  },
+  {
+    "id": 80,
+    "command": "minutes",
+    "category": "Work",
+    "description": "يلخص محضر الاجتماع",
+    "instruction": "Turn meeting notes into concise minutes with decisions, action items, owners, deadlines, and open questions."
+  },
+  {
+    "id": 81,
+    "command": "rank",
+    "category": "Decision",
+    "description": "يرتب الخيارات حسب الأفضلية",
+    "instruction": "Rank the options using explicit criteria and explain why the top options score higher."
+  },
+  {
+    "id": 82,
+    "command": "recommend",
+    "category": "Decision",
+    "description": "يقترح أفضل الخيارات",
+    "instruction": "Recommend the best option for the stated needs and constraints, including trade-offs and runner-up."
+  },
+  {
+    "id": 83,
+    "command": "challenge",
+    "category": "Analysis",
+    "description": "يتحدى افتراضاتك الحالية",
+    "instruction": "Challenge the current assumptions and reasoning. Test what would have to be true for the conclusion to fail."
+  },
+  {
+    "id": 84,
+    "command": "devilsadvocate",
+    "category": "Analysis",
+    "description": "يقدم الرأي المعاكس",
+    "instruction": "Argue the strongest credible opposing position, then identify which objections matter most."
+  },
+  {
+    "id": 85,
+    "command": "blindspots",
+    "category": "Analysis",
+    "description": "يكشف نقاطك العمياء",
+    "instruction": "Identify likely blind spots, missing stakeholders, hidden constraints, second-order effects, and ignored alternatives."
+  },
+  {
+    "id": 86,
+    "command": "check",
+    "category": "Quality",
+    "description": "يراجع النتيجة النهائية",
+    "instruction": "Perform a final quality check for correctness, completeness, consistency, and alignment with the goal."
+  },
+  {
+    "id": 87,
+    "command": "debug",
+    "category": "Technical",
+    "description": "يبحث عن الأخطاء",
+    "instruction": "Diagnose the problem systematically: reproduce, isolate causes, inspect assumptions, and identify the most likely root cause."
+  },
+  {
+    "id": 88,
+    "command": "fix",
+    "category": "Technical",
+    "description": "يصلح المشكلة مباشرة",
+    "instruction": "Propose the smallest robust fix that addresses the root cause, not just the visible symptom."
+  },
+  {
+    "id": 89,
+    "command": "optimize",
+    "category": "Technical",
+    "description": "يحسن الأداء والنتيجة",
+    "instruction": "Optimize the result for performance, simplicity, reliability, and maintainability. Quantify trade-offs when possible."
+  },
+  {
+    "id": 90,
+    "command": "better",
+    "category": "Quality",
+    "description": "يقترح نسخة أفضل",
+    "instruction": "Create a clearly better version and explain the few changes that produce the biggest improvement."
+  },
+  {
+    "id": 91,
+    "command": "table",
+    "category": "Format",
+    "description": "يحول المعلومات لجدول",
+    "instruction": "Organize the information into a concise table with useful column headings."
+  },
+  {
+    "id": 92,
+    "command": "bullets",
+    "category": "Format",
+    "description": "يحول النص لنقاط",
+    "instruction": "Convert the content into clean, non-redundant bullet points grouped logically."
+  },
+  {
+    "id": 93,
+    "command": "outline",
+    "category": "Format",
+    "description": "يبني هيكلًا منظمًا",
+    "instruction": "Create a logical hierarchical outline that shows the structure before details."
+  },
+  {
+    "id": 94,
+    "command": "format",
+    "category": "Format",
+    "description": "يعيد تنسيق المحتوى",
+    "instruction": "Reformat the content for readability and consistency without changing its meaning."
+  },
+  {
+    "id": 95,
+    "command": "json",
+    "category": "Format",
+    "description": "يحول البيانات إلى JSON",
+    "instruction": "Return the requested information as valid JSON with a sensible schema and no extra prose unless requested."
+  },
+  {
+    "id": 96,
+    "command": "csv",
+    "category": "Format",
+    "description": "ينظم البيانات كـ CSV",
+    "instruction": "Return the requested structured data as CSV with a header row and consistent fields."
+  },
+  {
+    "command": "assumptions",
+    "category": "Reasoning",
+    "description": "يكشف الافتراضات الضمنية",
+    "instruction": "Identify the explicit and implicit assumptions behind the request or argument. Separate assumptions that are well-supported from those that need validation.",
+    "id": 97
+  },
+  {
+    "command": "constraints",
+    "category": "Reasoning",
+    "description": "يحدد القيود اللي لازم الحل يحترمها",
+    "instruction": "Extract and organize all hard constraints, soft preferences, limits, dependencies, and non-negotiables. Flag missing constraints that could materially change the answer.",
+    "id": 98
+  },
+  {
+    "command": "questions",
+    "category": "Reasoning",
+    "description": "يطلع أهم الأسئلة قبل ما نقرر",
+    "instruction": "Generate the smallest set of high-value clarifying questions whose answers would materially improve the result. Prioritize questions by information gain.",
+    "id": 99
+  },
+  {
+    "command": "firstprinciples",
+    "category": "Reasoning",
+    "description": "يفكك المشكلة من المبادئ الأساسية",
+    "instruction": "Reason from first principles. Strip away conventions and inherited assumptions, identify the fundamental facts and constraints, then rebuild the solution from those foundations.",
+    "id": 100
+  },
+  {
+    "command": "rootcause",
+    "category": "Reasoning",
+    "description": "يدور على السبب الجذري للمشكلة",
+    "instruction": "Perform root-cause analysis. Distinguish symptoms from causes, trace plausible causal chains, test competing explanations, and identify the most actionable root causes.",
+    "id": 101
+  },
+  {
+    "command": "tradeoffs",
+    "category": "Decision",
+    "description": "يوضح المقايضات بين الاختيارات",
+    "instruction": "Map the key trade-offs. For each option, explain what is gained, what is sacrificed, which conditions favor it, and which downside is hardest to reverse.",
+    "id": 102
+  },
+  {
+    "command": "decision",
+    "category": "Decision",
+    "description": "يحوّل التحليل لقرار واضح",
+    "instruction": "Turn the available evidence into a decision. State the decision criteria, weight them when useful, evaluate the options, make a recommendation, and explain what could change the decision.",
+    "id": 103
+  },
+  {
+    "command": "risks",
+    "category": "Decision",
+    "description": "يحلل المخاطر واحتمالها وتأثيرها",
+    "instruction": "Identify material risks, estimate likelihood and impact qualitatively, note early warning signs, and propose practical mitigations and fallback plans.",
+    "id": 104
+  },
+  {
+    "command": "counterexample",
+    "category": "Reasoning",
+    "description": "يختبر الفكرة بأمثلة مضادة",
+    "instruction": "Stress-test the claim or plan using counterexamples and edge cases. Show where the reasoning could fail and what changes would make it more robust.",
+    "id": 105
+  },
+  {
+    "command": "socratic",
+    "category": "Study",
+    "description": "يعلمك بالأسئلة بدل الإجابة المباشرة",
+    "instruction": "Use a Socratic teaching style. Guide the user with progressively targeted questions, reveal only enough information to support the next step, and adapt based on their answers.",
+    "id": 106
+  },
+  {
+    "command": "rubric",
+    "category": "Evaluation",
+    "description": "يبني معيار تقييم واضح",
+    "instruction": "Create a practical evaluation rubric with explicit criteria, scoring guidance, and weights when appropriate. Make the rubric specific enough that two reviewers could apply it consistently.",
+    "id": 107
+  },
+  {
+    "command": "score",
+    "category": "Evaluation",
+    "description": "يقيّم الحاجة بدرجات ومعايير",
+    "instruction": "Score the item against explicit criteria. Show the score per criterion, the rationale, the overall result, and the highest-leverage improvements.",
+    "id": 108
+  },
+  {
+    "command": "estimate",
+    "category": "Analysis",
+    "description": "يعمل تقدير منطقي مع الافتراضات",
+    "instruction": "Produce a reasoned estimate. State assumptions, use ranges rather than false precision, show a simple calculation or decomposition, and identify the variables that dominate uncertainty.",
+    "id": 109
+  },
+  {
+    "command": "extract",
+    "category": "Data",
+    "description": "يستخرج المعلومات المطلوبة فقط",
+    "instruction": "Extract only the requested entities, fields, facts, actions, dates, numbers, or statements from the input. Preserve source wording where precision matters and avoid adding unsupported information.",
+    "id": 110
+  },
+  {
+    "command": "classify",
+    "category": "Data",
+    "description": "يصنف المحتوى حسب فئات واضحة",
+    "instruction": "Classify the input into a clear taxonomy. Define the categories, assign each item, explain ambiguous cases briefly, and avoid forcing items into a category when evidence is insufficient.",
+    "id": 111
+  },
+  {
+    "command": "schema",
+    "category": "Data",
+    "description": "يصمم شكل بيانات منظم",
+    "instruction": "Design a clean data schema for the information. Define fields, types, required versus optional values, enums where useful, and provide a compact example instance.",
+    "id": 112
+  },
+  {
+    "command": "edgecases",
+    "category": "Coding",
+    "description": "يستخرج الحالات الطرفية اللي ممكن تكسر الحل",
+    "instruction": "Enumerate important edge cases and failure modes. Group them by input, state, timing, permissions, data quality, concurrency, and environment when relevant, then rank by risk.",
+    "id": 113
+  },
+  {
+    "command": "refactor",
+    "category": "Coding",
+    "description": "يعيد هيكلة الكود بدون تغيير السلوك",
+    "instruction": "Refactor the code or design for clarity, maintainability, and reuse while preserving behavior. Explain the structural problems, propose the improved structure, and highlight any behavior-changing risks.",
+    "id": 114
+  },
+  {
+    "command": "tests",
+    "category": "Coding",
+    "description": "يولد اختبارات للحالات المهمة",
+    "instruction": "Design a focused test suite covering normal behavior, boundaries, regressions, failure paths, and high-risk edge cases. Prefer test cases that would catch realistic bugs rather than redundant coverage.",
+    "id": 115
+  },
+  {
+    "command": "security",
+    "category": "Coding",
+    "description": "يراجع الأمان والخصوصية",
+    "instruction": "Review the design or code for security and privacy risks. Identify trust boundaries, sensitive data, abuse cases, insecure defaults, and concrete mitigations without assuming threats that are unsupported.",
+    "id": 116
+  },
+  {
+    "command": "acceptance",
+    "category": "Planning",
+    "description": "يحول المطلوب لمعايير قبول قابلة للاختبار",
+    "instruction": "Convert the request into clear, testable acceptance criteria. Include success conditions, important negative cases, and observable outcomes so completion can be verified objectively.",
+    "id": 117
+  },
+  {
+    "command": "requirements",
+    "category": "Planning",
+    "description": "يستخرج المتطلبات الوظيفية وغير الوظيفية",
+    "instruction": "Turn the request into structured requirements: goals, users, functional requirements, non-functional requirements, constraints, dependencies, assumptions, and open questions.",
+    "id": 118
+  },
+  {
+    "command": "spec",
+    "category": "Planning",
+    "description": "يكتب مواصفة تنفيذ مختصرة وواضحة",
+    "instruction": "Produce an implementation-ready specification with scope, behavior, inputs, outputs, states, edge cases, acceptance criteria, and explicit out-of-scope items.",
+    "id": 119
+  },
+  {
+    "command": "prompt",
+    "category": "Meta",
+    "description": "يصمم Prompt أقوى للمهمة نفسها",
+    "instruction": "Design an improved prompt for the task. Preserve the user's real goal, add only useful context and constraints, specify the desired output, and avoid unnecessary role-play or verbosity.",
+    "id": 120
+  }
+]

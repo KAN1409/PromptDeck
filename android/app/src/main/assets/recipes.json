@@ -1,0 +1,77 @@
+[
+  {
+    "name": "قرار شراء",
+    "commands": [
+      "research",
+      "compare",
+      "proscons",
+      "verify",
+      "recommend"
+    ]
+  },
+  {
+    "name": "تحليل فكرة",
+    "commands": [
+      "critique",
+      "challenge",
+      "blindspots",
+      "improve"
+    ]
+  },
+  {
+    "name": "تعلم موضوع",
+    "commands": [
+      "eli5",
+      "explain",
+      "examples",
+      "quiz"
+    ]
+  },
+  {
+    "name": "حل مشكلة",
+    "commands": [
+      "debug",
+      "evidence",
+      "fix",
+      "check"
+    ]
+  },
+  {
+    "name": "خطة مشروع",
+    "commands": [
+      "brainstorm",
+      "strategy",
+      "roadmap",
+      "priority",
+      "action"
+    ]
+  },
+  {
+    "name": "كتابة قوية",
+    "commands": [
+      "rewrite",
+      "clarify",
+      "polish",
+      "professional"
+    ]
+  },
+  {
+    "name": "بحث عميق",
+    "commands": [
+      "research",
+      "sources",
+      "verify",
+      "deepdive",
+      "insights"
+    ]
+  },
+  {
+    "name": "CV",
+    "commands": [
+      "resume",
+      "critique",
+      "optimize",
+      "check"
+    ]
+  }
+]

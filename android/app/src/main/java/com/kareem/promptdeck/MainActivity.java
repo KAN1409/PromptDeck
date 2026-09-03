@@ -23,13 +23,15 @@ public class MainActivity extends Activity {
   static final int SATIN_TOP=Color.rgb(27,31,39), SATIN_BOTTOM=Color.rgb(16,19,25), SATIN_EDGE=Color.rgb(52,61,75);
 
   static class Cmd {
-    int id; String command,category,subcategory,description,instruction; boolean custom;
+    int id; String command,category,subcategory,description,instruction,sourceName,sourceUrl,exampleMode; ArrayList<String> exampleUrls=new ArrayList<>(); boolean custom;
     Cmd(JSONObject o, boolean custom) throws JSONException {
       id=o.optInt("id",0); command=clean(o.optString("command","")); category=o.optString("category","Custom").trim(); subcategory=o.optString("subcategory","").trim();
-      description=o.optString("description",o.optString("description_ar","")).trim(); instruction=o.optString("instruction","").trim(); this.custom=custom;
+      description=o.optString("description",o.optString("description_ar","")).trim(); instruction=o.optString("instruction","").trim();
+      sourceName=o.optString("source","").trim();sourceUrl=o.optString("source_url","").trim();exampleMode=o.optString("example_mode","").trim();
+      JSONArray ex=o.optJSONArray("example_urls");if(ex!=null)for(int i=0;i<ex.length();i++){String u=ex.optString(i,"").trim();if(!u.isEmpty())exampleUrls.add(u);}this.custom=custom;
       if(command.isEmpty()||instruction.isEmpty()) throw new JSONException("command and instruction are required");
     }
-    JSONObject json() throws JSONException { JSONObject o=new JSONObject();o.put("id",id);o.put("command",command);o.put("category",category);if(subcategory!=null&&!subcategory.isEmpty())o.put("subcategory",subcategory);o.put("description",description);o.put("instruction",instruction);return o; }
+    JSONObject json() throws JSONException { JSONObject o=new JSONObject();o.put("id",id);o.put("command",command);o.put("category",category);if(subcategory!=null&&!subcategory.isEmpty())o.put("subcategory",subcategory);o.put("description",description);o.put("instruction",instruction);if(sourceName!=null&&!sourceName.isEmpty())o.put("source",sourceName);if(sourceUrl!=null&&!sourceUrl.isEmpty())o.put("source_url",sourceUrl);if(exampleMode!=null&&!exampleMode.isEmpty())o.put("example_mode",exampleMode);if(exampleUrls!=null&&!exampleUrls.isEmpty()){JSONArray a=new JSONArray();for(String u:exampleUrls)a.put(u);o.put("example_urls",a);}return o; }
     static String clean(String s){s=s==null?"":s.trim();while(s.startsWith("/"))s=s.substring(1);return s.replaceAll("[^A-Za-z0-9_-]","");}
   }
   static class Group { String title,sub,icon; String[] names; Group(String icon,String title,String sub,String...names){this.icon=icon;this.title=title;this.sub=sub;this.names=names;} }
@@ -67,7 +69,7 @@ public class MainActivity extends Activity {
     super.onBackPressed();
   }
 
-  void load(){all.clear();try{JSONArray a=new JSONArray(readAsset("commands.json"));for(int i=0;i<a.length();i++)all.add(new Cmd(a.getJSONObject(i),false));loadCommunityPrompts();JSONArray c=new JSONArray(getSharedPreferences(PREFS,MODE_PRIVATE).getString(CUSTOM,"[]"));for(int i=0;i<c.length();i++)try{all.add(new Cmd(c.getJSONObject(i),true));}catch(Exception ignored){}}catch(Exception e){throw new RuntimeException(e);}seedPhotoCommands();seedExtraPhotoCommands();englishizeDescriptions();}
+  void load(){all.clear();try{JSONArray a=new JSONArray(readAsset("commands.json"));for(int i=0;i<a.length();i++)all.add(new Cmd(a.getJSONObject(i),false));loadCommunityPrompts();loadCuratedPhotoPrompts();JSONArray c=new JSONArray(getSharedPreferences(PREFS,MODE_PRIVATE).getString(CUSTOM,"[]"));for(int i=0;i<c.length();i++)try{all.add(new Cmd(c.getJSONObject(i),true));}catch(Exception ignored){}}catch(Exception e){throw new RuntimeException(e);}seedPhotoCommands();seedExtraPhotoCommands();englishizeDescriptions();}
 
   void loadCommunityPrompts(){
     try{
@@ -111,6 +113,20 @@ public class MainActivity extends Activity {
     if(source.equals("Health & Wellness"))return"Health & Wellness";
     if(source.equals("Lifestyle & Personal"))return"Lifestyle & Personal";
     return"Specialist Roles";
+  }
+
+  void loadCuratedPhotoPrompts(){
+    try{
+      JSONArray a=new JSONArray(readAsset("curated_photo_prompts.json"));
+      for(int i=0;i<a.length();i++){
+        JSONObject x=a.getJSONObject(i);
+        String raw=x.optString("command","").trim(), prompt=x.optString("instruction","").trim();
+        if(raw.isEmpty()||prompt.isEmpty())continue;
+        String command=Cmd.clean(raw),baseSlug=command;int n=2;while(find(command)!=null)command=baseSlug+(n++);
+        JSONObject o=new JSONObject(x.toString());o.put("id",50000+i);o.put("command",command);o.put("category","Photo Editing & Image Generation");
+        try{all.add(new Cmd(o,false));}catch(Exception ignored){}
+      }
+    }catch(Exception ignored){}
   }
 
   void seedPhotoCommands(){
@@ -304,7 +320,7 @@ public class MainActivity extends Activity {
   View commandRow(Cmd c,boolean divider){
     LinearLayout wrap=vbox();wrap.setPadding(dp(14),dp(11),dp(12),dp(9));LinearLayout line=hbox();line.setGravity(Gravity.CENTER_VERTICAL);
     TextView name=text("/"+c.command,15,true,TEXT);name.setTextDirection(View.TEXT_DIRECTION_LTR);name.setGravity(Gravity.START);name.setSingleLine(true);line.addView(name,new LinearLayout.LayoutParams(0,-2,1));if(selected.contains(c)){TextView tick=text("SELECTED",9,true,SUCCESS);tick.setLetterSpacing(.12f);line.addView(tick);}else line.addView(text("›",24,false,MUTED));wrap.addView(line);
-    TextView d=text(c.description,12,false,MUTED);d.setTextDirection(View.TEXT_DIRECTION_RTL);d.setGravity(Gravity.END);d.setPadding(0,dp(4),0,0);wrap.addView(d);
+    TextView d=text(c.description,12,false,MUTED);d.setTextDirection(View.TEXT_DIRECTION_FIRST_STRONG);d.setGravity(Gravity.START);d.setPadding(0,dp(4),0,0);wrap.addView(d);
     if(divider){View v=new View(this);v.setBackgroundColor(BORDER);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,dp(1));lp.setMargins(0,dp(11),0,0);wrap.addView(v,lp);}return wrap;
   }
 
@@ -315,12 +331,35 @@ public class MainActivity extends Activity {
     info("USE IT WHEN",useWhen(c));
     info("EXAMPLE","/"+c.command+"  "+example(c));
     info("INSTRUCTION SENT TO CHATGPT",c.instruction);
+    sourceActions(c);
     relatedActions(c.command);
     Button add=selected.contains(c)?secondary("✓  Added to Prompt Stack"):primary("＋  Add to Prompt Stack");add.setOnClickListener(v->{if(!selected.contains(c)){selected.add(c);toast("Added /"+c.command);}stack();});root.addView(add);
     Button back=ghost("←  "+g.title);back.setOnClickListener(v->group(g));root.addView(back);
   }
 
   void info(String label,String body){TextView l=text(label,10,true,ACCENT);l.setLetterSpacing(.14f);l.setPadding(0,dp(14),0,dp(6));root.addView(l);LinearLayout box=surface(true);TextView b=text(body,15,false,TEXT);b.setLineSpacing(0,1.18f);b.setTextDirection(View.TEXT_DIRECTION_FIRST_STRONG);box.addView(b);root.addView(box);}
+
+  void sourceActions(Cmd c){
+    if((c.sourceName==null||c.sourceName.isEmpty())&&(c.sourceUrl==null||c.sourceUrl.isEmpty()))return;
+    String body=(c.sourceName==null||c.sourceName.isEmpty())?"Curated source":c.sourceName;
+    if(c.exampleMode!=null&&!c.exampleMode.isEmpty()){
+      if("before_after".equals(c.exampleMode))body+="  •  Before / after examples available";
+      else if("results".equals(c.exampleMode))body+="  •  Result examples available";
+      else body+="  •  Source examples available";
+    }
+    info("SOURCE",body);
+    if(c.sourceUrl!=null&&!c.sourceUrl.isEmpty()){
+      String label="View source";
+      if("before_after".equals(c.exampleMode))label="Before / After  ↗";
+      else if("results".equals(c.exampleMode))label="Show Results  ↗";
+      else if(c.exampleMode!=null&&!c.exampleMode.isEmpty())label="Show Examples  ↗";
+      Button examples=secondary(label);examples.setOnClickListener(v->openUrl(c.sourceUrl));root.addView(examples);
+    }
+  }
+
+  void openUrl(String url){
+    try{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));}catch(Exception e){toast("Unable to open source");}
+  }
 
   void relatedActions(String command){
     String[] names=relatedNames(command);if(names.length==0)return;
@@ -358,7 +397,7 @@ public class MainActivity extends Activity {
       top.addView(command,new LinearLayout.LayoutParams(0,-2,1));
       card.addView(top);
 
-      TextView desc=text(c.description,12,false,MUTED);desc.setTextDirection(View.TEXT_DIRECTION_RTL);desc.setGravity(Gravity.END);desc.setLineSpacing(0,1.12f);desc.setPadding(dp(36),dp(4),0,dp(10));card.addView(desc);
+      TextView desc=text(c.description,12,false,MUTED);desc.setTextDirection(View.TEXT_DIRECTION_FIRST_STRONG);desc.setGravity(Gravity.START);desc.setLineSpacing(0,1.12f);desc.setPadding(dp(36),dp(4),0,dp(10));card.addView(desc);
 
       LinearLayout controls=hbox();controls.setGravity(Gravity.END|Gravity.CENTER_VERTICAL);
       Button up=compactControl("↑  Up"),dn=compactControl("↓  Down"),rm=compactControl("×  Remove");
@@ -388,7 +427,7 @@ public class MainActivity extends Activity {
       LinearLayout chips=hbox();chips.setPadding(0,0,dp(4),0);
       for(Cmd c:suggestions){Button chip=relatedChip(c);chips.addView(chip);}
       scroll.addView(chips);LinearLayout.LayoutParams hp=new LinearLayout.LayoutParams(-1,-2);hp.setMargins(0,0,0,dp(8));scroll.setLayoutParams(hp);root.addView(scroll);
-      TextView hint=text("Suggestions based on your current Stack. Tap any prompt to add it instantly.",12,false,MUTED);hint.setTextDirection(View.TEXT_DIRECTION_RTL);hint.setGravity(Gravity.END);hint.setPadding(0,0,0,dp(10));root.addView(hint);
+      TextView hint=text("Suggestions based on your current Stack. Tap any prompt to add it instantly.",12,false,MUTED);hint.setTextDirection(View.TEXT_DIRECTION_FIRST_STRONG);hint.setGravity(Gravity.START);hint.setPadding(0,0,0,dp(10));root.addView(hint);
     }
 
     root.addView(label("BROWSE BY CATEGORY"));
@@ -415,7 +454,7 @@ public class MainActivity extends Activity {
     LinearLayout line=hbox();line.setGravity(Gravity.CENTER_VERTICAL);
     TextView name=text("/"+c.command,15,true,TEXT);name.setTextDirection(View.TEXT_DIRECTION_LTR);name.setGravity(Gravity.START);name.setSingleLine(true);line.addView(name,new LinearLayout.LayoutParams(0,-2,1));
     TextView state=text(selected.contains(c)?"✓ ADDED":"＋ ADD",10,true,selected.contains(c)?SUCCESS:ACCENT);state.setLetterSpacing(.08f);line.addView(state);wrap.addView(line);
-    TextView d=text(c.description,12,false,MUTED);d.setTextDirection(View.TEXT_DIRECTION_RTL);d.setGravity(Gravity.END);d.setPadding(0,dp(3),0,0);wrap.addView(d);
+    TextView d=text(c.description,12,false,MUTED);d.setTextDirection(View.TEXT_DIRECTION_FIRST_STRONG);d.setGravity(Gravity.START);d.setPadding(0,dp(3),0,0);wrap.addView(d);
     wrap.setOnClickListener(v->{if(!selected.contains(c)){selected.add(c);toast("Added /"+c.command);addMore();}else{selected.remove(c);toast("Removed /"+c.command);addMore();}});
     if(divider){View sep=new View(this);sep.setBackgroundColor(BORDER);LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,dp(1));lp.setMargins(0,dp(10),0,0);wrap.addView(sep,lp);}return wrap;
   }

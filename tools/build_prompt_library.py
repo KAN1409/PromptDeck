@@ -2,6 +2,8 @@
 import csv, json, re, sys
 from pathlib import Path
 
+csv.field_size_limit(sys.maxsize)
+
 CATEGORY_RULES = [
     ("AI & Prompting", ["prompt", "chatgpt", "midjourney", "artificial intelligence", " ai ", "llm", "model", "agent", "claude", "gemini"]),
     ("Technology & Development", ["developer", "programmer", "programming", "software", "python", "javascript", "typescript", "java ", "golang", "rust ", "sql", "linux", "terminal", "console", "frontend", "backend", "fullstack", "web design", "ux/ui", "cyber", "security", "devops", "database", "api", "regex", "blockchain", "ethereum", "machine learning", "data engineer", "it architect", "system engineer", "code reviewer", "svg"]),

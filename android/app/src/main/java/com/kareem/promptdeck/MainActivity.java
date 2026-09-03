@@ -342,19 +342,59 @@ public class MainActivity extends Activity {
   void sourceActions(Cmd c){
     if((c.sourceName==null||c.sourceName.isEmpty())&&(c.sourceUrl==null||c.sourceUrl.isEmpty()))return;
     String body=(c.sourceName==null||c.sourceName.isEmpty())?"Curated source":c.sourceName;
-    if(c.exampleMode!=null&&!c.exampleMode.isEmpty()){
-      if("before_after".equals(c.exampleMode))body+="  •  Before / after examples available";
-      else if("results".equals(c.exampleMode))body+="  •  Result examples available";
-      else body+="  •  Source examples available";
-    }
     info("SOURCE",body);
-    if(c.sourceUrl!=null&&!c.sourceUrl.isEmpty()){
-      String label="View source";
-      if("before_after".equals(c.exampleMode))label="Before / After  ↗";
-      else if("results".equals(c.exampleMode))label="Show Results  ↗";
-      else if(c.exampleMode!=null&&!c.exampleMode.isEmpty())label="Show Examples  ↗";
-      Button examples=secondary(label);examples.setOnClickListener(v->openUrl(c.sourceUrl));root.addView(examples);
+
+    boolean hasExamples=(c.exampleMode!=null&&!c.exampleMode.isEmpty());
+    if(!hasExamples){
+      if(c.sourceUrl!=null&&!c.sourceUrl.isEmpty()){Button source=secondary("View source  ↗");source.setOnClickListener(v->openUrl(c.sourceUrl));root.addView(source);}return;
     }
+
+    LinearLayout tabs=hbox();tabs.setPadding(0,dp(2),0,dp(8));
+    Button promptTab=filterChip("Prompt",true);
+    String exampleLabel="Examples";
+    if("before_after".equals(c.exampleMode))exampleLabel="Before / After";
+    else if("results".equals(c.exampleMode))exampleLabel="Results";
+    Button examplesTab=filterChip(exampleLabel,false);
+    tabs.addView(promptTab);tabs.addView(examplesTab);root.addView(tabs);
+
+    LinearLayout panel=vbox();panel.setVisibility(View.GONE);root.addView(panel);
+    final String tabLabel=exampleLabel;
+    promptTab.setOnClickListener(v->{panel.setVisibility(View.GONE);promptTab.setBackground(shape(ACCENT,ACCENT,18));examplesTab.setBackground(shape(SURFACE2,BORDER,18));});
+    examplesTab.setOnClickListener(v->{
+      promptTab.setBackground(shape(SURFACE2,BORDER,18));examplesTab.setBackground(shape(ACCENT,ACCENT,18));
+      if(panel.getChildCount()==0)renderExamples(c,panel,tabLabel);
+      panel.setVisibility(View.VISIBLE);
+    });
+  }
+
+  void renderExamples(Cmd c,LinearLayout panel,String label){
+    LinearLayout card=surface(true);card.setPadding(dp(14),dp(14),dp(14),dp(14));
+    TextView title=text(label.toUpperCase(Locale.ROOT),11,true,MUTED);card.addView(title);
+    if(c.exampleUrls!=null&&!c.exampleUrls.isEmpty()){
+      TextView note=text("Result previews are loaded from the original source and are not bundled inside PromptDeck.",12,false,MUTED);note.setPadding(0,dp(6),0,dp(10));card.addView(note);
+      int i=1;for(String url:c.exampleUrls){
+        TextView cap=text("Example "+(i++),12,true,TEXT);cap.setPadding(0,dp(8),0,dp(6));card.addView(cap);
+        ImageView img=new ImageView(this);img.setAdjustViewBounds(true);img.setScaleType(ImageView.ScaleType.CENTER_CROP);img.setBackground(shape(SURFACE2,BORDER,10));
+        LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,dp(240));lp.setMargins(0,0,0,dp(10));img.setLayoutParams(lp);card.addView(img);loadRemoteImage(url,img);
+      }
+    }else{
+      String msg="Examples are available on the original source page.";
+      if("before_after".equals(c.exampleMode))msg="This prompt has a before-and-after example on the original source page.";
+      TextView note=text(msg,13,false,MUTED);note.setPadding(0,dp(8),0,dp(10));card.addView(note);
+    }
+    if(c.sourceUrl!=null&&!c.sourceUrl.isEmpty()){Button source=secondary("Open source examples  ↗");source.setOnClickListener(v->openUrl(c.sourceUrl));card.addView(source);}
+    panel.addView(card);
+  }
+
+  void loadRemoteImage(String url,ImageView target){
+    TextView loading=null;
+    new Thread(()->{
+      try{
+        java.net.URLConnection conn=new java.net.URL(url).openConnection();conn.setConnectTimeout(8000);conn.setReadTimeout(12000);conn.setRequestProperty("User-Agent","PromptDeck/0.7.3");
+        java.io.InputStream in=conn.getInputStream();android.graphics.Bitmap bm=android.graphics.BitmapFactory.decodeStream(in);in.close();
+        if(bm!=null)runOnUiThread(()->target.setImageBitmap(bm));
+      }catch(Exception e){runOnUiThread(()->{target.setImageDrawable(null);target.setMinimumHeight(dp(72));});}
+    }).start();
   }
 
   void openUrl(String url){

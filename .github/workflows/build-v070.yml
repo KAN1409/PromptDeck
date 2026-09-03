@@ -1,11 +1,14 @@
-# Rebuild after category integration
-name: Build PromptDeck v0.7.0
+# Rebuild after category browser integration
+name: Build PromptDeck v0.7.1
 
 on:
   workflow_dispatch:
   push:
     paths:
       - '.github/workflows/build-v070.yml'
+      - 'tools/**'
+      - 'android/app/src/main/java/com/kareem/promptdeck/**'
+      - 'android/app/src/main/assets/**'
 
 permissions:
   contents: write
@@ -34,16 +37,16 @@ jobs:
           print('Prompt library verified:',len(d))
           PY
 
-      - name: Apply category integration and repair legacy source
+      - name: Apply integrated categories and navigation
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
           python3 - <<'PY'
           from pathlib import Path
           import re
           paths=[
             Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java'),
-            Path('android/app/src/main/java/com/kareem/promptdeck/PromptLibraryActivity.java'),
             Path('android/app/src/main/res/values/strings.xml')
           ]
           bad=[]
@@ -55,14 +58,14 @@ jobs:
           print('English-only visible UI audit passed')
           PY
 
-      - name: Commit generated canonical v0.7 source
+      - name: Commit generated canonical v0.7.1 source
         run: |
           git config user.name 'PromptDeck Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add android/app/src/main/assets/prompts_library.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate 2,160 prompts into existing categories'
+            git commit -m 'Integrate library into category browser with subcategories and search'
             git push origin HEAD:main
           fi
 
@@ -92,13 +95,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.0.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.0.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.1.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.1.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.0-build
+          name: PromptDeck-v0.7.1-build
           path: |
-            /tmp/PromptDeck-v0.7.0.apk
-            /tmp/PromptDeck-v0.7.0.sha256
+            /tmp/PromptDeck-v0.7.1.apk
+            /tmp/PromptDeck-v0.7.1.sha256
           if-no-files-found: error

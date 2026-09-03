@@ -25,7 +25,8 @@ jobs:
           base64 -d /tmp/PromptDeck.b64 > /tmp/PromptDeck.zip
           rm -rf /tmp/pd
           mkdir -p /tmp/pd
-          unzip -o /tmp/PromptDeck.zip -d /tmp/pd
+          unzip -o /tmp/PromptDeck.zip -d /tmp/pd || true
+          test -f /tmp/pd/PromptDeck/app/build.gradle
           cp /tmp/cortex/promptdeck-build/MainActivity.java /tmp/pd/PromptDeck/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           python3 /tmp/cortex/promptdeck-build/patch-ui-rc2.py
           python3 /tmp/cortex/promptdeck-build/patch-ui-rc3.py

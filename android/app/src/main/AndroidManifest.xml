@@ -6,6 +6,9 @@
         android:icon="@drawable/promptdeck_icon"
         android:roundIcon="@drawable/promptdeck_icon">
         <activity
+            android:name=".PromptLibraryActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

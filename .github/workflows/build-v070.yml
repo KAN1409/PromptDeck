@@ -1,4 +1,4 @@
-# Rebuild after exact 2,160-library normalization
+# Rebuild after legacy Java escape repair
 name: Build PromptDeck v0.7.0
 
 on:
@@ -34,9 +34,10 @@ jobs:
           print('Prompt library verified:',len(d))
           PY
 
-      - name: Apply v0.7 English UI and library integration
+      - name: Apply v0.7 English UI and repair legacy source
         run: |
           python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -61,7 +62,7 @@ jobs:
           git add android/app/src/main/assets/prompts_library.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate 2,160 categorized prompts and English-only UI'
+            git commit -m 'Integrate 2,160 categorized prompts and repair English UI source'
             git push origin HEAD:main
           fi
 

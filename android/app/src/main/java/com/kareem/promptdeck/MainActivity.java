@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
     super.onBackPressed();
   }
 
-  void load(){all.clear();try{JSONArray a=new JSONArray(readAsset("commands.json"));for(int i=0;i<a.length();i++)all.add(new Cmd(a.getJSONObject(i),false));loadCommunityPrompts();loadCuratedPhotoPrompts();JSONArray c=new JSONArray(getSharedPreferences(PREFS,MODE_PRIVATE).getString(CUSTOM,"[]"));for(int i=0;i<c.length();i++)try{all.add(new Cmd(c.getJSONObject(i),true));}catch(Exception ignored){}}catch(Exception e){throw new RuntimeException(e);}seedPhotoCommands();seedExtraPhotoCommands();englishizeDescriptions();}
+  void load(){all.clear();try{JSONArray a=new JSONArray(readAsset("commands.json"));for(int i=0;i<a.length();i++)all.add(new Cmd(a.getJSONObject(i),false));loadCommunityPrompts();loadImportedPdfPrompts();loadCuratedPhotoPrompts();JSONArray c=new JSONArray(getSharedPreferences(PREFS,MODE_PRIVATE).getString(CUSTOM,"[]"));for(int i=0;i<c.length();i++)try{all.add(new Cmd(c.getJSONObject(i),true));}catch(Exception ignored){}}catch(Exception e){throw new RuntimeException(e);}seedPhotoCommands();seedExtraPhotoCommands();englishizeDescriptions();}
 
   void loadCommunityPrompts(){
     try{
@@ -91,6 +91,30 @@ public class MainActivity extends Activity {
       }
     }catch(Exception ignored){}
   }
+
+  void loadImportedPdfPrompts(){
+    try{
+      JSONArray a=new JSONArray(readAsset("imported_pdf_prompts.json"));
+      HashSet<String> seen=new HashSet<>();
+      for(Cmd c:all)seen.add(normalizePrompt(c.instruction));
+      for(int i=0;i<a.length();i++){
+        JSONObject x=a.getJSONObject(i);
+        String title=x.optString("title","").trim(),prompt=x.optString("prompt","").trim();
+        if(title.isEmpty()||prompt.isEmpty())continue;
+        String norm=normalizePrompt(prompt);if(seen.contains(norm))continue;
+        String slug=librarySlug(title),baseSlug=slug;int n=2;while(find(slug)!=null)slug=baseSlug+(n++);
+        JSONObject o=new JSONObject();
+        o.put("id",60000+i);o.put("command",slug);
+        o.put("category",x.optString("category","Specialist Roles"));
+        o.put("subcategory",x.optString("subcategory","Imported PDF Collection"));
+        o.put("description",x.optString("description",title));o.put("instruction",prompt);
+        o.put("source",x.optString("source","Imported PDF Collection"));
+        try{all.add(new Cmd(o,false));seen.add(norm);}catch(Exception ignored){}
+      }
+    }catch(Exception ignored){}
+  }
+
+  String normalizePrompt(String s){return s==null?"":s.replaceAll("\\s+"," ").trim().toLowerCase(Locale.ROOT);}
 
   String librarySlug(String title){
     String s=title.replaceAll("(?i)^act as (an? )?","").replaceAll("[^A-Za-z0-9]+","").trim();

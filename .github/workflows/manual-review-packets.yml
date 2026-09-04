@@ -1,0 +1,36 @@
+name: Generate Manual Review Packets
+
+on:
+  push:
+    branches:
+      - audit/prompt-dedup-v1
+    paths:
+      - 'tools/make_manual_review_packets.py'
+      - '.github/workflows/manual-review-packets.yml'
+      - 'android/app/src/main/assets/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate review packets
+        run: python tools/make_manual_review_packets.py
+      - name: Commit review packets
+        run: |
+          git config user.name 'PromptDeck Review Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audit/manual_review_packets
+          if ! git diff --cached --quiet; then
+            git commit -m 'Generate manual review packets'
+            git push origin HEAD:audit/prompt-dedup-v1
+          fi

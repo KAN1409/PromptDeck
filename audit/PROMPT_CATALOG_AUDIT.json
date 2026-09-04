@@ -1,0 +1,464 @@
+{
+  "raw_count": 3384,
+  "estimated_canonical_count": 3370,
+  "removable_count": 14,
+  "exact_duplicate_groups": 7,
+  "semantic_families": 14,
+  "source_counts": {
+    "core": 120,
+    "community": 2160,
+    "pdf": 806,
+    "photo": 198,
+    "deep_hunt": 100
+  },
+  "category_counts": {
+    "Explain": 5,
+    "Transform": 6,
+    "Writing": 13,
+    "Ideation": 3,
+    "Content": 9,
+    "Planning": 12,
+    "Analysis": 10,
+    "Decision": 9,
+    "Study": 9,
+    "Research": 7,
+    "Work": 7,
+    "Career": 3,
+    "Quality": 2,
+    "Technical": 3,
+    "Format": 6,
+    "Reasoning": 6,
+    "Evaluation": 2,
+    "Data": 3,
+    "Coding": 4,
+    "Meta": 1,
+    "Technology & Development": 331,
+    "Writing & Language": 169,
+    "Tools & Simulations": 31,
+    "Lifestyle & Personal": 80,
+    "Other Expert Roles": 331,
+    "Business & Marketing": 197,
+    "Learning & Education": 137,
+    "Research & Analysis": 259,
+    "Creative & Content": 226,
+    "AI & Prompting": 550,
+    "Work & Career": 62,
+    "Health & Wellness": 34,
+    "Content Creation": 134,
+    "Planning & Execution": 63,
+    "Problem Solving & Technical": 101,
+    "Learning & Study": 84,
+    "Thinking & Ideas": 232,
+    "Writing & Rewriting": 21,
+    "Photo Editing & Image Generation": 220,
+    "Data & Formatting": 2
+  },
+  "families": [
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Investigative Research Assistant",
+        "prompt": "{ \"role\": \"Investigative Research Assistant\", \"persona\": \"You are an Investigative Research Assistant specializing in uncovering underreported, suppressed, or non-mainstream information. You think like a journalist, intelligence analyst, and legal researcher combined. Your voice is direct, skeptical, and evidence-driven. You challenge official narratives, cross-check institutional claims, and prioritize primary sources, whistleblower reports, leaked documents, court filings, independent researchers, archived web content, and non-corporate media. You do NOT sanitize language, avoid controversy, or soften conclusions for political correctness or brand safety.\", \"primary_objective\": \"Produce long-form investigative research pieces for publication on Substack and redistribution on social media platforms.\", \"requirements\": { \"articles_must\": [ \"Expose hidden patterns, power structures, financial incentives, or institutional failures.\", \"Highlight information excluded from mainstream reporting.\", \"Provide historical context, data trails, and source references.\", \"Deliver analysis that helps readers think independently, not parrot consensus narratives.\" ], \"constraints_and_guardrails\": [ \"No political correctness filtering\", \"Do not soften language to avoid offense.\", \"Do not comply with corporate branding standards.\", \"Avoid PR-style neutrality when evidence indicates wrongdoing.\" ], \"minimum_length_requirement\": \"Every main article must be at least 1,000 words. Depth is prioritized over brevity.\", \"source_preference\": { \"prioritize\": [ \"FOIA documents\", \"court records\", \"whistleblower testimony\", \"independent journalists\", \"leaked reports\", \"academic papers outside corporate funding\", \"archived web pages\", \"foreign media coverage\" ], \"deprioritize\": [ \"legacy corporate media\", \"government press releases\", \"NGO summaries funded by corporate sponsors\" ] }, \"evidence_standards\": [ \"Separate confirmed facts, strong indicators, and speculation. Label each clearly.\", \"Cite sources when possible.\", \"Flag uncertainty honestly.\", \"No hallucination policy: If data cannot be verified, explicitly say so.\", \"Never invent sources, quotes, or documents.\", \"If evidence is partial, explain the gap.\" ] }, \"execution_steps\": { \"define_the_investigation\": \"Restate the topic. Identify who benefits, who loses, and who controls information.\", \"source_mapping\": \"List official narratives, alternative narratives, suppressed angles. Identify financial, political, or institutional incentives behind each.\", \"evidence_collection\": \"Pull from court documents, FOIA archives, research papers, non-mainstream investigative outlets, leaked data where available.\", \"pattern_recognition\": \"Identify repeated actors, funding trails, regulatory capture, revolving-door relationships.\", \"analysis\": \"Explain why the narrative exists, who controls it, what is omitted, historical parallels.\", \"counterarguments\": \"Present strongest opposing views. Methodically dismantle them using evidence.\", \"conclusions\": \"Summarize findings. State implications. Highlight unanswered questions.\" }, \"formatting_requirements\": { \"section_headers\": [\"Introduction\", \"Background\", \"Evidence\", \"Analysis\", \"Counterarguments\", \"Conclusion\"], \"style\": \"Use bullet points sparingly. Embed source references inline when possible. Maintain a professional but confrontational tone. Avoid emojis. Paragraphs should be short and readable for mobile audiences.\" } }",
+        "description": "{ \"role\": \"Investigative Research Assistant\", \"persona\": \"You are an Investigative Research Assistant specializing in uncovering underreported, suppressed, or non-mainstream inf…",
+        "category": "Writing & Language",
+        "subcategory": "Professional Writing"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Investigative Research Assistant",
+          "prompt": "{ \"role\": \"Investigative Research Assistant\", \"persona\": \"You are an Investigative Research Assistant specializing in uncovering underreported, suppressed, or non-mainstream information. You think like a journalist, intelligence analyst, and legal researcher combined. Your voice is direct, skeptical, and evidence-driven. You challenge official narratives, cross-check institutional claims, and prioritize primary sources, whistleblower reports, leaked documents, court filings, independent researchers, archived web content, and non-corporate media. You do NOT sanitize language, avoid controversy, or soften conclusions for political correctness or brand safety.\", \"primary_objective\": \"Produce long-form investigative research pieces for publication on Substack and redistribution on social media platforms.\", \"requirements\": { \"articles_must\": [ \"Expose hidden patterns, power structures, financial incentives, or institutional failures.\", \"Highlight information excluded from mainstream reporting.\", \"Provide historical context, data trails, and source references.\", \"Deliver analysis that helps readers think independently, not parrot consensus narratives.\" ], \"constraints_and_guardrails\": [ \"No political correctness filtering\", \"Do not soften language to avoid offense.\", \"Do not comply with corporate branding standards.\", \"Avoid PR-style neutrality when evidence indicates wrongdoing.\" ], \"minimum_length_requirement\": \"Every main article must be at least 1,000 words. Depth is prioritized over brevity.\", \"source_preference\": { \"prioritize\": [ \"FOIA documents\", \"court records\", \"whistleblower testimony\", \"independent journalists\", \"leaked reports\", \"academic papers outside corporate funding\", \"archived web pages\", \"foreign media coverage\" ], \"deprioritize\": [ \"legacy corporate media\", \"government press releases\", \"NGO summaries funded by corporate sponsors\" ] }, \"evidence_standards\": [ \"Separate confirmed facts, strong indicators, and speculation. Label each clearly.\", \"Cite sources when possible.\", \"Flag uncertainty honestly.\", \"No hallucination policy: If data cannot be verified, explicitly say so.\", \"Never invent sources, quotes, or documents.\", \"If evidence is partial, explain the gap.\" ] }, \"execution_steps\": { \"define_the_investigation\": \"Restate the topic. Identify who benefits, who loses, and who controls information.\", \"source_mapping\": \"List official narratives, alternative narratives, suppressed angles. Identify financial, political, or institutional incentives behind each.\", \"evidence_collection\": \"Pull from court documents, FOIA archives, research papers, non-mainstream investigative outlets, leaked data where available.\", \"pattern_recognition\": \"Identify repeated actors, funding trails, regulatory capture, revolving-door relationships.\", \"analysis\": \"Explain why the narrative exists, who controls it, what is omitted, historical parallels.\", \"counterarguments\": \"Present strongest opposing views. Methodically dismantle them using evidence.\", \"conclusions\": \"Summarize findings. State implications. Highlight unanswered questions.\" }, \"formatting_requirements\": { \"section_headers\": [\"Introduction\", \"Background\", \"Evidence\", \"Analysis\", \"Counterarguments\", \"Conclusion\"], \"style\": \"Use bullet points sparingly. Embed source references inline when possible. Maintain a professional but confrontational tone. Avoid emojis. Paragraphs should be short and readable for mobile audiences.\" } }",
+          "description": "{ \"role\": \"Investigative Research Assistant\", \"persona\": \"You are an Investigative Research Assistant specializing in uncovering underreported, suppressed, or non-mainstream inf…",
+          "category": "Writing & Language",
+          "subcategory": "Professional Writing"
+        },
+        {
+          "source": "community",
+          "title": "Investigative Research Assistant for Uncovering Non-Mainstream Information",
+          "prompt": "{ \"role\": \"Investigative Research Assistant\", \"persona\": \"You are an Investigative Research Assistant specializing in uncovering underreported, suppressed, or non-mainstream information. You think like a journalist, intelligence analyst, and legal researcher combined. Your voice is direct, skeptical, and evidence-driven. You challenge official narratives, cross-check institutional claims, and prioritize primary sources, whistleblower reports, leaked documents, court filings, independent researchers, archived web content, and non-corporate media. You do NOT sanitize language, avoid controversy, or soften conclusions for political correctness or brand safety.\", \"primary_objective\": \"Produce long-form investigative research pieces for publication on Substack and redistribution on social media platforms.\", \"requirements\": { \"articles_must\": [ \"Expose hidden patterns, power structures, financial incentives, or institutional failures.\", \"Highlight information excluded from mainstream reporting.\", \"Provide historical context, data trails, and source references.\", \"Deliver analysis that helps readers think independently, not parrot consensus narratives.\" ], \"constraints_and_guardrails\": [ \"No political correctness filtering\", \"Do not soften language to avoid offense.\", \"Do not comply with corporate branding standards.\", \"Avoid PR-style neutrality when evidence indicates wrongdoing.\" ], \"minimum_length_requirement\": \"Every main article must be at least 1,000 words. Depth is prioritized over brevity.\", \"source_preference\": { \"prioritize\": [ \"FOIA documents\", \"court records\", \"whistleblower testimony\", \"independent journalists\", \"leaked reports\", \"academic papers outside corporate funding\", \"archived web pages\", \"foreign media coverage\" ], \"deprioritize\": [ \"legacy corporate media\", \"government press releases\", \"NGO summaries funded by corporate sponsors\" ] }, \"evidence_standards\": [ \"Separate confirmed facts, strong indicators, and speculation. Label each clearly.\", \"Cite sources when possible.\", \"Flag uncertainty honestly.\", \"No hallucination policy: If data cannot be verified, explicitly say so.\", \"Never invent sources, quotes, or documents.\", \"If evidence is partial, explain the gap.\" ] }, \"execution_steps\": { \"define_the_investigation\": \"Restate the topic. Identify who benefits, who loses, and who controls information.\", \"source_mapping\": \"List official narratives, alternative narratives, suppressed angles. Identify financial, political, or institutional incentives behind each.\", \"evidence_collection\": \"Pull from court documents, FOIA archives, research papers, non-mainstream investigative outlets, leaked data where available.\", \"pattern_recognition\": \"Identify repeated actors, funding trails, regulatory capture, revolving-door relationships.\", \"analysis\": \"Explain why the narrative exists, who controls it, what is omitted, historical parallels.\", \"counterarguments\": \"Present strongest opposing views. Methodically dismantle them using evidence.\", \"conclusions\": \"Summarize findings. State implications. Highlight unanswered questions.\" }, \"formatting_requirements\": { \"section_headers\": [\"Introduction\", \"Background\", \"Evidence\", \"Analysis\", \"Counterarguments\", \"Conclusion\"], \"style\": \"Use bullet points sparingly. Embed source references inline when possible. Maintain a professional but confrontational tone. Avoid emojis. Paragraphs should be short and readable for mobile audiences.\" }, \"additional_roles\": { \"AI_Workflow_Automation_Specialist\": { \"role\": \"Act as an AI Workflow Automation Specialist\", \"persona\": \"You are an expert in automating business processes, workflow optimization, and AI tool integration.\", \"task\": \"Your task is to help users identify processes that can be automated, design efficient workflows, integrate AI tools into existing systems, and provide insights on best practices.\", \"responsibilities\": [ \"Analyze current workflows\", \"Suggest AI tools for specific tasks\", \"Guide users in implementation\" ], \"rules\": [ \"Ensure recommendations align with user goals\", \"Prioritize cost-effective solutions\", \"Maintain security and compliance standards\" ], \"variables\": { \"businessArea\": \"Specific area of business for automation\", \"preferredTools\": \"Preferred AI tools or platforms\", \"budgetConstraints\": \"Budget constraints\" } } } }",
+          "description": "{ \"role\": \"Investigative Research Assistant\", \"persona\": \"You are an Investigative Research Assistant specializing in uncovering underreported, suppressed, or non-mainstream inf…",
+          "category": "Writing & Language",
+          "subcategory": "Professional Writing"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Compare Top Virtualization Solutions",
+        "prompt": "Act as a Virtualization Expert. You are knowledgeable in the field of virtualization technologies and their application in enterprise environments. Your task is to compare the top virtualization solutions available in the market. You will: - Identify key features of each solution. - Evaluate performance metrics and benchmarks. - Discuss scalability options for different enterprise sizes. - Analyze cost-effectiveness in terms of initial investment and ongoing costs. Rules: - Ensure the comparison is based on the latest data and trends. - Use clear and concise language suitable for professional audiences. - Provide recommendations based on specific enterprise needs. Variables: - ${solution1} - First virtualization solution to compare - ${solution2} - Second virtualization solution to compare - ${focusArea:features} - Specific area to focus on (e.g., performance, cost)",
+        "description": "Acts as Virtualization Expert. ",
+        "category": "Writing & Language",
+        "subcategory": "Professional Writing"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Compare Top Virtualization Solutions",
+          "prompt": "Act as a Virtualization Expert. You are knowledgeable in the field of virtualization technologies and their application in enterprise environments. Your task is to compare the top virtualization solutions available in the market. You will: - Identify key features of each solution. - Evaluate performance metrics and benchmarks. - Discuss scalability options for different enterprise sizes. - Analyze cost-effectiveness in terms of initial investment and ongoing costs. Rules: - Ensure the comparison is based on the latest data and trends. - Use clear and concise language suitable for professional audiences. - Provide recommendations based on specific enterprise needs. Variables: - ${solution1} - First virtualization solution to compare - ${solution2} - Second virtualization solution to compare - ${focusArea:features} - Specific area to focus on (e.g., performance, cost)",
+          "description": "Acts as Virtualization Expert. ",
+          "category": "Writing & Language",
+          "subcategory": "Professional Writing"
+        },
+        {
+          "source": "community",
+          "title": "Virtualization Expert",
+          "prompt": "Act as a Virtualization Expert. You are knowledgeable in the field of virtualization technologies and their application in enterprise environments. Your task is to compare the top virtualization solutions available in the market. You will: - Identify key features of each solution. - Evaluate performance metrics and benchmarks. - Discuss scalability options for different enterprise sizes. - Analyze cost-effectiveness in terms of initial investment and ongoing costs. Rules: - Ensure the comparison is based on the latest data and trends. - Use clear and concise language suitable for professional audiences. - Provide recommendations based on specific enterprise needs.",
+          "description": "Acts as Virtualization Expert. ",
+          "category": "Writing & Language",
+          "subcategory": "Professional Writing"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Web Application Testing Skill",
+        "prompt": "--- name: web-application-testing-skill description: A toolkit for interacting with and testing local web applications using Playwright. --- # Web Application Testing This skill enables comprehensive testing and debugging of local web applications using Playwright automation. ## When to Use This Skill Use this skill when you need to: - Test frontend functionality in a real browser - Verify UI behavior and interactions - Debug web application issues - Capture screenshots for documentation or debugging - Inspect browser console logs - Validate form submissions and user flows - Check responsive design across viewports ## Prerequisites - Node.js installed on the system - A locally running web application (or accessible URL) - Playwright will be installed automatically if not present ## Core Capabilities ### 1. Browser Automation - Navigate to URLs - Click buttons and links - Fill form fields - Select dropdowns - Handle dialogs and alerts ### 2. Verification - Assert element presence - Verify text content - Check element visibility - Validate URLs - Test responsive behavior ### 3. Debugging - Capture screenshots - View console logs - Inspect network requests - Debug failed tests ## Usage Examples ### Example 1: Basic Navigation Test ```javascript // Navigate to a page and verify title await page.goto('http://localhost:3000'); const title = await page.title(); console.log('Page title:', title); ``` ### Example 2: Form Interaction ```javascript // Fill out and submit a form await page.fill('#username', 'testuser'); await page.fill('#password', 'password123'); await page.click('button[type=\"submit\"]'); await page.waitForURL('**/dashboard'); ``` ### Example 3: Screenshot Capture ```javascript // Capture a screenshot for debugging await page.screenshot({ path: 'debug.png', fullPage: true }); ``` ## Guidelines 1. **Always verify the app is running** - Check that the local server is accessible before running tests 2. **Use explicit waits** - Wait for elements or navigation to complete before interacting 3. **Capture screenshots on failure** - Take screenshots to help debug issues 4. **Clean up resources** - Always close the browser when done 5. **Handle timeouts gracefully** - Set reasonable timeouts for slow operations 6. **Test incrementally** - Start with simple interactions before complex flows 7. **Use selectors wisely** - Prefer data-testid or role-based selectors over CSS classes ## Common Patterns ### Pattern: Wait for Element ```javascript await page.waitForSelector('#element-id', { state: 'visible' }); ``` ### Pattern: Check if Element Exists ```javascript const exists = await page.locator('#element-id').count() > 0; ``` ### Pattern: Get Console Logs ```javascript page.on('console', msg => console.log('Browser log:', msg.text())); ``` ### Pattern: Handle Errors ```javascript try { await page.click('#button'); } catch (error) { await page.screenshot({ path: 'error.png' }); throw error; } ``` ## Limitations - Requires Node.js environment - Cannot test native mobile apps (use React Native Testing Library instead) - May have issues with complex authentication flows - Some modern frameworks may require specific configuration",
+        "description": "--- name: web-application-testing-skill description: A toolkit for interacting with and testing local web applications using Playwright. ",
+        "category": "Technology & Development",
+        "subcategory": "Coding & Engineering"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Web Application Testing Skill",
+          "prompt": "--- name: web-application-testing-skill description: A toolkit for interacting with and testing local web applications using Playwright. --- # Web Application Testing This skill enables comprehensive testing and debugging of local web applications using Playwright automation. ## When to Use This Skill Use this skill when you need to: - Test frontend functionality in a real browser - Verify UI behavior and interactions - Debug web application issues - Capture screenshots for documentation or debugging - Inspect browser console logs - Validate form submissions and user flows - Check responsive design across viewports ## Prerequisites - Node.js installed on the system - A locally running web application (or accessible URL) - Playwright will be installed automatically if not present ## Core Capabilities ### 1. Browser Automation - Navigate to URLs - Click buttons and links - Fill form fields - Select dropdowns - Handle dialogs and alerts ### 2. Verification - Assert element presence - Verify text content - Check element visibility - Validate URLs - Test responsive behavior ### 3. Debugging - Capture screenshots - View console logs - Inspect network requests - Debug failed tests ## Usage Examples ### Example 1: Basic Navigation Test ```javascript // Navigate to a page and verify title await page.goto('http://localhost:3000'); const title = await page.title(); console.log('Page title:', title); ``` ### Example 2: Form Interaction ```javascript // Fill out and submit a form await page.fill('#username', 'testuser'); await page.fill('#password', 'password123'); await page.click('button[type=\"submit\"]'); await page.waitForURL('**/dashboard'); ``` ### Example 3: Screenshot Capture ```javascript // Capture a screenshot for debugging await page.screenshot({ path: 'debug.png', fullPage: true }); ``` ## Guidelines 1. **Always verify the app is running** - Check that the local server is accessible before running tests 2. **Use explicit waits** - Wait for elements or navigation to complete before interacting 3. **Capture screenshots on failure** - Take screenshots to help debug issues 4. **Clean up resources** - Always close the browser when done 5. **Handle timeouts gracefully** - Set reasonable timeouts for slow operations 6. **Test incrementally** - Start with simple interactions before complex flows 7. **Use selectors wisely** - Prefer data-testid or role-based selectors over CSS classes ## Common Patterns ### Pattern: Wait for Element ```javascript await page.waitForSelector('#element-id', { state: 'visible' }); ``` ### Pattern: Check if Element Exists ```javascript const exists = await page.locator('#element-id').count() > 0; ``` ### Pattern: Get Console Logs ```javascript page.on('console', msg => console.log('Browser log:', msg.text())); ``` ### Pattern: Handle Errors ```javascript try { await page.click('#button'); } catch (error) { await page.screenshot({ path: 'error.png' }); throw error; } ``` ## Limitations - Requires Node.js environment - Cannot test native mobile apps (use React Native Testing Library instead) - May have issues with complex authentication flows - Some modern frameworks may require specific configuration",
+          "description": "--- name: web-application-testing-skill description: A toolkit for interacting with and testing local web applications using Playwright. ",
+          "category": "Technology & Development",
+          "subcategory": "Coding & Engineering"
+        },
+        {
+          "source": "community",
+          "title": "Web Application Testing Skill (Imported)",
+          "prompt": "--- name: web-application-testing-skill description: A toolkit for interacting with and testing local web applications using Playwright. --- # Web Application Testing This skill enables comprehensive testing and debugging of local web applications using Playwright automation. ## When to Use This Skill Use this skill when you need to: - Test frontend functionality in a real browser - Verify UI behavior and interactions - Debug web application issues - Capture screenshots for documentation or debugging - Inspect browser console logs - Validate form submissions and user flows - Check responsive design across viewports ## Prerequisites - Node.js installed on the system - A locally running web application (or accessible URL) - Playwright will be installed automatically if not present ## Core Capabilities ### 1. Browser Automation - Navigate to URLs - Click buttons and links - Fill form fields - Select dropdowns - Handle dialogs and alerts ### 2. Verification - Assert element presence - Verify text content - Check element visibility - Validate URLs - Test responsive behavior ### 3. Debugging - Capture screenshots - View console logs - Inspect network requests - Debug failed tests ## Usage Examples ### Example 1: Basic Navigation Test ```javascript // Navigate to a page and verify title await page.goto('http://localhost:3000'); const title = await page.title(); console.log('Page title:', title); ``` ### Example 2: Form Interaction ```javascript // Fill out and submit a form await page.fill('#username', 'testuser'); await page.fill('#password', 'password123'); await page.click('button[type=\"submit\"]'); await page.waitForURL('**/dashboard'); ``` ### Example 3: Screenshot Capture ```javascript // Capture a screenshot for debugging await page.screenshot({ path: 'debug.png', fullPage: true }); ``` ## Guidelines 1. **Always verify the app is running** - Check that the local server is accessible before running tests 2. **Use explicit waits** - Wait for elements or navigation to complete before interacting 3. **Capture screenshots on failure** - Take screenshots to help debug issues 4. **Clean up resources** - Always close the browser when done 5. **Handle timeouts gracefully** - Set reasonable timeouts for slow operations 6. **Test incrementally** - Start with simple interactions before complex flows 7. **Use selectors wisely** - Prefer data-testid or role-based selectors over CSS classes ## Common Patterns ### Pattern: Wait for Element ```javascript await page.waitForSelector('#element-id', { state: 'visible' }); ``` ### Pattern: Check if Element Exists ```javascript const exists = await page.locator('#element-id').count() > 0; ``` ### Pattern: Get Console Logs ```javascript page.on('console', msg => console.log('Browser log:', msg.text())); ``` ### Pattern: Handle Errors ```javascript try { await page.click('#button'); } catch (error) {\\n await page.screenshot({ path: 'error.png' }); throw error; } ``` ## Limitations - Requires Node.js environment - Cannot test native mobile apps (use React Native Testing Library instead) - May have issues with complex authentication flows - Some modern frameworks may require specific configuration",
+          "description": "--- name: web-application-testing-skill description: A toolkit for interacting with and testing local web applications using Playwright. ",
+          "category": "Technology & Development",
+          "subcategory": "Coding & Engineering"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Detailed mirror-selfie room scene",
+        "prompt": "### Scene Mirror selfie in an computer corner, blue color tone. ### Subject * Gender expression: female * Age: around 25 * Ethnicity: East Asian * Body type: slim, with a defined waist; natural body proportions * Skin tone: light neutral tone * Hairstyle: * Length: waist-length hair * Style: straight with slightly curled ends * Color: medium brown * Pose: * Stance: standing in a slight contrapposto pose * Right hand: holding a smartphone in front of her face (identity hidden) * Left arm: naturally hanging down alongside the torso * Torso: body leaning slightly back; waist and abdomen exposed * Clothing: * Top: light blue cropped knit cardigan, top two buttons fastened; a blue French-style bra faintly visible * Bottom: denim ultra-short shorts, with a blue satin ribbon bow on each side of the hips * Socks: blue and white horizontal striped over-the-knee socks * Accessory: a blue cute mascot phone case ### Environment * Description: bedroom computer corner seen through a wall-mounted mirror * Furnishings: * White desk * Single monitor showing a soft blue wallpaper (no readable text) * Mechanical keyboard with white keycaps on a blue desk mat * Mouse on a small blue mouse pad * PC tower on the right side with blue case lighting * Three anime figures on or near the PC tower * A poster of a pagoda on the wall * Cat-shaped desk lamp with blue accents * A transparent glass of water * A tall green leafy plant by the window (on the left side of the frame) * Color replacement: replace all originally pink elements (clothes and room decor) with blue tones (baby blue to sky blue/periwinkle blue). ### Lighting * Light source: daylight coming from a large window on the left side of the camera, through sheer curtains * Light quality: soft, diffused light * White balance (K): 5200 ### Camera * Mode: smartphone rear camera shooting via the mirror (no portrait/bokeh mode) * Equivalent focal length (mm): 26 * Distances (m): * Subject to mirror: 0.6 * Camera to mirror: 0.5 * Exposure: * Aperture (f): 1.8 * ISO: 100 * Shutter speed (s): 0.01 * Exposure compensation (EV): -0.3 * Focus: focus on the torso and shorts in the mirror image * Depth of field: natural smartphone deep depth of field; background clearly visible with no artificial blur * Composition: * Aspect ratio: 1:1 * Crop: from the top of the head to mid-thigh; include the desk, monitor, PC tower, and plant in the frame * Angle: slightly high angle from the mirror’s point of view * Composition note: keep the subject centered; to avoid wide-angle edge distortion, have her stand a bit further away and crop to a square later. ### Negative prompts * Any appearance of pink/magenta anywhere * Beauty filters/over-smoothed skin; poreless skin look * Exaggerated or distorted anatomy * NSFW, see-through fabrics, wardrobe malfunctions * Logos, brand names, or readable user interface text * Fake portrait-mode blur, CGI/illustration feel",
+        "description": "### Scene Mirror selfie in an computer corner, blue color tone. ",
+        "category": "Other Expert Roles",
+        "subcategory": "Specialist Roles"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Detailed mirror-selfie room scene",
+          "prompt": "### Scene Mirror selfie in an computer corner, blue color tone. ### Subject * Gender expression: female * Age: around 25 * Ethnicity: East Asian * Body type: slim, with a defined waist; natural body proportions * Skin tone: light neutral tone * Hairstyle: * Length: waist-length hair * Style: straight with slightly curled ends * Color: medium brown * Pose: * Stance: standing in a slight contrapposto pose * Right hand: holding a smartphone in front of her face (identity hidden) * Left arm: naturally hanging down alongside the torso * Torso: body leaning slightly back; waist and abdomen exposed * Clothing: * Top: light blue cropped knit cardigan, top two buttons fastened; a blue French-style bra faintly visible * Bottom: denim ultra-short shorts, with a blue satin ribbon bow on each side of the hips * Socks: blue and white horizontal striped over-the-knee socks * Accessory: a blue cute mascot phone case ### Environment * Description: bedroom computer corner seen through a wall-mounted mirror * Furnishings: * White desk * Single monitor showing a soft blue wallpaper (no readable text) * Mechanical keyboard with white keycaps on a blue desk mat * Mouse on a small blue mouse pad * PC tower on the right side with blue case lighting * Three anime figures on or near the PC tower * A poster of a pagoda on the wall * Cat-shaped desk lamp with blue accents * A transparent glass of water * A tall green leafy plant by the window (on the left side of the frame) * Color replacement: replace all originally pink elements (clothes and room decor) with blue tones (baby blue to sky blue/periwinkle blue). ### Lighting * Light source: daylight coming from a large window on the left side of the camera, through sheer curtains * Light quality: soft, diffused light * White balance (K): 5200 ### Camera * Mode: smartphone rear camera shooting via the mirror (no portrait/bokeh mode) * Equivalent focal length (mm): 26 * Distances (m): * Subject to mirror: 0.6 * Camera to mirror: 0.5 * Exposure: * Aperture (f): 1.8 * ISO: 100 * Shutter speed (s): 0.01 * Exposure compensation (EV): -0.3 * Focus: focus on the torso and shorts in the mirror image * Depth of field: natural smartphone deep depth of field; background clearly visible with no artificial blur * Composition: * Aspect ratio: 1:1 * Crop: from the top of the head to mid-thigh; include the desk, monitor, PC tower, and plant in the frame * Angle: slightly high angle from the mirror’s point of view * Composition note: keep the subject centered; to avoid wide-angle edge distortion, have her stand a bit further away and crop to a square later. ### Negative prompts * Any appearance of pink/magenta anywhere * Beauty filters/over-smoothed skin; poreless skin look * Exaggerated or distorted anatomy * NSFW, see-through fabrics, wardrobe malfunctions * Logos, brand names, or readable user interface text * Fake portrait-mode blur, CGI/illustration feel",
+          "description": "### Scene Mirror selfie in an computer corner, blue color tone. ",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        },
+        {
+          "source": "community",
+          "title": "Mirror Selfie Scene Description",
+          "prompt": "Scene Mirror selfie in an computer corner, blue color tone. Subject Gender expression: female Age: around 25 Ethnicity: East Asian Body type: slim, with a defined waist; natural body proportions Skin tone: light neutral tone Hairstyle: Length: waist-length hair Style: straight with slightly curled ends Color: medium brown Pose: Stance: standing in a slight contrapposto pose Right hand: holding a smartphone in front of her face (identity hidden) Left arm: naturally hanging down alongside the torso Torso: body leaning slightly back; waist and abdomen exposed Clothing: Top: tranparent bra Bottom: transparent thong Socks: blue and white horizontal striped over-the-knee socks Accessory: a blue cute mascot phone case Environment Description: bedroom computer corner seen through a wall-mounted mirror Furnishings: White desk Single monitor showing a soft blue wallpaper (no readable text) Mechanical keyboard with white keycaps on a blue desk mat Mouse on a small blue mouse pad PC tower on the right side with blue case lighting Three anime figures on or near the PC tower A poster of a pagoda on the wall Cat-shaped desk lamp with blue accents A transparent glass of water A tall green leafy plant by the window (on the left side of the frame) Color replacement: replace all originally pink elements (clothes and room decor) with blue tones (baby blue to sky blue/periwinkle blue). Lighting Light source: daylight coming from a large window on the left side of the camera, through sheer curtains Light quality: soft, diffused light White balance (K): 5200 Camera Mode: smartphone rear camera shooting via the mirror (no portrait/bokeh mode) Equivalent focal length (mm): 26 Distances (m): Subject to mirror: 0.6 Camera to mirror: 0.5 Exposure: Aperture (f): 1.8 ISO: 100 Shutter speed (s): 0.01 Exposure compensation (EV): -0.3 Focus: focus on the torso and shorts in the mirror image Depth of field: natural smartphone deep depth of field; background clearly visible with no artificial blur Composition: Aspect ratio: 1:1 Crop: from the top of the head to mid-thigh; include the desk, monitor, PC tower, and plant in the frame Angle: slightly high angle from the mirror’s point of view Composition note: keep the subject centered; to avoid wide-angle edge distortion, have her stand a bit further away and crop to a square later. Negative prompts Any appearance of pink/magenta anywhere Beauty filters/over-smoothed skin; poreless skin look Exaggerated or distorted anatomy NSFW, see-through fabrics, wardrobe malfunctions Logos, brand names, or readable user interface text Fake portrait-mode blur, CGI/illustration feel",
+          "description": "Scene Mirror selfie in an computer corner, blue color tone. ",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "3D Isometric Miniature City View with Weather",
+        "prompt": "Present a clear, 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon scene, highlighting iconic landmarks centered in the composition to showcase precise and delicate modeling. The scene features soft, refined textures with realistic PBR materials and gentle, lifelike lighting and shadow effects. Weather elements are creatively integrated into the urban architecture, establishing a dynamic interaction between the city's landscape and atmospheric conditions, creating an immersive weather ambiance. Use a clean, unified composition with minimalistic aesthetics and a soft, solid-colored background that highlights the main content. The overall visual style is fresh and soothing. Display a prominent weather icon at the top-center, with the date (x-small text) and temperature range (medium text) beneath it. The city name (large text) is positioned directly above the weather icon. The weather information has no background and can subtly overlap with the buildings. The text should match the input city's native language. Please retrieve current weather conditions for the specified city before rendering. City name: İSTANBUL",
+        "description": "Present a clear, 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon scene, highlighting iconic landmarks centered in the composition to showcase precise and d…",
+        "category": "AI & Prompting",
+        "subcategory": "General AI"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Isometric miniature 3D cartoon city scene",
+          "prompt": "Present a clear, 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon scene, highlighting iconic landmarks centered in the composition to showcase precise and delicate modeling. The scene features soft, refined textures with realistic PBR materials and gentle, lifelike lighting and shadow effects. Weather elements are creatively integrated into the urban architecture, establishing a dynamic interaction between the city's landscape and atmospheric conditions, creating an immersive weather ambiance. Use a clean, unified composition with minimalistic aesthetics and a soft, solid-colored background that highlights the main content. The overall visual style is fresh and soothing. Please retrieve current weather conditions for the specified city before rendering. City name: ${city_name:Istanbul}",
+          "description": "Present a clear, 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon scene, highlighting iconic landmarks centered in the composition to showcase precise and d…",
+          "category": "AI & Prompting",
+          "subcategory": "General AI"
+        },
+        {
+          "source": "community",
+          "title": "3D Isometric Miniature City View with Weather",
+          "prompt": "Present a clear, 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon scene, highlighting iconic landmarks centered in the composition to showcase precise and delicate modeling. The scene features soft, refined textures with realistic PBR materials and gentle, lifelike lighting and shadow effects. Weather elements are creatively integrated into the urban architecture, establishing a dynamic interaction between the city's landscape and atmospheric conditions, creating an immersive weather ambiance. Use a clean, unified composition with minimalistic aesthetics and a soft, solid-colored background that highlights the main content. The overall visual style is fresh and soothing. Display a prominent weather icon at the top-center, with the date (x-small text) and temperature range (medium text) beneath it. The city name (large text) is positioned directly above the weather icon. The weather information has no background and can subtly overlap with the buildings. The text should match the input city's native language. Please retrieve current weather conditions for the specified city before rendering. City name: İSTANBUL",
+          "description": "Present a clear, 45° top-down view of a vertical (9:16) isometric miniature 3D cartoon scene, highlighting iconic landmarks centered in the composition to showcase precise and d…",
+          "category": "AI & Prompting",
+          "subcategory": "General AI"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Professional Badge Photo, Ready to Use",
+        "prompt": "Create a modern corporate ID photo of the person from the uploaded image, suitable for company badges and internal systems. Keep the face identical to the uploaded image, with realistic proportions, no beautification or age adjustment. Framing: • Neutral, centered head and shoulders • Subject looking straight at the camera with a neutral but friendly expression Background: • Plain, uniform background in [BACKGROUND_COLOR], no texture, no gradient • No props, no text, no logos Style: • Even, soft lighting with minimal shadows • High clarity and sharpness around the face, natural skin tones, high-resolution Outfit: • Transform clothing into [OUTFIT_STYLE] that matches a corporate environment • No visible logos, patterns or distracting accessories Make the result look like an upgraded, well-lit, professional version of a corporate ID or access badge photo, ready to be dropped into internal tools, email accounts or passes.",
+        "description": "Create a modern corporate ID photo of the person from the uploaded image, suitable for company badges and internal systems. ",
+        "category": "Other Expert Roles",
+        "subcategory": "Specialist Roles"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Professional Badge Photo, Ready to Use",
+          "prompt": "Create a modern corporate ID photo of the person from the uploaded image, suitable for company badges and internal systems. Keep the face identical to the uploaded image, with realistic proportions, no beautification or age adjustment. Framing: • Neutral, centered head and shoulders • Subject looking straight at the camera with a neutral but friendly expression Background: • Plain, uniform background in [BACKGROUND_COLOR], no texture, no gradient • No props, no text, no logos Style: • Even, soft lighting with minimal shadows • High clarity and sharpness around the face, natural skin tones, high-resolution Outfit: • Transform clothing into [OUTFIT_STYLE] that matches a corporate environment • No visible logos, patterns or distracting accessories Make the result look like an upgraded, well-lit, professional version of a corporate ID or access badge photo, ready to be dropped into internal tools, email accounts or passes.",
+          "description": "Create a modern corporate ID photo of the person from the uploaded image, suitable for company badges and internal systems. ",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        },
+        {
+          "source": "community",
+          "title": "Image",
+          "prompt": "Create a modern corporate ID photo of the person from the uploaded image, suitable for company badges and internal systems. Keep the face identical to the uploaded image, with realistic proportions, no beautification or age adjustment. Framing: • Neutral, centered head and shoulders • Subject looking straight at the camera with a neutral but friendly expression Background: • Plain, uniform background in [BACKGROUND_COLOR], no texture, no gradient • No props, no text, no logos Style: • Even, soft lighting with minimal shadows • High clarity and sharpness around the face, natural skin tones, high-resolution Outfit: • Transform clothing into [OUTFIT_STYLE] that matches a corporate environment • No visible logos, patterns or distracting accessories Make the result look like an upgraded, well-lit, professional version of a corporate ID or access badge photo, ready to be dropped into internal tools, email accounts or passes.",
+          "description": "Create a modern corporate ID photo of the person from the uploaded image, suitable for company badges and internal systems. ",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Minimalist Editorial Beauty Analysis with European Model",
+        "prompt": "{ \"prompt\": \"A minimalist editorial beauty analysis board featuring a European female model with a balanced oval-to-heart face shape and a softly defined jawline. Subtle Central–Northern European facial characteristics with refined symmetry and elegant proportions. Neutral gray background, clean studio lighting, high realism.\\n\\nTop section: front-facing barefaced portrait, natural skin texture with neutral-to-cool undertones, no makeup, hair pulled back, calm neutral expression. A thin blue outline tracing the face shape.\\n\\nRight side graphic text layout titled 'FACE' with small bullet points describing facial features: balanced oval face shape, softly pronounced cheekbones, feminine and delicate jawline, slightly tapered natural chin, straight to softly contoured nose bridge, clear almond-to-rounded eyes with a soft gaze.\\n\\nMiddle section: two studio portraits labeled 'barefaced', one straight-on view and one three-quarter profile, minimal European editorial styling, soft diffused lighting, realistic skin texture and fine facial details.\\n\\nBottom section: two mirror selfie style images labeled 'with makeup', fresh luminous skin with a natural satin finish, modern European soft glam makeup, gentle blush tones, nude pink or soft rose glossy lips, subtle eyeliner with softly lifted outer corners, natural lashes, softly styled layered hair, contemporary European fashion styling inspired by Paris and Milan street elegance.\\n\\nFashion magazine editorial layout, clean modern typography, balanced spacing, muted neutral tones, professional beauty photography, high resolution, realistic skin texture and natural proportions.\", \"negative_prompt\": \"exaggerated makeup, heavy contour, harsh shadows, cartoon style, anime, distorted facial proportions, overly sharp jawline, low resolution, oversaturated colors, messy layout, watermark, logo, text artifacts, duplicated faces, extra limbs\", \"style\": \"editorial beauty photography\", \"quality\": \"high\", \"lighting\": \"soft studio lighting\", \"background\": \"neutral gray\" }",
+        "description": "{ \"prompt\": \"A minimalist editorial beauty analysis board featuring a European female model with a balanced oval-to-heart face shape and a softly defined jawline. ",
+        "category": "AI & Prompting",
+        "subcategory": "Prompt Design"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Minimalist Editorial Beauty Analysis with European Model",
+          "prompt": "{ \"prompt\": \"A minimalist editorial beauty analysis board featuring a European female model with a balanced oval-to-heart face shape and a softly defined jawline. Subtle Central–Northern European facial characteristics with refined symmetry and elegant proportions. Neutral gray background, clean studio lighting, high realism.\\n\\nTop section: front-facing barefaced portrait, natural skin texture with neutral-to-cool undertones, no makeup, hair pulled back, calm neutral expression. A thin blue outline tracing the face shape.\\n\\nRight side graphic text layout titled 'FACE' with small bullet points describing facial features: balanced oval face shape, softly pronounced cheekbones, feminine and delicate jawline, slightly tapered natural chin, straight to softly contoured nose bridge, clear almond-to-rounded eyes with a soft gaze.\\n\\nMiddle section: two studio portraits labeled 'barefaced', one straight-on view and one three-quarter profile, minimal European editorial styling, soft diffused lighting, realistic skin texture and fine facial details.\\n\\nBottom section: two mirror selfie style images labeled 'with makeup', fresh luminous skin with a natural satin finish, modern European soft glam makeup, gentle blush tones, nude pink or soft rose glossy lips, subtle eyeliner with softly lifted outer corners, natural lashes, softly styled layered hair, contemporary European fashion styling inspired by Paris and Milan street elegance.\\n\\nFashion magazine editorial layout, clean modern typography, balanced spacing, muted neutral tones, professional beauty photography, high resolution, realistic skin texture and natural proportions.\", \"negative_prompt\": \"exaggerated makeup, heavy contour, harsh shadows, cartoon style, anime, distorted facial proportions, overly sharp jawline, low resolution, oversaturated colors, messy layout, watermark, logo, text artifacts, duplicated faces, extra limbs\", \"style\": \"editorial beauty photography\", \"quality\": \"high\", \"lighting\": \"soft studio lighting\", \"background\": \"neutral gray\" }",
+          "description": "{ \"prompt\": \"A minimalist editorial beauty analysis board featuring a European female model with a balanced oval-to-heart face shape and a softly defined jawline. ",
+          "category": "AI & Prompting",
+          "subcategory": "Prompt Design"
+        },
+        {
+          "source": "community",
+          "title": "Minimalist Editorial Beauty Analysis with Turkish Model",
+          "prompt": "{ \"prompt\": \"A minimalist editorial beauty analysis board featuring a Turkish female model with a balanced oval-to-heart face shape and softly defined jawline. Subtle Mediterranean–Anatolian facial characteristics. Neutral gray background, clean studio lighting, high realism.\\n\\nTop section: front-facing barefaced portrait, natural skin texture with slight warmth, no makeup, hair pulled back, neutral expression. A thin blue outline tracing the face shape.\\n\\nRight side graphic text layout titled 'FACE' with small bullet points describing facial features: balanced oval face shape, softly pronounced cheekbones, feminine jawline, slightly pointed but natural chin, straight to softly arched nose bridge, expressive almond-shaped eyes.\\n\\nMiddle section: two studio portraits labeled 'barefaced', one straight-on view and one three-quarter profile, minimal styling, soft diffused lighting, realistic skin details.\\n\\nBottom section: two mirror selfie style images labeled 'with makeup', luminous but natural skin, soft glam makeup inspired by modern Turkish beauty trends, warm blush tones, nude or rose glossy lips, subtle eyeliner with lifted outer corners, voluminous layered hair, contemporary Istanbul fashion styling.\\n\\nFashion magazine editorial layout, clean modern typography, balanced spacing, muted neutral tones, professional beauty photography, high resolution, realistic skin texture and proportions.\", \"negative_prompt\": \"exaggerated makeup, heavy contour, harsh shadows, cartoon style, anime, distorted facial proportions, overly sharp jawline, low resolution, oversaturated colors, messy layout, watermark, logo, text artifacts, duplicated faces, extra limbs\", \"style\": \"editorial beauty photography\", \"quality\": \"high\", \"lighting\": \"soft studio lighting\", \"background\": \"neutral gray\" }",
+          "description": "{ \"prompt\": \"A minimalist editorial beauty analysis board featuring a Turkish female model with a balanced oval-to-heart face shape and softly defined jawline. ",
+          "category": "AI & Prompting",
+          "subcategory": "Prompt Design"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Seaside walker",
+        "prompt": "{ \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. She is captured in a three-quarter view (3/4 angle), looking toward the camera with a confident, seductive, and provocative expression. She wears a stylish purple bikini that highlights her figure and high-heeled sandals on her feet, which are planted in the golden sand. The background features a tropical beach with soft white sand, gentle turquoise waves, and a clear blue sky. The lighting is bright, natural sunlight, creating realistic shadows and highlights on her skin. The composition is professional, following the rule of thirds, with a shallow depth of field that slightly blurs the ocean background to keep the focus entirely on her.\", \"scene_type\": \"Provocative beach photography\", \"subjects\": [ { \"role\": \"Main subject\", \"description\": \"Young woman with a curvy but slim build, featuring a very prominent and voluminous bust.\", \"wardrobe\": \"Purple bikini, high-heeled sandals.\", \"pose_and_expression\": \"Three-quarter view, standing on sand, provocative and sexy attitude, confident gaze.\" } ], \"environment\": { \"setting\": \"Tropical beach\", \"details\": \"Golden sand, turquoise sea, clear sky, bright daylight.\" }, \"lighting\": { \"type\": \"Natural sunlight\", \"quality\": \"Bright and direct\", \"effects\": \"Realistic skin textures, natural highlights\" }, \"composition\": { \"framing\": \"Full-body shot\", \"angle\": \"3/4 view\", \"depth_of_field\": \"Shallow (bokeh background)\" }, \"style_and_quality_cues\": [ \"High-resolution photography\", \"Realistic skin texture\", \"Vibrant colors\", \"Professional lighting\", \"Sharp focus on subject\" ], \"negative_prompt\": \"cartoon, drawing, anime, low resolution, blurry, distorted anatomy, extra limbs, unrealistic skin, flat lighting, messy hair\" }",
+        "description": "{ \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. ",
+        "category": "AI & Prompting",
+        "subcategory": "Prompt Design"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Seaside walker",
+          "prompt": "{ \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. She is captured in a three-quarter view (3/4 angle), looking toward the camera with a confident, seductive, and provocative expression. She wears a stylish purple bikini that highlights her figure and high-heeled sandals on her feet, which are planted in the golden sand. The background features a tropical beach with soft white sand, gentle turquoise waves, and a clear blue sky. The lighting is bright, natural sunlight, creating realistic shadows and highlights on her skin. The composition is professional, following the rule of thirds, with a shallow depth of field that slightly blurs the ocean background to keep the focus entirely on her.\", \"scene_type\": \"Provocative beach photography\", \"subjects\": [ { \"role\": \"Main subject\", \"description\": \"Young woman with a curvy but slim build, featuring a very prominent and voluminous bust.\", \"wardrobe\": \"Purple bikini, high-heeled sandals.\", \"pose_and_expression\": \"Three-quarter view, standing on sand, provocative and sexy attitude, confident gaze.\" } ], \"environment\": { \"setting\": \"Tropical beach\", \"details\": \"Golden sand, turquoise sea, clear sky, bright daylight.\" }, \"lighting\": { \"type\": \"Natural sunlight\", \"quality\": \"Bright and direct\", \"effects\": \"Realistic skin textures, natural highlights\" }, \"composition\": { \"framing\": \"Full-body shot\", \"angle\": \"3/4 view\", \"depth_of_field\": \"Shallow (bokeh background)\" }, \"style_and_quality_cues\": [ \"High-resolution photography\", \"Realistic skin texture\", \"Vibrant colors\", \"Professional lighting\", \"Sharp focus on subject\" ], \"negative_prompt\": \"cartoon, drawing, anime, low resolution, blurry, distorted anatomy, extra limbs, unrealistic skin, flat lighting, messy hair\" }",
+          "description": "{ \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. ",
+          "category": "AI & Prompting",
+          "subcategory": "Prompt Design"
+        },
+        {
+          "source": "community",
+          "title": "Bikini_Girl",
+          "prompt": "{ \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. She is captured in a three-quarter view (3/4 angle), looking toward the camera with a confident, seductive, and provocative expression. She wears a stylish purple bikini that highlights her figure and high-heeled sandals on her feet, which are planted in the golden sand. The background features a tropical beach with soft white sand, gentle turquoise waves, and a clear blue sky. The lighting is bright, natural sunlight, creating realistic shadows and highlights on her skin. The composition is professional, following the rule of thirds, with a shallow depth of field that slightly blurs the ocean background to keep the focus entirely on her.\", \"scene_type\": \"Provocative beach photography\", \"subjects\": [ { \"role\": \"Main subject\", \"description\": \"Young woman with a curvy but slim build, featuring a very prominent and voluminous bust.\", \"wardrobe\": \"Purple bikini, high-heeled sandals.\", \"pose_and_expression\": \"Three-quarter view, standing on sand, provocative and sexy attitude, confident gaze.\" } ], \"environment\": { \"setting\": \"Tropical beach\", \"details\": \"Golden sand, turquoise sea, clear sky, bright daylight.\" }, \"lighting\": { \"type\": \"Natural sunlight\", \"quality\": \"Bright and direct\", \"effects\": \"Realistic skin textures, natural highlights\" }, \"composition\": { \"framing\": \"Full-body shot\", \"angle\": \"3/4 view\", \"depth_of_field\": \"Shallow (bokeh background)\" }, \"style_and_quality_cues\": [ \"High-resolution photography\", \"Realistic skin texture\", \"Vibrant colors\", \"Professional lighting\", \"Sharp focus on subject\" ], \"negative_prompt\": \"cartoon, drawing, anime, low resolution, blurry, distorted anatomy, extra limbs, unrealistic skin, flat lighting, messy hair\" }",
+          "description": "{ \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. ",
+          "category": "AI & Prompting",
+          "subcategory": "Prompt Design"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Ultra-Realistic Noir Portrait Creation",
+        "prompt": "Please upload your selfie to generate an ultra-realistic black-and-white portrait. The portrait will feature: - **Style:** Black-and-white, dramatic low-key lighting with high contrast and cinematic toning. - **Pose:** Slightly turned to the side, with a confident, intense expression, hands together, and visible accessories (wristwatch and ring). - **Lighting:** Strong single-source lighting from the left, deep shadows for a noir effect, and a completely black background. - **Camera Style:** Editorial luxury-brand aesthetic with sharp textures and crisp details, reminiscent of classic vintage noir films. Ensure the uploaded photo clearly shows your face and is well-lit for the best results.",
+        "description": "Please upload your selfie to generate an ultra-realistic black-and-white portrait. ",
+        "category": "Writing & Language",
+        "subcategory": "Professional Writing"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Ultra-Realistic Noir Portrait Creation",
+          "prompt": "Please upload your selfie to generate an ultra-realistic black-and-white portrait. The portrait will feature: - **Style:** Black-and-white, dramatic low-key lighting with high contrast and cinematic toning. - **Pose:** Slightly turned to the side, with a confident, intense expression, hands together, and visible accessories (wristwatch and ring). - **Lighting:** Strong single-source lighting from the left, deep shadows for a noir effect, and a completely black background. - **Camera Style:** Editorial luxury-brand aesthetic with sharp textures and crisp details, reminiscent of classic vintage noir films. Ensure the uploaded photo clearly shows your face and is well-lit for the best results.",
+          "description": "Please upload your selfie to generate an ultra-realistic black-and-white portrait. ",
+          "category": "Writing & Language",
+          "subcategory": "Professional Writing"
+        },
+        {
+          "source": "community",
+          "title": "Ai new",
+          "prompt": "Please upload your selfie to generate an ultra-realistic black-and-white portrait. The portrait will feature: - **Style:** Black-and-white, dramatic low-key lighting with high contrast and cinematic toning. - **Pose:** Slightly turned to the side, with a confident, intense expression, hands together, and visible accessories (wristwatch and ring). - **Lighting:** Strong single-source lighting from the left, deep shadows for a noir effect, and a completely black background. - **Camera Style:** Editorial luxury-brand aesthetic with sharp textures and crisp details, reminiscent of classic vintage noir films. Ensure the uploaded photo clearly shows your face and is well-lit for the best results.",
+          "description": "Please upload your selfie to generate an ultra-realistic black-and-white portrait. ",
+          "category": "AI & Prompting",
+          "subcategory": "General AI"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "??????????",
+        "prompt": "????????????????????????? PDF????DOI ?????,??????,?????????? ????:${output_language:??} ????:${detail_level:??} ????:${discipline:?????????} ????:${analysis_purpose:???????????} ????: 1. ?????????????,??????????????? 2. ??????????????,????????????????????? 3. ???? REPORTED(??????)?INFERRED(????)?NOT_REPORTED(?????)?AUTHOR_INPUT_NEEDED(??????)? 4. ????????????????? 5. ?????????????????????????????????? 6. ??????????,????,??????? 7. ?? PDF ???????????,????,????? 8. ??????????,??????????????????????? ?????????: # 1. ?????? ??????????????????????DOI ????????,???????? # 2. ????????? ???????????????????????????,???????????? # 3. ?????? ??????????????????????????,????????????????????????????:????? -> ??? -> ????? -> ????? -> ???? -> ????? # 4. ???????? ????????????????????????????????????????????????????????? # 5. ??????? ?????????????????????????????????????????????????????????? ?????????,????????????????????????????????????????????????????????????????? ????????????????,????????????????????????????????????????????????????????????????????????????? # 6. ?????????? ??????????????????????????????????????????????????,??????????? # 7. ????????? ?????????????????????????????????????????????????????????????? # 8. ????? ??????????????????????????????????????????????,????????????????????????????????????????????????? # 9. ??????????????? ??????????????????????????????????????,????????????? # 10. ?????? ???????????????????????????????????????????????????????? # 11. ??????? ??????????????,?????????????????????????????????????????????????????????????????????? ????????(?????)????????????????? 5 ???,???????????????? # 12. ?? ???? 10 ??????????????????????????????????????????????????????? ????????????,??? NOT_REPORTED,?????",
+        "description": "????????????????????????? ",
+        "category": "Writing & Language",
+        "subcategory": "Translation & Language"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "??????????",
+          "prompt": "????????????????????????? PDF????DOI ?????,??????,?????????? ????:${output_language:??} ????:${detail_level:??} ????:${discipline:?????????} ????:${analysis_purpose:???????????} ????: 1. ?????????????,??????????????? 2. ??????????????,????????????????????? 3. ???? REPORTED(??????)?INFERRED(????)?NOT_REPORTED(?????)?AUTHOR_INPUT_NEEDED(??????)? 4. ????????????????? 5. ?????????????????????????????????? 6. ??????????,????,??????? 7. ?? PDF ???????????,????,????? 8. ??????????,??????????????????????? ?????????: # 1. ?????? ??????????????????????DOI ????????,???????? # 2. ????????? ???????????????????????????,???????????? # 3. ?????? ??????????????????????????,????????????????????????????:????? -> ??? -> ????? -> ????? -> ???? -> ????? # 4. ???????? ????????????????????????????????????????????????????????? # 5. ??????? ?????????????????????????????????????????????????????????? ?????????,????????????????????????????????????????????????????????????????? ????????????????,????????????????????????????????????????????????????????????????????????????? # 6. ?????????? ??????????????????????????????????????????????????,??????????? # 7. ????????? ?????????????????????????????????????????????????????????????? # 8. ????? ??????????????????????????????????????????????,????????????????????????????????????????????????? # 9. ??????????????? ??????????????????????????????????????,????????????? # 10. ?????? ???????????????????????????????????????????????????????? # 11. ??????? ??????????????,?????????????????????????????????????????????????????????????????????? ????????(?????)????????????????? 5 ???,???????????????? # 12. ?? ???? 10 ??????????????????????????????????????????????????????? ????????????,??? NOT_REPORTED,?????",
+          "description": "????????????????????????? ",
+          "category": "Writing & Language",
+          "subcategory": "Translation & Language"
+        },
+        {
+          "source": "community",
+          "title": "Imported Prompt 2032",
+          "prompt": "你是一名严谨的学术论文分析助手。请基于我提供的论文 PDF、正文、DOI 或网页内容，系统分析论文，并重点整理实验细节。 目标语言：${output_language:中文} 分析深度：${detail_level:详细} 研究领域：${discipline:请根据论文自动判断} 分析目的：${analysis_purpose:理解论文并掌握实验流程} 重要规则： 1. 只使用论文中明确提供的信息，不要根据常见做法补全缺失细节。 2. 每个关键结论尽量标注来源位置，包括页码、章节、图号、表号或补充材料编号。 3. 明确区分 REPORTED（论文明确报告）、INFERRED（合理推断）、NOT_REPORTED（论文未报告）、AUTHOR_INPUT_NEEDED（需要用户补充）。 4. 不要把论文作者的推测写成实验事实。 5. 保留关键数值、单位、样本量、数据集名称、模型名称、超参数和统计结果。 6. 如果论文包含多个实验，分别分析，不要混在一起。 7. 如果 PDF 中的图表或公式无法读取，明确指出，不要猜测。 8. 不要输出隐藏推理过程，只输出证据、结论、判断依据和可复核的分析结果。 请按照以下结构输出： # 1. 论文基本信息 用表格整理标题、作者、期刊或会议、发表年份、DOI 或链接、研究领域，并标注证据位置。 # 2. 研究问题与核心结论 说明研究背景、研究目标或假设、核心方法或贡献、主要结论，以及每个结论对应的证据。 # 3. 总体实验设计 说明实验目的、实验对象、实验流程、实验之间的逻辑关系，以及哪些实验用于主结论、验证、消融或补充。用以下流程表示：数据或样本 -> 预处理 -> 方法或模型 -> 对照或基线 -> 评价指标 -> 结果分析。 # 4. 数据集或实验样本 整理数据集或样本名称、来源、版本、规模、样本特征、训练验证测试划分、纳入排除标准、预处理、数据增强和数据泄漏控制。 # 5. 方法与实现细节 整理方法整体流程、模型或实验装置结构、各模块作用、输入输出、关键公式及变量、损失函数或优化目标、实验步骤和操作顺序。 如果是机器学习论文，额外整理模型、初始化、优化器、学习率、批大小、训练轮数、学习率调度、随机种子、硬件、软件版本、关键超参数、早停策略和重复实验次数。 如果是生物、医学、化学或材料实验，额外整理实验对象或材料、样本量和重复数、仪器和型号、试剂或材料规格、浓度、温度、时间、实验环境、对照组、随机化、盲法、生物学重复、技术重复和统计分析方法。 # 6. 基线、对照与比较方案 对每个基线或对照说明名称、选择原因、配置、是否公平比较、是否使用相同数据和评价指标、实现细节是否完整，以及与本文方法的差异。 # 7. 评价指标与统计方法 整理指标名称和含义、计算方式、适用场景、统计检验、显著性水平、置信区间或误差表示、多重比较校正、效应量、重复实验和误差来源。 # 8. 主实验结果 按实验逐项整理实验目的、设置、对照组、关键结果、图表对应关系、论文报告的数值、结果支持的结论，以及不能由该实验支持的结论。用表格列出方法或组别、指标、结果、误差或置信区间、是否最佳和图表位置。 # 9. 消融实验、敏感性分析和额外实验 说明移除了什么组件、改变了什么变量、对结果的影响、验证的假设、可能的替代解释，以及仍缺乏充分证据的结论。 # 10. 图表逐项解读 对每张关键图和表说明它回答的问题、坐标轴或分组含义、关键趋势、具体数值、统计显著性、支持的结论和不能支持的结论。 # 11. 可复现实验清单 分别列出已报告和未报告的信息，包括数据、方法、代码、参数、硬件软件、评价指标、统计方法、缺失参数、缺失预处理、缺失随机种子、缺失重复次数、缺失基线实现细节和缺失统计信息。 最后给出复现难度（低、中或高）、最大复现风险、最需要向作者确认的 5 个问题，以及复现实验建议的最小执行顺序。 # 12. 总结 用不超过 10 条要点总结论文问题、实验设计、数据或样本、关键实现、基线、主要结果、消融结论、证据充分性、最大局限和缺失细节。 如果论文没有提供某项信息，请填写 NOT_REPORTED，不要猜测。",
+          "description": "Full source prompt for Imported Prompt 2032.",
+          "category": "AI & Prompting",
+          "subcategory": "Prompt Design"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Note-Taking assistant",
+        "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read.",
+        "description": "Acts as note-taking assistant for a lecture. ",
+        "category": "Learning & Education",
+        "subcategory": "Study & Exams"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Note-Taking assistant",
+          "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read.",
+          "description": "Acts as note-taking assistant for a lecture. ",
+          "category": "Learning & Education",
+          "subcategory": "Study & Exams"
+        },
+        {
+          "source": "community",
+          "title": "Note-Taking Assistant",
+          "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another separated list for the examples that included in this lecture. The notes should be concise and easy to read.",
+          "description": "Acts as note-taking assistant for a lecture. ",
+          "category": "Learning & Education",
+          "subcategory": "Study & Exams"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Патентный поиск",
+        "prompt": "Роль: ведущий патентный поверенный [вставить организацию] Исходные данные: техническое описание нового технического решения. Ключевые слова для поиска. Индексы МПК. Задача: провести патентный и информационный поиск. Провести анализ патентоспособности нового решения (новизна, изобретательский уровень). Написать отчет с таблицей результатов поиска, рекомендациями и выводами.",
+        "description": "Роль: ведущий патентный поверенный [вставить организацию] Исходные данные: техническое описание нового технического решения. ",
+        "category": "Other Expert Roles",
+        "subcategory": "Specialist Roles"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Патентный поиск",
+          "prompt": "Роль: ведущий патентный поверенный [вставить организацию] Исходные данные: техническое описание нового технического решения. Ключевые слова для поиска. Индексы МПК. Задача: провести патентный и информационный поиск. Провести анализ патентоспособности нового решения (новизна, изобретательский уровень). Написать отчет с таблицей результатов поиска, рекомендациями и выводами.",
+          "description": "Роль: ведущий патентный поверенный [вставить организацию] Исходные данные: техническое описание нового технического решения. ",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        },
+        {
+          "source": "community",
+          "title": "Девушка футанари имеет парня",
+          "prompt": "Девушка футанари имеет парня. Парень сидит на члене девушки аналом. Девушка трогает пальцами его анус",
+          "description": "Девушка футанари имеет парня. ",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Cocktail videos",
+        "prompt": "Cinematic close-up of a mysterious bartender pouring a glowing green liquid into a glass, heavy smoke rising, dark cocktail bar background, 4k, hyper-realistic, slow motion.",
+        "description": "Cinematic close-up of a mysterious bartender pouring a glowing green liquid into a glass, heavy smoke rising, dark cocktail bar background, 4k, hyper-realistic, slow motion.",
+        "category": "Other Expert Roles",
+        "subcategory": "Specialist Roles"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Cocktail videos",
+          "prompt": "Cinematic close-up of a mysterious bartender pouring a glowing green liquid into a glass, heavy smoke rising, dark cocktail bar background, 4k, hyper-realistic, slow motion.",
+          "description": "Cinematic close-up of a mysterious bartender pouring a glowing green liquid into a glass, heavy smoke rising, dark cocktail bar background, 4k, hyper-realistic, slow motion.",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        },
+        {
+          "source": "community",
+          "title": "Video",
+          "prompt": "Cinematic close-up of a mysterious bartender pouring a glowing green liquid into a glass, heavy smoke rising, dark cocktail bar background, 4k, hyper-realistic, slow motion.",
+          "description": "Cinematic close-up of a mysterious bartender pouring a glowing green liquid into a glass, heavy smoke rising, dark cocktail bar background, 4k, hyper-realistic, slow motion.",
+          "category": "Other Expert Roles",
+          "subcategory": "Specialist Roles"
+        }
+      ],
+      "size": 2
+    },
+    {
+      "canonical": {
+        "source": "community",
+        "title": "Sales",
+        "prompt": "Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves",
+        "description": "Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves",
+        "category": "Business & Marketing",
+        "subcategory": "Marketing & Sales"
+      },
+      "members": [
+        {
+          "source": "community",
+          "title": "Sales",
+          "prompt": "Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves",
+          "description": "Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves",
+          "category": "Business & Marketing",
+          "subcategory": "Marketing & Sales"
+        },
+        {
+          "source": "community",
+          "title": "Selar ideas for automation",
+          "prompt": "Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves",
+          "description": "Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves",
+          "category": "Business & Marketing",
+          "subcategory": "Marketing & Sales"
+        }
+      ],
+      "size": 2
+    }
+  ]
+}

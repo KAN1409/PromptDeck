@@ -1,0 +1,47 @@
+name: Audit Prompt Catalog V2
+
+on:
+  push:
+    branches:
+      - audit/prompt-dedup-v1
+    paths:
+      - 'tools/audit_prompt_catalog_v2.py'
+      - '.github/workflows/audit-prompt-catalog-v2.yml'
+      - 'android/app/src/main/assets/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install semantic audit dependencies
+        run: |
+          python -m pip install --disable-pip-version-check sentence-transformers==5.1.1 scikit-learn==1.7.2
+      - name: Run deep semantic and quality audit
+        run: python tools/audit_prompt_catalog_v2.py
+      - name: Show summary
+        run: sed -n '1,45p' audit/PROMPT_CATALOG_AUDIT_V2.md
+      - name: Commit audit report
+        run: |
+          git config user.name 'PromptDeck Audit Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audit/PROMPT_CATALOG_AUDIT_V2.md audit/PROMPT_CATALOG_AUDIT_V2.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add deep semantic prompt catalog audit V2'
+            git push origin HEAD:audit/prompt-dedup-v1
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prompt-catalog-audit-v2
+          path: |
+            audit/PROMPT_CATALOG_AUDIT_V2.md
+            audit/PROMPT_CATALOG_AUDIT_V2.json

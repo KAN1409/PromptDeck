@@ -1,5 +1,5 @@
-# Rebuild after smart-paste raw prompt integration
-name: Build PromptDeck v0.7.4
+# Rebuild after six-PDF prompt integration
+name: Build PromptDeck v0.7.5
 
 on:
   workflow_dispatch:
@@ -31,25 +31,35 @@ jobs:
             -o /tmp/prompts.csv
           python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
           python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 \
+              android/app/src/main/assets/imported_pdf_prompts_02.b64 \
+              android/app/src/main/assets/imported_pdf_prompts_03.b64 \
+              android/app/src/main/assets/imported_pdf_prompts_04.b64 \
+              android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
           python3 - <<'PY'
           import json
           core=json.load(open('android/app/src/main/assets/prompts_library.json',encoding='utf-8'))
           photo=json.load(open('android/app/src/main/assets/curated_photo_prompts.json',encoding='utf-8'))
+          imported=json.load(open('android/app/src/main/assets/imported_pdf_prompts.json',encoding='utf-8'))
           assert len(core)==2160, len(core)
           assert len(photo)==198, len(photo)
-          assert all(x.get('command') and x.get('instruction') and x.get('subcategory') for x in photo)
-          assert sum(1 for x in photo if x.get('example_mode'))==198
-          assert sum(1 for x in photo if x.get('example_urls'))>0
-          print('Integrated prompt data verified:',len(core),'+',len(photo))
+          assert len(imported)==806, len(imported)
+          assert all(x.get('title') and x.get('prompt') and x.get('category') for x in imported)
+          allowed={'Writing & Rewriting','Thinking & Ideas','Research & Analysis','Planning & Execution','Learning & Study','Work & Career','Content Creation','Problem Solving & Technical','Data & Formatting','AI & Prompting','Business & Marketing','Health & Wellness','Lifestyle & Personal','Specialist Roles','Photo Editing & Image Generation'}
+          bad=sorted({x['category'] for x in imported if x['category'] not in allowed})
+          assert not bad,bad
+          print('Integrated prompt data verified:',len(core),'+',len(photo),'+',len(imported))
           PY
 
-      - name: Apply categories, result previews and smart paste
+      - name: Apply categories, result previews, smart paste and PDF imports
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
           python3 tools/patch_category_browser_v071.py
           python3 tools/patch_curated_photo_v072.py
           python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -69,18 +79,21 @@ jobs:
           assert 'String autoCommandName(String prompt,String category)' in main
           assert 'if(blocks.isEmpty())' in main
           assert 'Start each prompt with /CommandName' not in main
-          print('English-only UI, result previews and raw Smart Paste audit passed')
+          assert 'void loadImportedPdfPrompts()' in main
+          assert 'loadImportedPdfPrompts();' in main
+          print('English-only UI, previews, Smart Paste and PDF import audit passed')
           PY
 
-      - name: Commit generated canonical v0.7.4 source
+      - name: Commit generated canonical v0.7.5 source
         run: |
           git config user.name 'PromptDeck Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add android/app/src/main/assets/prompts_library.json \
                   android/app/src/main/assets/curated_photo_prompts.json \
+                  android/app/src/main/assets/imported_pdf_prompts.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Accept raw prompts in Smart Paste'
+            git commit -m 'Integrate 806 prompts extracted from six PDF collections'
             git push origin HEAD:main
           fi
 
@@ -110,13 +123,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.4.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.4.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.5.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.5.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.4-build
+          name: PromptDeck-v0.7.5-build
           path: |
-            /tmp/PromptDeck-v0.7.4.apk
-            /tmp/PromptDeck-v0.7.4.sha256
+            /tmp/PromptDeck-v0.7.5.apk
+            /tmp/PromptDeck-v0.7.5.sha256
           if-no-files-found: error

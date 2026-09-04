@@ -11,7 +11,7 @@ s=s.replace('toast("No prompts found. Start each prompt with /CommandName")','to
 pat=r'''  int\[\] parseBulkCommands\(String raw,String category\)\{.*?\n  \}\n\n  void showAdd\(\)\{'''
 replacement=r'''  int[] parseBulkCommands(String raw,String category){
     int added=0,skipped=0;
-    java.util.regex.Pattern header=java.util.regex.Pattern.compile("^\\s*(?:\\d+[.)]\\s*)?/([A-Za-z0-9_-]+)(?:\\s*(?:→|->|—|–|:|\\\\||=)\\s*(.*))?\\s*$");
+    java.util.regex.Pattern header=java.util.regex.Pattern.compile("^\\s*(?:\\d+[.)]\\s*)?/([A-Za-z0-9_-]+)(?:\\s*(?:→|->|—|–|:|=)\\s*(.*))?\\s*$");
     String currentName=null,currentInline=null;StringBuilder body=new StringBuilder();
     ArrayList<String[]> blocks=new ArrayList<>();
     for(String line:raw.split("\\r?\\n")){
@@ -52,7 +52,7 @@ replacement=r'''  int[] parseBulkCommands(String raw,String category){
     // Prefer an explicit short first line as the title if the user pasted one.
     String[] lines=text.split("\\r?\\n");
     if(lines.length>0){
-      String first=lines[0].trim().replaceAll("^[#*\\-\\s]+","");
+      String first=lines[0].trim().replaceAll("^[#*\\s-]+","");
       if(first.length()>=3&&first.length()<=56&&first.split("\\s+").length<=8&&!first.endsWith(".")&&!first.endsWith(","))candidate=first;
     }
 
@@ -87,7 +87,8 @@ replacement=r'''  int[] parseBulkCommands(String raw,String category){
 
   void showAdd(){'''
 
-ns2,n=re.subn(pat,replacement,s,flags=re.S)
+# Use a function replacement so Python's regex engine does not reinterpret Java backslashes.
+ns2,n=re.subn(pat,lambda m: replacement,s,flags=re.S)
 if n!=1:
     raise SystemExit(f'Expected to replace one parseBulkCommands block, replaced {n}')
 s=ns2

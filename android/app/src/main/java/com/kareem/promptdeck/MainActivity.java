@@ -533,16 +533,15 @@ public class MainActivity extends Activity {
 
   int[] parseBulkCommands(String raw,String category){
     int added=0,skipped=0;
-    java.util.regex.Pattern header=java.util.regex.Pattern.compile("^\s*(?:\d+[.)]\s*)?/([A-Za-z0-9_-]+)(?:\s*(?:→|->|—|–|:|\\||=)\s*(.*))?\s*$");
+    java.util.regex.Pattern header=java.util.regex.Pattern.compile("^\\s*(?:\\d+[.)]\\s*)?/([A-Za-z0-9_-]+)(?:\\s*(?:→|->|—|–|:|=)\\s*(.*))?\\s*$");
     String currentName=null,currentInline=null;StringBuilder body=new StringBuilder();
     ArrayList<String[]> blocks=new ArrayList<>();
-    for(String line:raw.split("\r?\n")){
+    for(String line:raw.split("\\r?\\n")){
       java.util.regex.Matcher m=header.matcher(line.trim());
       if(m.matches()){
         if(currentName!=null)blocks.add(new String[]{currentName,currentInline==null?"":currentInline,body.toString().trim()});
         currentName=m.group(1);currentInline=m.group(2)==null?"":m.group(2).trim();body.setLength(0);
-      }else if(currentName!=null){if(body.length()>0)body.append('
-');body.append(line);}
+      }else if(currentName!=null){if(body.length()>0)body.append('\n');body.append(line);}
     }
     if(currentName!=null)blocks.add(new String[]{currentName,currentInline==null?"":currentInline,body.toString().trim()});
 
@@ -573,10 +572,10 @@ public class MainActivity extends Activity {
     String candidate="";
 
     // Prefer an explicit short first line as the title if the user pasted one.
-    String[] lines=text.split("\r?\n");
+    String[] lines=text.split("\\r?\\n");
     if(lines.length>0){
-      String first=lines[0].trim().replaceAll("^[#*\-\s]+","");
-      if(first.length()>=3&&first.length()<=56&&first.split("\s+").length<=8&&!first.endsWith(".")&&!first.endsWith(","))candidate=first;
+      String first=lines[0].trim().replaceAll("^[#*\\s-]+","");
+      if(first.length()>=3&&first.length()<=56&&first.split("\\s+").length<=8&&!first.endsWith(".")&&!first.endsWith(","))candidate=first;
     }
 
     if(candidate.isEmpty()&&category!=null&&category.toLowerCase(Locale.ROOT).contains("photo")){
@@ -594,7 +593,7 @@ public class MainActivity extends Activity {
     if(candidate.isEmpty()){
       HashSet<String> stop=new HashSet<>(Arrays.asList("the","a","an","and","or","to","of","in","on","for","with","from","this","that","it","is","are","be","as","use","create","make","generate","produce","image","photo","prompt","please","only","into","while","keep","preserve","original","subject"));
       StringBuilder out=new StringBuilder();int count=0;
-      for(String w:text.replaceAll("[^A-Za-z0-9 ]"," ").split("\s+")){
+      for(String w:text.replaceAll("[^A-Za-z0-9 ]"," ").split("\\s+")){
         String lw=w.toLowerCase(Locale.ROOT);if(w.length()<3||stop.contains(lw))continue;
         out.append(Character.toUpperCase(w.charAt(0))).append(w.substring(1).toLowerCase(Locale.ROOT));
         if(++count==3)break;

@@ -1,5 +1,5 @@
-# Rebuild after curated photo result-preview integration
-name: Build PromptDeck v0.7.3
+# Rebuild after smart-paste raw prompt integration
+name: Build PromptDeck v0.7.4
 
 on:
   workflow_dispatch:
@@ -43,12 +43,13 @@ jobs:
           print('Integrated prompt data verified:',len(core),'+',len(photo))
           PY
 
-      - name: Apply categories, navigation and result previews
+      - name: Apply categories, result previews and smart paste
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
           python3 tools/patch_category_browser_v071.py
           python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -65,10 +66,13 @@ jobs:
           main=paths[0].read_text(encoding='utf-8')
           assert 'void renderExamples(Cmd c' in main
           assert 'void loadRemoteImage(String url' in main
-          print('English-only UI and example-preview audit passed')
+          assert 'String autoCommandName(String prompt,String category)' in main
+          assert 'if(blocks.isEmpty())' in main
+          assert 'Start each prompt with /CommandName' not in main
+          print('English-only UI, result previews and raw Smart Paste audit passed')
           PY
 
-      - name: Commit generated canonical v0.7.3 source
+      - name: Commit generated canonical v0.7.4 source
         run: |
           git config user.name 'PromptDeck Bot'
           git config user.email 'actions@users.noreply.github.com'
@@ -76,7 +80,7 @@ jobs:
                   android/app/src/main/assets/curated_photo_prompts.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate curated photo prompts with in-app result previews'
+            git commit -m 'Accept raw prompts in Smart Paste'
             git push origin HEAD:main
           fi
 
@@ -106,13 +110,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.3.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.3.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.4.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.4.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.3-build
+          name: PromptDeck-v0.7.4-build
           path: |
-            /tmp/PromptDeck-v0.7.3.apk
-            /tmp/PromptDeck-v0.7.3.sha256
+            /tmp/PromptDeck-v0.7.4.apk
+            /tmp/PromptDeck-v0.7.4.sha256
           if-no-files-found: error

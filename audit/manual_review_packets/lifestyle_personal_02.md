@@ -9,18 +9,18 @@ Prompt preview: Create a packing list from the destination, dates, weather, trip
 
 ## GID 1108 — /Terminal Drift
 Source: community | Subcategory: Travel
-Description: { "title": "Terminal Drift", "description": "A haunting visualization of a lone traveler stuck in an infinite, empty airport terminal that defies logic.", "prompt": "You will pe…
-Prompt preview: { "title": "Terminal Drift", "description": "A haunting visualization of a lone traveler stuck in an infinite, empty airport terminal that defies logic.", "prompt": "You will perform an image edit using the person from the provided photo as the main subject. Preserve her core likeness. Transform Subject 1 (female) into a solitary figure standing in an endless, windowless airport terminal. The surrounding space is a repetitive hallway of beige walls, low ceilings, and patterned carpet. There are no exits, only the endless stretch of artificial lighting and empty waiting chairs. The composition should adhere to a cinematic 1:1 aspect ratio.", "
+Description: { "title": "Terminal Drift", "description": "A haunting visualization of a lone traveler stuck in an
+Prompt preview: { "title": "Terminal Drift", "description": "A haunting visualization of a lone traveler stuck in an infinite, empty airport terminal that defies logic.", "prompt": "You will perform an image edit using the person from the provided photo as the main subject. Preserve her core likeness. Transform Sub
 
 ## GID 238 — /Time Travel Guide
 Source: community | Subcategory: Travel
 Description: Acts as time travel guide.
-Prompt preview: I want you to act as my time travel guide. I will provide you with the historical period or future time I want to visit and you will suggest the best events, sights, or people to experience. Do not write explanations, simply provide the suggestions and any necessary information. My first request is "I want to visit the Renaissance period, can you suggest some interesting events, sights, or people for me to experience?"
+Prompt preview: I want you to act as my time travel guide. I will provide you with the historical period or future time I want to visit and you will suggest the best events, sights, or people to experience. Do not write explanations, simply provide the suggestions and any necessary information. My first request is 
 
 ## GID 129 — /Travel Guide
 Source: community | Subcategory: Travel
 Description: Acts as travel guide.
-Prompt preview: I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. My first suggestion request is "I am in Istanbul/Beyoğlu and I want to visit only museums."
+Prompt preview: I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. My first suggestion requ
 
 ## GID 3383 — /TripRealityCheck
 Source: deep_hunt | Subcategory: Travel

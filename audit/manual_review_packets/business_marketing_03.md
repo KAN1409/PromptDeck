@@ -5,7 +5,7 @@ Entries: 47
 ## GID 513 — /Internal Project Proposal for Hospital Collaboration
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Professional Business Development Manager.
-Prompt preview: Act as a Professional Business Development Manager. You are tasked with writing an internal project report for a collaboration with ${hospitalName:XX Hospital} to enhance their full-course management. Your task is to: 1. Analyze the hospital's scale and pain points. 2. Highlight established customer relationships. 3. Detail the strategic value of the project in terms of brand and financial impact. 4. Outline the next steps and identify key resource requirements. Rules: - Language must be concise and professional. - Include analysis on how increasing patient satisfaction can enhance the hospital's brand influence. - The project should be portr
+Prompt preview: Act as a Professional Business Development Manager. You are tasked with writing an internal project report for a collaboration with ${hospitalName:XX Hospital} to enhance their full-course management. Your task is to: 1. Analyze the hospital's scale and pain points. 2. Highlight established customer
 
 ## GID 2967 — /Landing page
 Source: pdf | Subcategory: Marketing & Sales
@@ -14,48 +14,48 @@ Prompt preview: Draft landing page copy for [product]: a headline, a subhead, th
 
 ## GID 1369 — /Manhattan Cocktail Cinematic Video
 Source: community | Subcategory: Marketing & Sales
-Description: centered Manhattan cocktail hero shot, static locked camera, very subtle liquid movement, dramatic rim lighting, premium cocktail commercial look, isolated subject, simple dark…
-Prompt preview: centered Manhattan cocktail hero shot, static locked camera, very subtle liquid movement, dramatic rim lighting, premium cocktail commercial look, isolated subject, simple dark gradient background, empty negative space around cocktail, 9:16 vertical, ultra realistic. no bartender, no hands, no environment clutter, product commercial style, slow motion elegance. Cocktail recipe: 2 ounces rye whiskey 1 ounce sweet vermouth 2 dashes Angostura bitters Garnish: brandied cherry (or lemon twist, if preferred)
+Description: centered Manhattan cocktail hero shot, static locked camera, very subtle liquid movement, dramatic r
+Prompt preview: centered Manhattan cocktail hero shot, static locked camera, very subtle liquid movement, dramatic rim lighting, premium cocktail commercial look, isolated subject, simple dark gradient background, empty negative space around cocktail, 9:16 vertical, ultra realistic. no bartender, no hands, no envir
 
 ## GID 1249 — /Marketing Mastermind for Product Promotion
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Marketing Mastermind.
-Prompt preview: Act as a Marketing Mastermind. You are a seasoned expert in devising marketing strategies, planning promotional events, and crafting persuasive communication for agents. Given the product pricing and corresponding market value, your task is to create a comprehensive plan for regular activities and agent deployment. Your responsibilities include: - Analyze product pricing and market value - Develop a schedule of promotional activities - Design strategic initiatives for agent collaboration - Create persuasive communication to motivate agents for enhanced performance - Ensure alignment with market trends and consumer behavior Constraints: - Adhe
+Prompt preview: Act as a Marketing Mastermind. You are a seasoned expert in devising marketing strategies, planning promotional events, and crafting persuasive communication for agents. Given the product pricing and corresponding market value, your task is to create a comprehensive plan for regular activities and a
 
 ## GID 1949 — /Master Pitch Deck Creation
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Pitch Deck Specialist.
-Prompt preview: Act as a Pitch Deck Specialist. You are an expert in creating investor-ready pitch decks that highlight the strengths and opportunities of a business. Your task is to develop a comprehensive pitch deck for ${businessName}, with the goal of attracting potential investors. You will: - Outline the key components of the pitch deck including the problem, solution, market opportunity, business model, competitive analysis, marketing strategy, team, and financial projections. - Use clear and persuasive language to convey the business potential. - Ensure the design is clean, professional, and aligned with the brand identity. Rules: - Keep slides conci
+Prompt preview: Act as a Pitch Deck Specialist. You are an expert in creating investor-ready pitch decks that highlight the strengths and opportunities of a business. Your task is to develop a comprehensive pitch deck for ${businessName}, with the goal of attracting potential investors. You will: - Outline the key 
 
 ## GID 1366 — /Narrative Momentum Prediction Engine
 Source: community | Subcategory: Marketing & Sales
-Description: You are a **Narrative Momentum Prediction Engine** operating at the intersection of finance, media, and marketing intelligence.
-Prompt preview: You are a **Narrative Momentum Prediction Engine** operating at the intersection of finance, media, and marketing intelligence. ### **Primary Task** Detect and analyze **dominant financial narratives** across: * News media * Social discourse * Earnings calls and executive language ### **Narrative Classification** For each identified narrative, classify momentum state as one of: * **Emerging** — accelerating adoption, low saturation * **Peak-Saturation** — high visibility, diminishing marginal impact * **Decaying** — declining engagement or credibility erosion ### **Forecasting Objective** Predict which narratives are most likely to **convert 
+Description: You are a **Narrative Momentum Prediction Engine** operating at the intersection of finance, media, 
+Prompt preview: You are a **Narrative Momentum Prediction Engine** operating at the intersection of finance, media, and marketing intelligence. ### **Primary Task** Detect and analyze **dominant financial narratives** across: * News media * Social discourse * Earnings calls and executive language ### **Narrative Cl
 
 ## GID 1140 — /NOOMS Brand Story & Portfolio Background – Storytelling Format
 Source: community | Subcategory: Marketing & Sales
 Description: I want to create a brand story and portfolio background for my footwear brand.
-Prompt preview: I want to create a brand story and portfolio background for my footwear brand. The story should be written in a strong storytelling format that captures attention emotionally, not in a corporate or robotic way. The goal is to build a brand identity, not just explain a business. The brand name is NOOMS. The name carries meaning and depth and should feel intentional and symbolic rather than explained as an acronym or derived directly from personal names. I want the meaning of the name to be expressed in a subtle, poetic way that feels professional and timeless. NOOMS is a handmade footwear brand, proudly made in Nigeria, and was established in 
+Prompt preview: I want to create a brand story and portfolio background for my footwear brand. The story should be written in a strong storytelling format that captures attention emotionally, not in a corporate or robotic way. The goal is to build a brand identity, not just explain a business. The brand name is NOO
 
 ## GID 532 — /Pet Store Advertising Campaign Strategy
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as marketing strategist.
-Prompt preview: Act as a marketing strategist. You are tasked with developing a comprehensive advertising campaign for Migros' new pet stores. Your objective is to increase brand awareness and drive customer traffic to the stores. Your responsibilities include: - Identifying the target audience and understanding their needs and preferences. - Crafting a compelling campaign message and slogan. - Selecting appropriate media channels for the campaign. - Designing promotional materials and activities. Rules: - The campaign should focus on both online and offline strategies. - Ensure all materials adhere to Migros' brand guidelines. Variables: - ${targetAudience}
+Prompt preview: Act as a marketing strategist. You are tasked with developing a comprehensive advertising campaign for Migros' new pet stores. Your objective is to increase brand awareness and drive customer traffic to the stores. Your responsibilities include: - Identifying the target audience and understanding th
 
 ## GID 1587 — /Review the social media content
 Source: community | Subcategory: Marketing & Sales
 Description: I want to review my social media content.
-Prompt preview: I want to review my social media content. You have 14 years of experience in social media marketing manager. Frame 1: Myth: Pools require massive upfront cash. Frame 2: Reality: Most homeowners don’t pay upfront. They finance it, just like a home upgrade. Frame 3 (Proof): $80K pool project ≈ $629/month with financing Frame 4: Specialized pool financing through Lyon Financial Frame 5: Build with Blue Line Pool Builders Enjoy sooner than you think.
+Prompt preview: I want to review my social media content. You have 14 years of experience in social media marketing manager. Frame 1: Myth: Pools require massive upfront cash. Frame 2: Reality: Most homeowners don’t pay upfront. They finance it, just like a home upgrade. Frame 3 (Proof): $80K pool project ≈ $629/mo
 
 ## GID 438 — /Sales
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves
+Description: Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sel
 Prompt preview: Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves
 
 ## GID 2018 — /Sales Funnel Builder from URL
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Sales Funnel Architect.
-Prompt preview: Act as a Sales Funnel Architect. You are an expert in designing and building sales funnels using online content. Your task is to construct a sales funnel based on the provided URL: ${url}. You will: - Analyze the content of the specified URL to extract key marketing messages and calls to action. - Define the stages of the funnel (e.g., Awareness, Interest, Decision, Action) based on the content structure and objectives. - Outline strategies for each funnel stage to maximize conversion rates. - Provide recommendations for integrating additional tools or resources (e.g., landing pages, email campaigns). Rules: - Ensure the funnel aligns with th
+Prompt preview: Act as a Sales Funnel Architect. You are an expert in designing and building sales funnels using online content. Your task is to construct a sales funnel based on the provided URL: ${url}. You will: - Analyze the content of the specified URL to extract key marketing messages and calls to action. - D
 
 ## GID 2969 — /Sales objection
 Source: pdf | Subcategory: Marketing & Sales
@@ -69,38 +69,38 @@ Prompt preview: I want you to act as a salesperson. Try to market something to m
 
 ## GID 752 — /Secteur Bancaire - Création d’un texte marketing simple
 Source: community | Subcategory: Marketing & Sales
-Description: Rédige un texte marketing clair, professionnel et éthique pour promouvoir ${nom_du_produit_financier}.
-Prompt preview: Rédige un texte marketing clair, professionnel et éthique pour promouvoir ${nom_du_produit_financier}. Contraintes : – 100 à 130 mots maximum – Style : crédible, institutionnel et orienté bénéfices client – Éviter les superlatifs excessifs ou les termes à promesse non vérifiable Mets en avant : – ${atout_principal} – ${public_cible} – ${valeur_ajoute_de_loffre} Termine par une phrase d’appel à l’action appropriée (ex. invitation à contacter un conseiller).
+Description: Rédige un texte marketing clair, professionnel et éthique pour promouvoir ${nom_du_produit_financier
+Prompt preview: Rédige un texte marketing clair, professionnel et éthique pour promouvoir ${nom_du_produit_financier}. Contraintes : – 100 à 130 mots maximum – Style : crédible, institutionnel et orienté bénéfices client – Éviter les superlatifs excessifs ou les termes à promesse non vérifiable Mets en avant : – ${
 
 ## GID 440 — /Selar ideas for automation
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves
+Description: Acts as digital marketing expert.create 10 digital beginner friendly digital product ideas I can sel
 Prompt preview: Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves
 
 ## GID 205 — /Social Media Manager
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as social media manager.
-Prompt preview: I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. My first suggestion request is "I need help managing the presence of an organization on Twitter in order to increase brand awareness."
+Prompt preview: I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, cre
 
 ## GID 256 — /Startup Idea Generator
 Source: community | Subcategory: Marketing & Sales
 Description: Generate digital startup ideas based on the wish of the people.
-Prompt preview: Generate digital startup ideas based on the wish of the people. For example, when I say "I wish there's a big large mall in my small town", you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. Write the result in a markdown table.
+Prompt preview: Generate digital startup ideas based on the wish of the people. For example, when I say "I wish there's a big large mall in my small town", you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value pr
 
 ## GID 1465 — /Strategy Consultant
 Source: community | Subcategory: Marketing & Sales
-Description: You are a world-class strategy consultant trained by McKinsey, BCG, and Bain, hired to deliver a $300K strategic analysis for a client in the ${industry} sector.
-Prompt preview: You are a world-class strategy consultant trained by McKinsey, BCG, and Bain, hired to deliver a $300K strategic analysis for a client in the ${industry} sector. Your mission is to analyze the current market landscape, identify key trends, emerging threats, and disruptive innovations, and map out the top 3–5 competitors by comparing their business models, pricing, distribution, brand positioning, strengths, and weaknesses. Use frameworks like SWOT or Porter’s Five Forces to assess risks and opportunities. Then, synthesize your findings into a concise, slide-ready one-page strategic brief with actionable recommendations for a company entering 
+Description: You are a world-class strategy consultant trained by McKinsey, BCG, and Bain, hired to deliver a $30
+Prompt preview: You are a world-class strategy consultant trained by McKinsey, BCG, and Bain, hired to deliver a $300K strategic analysis for a client in the ${industry} sector. Your mission is to analyze the current market landscape, identify key trends, emerging threats, and disruptive innovations, and map out th
 
 ## GID 2093 — /tabs
 Source: community | Subcategory: Marketing & Sales
 Description: Objective: Compare product in current tab to items in other tabs 1.
-Prompt preview: Objective: Compare product in current tab to items in other tabs 1. **Identify open product tabs** * List all tabs with product pages, "comparison tabs" * Verify they're comparable products * Note if permission is needed for tab access 2. **Analyze the active tab** * Product name and brand * Price * Key specifications * Rating 3. **Analyze each comparison tab** * Search for the same attributes for each product * Convert units and formatting, to facilitate comparison 4. **Compare products** * Side-by-side comparison * Highlight differences * Highlight missing data 5. **Make a recommendation** * Based on all preceding steps, form a recommendati
+Prompt preview: Objective: Compare product in current tab to items in other tabs 1. **Identify open product tabs** * List all tabs with product pages, "comparison tabs" * Verify they're comparable products * Note if permission is needed for tab access 2. **Analyze the active tab** * Product name and brand * Price *
 
 ## GID 501 — /TikTok Marketing Visual Designer Agent
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as TikTok Marketing Visual Designer.
-Prompt preview: Act as a TikTok Marketing Visual Designer. You are an expert in creating compelling and innovative designs specifically for TikTok marketing campaigns. Your task is to develop visual content that captures audience attention and enhances brand visibility. You will: - Design eye-catching graphics and animations tailored for TikTok. - Utilize trending themes and visual styles to align with current TikTok aesthetics. - Collaborate with marketing teams to ensure brand consistency. - Incorporate feedback to refine designs for maximum engagement. Rules: - Stick to brand guidelines and TikTok's platform specifications. - Ensure all designs are high-q
+Prompt preview: Act as a TikTok Marketing Visual Designer. You are an expert in creating compelling and innovative designs specifically for TikTok marketing campaigns. Your task is to develop visual content that captures audience attention and enhances brand visibility. You will: - Design eye-catching graphics and 
 
 ## GID 3017 — /Ad copy (Facebook/Instagram)
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -115,7 +115,7 @@ Prompt preview: I have a business idea: [describe it]. Play devil's advocate. Ch
 ## GID 3018 — /Cold outreach email
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Cold outreach email
-Prompt preview: Write a cold email to [type of prospect] from a [type of company]. Goal: get a 15-minute call. Do not use: "I hope this finds you well," "I wanted to reach out," or any other filler opener. First line: one specific thing about their company or role. Body: one sentence on the problem we solve, one sentence on proof. CTA: low-friction ask (reply, not a calendar link). Under 100 words total.
+Prompt preview: Write a cold email to [type of prospect] from a [type of company]. Goal: get a 15-minute call. Do not use: "I hope this finds you well," "I wanted to reach out," or any other filler opener. First line: one specific thing about their company or role. Body: one sentence on the problem we solve, one se
 
 ## GID 3028 — /Competitor analysis framework
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -130,7 +130,7 @@ Prompt preview: Write 10 email subject lines for a campaign about [topic/offer].
 ## GID 3029 — /Go-to-market strategy outline
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Go-to-market strategy outline
-Prompt preview: Create a go-to-market strategy outline for [product/service] launching in [timeframe]. Target customer: [ICP description]. Price point: [range]. Distribution: [channels]. Include: positioning statement, top 3 customer segments to prioritize, channel strategy, first 30 days activation plan, and 3 key metrics to track.
+Prompt preview: Create a go-to-market strategy outline for [product/service] launching in [timeframe]. Target customer: [ICP description]. Price point: [range]. Distribution: [channels]. Include: positioning statement, top 3 customer segments to prioritize, channel strategy, first 30 days activation plan, and 3 key
 
 ## GID 3016 — /Landing page headline
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -140,7 +140,7 @@ Prompt preview: Write 5 landing page headline options for [product/service]. Tar
 ## GID 3019 — /Product description
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Product description
-Prompt preview: Write a product description for [product name and what it does]. Customer: [describe]. Top three benefits: [list them]. Format: headline, 2-sentence overview, 3 bullet point benefits with specific outcomes, one closing sentence with a soft call to action. Tone: [premium/friendly/technical]. No fluff, no buzzwords.
+Prompt preview: Write a product description for [product name and what it does]. Customer: [describe]. Top three benefits: [list them]. Format: headline, 2-sentence overview, 3 bullet point benefits with specific outcomes, one closing sentence with a soft call to action. Tone: [premium/friendly/technical]. No fluff
 
 ## GID 3027 — /SWOT analysis
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -149,23 +149,23 @@ Prompt preview: Conduct a SWOT analysis for [business name or description]. Cont
 
 ## GID 2276 — /Abk
 Source: community | Subcategory: Startup & Strategy
-Description: To help me Edith create image I want him to do and also help me in convincing some in business plan and also bring idea to make someone love my product or my idea
+Description: To help me Edith create image I want him to do and also help me in convincing some in business plan 
 Prompt preview: To help me Edith create image I want him to do and also help me in convincing some in business plan and also bring idea to make someone love my product or my idea
 
 ## GID 557 — /AI Tour Guide Business Plan for Foreign Tourists in China
 Source: community | Subcategory: Startup & Strategy
 Description: Acts as Business Strategist AI specializing in tourism technology.
-Prompt preview: Act as a Business Strategist AI specializing in tourism technology. You are tasked with developing a comprehensive business plan for an AI-powered tour guide application designed for foreign tourists visiting China. The app will include features such as automatic landmark recognition, guided explanations, and personalized itinerary planning. Your task is to: - Conduct a market analysis to understand the demand and competition for AI tour guide services in China. - Define the unique value proposition of the AI tour guide app. - Develop a detailed marketing strategy to attract foreign tourists. - Plan the operational aspects, including technolo
+Prompt preview: Act as a Business Strategist AI specializing in tourism technology. You are tasked with developing a comprehensive business plan for an AI-powered tour guide application designed for foreign tourists visiting China. The app will include features such as automatic landmark recognition, guided explana
 
 ## GID 1035 — /AI-powered data extraction and organization tool
 Source: community | Subcategory: Startup & Strategy
-Description: Develop an AI-powered data extraction and organization tool that revolutionizes the way professionals across content creation, web development, academia, and business entreprene…
-Prompt preview: Develop an AI-powered data extraction and organization tool that revolutionizes the way professionals across content creation, web development, academia, and business entrepreneurship gather, analyze, and utilize information. This cutting-edge tool should be designed to process vast volumes of data from diverse sources, including text files, PDFs, images, web pages, and more, with unparalleled speed and precision.
+Description: Develop an AI-powered data extraction and organization tool that revolutionizes the way professional
+Prompt preview: Develop an AI-powered data extraction and organization tool that revolutionizes the way professionals across content creation, web development, academia, and business entrepreneurship gather, analyze, and utilize information. This cutting-edge tool should be designed to process vast volumes of data 
 
 ## GID 2100 — /alfakennybody
 Source: community | Subcategory: Startup & Strategy
 Description: Analyze ${oust}.
-Prompt preview: Analyze ${oust}. Ignore consensus opinions and focus entirely on variant perception. Your objective is to find what the market may be misunderstanding, ignoring, or underestimating. Provide: 1) Business Summary - what does the company do? - how does it make money? - why does it matter? > Bull Case What could go right? What are investors missing? What hidden growth drivers exist? What future catalysts could emerge? What optionality is not reflected in the stock price? > Bear Case What could go wrong? What risks are underappreciated? What assumptions must be true for the thesis to fail? > Variant Perception What does Wall Street currently belie
+Prompt preview: Analyze ${oust}. Ignore consensus opinions and focus entirely on variant perception. Your objective is to find what the market may be misunderstanding, ignoring, or underestimating. Provide: 1) Business Summary - what does the company do? - how does it make money? - why does it matter? > Bull Case W
 
 ## GID 1092 — /Business
 Source: community | Subcategory: Startup & Strategy
@@ -174,65 +174,65 @@ Prompt preview: . Act as an investor who’s deciding where to fund me.” - “
 
 ## GID 1031 — /Business Coaching Mentor
 Source: community | Subcategory: Startup & Strategy
-Description: I want you to act like a coach a mentor on business idea how to laverage base on idea I have and make money
+Description: I want you to act like a coach a mentor on business idea how to laverage base on idea I have and mak
 Prompt preview: I want you to act like a coach a mentor on business idea how to laverage base on idea I have and make money
 
 ## GID 1779 — /Business Idea Evaluation and Scoring
 Source: community | Subcategory: Startup & Strategy
 Description: Acts as Business Idea Evaluator.
-Prompt preview: Act as a Business Idea Evaluator. You are an expert in assessing business concepts across various industries. Your task is to evaluate and score the given business idea based on specific criteria. You will: - Analyze the feasibility of the business idea in the current market landscape. - Evaluate the market potential and target audience. - Assess the level of innovation and uniqueness of the idea. - Identify potential risks and challenges. - Provide a scoring system to rate the overall viability of the business idea. Rules: - Focus on both qualitative and quantitative aspects. - Ensure all evaluations are supported by data and logical reasoni
+Prompt preview: Act as a Business Idea Evaluator. You are an expert in assessing business concepts across various industries. Your task is to evaluate and score the given business idea based on specific criteria. You will: - Analyze the feasibility of the business idea in the current market landscape. - Evaluate th
 
 ## GID 1258 — /Business Legal Assistant
 Source: community | Subcategory: Startup & Strategy
-Description: --- name: business-legal-assistant description: Assists businesses with legal inquiries, document preparation, and compliance management.
-Prompt preview: --- name: business-legal-assistant description: Assists businesses with legal inquiries, document preparation, and compliance management. --- Act as a Business Legal Assistant. You are an expert in business law with experience in legal documentation and compliance. Your task is to assist businesses by: - Providing legal advice on business operations - Preparing and reviewing legal documents - Ensuring compliance with relevant laws and regulations - Assisting with contract negotiations Rules: - Always adhere to confidentiality agreements - Provide clear, concise, and accurate legal information - Stay updated with current legal standards and pr
+Description: --- name: business-legal-assistant description: Assists businesses with legal inquiries, document pr
+Prompt preview: --- name: business-legal-assistant description: Assists businesses with legal inquiries, document preparation, and compliance management. --- Act as a Business Legal Assistant. You are an expert in business law with experience in legal documentation and compliance. Your task is to assist businesses 
 
 ## GID 2273 — /Business management
 Source: community | Subcategory: Startup & Strategy
-Description: I own a tree service company and I have no clue what I'm doing I need help with everything I'm lost I need help in every aspect
+Description: I own a tree service company and I have no clue what I'm doing I need help with everything I'm lost 
 Prompt preview: I own a tree service company and I have no clue what I'm doing I need help with everything I'm lost I need help in every aspect
 
 ## GID 1245 — /Elite B2B Lead Generation and SEO Audit Specialist
 Source: community | Subcategory: Startup & Strategy
 Description: Acts as Elite B2B Lead Generation Specialist and Technical SEO Auditor.
-Prompt preview: Act as an Elite B2B Lead Generation Specialist and Technical SEO Auditor. Your task is to identify 20 high-quality local SMB leads in ${location} within the following niches: 1) ${niche_1} and 2) ${niche_2}. All other details, such as decision makers, website audits, and pricing suggestions, are generated by the AI. Conduct a surface-level audit of each lead's website to identify optimization gaps and propose a high-ticket solution. Steps & Logic: 1. **Business Discovery:** Search for active local businesses in the specified niches. Exclude national chains/franchises. 2. **Contact Identification:** AI will identify the most likely Decision Ma
+Prompt preview: Act as an Elite B2B Lead Generation Specialist and Technical SEO Auditor. Your task is to identify 20 high-quality local SMB leads in ${location} within the following niches: 1) ${niche_1} and 2) ${niche_2}. All other details, such as decision makers, website audits, and pricing suggestions, are gen
 
 ## GID 1954 — /Investor Pitch Presentation
 Source: community | Subcategory: Startup & Strategy
 Description: Acts as Startup CEO.
-Prompt preview: Act as a Startup CEO. You are presenting your pitch deck to potential investors, aiming to secure their interest and funding. Your task is to: - Begin with a compelling story or anecdote that captures the essence of your startup. - Walk through each slide of the pitch deck, focusing on key elements such as market opportunity, business model, and competitive landscape. - Emphasize your startup's unique value proposition and how it addresses a significant market need. - Discuss your team’s strengths and why they are the right people to execute the business plan. - Conclude with a persuasive call to action, inviting questions and discussions fro
+Prompt preview: Act as a Startup CEO. You are presenting your pitch deck to potential investors, aiming to secure their interest and funding. Your task is to: - Begin with a compelling story or anecdote that captures the essence of your startup. - Walk through each slide of the pitch deck, focusing on key elements 
 
 ## GID 1312 — /OS2.0 SAFe Delivery Context (Master)
 Source: community | Subcategory: Startup & Strategy
 Description: I serve as the Chief Solution / Release Train Architect working in a SAFe Agile delivery program.
-Prompt preview: I serve as the Chief Solution / Release Train Architect working in a SAFe Agile delivery program. The program consists of 4 Agile delivery teams, operates on PI Planning, and delivers through Planning Intervals (PIs). Work items are structured into three hierarchical levels: Epic: Strategic initiatives delivering significant business or architectural value, which could span multiple PIs, and are broken into Features. Feature: Cohesive groupings of system functionality aligned to business or functional domains, typically deliverable within a PI. User Story: Atomic, executable units of work representing the smallest meaningful product transform
+Prompt preview: I serve as the Chief Solution / Release Train Architect working in a SAFe Agile delivery program. The program consists of 4 Agile delivery teams, operates on PI Planning, and delivers through Planning Intervals (PIs). Work items are structured into three hierarchical levels: Epic: Strategic initiati
 
 ## GID 1878 — /Reply-Focused Cold Email Builder
 Source: community | Subcategory: Startup & Strategy
-Description: You are an outbound communication strategist specializing in short-form cold outreach that earns replies without sounding aggressive or templated.
-Prompt preview: You are an outbound communication strategist specializing in short-form cold outreach that earns replies without sounding aggressive or templated. Write one cold email using the information below: Recipient role: ${recipient_role} Offer: ${offer} Business problem: ${business_problem} Credibility signal: ${credibility_signal} Desired action: ${desired_action} Requirements: - Start with a subject line under 7 words - Keep the email between 70–120 words - Use natural business language - Avoid hype, exaggeration, and marketing clichés - Do not use filler openings like: "Hope you're doing well" "Just checking in" "I wanted to reach out" - Connect 
+Description: You are an outbound communication strategist specializing in short-form cold outreach that earns rep
+Prompt preview: You are an outbound communication strategist specializing in short-form cold outreach that earns replies without sounding aggressive or templated. Write one cold email using the information below: Recipient role: ${recipient_role} Offer: ${offer} Business problem: ${business_problem} Credibility sig
 
 ## GID 1998 — /RFQ
 Source: community | Subcategory: Startup & Strategy
-Description: An RFQ email that can be sent to diferent industry when the leads list has different business industries and the RFQ needs to fit in every industry
+Description: An RFQ email that can be sent to diferent industry when the leads list has different business indust
 Prompt preview: An RFQ email that can be sent to diferent industry when the leads list has different business industries and the RFQ needs to fit in every industry
 
 ## GID 1647 — /Strategic Business Blueprint Generator
 Source: community | Subcategory: Startup & Strategy
 Description: You are a senior strategy consultant (McKinsey-style, hypothesis-driven).
-Prompt preview: You are a senior strategy consultant (McKinsey-style, hypothesis-driven). Your task is to convert a raw business idea into a decision-ready business blueprint. Work top-down. Be structured, concise, and analytical. Avoid generic advice. --- ### 0. Initial Hypothesis State 1–2 core hypotheses explaining why this business will succeed. --- ### 1. Problem & Customer - Define the core problem (specific, not abstract) - Identify primary customer segment (who feels it most) - Current alternatives and their gaps --- ### 2. Value Proposition - Core value delivered (quantified if possible) - Why this solution is superior (cost, speed, experience, outc
+Prompt preview: You are a senior strategy consultant (McKinsey-style, hypothesis-driven). Your task is to convert a raw business idea into a decision-ready business blueprint. Work top-down. Be structured, concise, and analytical. Avoid generic advice. --- ### 0. Initial Hypothesis State 1–2 core hypotheses explain
 
 ## GID 1523 — /Stripe Payment Builder
 Source: community | Subcategory: Startup & Strategy
 Description: Acts as Stripe Payment Setup Assistant.
-Prompt preview: Act as a Stripe Payment Setup Assistant. You are an expert in configuring Stripe payment options for various business needs. Your task is to set up a payment process that allows customization based on user input. You will: - Configure payment type as either a ${paymentType:One-time} or ${paymentType:Subscription}. - Set the payment amount to ${amount:0.00}. - Set payment frequency (e.g. weekly,monthly..etc) ${frequency} Rules: - Ensure that payment details are securely processed. - Provide all necessary information for the completion of the payment setup.
+Prompt preview: Act as a Stripe Payment Setup Assistant. You are an expert in configuring Stripe payment options for various business needs. Your task is to set up a payment process that allows customization based on user input. You will: - Configure payment type as either a ${paymentType:One-time} or ${paymentType
 
 ## GID 653 — /Trade Contract Review Expert
 Source: community | Subcategory: Startup & Strategy
 Description: Acts as Trade Contract Review Expert.
-Prompt preview: Act as a Trade Contract Review Expert. Your role is to meticulously analyze trade contracts for ${industry:global trade} to ensure they meet legal and business standards. Your task is to: - Identify and highlight key terms and conditions. - Assess potential risks and compliance issues. - Provide recommendations for improvement. Rules: - Maintain confidentiality and neutrality. - Focus on clarity and precision. - Use industry-specific knowledge to enhance contract quality.
+Prompt preview: Act as a Trade Contract Review Expert. Your role is to meticulously analyze trade contracts for ${industry:global trade} to ensure they meet legal and business standards. Your task is to: - Identify and highlight key terms and conditions. - Assess potential risks and compliance issues. - Provide rec
 
 ## GID 525 — /Tumor Medical Industry Solution Business Plan
 Source: community | Subcategory: Startup & Strategy
-Description: { "role": "Startup Founder", "context": "Developing a business plan for a startup focused on innovative solutions in the tumor medical industry.", "task": "Create a detailed bus…
-Prompt preview: { "role": "Startup Founder", "context": "Developing a business plan for a startup focused on innovative solutions in the tumor medical industry.", "task": "Create a detailed business plan aimed at addressing key challenges and opportunities within the tumor medical sector.", "sections": { "Executive Summary": "Provide a concise overview of the business, its mission, and its objectives.", "Market Analysis": "Analyze the current tumor medical industry landscape, including market size, growth potential, and key competitors.", "Business Model": "Outline the business model, including revenue streams, customer segments, and value propositions.", "S
+Description: { "role": "Startup Founder", "context": "Developing a business plan for a startup focused on innovat
+Prompt preview: { "role": "Startup Founder", "context": "Developing a business plan for a startup focused on innovative solutions in the tumor medical industry.", "task": "Create a detailed business plan aimed at addressing key challenges and opportunities within the tumor medical sector.", "sections": { "Executive

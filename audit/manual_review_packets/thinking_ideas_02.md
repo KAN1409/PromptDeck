@@ -295,7 +295,7 @@ Prompt preview: Feed ChatGPT your facts and information
 ## GID 2949 — /Write a long prompt paragraph You know, just like engineering a Falcon
 Source: pdf | Subcategory: Imported PDF Collection
 Description: Write a long prompt paragraph You know, just like engineering a Falcon
-Prompt preview: Write a long prompt paragraph You know, just like engineering a Falcon rocket to land back on Earth, the magic with ChatGPT is all in the precision of your inputs. The more tailored your input, the more stellar the output. It’s like customizing a Tesla – the more you personalize, the better the ride. Injecting specific details and data into ChatGPT is like giving the AI a blueprint. That’s your ticket to outputs that feel like they’re from 2040 – ahead of its time and top-tier, just like how the pros do it. Instead of thinking of your prompts as mere sentences, imagine them as intricate blueprints or detailed roadmaps. For example: You are a 
+Prompt preview: Write a long prompt paragraph You know, just like engineering a Falcon rocket to land back on Earth, the magic with ChatGPT is all in the precision of your inputs. The more tailored your input, the more stellar the output. It’s like customizing a Tesla – the more you personalize, the better the ride
 
 ## GID 2654 — /You are a baking expert. Troubleshoot my [baked good] that came out [p
 Source: pdf | Subcategory: Imported PDF Collection

@@ -320,12 +320,12 @@ Prompt preview: Given the current situation, choose the single best next move. P
 ## GID 3074 — /The Overwhelm Eliminator
 Source: pdf | Subcategory: Productivity & Planning
 Description: The Overwhelm Eliminator
-Prompt preview: Act as an expert productivity coach and task planner. I am feeling overwhelmed by [big task]. Break it down into a clear, logical checklist of small, manageable steps, so I know exactly where to start and what to do next. Also, help me organize the tasks in a proper order, highlight any prerequisites, estimate the time required, and help me identify the highest-priority actions. If the project is large, divide it into milestones with clear objectives. Also, give me ways to simplify the process and also avoid common mistakes. Maintain momentum until the task is complete.
+Prompt preview: Act as an expert productivity coach and task planner. I am feeling overwhelmed by [big task]. Break it down into a clear, logical checklist of small, manageable steps, so I know exactly where to start and what to do next. Also, help me organize the tasks in a proper order, highlight any prerequisite
 
 ## GID 3022 — /Difficult email draft
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Difficult email draft
-Prompt preview: Help me write an email about [sensitive situation, e.g., declining a project, giving negative feedback, requesting a deadline extension]. Context: [explain the situation]. Tone: professional, direct, and non-apologetic but not aggressive. Keep it under 150 words. Do not over-explain or pad with pleasantries.
+Prompt preview: Help me write an email about [sensitive situation, e.g., declining a project, giving negative feedback, requesting a deadline extension]. Context: [explain the situation]. Tone: professional, direct, and non-apologetic but not aggressive. Keep it under 150 words. Do not over-explain or pad with plea
 
 ## GID 3020 — /Meeting agenda creator
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -340,7 +340,7 @@ Prompt preview: Here are my raw notes from [meeting/call/event]: [paste notes]. 
 ## GID 3023 — /Weekly priority planner
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Weekly priority planner
-Prompt preview: Here are all my tasks for this week: [paste task list]. Apply the Eisenhower Matrix (urgent/important quadrants) to categorize them. Then suggest a daily schedule across 5 days that: - Puts deep work in the first 2 hours of each day - Groups meetings and admin together - Leaves buffer time - Protects Friday afternoon for review and planning
+Prompt preview: Here are all my tasks for this week: [paste task list]. Apply the Eisenhower Matrix (urgent/important quadrants) to categorize them. Then suggest a daily schedule across 5 days that: - Puts deep work in the first 2 hours of each day - Groups meetings and admin together - Leaves buffer time - Protect
 
 ## GID 3295 — /PreMortem
 Source: deep_hunt | Subcategory: Risk Planning

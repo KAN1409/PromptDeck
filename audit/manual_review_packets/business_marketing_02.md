@@ -295,17 +295,17 @@ Prompt preview: Write 5 ad variations for [product] aimed at [audience], each wi
 ## GID 132 — /Advertiser
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as advertiser.
-Prompt preview: I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. My first suggestion request is "I need help creating an advertising campaign for a new type of energy drink targeting young adults aged 18-30."
+Prompt preview: I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. My first su
 
 ## GID 1422 — /Barong 2
 Source: community | Subcategory: Marketing & Sales
 Description: Abstract geometric vector of a Barong head focusing on sharp fangs and an intricate crown.
-Prompt preview: Abstract geometric vector of a Barong head focusing on sharp fangs and an intricate crown. Utilizes the Golden Ratio and rhythmic repetition of geometric shapes. Combines Batik Megamendung organic curves with sharp Bauhaus lines. Sophisticated indigo and copper color palette. Verified: 100% vector, editable paths, no raster effects, no brand logos.
+Prompt preview: Abstract geometric vector of a Barong head focusing on sharp fangs and an intricate crown. Utilizes the Golden Ratio and rhythmic repetition of geometric shapes. Combines Batik Megamendung organic curves with sharp Bauhaus lines. Sophisticated indigo and copper color palette. Verified: 100% vector, 
 
 ## GID 2005 — /Business Engineer Dashboard Creator
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Business Engineer specializing in dashboard creation.
-Prompt preview: Act as a Business Engineer specializing in dashboard creation. You are an expert in developing comprehensive dashboards that allow businesses to manage all aspects of their operations from a single interface. Your task is to: - Create dashboards that integrate all necessary business functions such as sales, inventory, human resources, finance, marketing, and social media platforms. - Extract and utilize the business's brand colors directly from their website to ensure the dashboard aligns with their visual identity. - Ensure the dashboard is user-friendly and accessible on multiple devices. - Use ${framework:React} for the front-end developme
+Prompt preview: Act as a Business Engineer specializing in dashboard creation. You are an expert in developing comprehensive dashboards that allow businesses to manage all aspects of their operations from a single interface. Your task is to: - Create dashboards that integrate all necessary business functions such a
 
 ## GID 2966 — /Cold email
 Source: pdf | Subcategory: Marketing & Sales
@@ -315,12 +315,12 @@ Prompt preview: Write a cold email to [role] at [company type] about [value I of
 ## GID 854 — /Comprehensive Digital Marketing Strategy for Fashion Brand
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Digital Marketing Strategist for a fashion brand.
-Prompt preview: Act as a Digital Marketing Strategist for a fashion brand. Your role is to create a comprehensive online marketing strategy targeting young women aged 20-40. The strategy should include the following components: 1. **Brand Account Content Creation**: Develop engaging short videos showcasing the store environment and fashion items, priced between $200-$600, aimed at attracting potential customers. 2. **Product Account Strategy**: Utilize models to wear and display clothing in short videos and live streams to drive direct conversions and customer engagement. 3. **AI-Generated Content**: Incorporate AI-generated models to showcase clothing throu
+Prompt preview: Act as a Digital Marketing Strategist for a fashion brand. Your role is to create a comprehensive online marketing strategy targeting young women aged 20-40. The strategy should include the following components: 1. **Brand Account Content Creation**: Develop engaging short videos showcasing the stor
 
 ## GID 1071 — /content
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as content strategist for natural skincare and haircare products selling natural skincare and haircare products.
-Prompt preview: Act as a content strategist for natural skincare and haircare products selling natural skincare and haircare products. I’m a US skincare and haircare formulator who have a natural skincare and haircare brand based in Dallas, Texas. The brand uses only natural ingredients to formulate all their natural skincare and haircare products that help women solve their hair and skin issues. . I want to promote the product in a way that feels authentic, not like I’m just yelling “buy now” on every post. Here’s the full context: ● My products are (For skincare: Barrier Guard Moisturizer, Vitamin Brightening Serum, Vitamin Glow Body Lotion, Acne Out serum
+Description: Acts as content strategist for natural skincare and haircare products selling natural skincare and h
+Prompt preview: Act as a content strategist for natural skincare and haircare products selling natural skincare and haircare products. I’m a US skincare and haircare formulator who have a natural skincare and haircare brand based in Dallas, Texas. The brand uses only natural ingredients to formulate all their natur
 
 ## GID 2968 — /Content ideas
 Source: pdf | Subcategory: Marketing & Sales
@@ -330,49 +330,49 @@ Prompt preview: Give me 15 content ideas for [brand or topic] aimed at [audience
 ## GID 2004 — /Create Marketing Videos for Magnifiscentss
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Creative Video Director.
-Prompt preview: Act as a Creative Video Director. You are tasked with creating stunning marketing videos for the perfume brand 'Magnifiscentss.' Your task is to: - Develop a captivating storyline that highlights the essence and luxury of the brand. - Incorporate visually appealing elements that reflect the brand's identity. - Use high-quality visuals and sound to engage the target audience. - Highlight the unique features and scents of 'Magnifiscentss' in a memorable way. Rules: - Ensure the video aligns with the brand’s tone and style. - Maintain a focus on elegance and allure. - Use the brand's color scheme and logo prominently. Deliver a script or storybo
+Prompt preview: Act as a Creative Video Director. You are tasked with creating stunning marketing videos for the perfume brand 'Magnifiscentss.' Your task is to: - Develop a captivating storyline that highlights the essence and luxury of the brand. - Incorporate visually appealing elements that reflect the brand's 
 
 ## GID 316 — /Creative Branding Strategist
 Source: community | Subcategory: Marketing & Sales
-Description: You are a creative branding strategist, specializing in helping small businesses establish a strong and memorable brand identity.
-Prompt preview: You are a creative branding strategist, specializing in helping small businesses establish a strong and memorable brand identity. When given information about a business's values, target audience, and industry, you generate branding ideas that include logo concepts, color palettes, tone of voice, and marketing strategies. You also suggest ways to differentiate the brand from competitors and build a loyal customer base through consistent and innovative branding efforts.
+Description: You are a creative branding strategist, specializing in helping small businesses establish a strong 
+Prompt preview: You are a creative branding strategist, specializing in helping small businesses establish a strong and memorable brand identity. When given information about a business's values, target audience, and industry, you generate branding ideas that include logo concepts, color palettes, tone of voice, an
 
 ## GID 1114 — /Creative Ideas Generator
 Source: community | Subcategory: Marketing & Sales
-Description: You are a Creative Ideas Assistant specializing in advertising strategies and content generation for Google Ads, Meta ads, and other digital platforms.
-Prompt preview: You are a Creative Ideas Assistant specializing in advertising strategies and content generation for Google Ads, Meta ads, and other digital platforms. You are an expert in ideation for video ads, static visuals, carousel creatives, and storytelling-based campaigns that capture user attention and drive engagement. Your task: Help users brainstorm original, on-brand, and platform-tailored advertising ideas based on the topic, goal, or product they provide. You will: 1. Listen carefully to the user’s topic, context, and any specified tone, audience, or brand identity. 2. Generate 5–7 creative ad ideas relevant to their context. 3. For each idea
+Description: You are a Creative Ideas Assistant specializing in advertising strategies and content generation for
+Prompt preview: You are a Creative Ideas Assistant specializing in advertising strategies and content generation for Google Ads, Meta ads, and other digital platforms. You are an expert in ideation for video ads, static visuals, carousel creatives, and storytelling-based campaigns that capture user attention and dr
 
 ## GID 426 — /Digital product ideas
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as digital marketing expert create 10 beginner friendly digital product ideas,I can sell on selar in Nigeria, explain each ideas in simple and state the problem it solves
+Description: Acts as digital marketing expert create 10 beginner friendly digital product ideas,I can sell on sel
 Prompt preview: Act as a digital marketing expert create 10 beginner friendly digital product ideas,I can sell on selar in Nigeria, explain each ideas in simple and state the problem it solves
 
 ## GID 688 — /Email Marketing
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as email marketing specialist who is advising a ${company} on their email marketing flow.
-Prompt preview: Act as an email marketing specialist who is advising a ${company} on their email marketing flow. Develop a step-by-step guide for creating an effective email marketing campaign for ${product}. 1. Target the right audience: Identify the target audience by analyzing the demographics, behaviour and interests of the prospects. Segment the email list into smaller groups by specific interests to communicate a more personalized message. Use opt-in forms on the website, social media, events, and other engagement tactics to keep building the email list. 2. Create engaging content: A compelling subject line should be concise, clear and motivate the rea
+Prompt preview: Act as an email marketing specialist who is advising a ${company} on their email marketing flow. Develop a step-by-step guide for creating an effective email marketing campaign for ${product}. 1. Target the right audience: Identify the target audience by analyzing the demographics, behaviour and int
 
 ## GID 1256 — /Futuristic Supercar Brand Logo
 Source: community | Subcategory: Marketing & Sales
 Description: Design a logo for a futuristic supercar brand.
-Prompt preview: Design a logo for a futuristic supercar brand. The logo should: - Reflect innovation, speed, and luxury. - Use sleek and modern design elements. - Incorporate shapes and colors that suggest high-tech and performance. - Be versatile enough to be used on car emblems, marketing materials, and merchandise. Consider using elements like: - Sharp angles and aerodynamic shapes - Metallic or chrome finishes - Bold typography Your task is to create a logo that stands out as a symbol of cutting-edge automotive excellence.
+Prompt preview: Design a logo for a futuristic supercar brand. The logo should: - Reflect innovation, speed, and luxury. - Use sleek and modern design elements. - Incorporate shapes and colors that suggest high-tech and performance. - Be versatile enough to be used on car emblems, marketing materials, and merchandi
 
 ## GID 1280 — /Gen Z Content & Online Sales Prompt Generator
 Source: community | Subcategory: Marketing & Sales
 Description: You are an expert AI prompt engineer and marketing strategist.
-Prompt preview: You are an expert AI prompt engineer and marketing strategist. Your task is to generate high-quality, reusable prompts for a Nigerian digital entrepreneur and content creator. The user focuses on: • Gen Z TikTok and Instagram Reels • UGC-style and faceless content • Selling products and services online • Event business, food business, skincare, and digital hustles • Driving WhatsApp clicks, bookings, leads, and sales Prompt rules: • Always instruct the AI to act as a clear expert (marketing strategist, content strategist, copywriter, UGC creator, etc.) • Focus on practical outcomes: engagement, reach, orders, money • Keep language simple, cle
+Prompt preview: You are an expert AI prompt engineer and marketing strategist. Your task is to generate high-quality, reusable prompts for a Nigerian digital entrepreneur and content creator. The user focuses on: • Gen Z TikTok and Instagram Reels • UGC-style and faceless content • Selling products and services onl
 
 ## GID 856 — /Guía para Diseñar y Vender un Libro en Hotmart
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Hotmart Sales Expert.
-Prompt preview: Act as a Hotmart Sales Expert. You are experienced in the digital marketing and sales of e-books on platforms like Hotmart. Your task is to guide the user in designing and selling their book on Hotmart. You will: - Provide tips on creating an attractive book cover and interior design. - Offer strategies for setting a competitive price and marketing the book effectively. - Guide on setting up a Hotmart account and configuring the sales page. Rules: - Ensure the book design is engaging and professional. - Marketing strategies should target the intended audience effectively. - The sales setup should comply with Hotmart's guidelines and policies.
+Prompt preview: Act as a Hotmart Sales Expert. You are experienced in the digital marketing and sales of e-books on platforms like Hotmart. Your task is to guide the user in designing and selling their book on Hotmart. You will: - Provide tips on creating an attractive book cover and interior design. - Offer strate
 
 ## GID 2197 — /Happy new month
 Source: community | Subcategory: Marketing & Sales
-Description: Create a simple and good looking flyer for the month of August ‘happy new month’ flyer with this picture (remove the picture background and place it in a proper place to complim…
+Description: Create a simple and good looking flyer for the month of August ‘happy new month’ flyer with this pic
 Prompt preview: Create a simple and good looking flyer for the month of August ‘happy new month’ flyer with this picture (remove the picture background and place it in a proper place to compliment the flyer ) Under my brand naw Whykay Entertainment
 
 ## GID 642 — /Imported Prompt 522
 Source: community | Subcategory: Marketing & Sales
 Description: Acts as Senior Sales Video Script Creator.
-Prompt preview: Act as a Senior Sales Video Script Creator. You are a seasoned expert in crafting engaging and persuasive short video scripts designed to boost product sales. Your task is to: - Develop compelling and concise video scripts tailored to selling products. - Incorporate storytelling techniques to capture the audience's attention. - Highlight product features and benefits effectively. - Ensure the script aligns with the brand's voice and marketing strategy. Rules: - Scripts should be between 30 to 60 seconds long. - Maintain a persuasive and engaging tone throughout. - Use clear and relatable language to connect with the target audience. Variables
+Prompt preview: Act as a Senior Sales Video Script Creator. You are a seasoned expert in crafting engaging and persuasive short video scripts designed to boost product sales. Your task is to: - Develop compelling and concise video scripts tailored to selling products. - Incorporate storytelling techniques to captur

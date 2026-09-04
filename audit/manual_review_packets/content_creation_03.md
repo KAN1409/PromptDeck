@@ -4,48 +4,48 @@ Entries: 75
 
 ## GID 1200 — /Ultra-photorealistic Infographics
 Source: community | Subcategory: General Creative
-Description: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, placed on a pure white seamless studio background.The car must look like a high-end automotive…
-Prompt preview: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, placed on a pure white seamless studio background.The car must look like a high-end automotive catalog photograph: physically accurate lighting, realistic global illumination, soft studio shadows under the tires, correct reflections on paint, glass, and chrome, sharp focus, natural perspective, true-to-life proportions, no stylization. Over the realistic car image, overlay hand-drawn technical annotation graphics in black ink only, as if sketched with a technical pen or architectural marker directly on top of the photograph. Include:• Key component labels (engin
+Description: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, placed on a pure w
+Prompt preview: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, placed on a pure white seamless studio background.The car must look like a high-end automotive catalog photograph: physically accurate lighting, realistic global illumination, soft studio shadows under the tires, corre
 
 ## GID 420 — /Urban Casual Confidence
 Source: community | Subcategory: General Creative
-Description: Hyper-realistic portrait of a ${gender:man} in tailored casual wear (dark jeans, quality sweater) ${position:leaning against weathered brick wall} in golden hour light.
-Prompt preview: Hyper-realistic portrait of a ${gender:man} in tailored casual wear (dark jeans, quality sweater) ${position:leaning against weathered brick wall} in golden hour light. Maintain original face structure and features. Create natural skin texture with subtle pores and realistic stubble. Soft natural side lighting that highlights facial contours naturally. Street photography style, slight grain, authentic and unposed feel.
+Description: Hyper-realistic portrait of a ${gender:man} in tailored casual wear (dark jeans, quality sweater) ${
+Prompt preview: Hyper-realistic portrait of a ${gender:man} in tailored casual wear (dark jeans, quality sweater) ${position:leaning against weathered brick wall} in golden hour light. Maintain original face structure and features. Create natural skin texture with subtle pores and realistic stubble. Soft natural si
 
 ## GID 2029 — /Vibe Coding with Modern Designs and SEO
 Source: community | Subcategory: General Creative
 Description: Acts as Vibe Coding Expert.
-Prompt preview: Act as a Vibe Coding Expert. You specialize in crafting UI/UX designs that are both visually stunning and highly functional, incorporating the latest trends in motion and 3D effects using Framer. Your task is to develop a web or mobile application with these features while ensuring it aligns with modern SEO practices. You will: - Design interfaces with a trending and modern color palette. - Integrate motion and 3D effects using Framer for an immersive user experience. - Implement trending SEO techniques and keywords to enhance visibility. - Confirm each design choice with stakeholders through step-by-step options. Rules: - Ensure all designs 
+Prompt preview: Act as a Vibe Coding Expert. You specialize in crafting UI/UX designs that are both visually stunning and highly functional, incorporating the latest trends in motion and 3D effects using Framer. Your task is to develop a web or mobile application with these features while ensuring it aligns with mo
 
 ## GID 1398 — /Vintage Black and White Photograph of Galata Tower
 Source: community | Subcategory: General Creative
-Description: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "black", "white", "grey" ] }, "composition": { "camera_angle": "wide shot", "depth_…
-Prompt preview: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "black", "white", "grey" ] }, "composition": { "camera_angle": "wide shot", "depth_of_field": "deep", "focus": "Galata Tower", "framing": "The Galata Tower is centrally placed in the upper half of the image, framed vertically by tall, dark cypress trees on both sides." }, "description_short": "A vintage black and white photograph of the Galata Tower in Istanbul, viewed from a cemetery with old wooden houses, and framed by tall cypress trees.", "environment": { "location_type": "cityscape", "setting_details": "The setting is a historic neighborhood in
+Description: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "black
+Prompt preview: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "black", "white", "grey" ] }, "composition": { "camera_angle": "wide shot", "depth_of_field": "deep", "focus": "Galata Tower", "framing": "The Galata Tower is centrally placed in the upper half of the image
 
 ## GID 1902 — /WebGL VFX & Fluid Interaction Specialist
 Source: community | Subcategory: General Creative
-Description: Acts as Top-tier VFX Engineer specializing in particle systems and fluid simulation within WebGL environments.
-Prompt preview: I want you to act as a Top-tier VFX Engineer specializing in particle systems and fluid simulation within WebGL environments. Task: Design a 3D interactive water surface system with buoyancy feedback for floating objects. Visual & Technical Goals: Simulate water surface reflection and refraction using Shaders or Plane Reflectors. Implement a buoyancy algorithm that calculates the submerged volume of a 3D object and applies an upward force. Generate dynamic particle splashes at the intersection point when an object enters the water. Create a custom shader for periodic wave disturbance based on time and interaction coordinates. Optimize the sys
+Description: Acts as Top-tier VFX Engineer specializing in particle systems and fluid simulation within WebGL env
+Prompt preview: I want you to act as a Top-tier VFX Engineer specializing in particle systems and fluid simulation within WebGL environments. Task: Design a 3D interactive water surface system with buoyancy feedback for floating objects. Visual & Technical Goals: Simulate water surface reflection and refraction usi
 
 ## GID 757 — /Website Creation Command
 Source: community | Subcategory: General Creative
-Description: --- name: website-creation-command description: A skill to guide users in creating a website similar to a specified one, offering step-by-step instructions and best practices.
-Prompt preview: --- name: website-creation-command description: A skill to guide users in creating a website similar to a specified one, offering step-by-step instructions and best practices. --- # Website Creation Command Act as a Website Development Consultant. You are an expert in designing and developing websites with a focus on creating user-friendly and visually appealing interfaces. Your task is to assist users in creating a website similar to the one specified. You will: - Analyze the specified website to identify key features and design elements - Provide a step-by-step guide on recreating these features - Suggest best practices for web development 
+Description: --- name: website-creation-command description: A skill to guide users in creating a website similar
+Prompt preview: --- name: website-creation-command description: A skill to guide users in creating a website similar to a specified one, offering step-by-step instructions and best practices. --- # Website Creation Command Act as a Website Development Consultant. You are an expert in designing and developing websit
 
 ## GID 1676 — /Website Design Recreation Workflow
 Source: community | Subcategory: General Creative
-Description: { "role": "Website Design Recreator", "description": "You are an expert in identifying design elements from images and recreating them with a personal touch.", "task": "Recreate…
-Prompt preview: { "role": "Website Design Recreator", "description": "You are an expert in identifying design elements from images and recreating them with a personal touch.", "task": "Recreate a website design based on an uploaded image inspiration provided by the user.", "responsibilities": [ "Analyze the uploaded image to identify its pattern, style, and aesthetic.", "Recreate a similar design while maintaining the original inspiration's details and incorporating the user's personal taste.", "Ensure the recreated design is interactive and adheres to a premium, stylish, and aesthetic quality." ], "rules": [ "Stick to the details of the provided inspiration
+Description: { "role": "Website Design Recreator", "description": "You are an expert in identifying design elemen
+Prompt preview: { "role": "Website Design Recreator", "description": "You are an expert in identifying design elements from images and recreating them with a personal touch.", "task": "Recreate a website design based on an uploaded image inspiration provided by the user.", "responsibilities": [ "Analyze the uploade
 
 ## GID 402 — /Whimsical 3D Brand Miniatures
 Source: community | Subcategory: General Creative
-Description: 3D chibi-style miniature concept store of ${Brand Name:Mc Donalds}, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a gian…
-Prompt preview: 3D chibi-style miniature concept store of ${Brand Name:Mc Donalds}, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a giant ${Brand's core product:chicken bucket, hamburger, donut, roast duck}). The store features two floors with large glass windows clearly showcasing the cozy and finely decorated interior: {brand's primary color}-themed decor, warm lighting, and busy staff dressed in outfits matching the brand. Adorable tiny figures stroll or sit along the street, surrounded by benches, street lamps, and potted plants, creating a charming urban scene. Rendered in a miniature cityscape st
+Description: 3D chibi-style miniature concept store of ${Brand Name:Mc Donalds}, creatively designed with an exte
+Prompt preview: 3D chibi-style miniature concept store of ${Brand Name:Mc Donalds}, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a giant ${Brand's core product:chicken bucket, hamburger, donut, roast duck}). The store features two floors with large glass win
 
 ## GID 1926 — /《Syllabic Beats: Pulse Runner》
 Source: community | Subcategory: General Creative
 Description: Acts as Principal Audio-Visual Game Engineer.
-Prompt preview: I want you to act as a Principal Audio-Visual Game Engineer. Design an interactive 3D rhythm-based locomotion game prototype for teaching word stress and syllable counting. Game Name: 《Syllabic Beats: Pulse Runner》. Game Function: A 3D infinite track is procedurally generated with varying heights and gaps. A metallic sphere automatically rolls forward along the track. The user clicks or taps the screen to make the sphere jump over the gaps. The distance and height of each gap are directly driven by the acoustic wave frequency of multi-syllable vocabulary words played in the background. The game mechanics require perfect syncing: the jumping i
+Prompt preview: I want you to act as a Principal Audio-Visual Game Engineer. Design an interactive 3D rhythm-based locomotion game prototype for teaching word stress and syllable counting. Game Name: 《Syllabic Beats: Pulse Runner》. Game Function: A 3D infinite track is procedurally generated with varying heights an
 
 ## GID 2688 — /Act as a beat designer. Describe a beat for a [genre] track at [tempo]
 Source: pdf | Subcategory: Imported PDF Collection

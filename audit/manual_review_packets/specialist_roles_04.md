@@ -5,11 +5,11 @@ Entries: 75
 ## GID 1193 — /Realistic Night Sky Portrait
 Source: community | Subcategory: Specialist Roles
 Description: Generate an image of the night sky that is highly detailed, realistic, and aesthetic.
-Prompt preview: Generate an image of the night sky that is highly detailed, realistic, and aesthetic. The image should be in portrait view, capturing the vastness and beauty of the celestial scene. Ensure the depiction is eye-catching and maintains a sense of realism, avoiding any cartoon or animated styles. Focus on elements such as stars, constellations, and perhaps the Milky Way, enhancing their natural allure and vibrancy.
+Prompt preview: Generate an image of the night sky that is highly detailed, realistic, and aesthetic. The image should be in portrait view, capturing the vastness and beauty of the celestial scene. Ensure the depiction is eye-catching and maintains a sense of realism, avoiding any cartoon or animated styles. Focus 
 
 ## GID 1713 — /Realistic Selfie of Girl with Transparent Glasses and Pink Hair
 Source: community | Subcategory: Specialist Roles
-Description: Create a realistic selfie photo of a girl with the following features: - Transparent glasses - Vibrant pink hair, styled naturally - Natural lighting to enhance realism - Casual…
+Description: Create a realistic selfie photo of a girl with the following features: - Transparent glasses - Vibra
 Prompt preview: Create a realistic selfie photo of a girl with the following features: - Transparent glasses - Vibrant pink hair, styled naturally - Natural lighting to enhance realism - Casual expression, capturing a candid moment - Ensure high resolution and detail to make it look like a genuine selfie.
 
 ## GID 1930 — /rebuttal
@@ -19,28 +19,28 @@ Prompt preview: i have compeleted the reviewas atached. nowi wamt you toheck all
 
 ## GID 358 — /Recognize Sponsors
 Source: community | Subcategory: Specialist Roles
-Description: List ways I can recognize or involve sponsors in my project's community (e.g., special Discord roles, early feature access, private Q&A sessions).
+Description: List ways I can recognize or involve sponsors in my project's community (e.g., special Discord roles
 Prompt preview: List ways I can recognize or involve sponsors in my project's community (e.g., special Discord roles, early feature access, private Q&A sessions).
 
 ## GID 1997 — /remove current vnet
 Source: community | Subcategory: Specialist Roles
-Description: I have used netgen vnet to deploy that is managed by internal cental team which is geeting deployed by other team for us and managed by them from diffrenct resource group (pc-ma…
-Prompt preview: I have used netgen vnet to deploy that is managed by internal cental team which is geeting deployed by other team for us and managed by them from diffrenct resource group (pc-managed). It hits a road blocker and now we are going to fall back to our old methos to create our own team managed vnet and subnets and not depend on diffrent team managed vnet. wanted to remove all (comment out) the dependecy from all the modules and resources. and comment of the networking main file so that it gets removed completly. Only once it gets completly removed we can create new vet in our resourse group. help me with the code to remove current vnet like as in
+Description: I have used netgen vnet to deploy that is managed by internal cental team which is geeting deployed 
+Prompt preview: I have used netgen vnet to deploy that is managed by internal cental team which is geeting deployed by other team for us and managed by them from diffrenct resource group (pc-managed). It hits a road blocker and now we are going to fall back to our old methos to create our own team managed vnet and 
 
 ## GID 804 — /Restaurant Candle Close-up (intimate, not explicit)
 Source: community | Subcategory: Specialist Roles
-Description: { "category": "CANDLELIT_RESTAURANT_CLOSEUP", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking.", "hair": { "color": "Dark brown", "style": "Loose, softly style…
-Prompt preview: { "category": "CANDLELIT_RESTAURANT_CLOSEUP", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking.", "hair": { "color": "Dark brown", "style": "Loose, softly styled", "texture": "Real strands, gentle shine" }, "face": { "eyes": "Soft eye contact, warm highlights", "makeup": "Natural glam, subtle liner", "skin_details": "Real pores, warm glow from candle" }, "clothing": { "outfit": "Simple elegant black top/dress (no logos)" }, "accessories": { "jewelry": ["Silver hoops"] } }, "pose": { "type": "Close-up seated", "orientation": "Face toward camera", "hands": "One hand supporting chin, fingers relaxed", "gaze": "Direct eye contact
+Description: { "category": "CANDLELIT_RESTAURANT_CLOSEUP", "subject": { "demographics": "Adult woman, 21-29, Turk
+Prompt preview: { "category": "CANDLELIT_RESTAURANT_CLOSEUP", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking.", "hair": { "color": "Dark brown", "style": "Loose, softly styled", "texture": "Real strands, gentle shine" }, "face": { "eyes": "Soft eye contact, warm highlights", "makeup": "Natural gl
 
 ## GID 462 — /Revenue Performance Report
 Source: community | Subcategory: Specialist Roles
-Description: Generate a monthly revenue performance report showing MRR, number of active subscriptions, and churned subscriptions for the last 6 months, grouped by month.
+Description: Generate a monthly revenue performance report showing MRR, number of active subscriptions, and churn
 Prompt preview: Generate a monthly revenue performance report showing MRR, number of active subscriptions, and churned subscriptions for the last 6 months, grouped by month.
 
 ## GID 1214 — /Rick And Morty
 Source: community | Subcategory: Specialist Roles
-Description: { "TASK": "Reimagine the scene as a 'Rick and Morty' TV show screenshot.", "VISUAL_ID": "2D Vector Animation, Adult Swim Style (Justin Roiland).
-Prompt preview: { "TASK": "Reimagine the scene as a 'Rick and Morty' TV show screenshot.", "VISUAL_ID": "2D Vector Animation, Adult Swim Style (Justin Roiland). Flat colors, uniform thin black outlines.", "CHARACTERS": "Convert humans to 'Rick and Morty' anatomy. Tubular/noodle limbs, droopy stance. EYES: Large white spheres with distinctive 'scribbled' irregular black pupils (wobbly dots). EXPRESSIONS: Apathetic, panicked, or drooling.", "OUTFIT": "Simplify complex tactical gear into flat cartoon sci-fi costumes. Remove texture noise; keep only iconic shapes.", "BG": "Alien dimension or messy garage. Wobbly organic lines, weird sci-fi textures (holes, slime
+Description: { "TASK": "Reimagine the scene as a 'Rick and Morty' TV show screenshot.", "VISUAL_ID": "2D Vector A
+Prompt preview: { "TASK": "Reimagine the scene as a 'Rick and Morty' TV show screenshot.", "VISUAL_ID": "2D Vector Animation, Adult Swim Style (Justin Roiland). Flat colors, uniform thin black outlines.", "CHARACTERS": "Convert humans to 'Rick and Morty' anatomy. Tubular/noodle limbs, droopy stance. EYES: Large whi
 
 ## GID 1223 — /Romantic Rainy Scene Video
 Source: community | Subcategory: Specialist Roles
@@ -49,8 +49,8 @@ Prompt preview: They are standing under the rain, looking at each other romantic
 
 ## GID 793 — /Rooftop Sunset Lookback (half-body)
 Source: community | Subcategory: Specialist Roles
-Description: { "category": "ROOFTOP_SUNSET_LOOKBACK", "subject": { "demographics": "Adult woman, 21-27, Turkish-looking.", "hair": { "color": "Dark brown", "style": "Loose waves, slightly wi…
-Prompt preview: { "category": "ROOFTOP_SUNSET_LOOKBACK", "subject": { "demographics": "Adult woman, 21-27, Turkish-looking.", "hair": { "color": "Dark brown", "style": "Loose waves, slightly wind-touched", "texture": "Strands visible, flyaways around face", "movement": "Hair subtly lifted by breeze" }, "face": { "shape": "Soft oval", "eyes": "Intense yet friendly eye contact", "makeup": "Natural glam, dewy skin, subtle liner", "skin_details": "Visible pores, realistic glow, no airbrush" }, "clothing": { "outfit": "Minimal black outfit, light jacket (no text/logos)", "fabric": "Real weave, gentle wrinkles at elbows" }, "accessories": { "jewelry": ["Small silv
+Description: { "category": "ROOFTOP_SUNSET_LOOKBACK", "subject": { "demographics": "Adult woman, 21-27, Turkish-l
+Prompt preview: { "category": "ROOFTOP_SUNSET_LOOKBACK", "subject": { "demographics": "Adult woman, 21-27, Turkish-looking.", "hair": { "color": "Dark brown", "style": "Loose waves, slightly wind-touched", "texture": "Strands visible, flyaways around face", "movement": "Hair subtly lifted by breeze" }, "face": { "s
 
 ## GID 1233 — /scaryface
 Source: community | Subcategory: Specialist Roles
@@ -59,18 +59,18 @@ Prompt preview: I want a scaryface masked man with really realistic lilke chasin
 
 ## GID 2252 — /sec
 Source: community | Subcategory: Specialist Roles
-Description: Photorealistic intimate couple portrait, a handsome young man (age 25) and a gorgeous curvy blonde woman (age 24) lying together on a white silk bed sheet, she has large natural…
-Prompt preview: Photorealistic intimate couple portrait, a handsome young man (age 25) and a gorgeous curvy blonde woman (age 24) lying together on a white silk bed sheet, she has large natural breasts, wide hips, hourglass figure, long wavy platinum hair, fair skin, they are embracing tenderly, she is looking at the camera with a seductive smile, he is looking at her, soft morning sunlight from window, warm golden tones, shallow depth of field, cinematic lighting, 8k, highly detailed skin texture, shot on Canon EOS R5, 85mm lens, f/1.4, sensual mood, erotic but tasteful, no nudity visible, only bare shoulders and cleavage.
+Description: Photorealistic intimate couple portrait, a handsome young man (age 25) and a gorgeous curvy blonde w
+Prompt preview: Photorealistic intimate couple portrait, a handsome young man (age 25) and a gorgeous curvy blonde woman (age 24) lying together on a white silk bed sheet, she has large natural breasts, wide hips, hourglass figure, long wavy platinum hair, fair skin, they are embracing tenderly, she is looking at t
 
 ## GID 701 — /Secteur Bancaire - Email Professionnel
 Source: community | Subcategory: Specialist Roles
 Description: Rédige un e‑mail professionnel destiné à ${type de client} pour lui présenter ${object du mail}.
-Prompt preview: Rédige un e‑mail professionnel destiné à ${type de client} pour lui présenter ${object du mail}. Le ton doit être courtois, précis et concis. Voici les éléments à intégrer : – Thème principal : ${theme} – Points clés à mentionner : ${points clés} – Action attendue : ${action attendue} Termine par une phrase de conclusion professionnelle adaptée au contexte bancaire.
+Prompt preview: Rédige un e‑mail professionnel destiné à ${type de client} pour lui présenter ${object du mail}. Le ton doit être courtois, précis et concis. Voici les éléments à intégrer : – Thème principal : ${theme} – Points clés à mentionner : ${points clés} – Action attendue : ${action attendue} Termine par un
 
 ## GID 745 — /Secteur Bancaire - Vérification de conformité de texte
 Source: community | Subcategory: Specialist Roles
-Description: Vérifie le texte suivant selon trois critères : neutralité, précision, et conformité à un ton réglementaire bancaire.
-Prompt preview: Vérifie le texte suivant selon trois critères : neutralité, précision, et conformité à un ton réglementaire bancaire. Identifie les formulations potentiellement problématiques ou suggestives, puis reformule‑les pour convenir à un document officiel. Texte à analyser : ${texte a analyser} Présente ta réponse sous deux colonnes : – Texte original / Texte reformulé
+Description: Vérifie le texte suivant selon trois critères : neutralité, précision, et conformité à un ton réglem
+Prompt preview: Vérifie le texte suivant selon trois critères : neutralité, précision, et conformité à un ton réglementaire bancaire. Identifie les formulations potentiellement problématiques ou suggestives, puis reformule‑les pour convenir à un document officiel. Texte à analyser : ${texte a analyser} Présente ta 
 
 ## GID 1666 — /Self-summary
 Source: community | Subcategory: Specialist Roles
@@ -79,68 +79,68 @@ Prompt preview: Give me a summary of what you know about me so far
 
 ## GID 1768 — /Serene Autumn Lakeside Illustration
 Source: community | Subcategory: Specialist Roles
-Description: { "colors": { "color_temperature": "warm", "contrast_level": "medium", "dominant_palette": [ "red", "light blue", "orange", "grey", "black" ] }, "composition": { "camera_angle":…
-Prompt preview: { "colors": { "color_temperature": "warm", "contrast_level": "medium", "dominant_palette": [ "red", "light blue", "orange", "grey", "black" ] }, "composition": { "camera_angle": "wide shot", "depth_of_field": "deep", "focus": "The autumn trees and their reflection in the lake", "framing": "The composition is adapted to a 1:1 square format, keeping the main visual weight of the trees on the right, balanced by the small fisherman on the left. The reflection in the water creates a strong vertical symmetry centered within the square frame." }, "description_short": "A serene illustration of a lone person fishing on the shore of a tranquil lake, su
+Description: { "colors": { "color_temperature": "warm", "contrast_level": "medium", "dominant_palette": [ "red", 
+Prompt preview: { "colors": { "color_temperature": "warm", "contrast_level": "medium", "dominant_palette": [ "red", "light blue", "orange", "grey", "black" ] }, "composition": { "camera_angle": "wide shot", "depth_of_field": "deep", "focus": "The autumn trees and their reflection in the lake", "framing": "The compo
 
 ## GID 762 — /Serene Evening Rowboat Scene in Illustrative Realism
 Source: community | Subcategory: Specialist Roles
-Description: { "colors": { "color_temperature": "neutral", "contrast_level": "medium", "dominant_palette": [ "slate blue", "off-white", "olive green", "brown", "ochre" ] }, "composition": {…
-Prompt preview: { "colors": { "color_temperature": "neutral", "contrast_level": "medium", "dominant_palette": [ "slate blue", "off-white", "olive green", "brown", "ochre" ] }, "composition": { "camera_angle": "wide shot", "depth_of_field": "deep", "focus": "Three men in a rowboat", "framing": "The subjects are positioned slightly off-center in the middle ground, with a strong horizontal line from the water creating a reflective symmetry in the lower half of the frame." }, "description_short": "An illustrative painting of three men in a rowboat on still water at dusk, with a cluster of houses and a large, pale moon in the background, all reflected on the wate
+Description: { "colors": { "color_temperature": "neutral", "contrast_level": "medium", "dominant_palette": [ "sla
+Prompt preview: { "colors": { "color_temperature": "neutral", "contrast_level": "medium", "dominant_palette": [ "slate blue", "off-white", "olive green", "brown", "ochre" ] }, "composition": { "camera_angle": "wide shot", "depth_of_field": "deep", "focus": "Three men in a rowboat", "framing": "The subjects are posi
 
 ## GID 975 — /Serene Mirror-Selfie Portrait in Sunlit Bedroom
 Source: community | Subcategory: Specialist Roles
-Description: { "scene_type": "Indoor lifestyle portrait (mirror-selfie aesthetic)", "environment": { "location": "Sunlit bedroom with gentle, natural daytime illumination", "background": { "…
-Prompt preview: { "scene_type": "Indoor lifestyle portrait (mirror-selfie aesthetic)", "environment": { "location": "Sunlit bedroom with gentle, natural daytime illumination", "background": { "bed": "White metal-frame bed with a soft vintage feel, dressed in light botanical-pattern bedding", "decor": "Clean, minimal styling with a couple of small potted plants, a simple nightstand, and understated floral touches", "windows": "Large window with airy sheer curtains that diffuse the light and soften the whole room", "color_palette": "Warm whites, ivory, beige, and pale neutrals with faint botanical and floral accents" }, "atmosphere": "Quiet, intimate, cozy, br
+Description: { "scene_type": "Indoor lifestyle portrait (mirror-selfie aesthetic)", "environment": { "location": 
+Prompt preview: { "scene_type": "Indoor lifestyle portrait (mirror-selfie aesthetic)", "environment": { "location": "Sunlit bedroom with gentle, natural daytime illumination", "background": { "bed": "White metal-frame bed with a soft vintage feel, dressed in light botanical-pattern bedding", "decor": "Clean, minima
 
 ## GID 1373 — /Serene Moonlit Street Illustration
 Source: community | Subcategory: Specialist Roles
-Description: { "colors": { "color_temperature": "cool", "contrast_level": "high", "dominant_palette": [ "teal", "cool gray", "warm yellow", "orange" ] }, "composition": { "camera_angle": "ey…
-Prompt preview: { "colors": { "color_temperature": "cool", "contrast_level": "high", "dominant_palette": [ "teal", "cool gray", "warm yellow", "orange" ] }, "composition": { "camera_angle": "eye-level shot", "depth_of_field": "deep", "focus": "A corner building with a lit cafe", "framing": "The building is positioned on the right side of the frame, balanced by the open water and sky on the left. Power lines and a crosswalk create leading lines." }, "description_short": "A digital illustration of a quiet, moonlit street scene by the water, featuring a warmly lit cafe and a black cat sitting on a balcony.", "environment": { "location_type": "cityscape", "setti
+Description: { "colors": { "color_temperature": "cool", "contrast_level": "high", "dominant_palette": [ "teal", "
+Prompt preview: { "colors": { "color_temperature": "cool", "contrast_level": "high", "dominant_palette": [ "teal", "cool gray", "warm yellow", "orange" ] }, "composition": { "camera_angle": "eye-level shot", "depth_of_field": "deep", "focus": "A corner building with a lit cafe", "framing": "The building is position
 
 ## GID 343 — /Show Direct Impact
 Source: community | Subcategory: Specialist Roles
-Description: Write a paragraph that shows sponsors the direct impact their funding will have on my projects and the wider community.
+Description: Write a paragraph that shows sponsors the direct impact their funding will have on my projects and t
 Prompt preview: Write a paragraph that shows sponsors the direct impact their funding will have on my projects and the wider community.
 
 ## GID 360 — /Showcase Top Repositories
 Source: community | Subcategory: Specialist Roles
-Description: Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential sponsors to support my work.
+Description: Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential spo
 Prompt preview: Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential sponsors to support my work.
 
 ## GID 2202 — /Skill acquisition
 Source: community | Subcategory: Specialist Roles
-Description: I want to become an independent girl by making my own money through skill teach like the best mentor ever on earth make me the best on earth tell me the world problem and how I…
+Description: I want to become an independent girl by making my own money through skill teach like the best mentor
 Prompt preview: I want to become an independent girl by making my own money through skill teach like the best mentor ever on earth make me the best on earth tell me the world problem and how I can solve it to make money
 
 ## GID 1418 — /Skin care for acne and freckles
 Source: community | Subcategory: Specialist Roles
 Description: Acts as Skincare Consultant.
-Prompt preview: Act as a Skincare Consultant. You are an expert in skincare with extensive knowledge of safe and effective skin whitening and improvement techniques. My details: → Skin type: Dry to combination → Concerns: Acne, freckles on left side of face, dark circles → Current routine: Cleanse → Moisturizer → Sunscreen → Product preference: None specific → Experience level: Beginner to actives Please create a personalized skincare plan that is: → Simple & sustainable for daily use → Focused on 20% effort for 80% results → Budget friendly → Builds on my current routine
+Prompt preview: Act as a Skincare Consultant. You are an expert in skincare with extensive knowledge of safe and effective skin whitening and improvement techniques. My details: → Skin type: Dry to combination → Concerns: Acne, freckles on left side of face, dark circles → Current routine: Cleanse → Moisturizer → S
 
 ## GID 876 — /Snapshot of a Turkish Hospital Night: A Dramedy Scene
 Source: community | Subcategory: Specialist Roles
-Description: Ultra-realistic Turkish dramedy still, vertical orientation, set in a slightly worn state hospital emergency waiting room at night.
-Prompt preview: Ultra-realistic Turkish dramedy still, vertical orientation, set in a slightly worn state hospital emergency waiting room at night. Fluorescent lights create a tired, greenish-white tone. Plastic chairs in rows, a water cooler in the corner, posters about “Acil Servis Kuralları” on the wall, and a digital ticket display showing red numbers. The floor is a bit scuffed, everything feels sterile but old. In the middle row, a 27-year-old Turkish-looking curvy blonde woman sits slumped in the chair, wearing casual city clothes from earlier in the day: maybe a floral dress with a light jacket, sneakers, hair slightly messy. She looks exhausted but 
+Description: Ultra-realistic Turkish dramedy still, vertical orientation, set in a slightly worn state hospital e
+Prompt preview: Ultra-realistic Turkish dramedy still, vertical orientation, set in a slightly worn state hospital emergency waiting room at night. Fluorescent lights create a tired, greenish-white tone. Plastic chairs in rows, a water cooler in the corner, posters about “Acil Servis Kuralları” on the wall, and a d
 
 ## GID 782 — /Snowy Street Cozy (winter fit, cinematic)
 Source: community | Subcategory: Specialist Roles
-Description: { "category": "SNOWY_STREET_WINTER_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUTE_MAX", "instruction": "Lock identity to reference image exactly.
-Prompt preview: { "category": "SNOWY_STREET_WINTER_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUTE_MAX", "instruction": "Lock identity to reference image exactly. Adult 21+ only." }, "subject": { "demographics": "Adult woman, 21-29, match reference identity.", "hair": { "color": "Match reference.", "style": "Hair tucked into scarf/coat with a few strands visible", "texture": "Natural strands, slight static flyaways", "movement": "Minimal movement; cold air realism" }, "face": { "eyes": "Exact reference eyes; slight squint from cold", "skin_details": "Natural texture; slight redness on cheeks (subtle, realistic)", "micro_details": "Preserve
+Description: { "category": "SNOWY_STREET_WINTER_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUT
+Prompt preview: { "category": "SNOWY_STREET_WINTER_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUTE_MAX", "instruction": "Lock identity to reference image exactly. Adult 21+ only." }, "subject": { "demographics": "Adult woman, 21-29, match reference identity.", "hair": { "color": "Match reference.
 
 ## GID 200 — /Socrat
 Source: community | Subcategory: Specialist Roles
 Description: Acts as Socrat.
-Prompt preview: I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. My first suggestion request is "I need help exploring the concept of justice from an ethical perspective."
+Prompt preview: I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. My first suggestion request is "I need help exploring the concept of justice from an ethical per
 
 ## GID 201 — /Socratic Method
 Source: community | Subcategory: Specialist Roles
 Description: Acts as Socrat.
-Prompt preview: I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. My first claim is "justice is neccessary in a society"
+Prompt preview: I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. My first claim is "justice is neccessary in a soci
 
 ## GID 1512 — /Spanish girl in nightclub
 Source: community | Subcategory: Specialist Roles
-Description: { "action": "image_generation", "action_input": "A full-body photo, vertical format 9:16 AR of Natalia, a 23-year-old Spanish woman with long wavy dark brown hair and green eyes.
-Prompt preview: { "action": "image_generation", "action_input": "A full-body photo, vertical format 9:16 AR of Natalia, a 23-year-old Spanish woman with long wavy dark brown hair and green eyes. She is in a crowded, dimly lit contemporary Roman nightclub with neon accents. She is wearing a form-fitting, extremely short black silk slip dress with deep cleavage that highlights her curves and prominent bust. Heeled sandals at her feet. She looks radiant and uninhibited, laughing while dancing with a drink in her hand, surrounded by blurred figures of people in the background. The atmosphere is hazy, energetic, and cinematic, capturing a moment of wild freedom a
+Description: { "action": "image_generation", "action_input": "A full-body photo, vertical format 9:16 AR of Natal
+Prompt preview: { "action": "image_generation", "action_input": "A full-body photo, vertical format 9:16 AR of Natalia, a 23-year-old Spanish woman with long wavy dark brown hair and green eyes. She is in a crowded, dimly lit contemporary Roman nightclub with neon accents. She is wearing a form-fitting, extremely s
 
 ## GID 1860 — /Split Word Rejoin
 Source: community | Subcategory: Specialist Roles
@@ -149,8 +149,8 @@ Prompt preview: Remove the - character and restore the split words in the markdo
 
 ## GID 2196 — /Sprezzatura
 Source: community | Subcategory: Specialist Roles
-Description: Task: Rewrite the provided text to maximize impact, clarity, and sprezzatura—the art of studied nonchalance, effortless authority, and understated precision.
-Prompt preview: Task: Rewrite the provided text to maximize impact, clarity, and sprezzatura—the art of studied nonchalance, effortless authority, and understated precision. Primary Guidelines Apply Sprezzatura (Effortless Flow): The final piece should feel composed, smooth, and natural, as if written effortlessly. Avoid rigid, stiff, or try-hard academic prose. Eliminate Redundant Modifiers: Remove decorative, unnecessary, or performative adjectives and adverbs (e.g., change "unexpected surprise" to "surprise," "loud screeching noise" to "screech"). Preserve Structure & Intent: Maintain the original paragraph flow, core intent, and voice. Do not introduce e
+Description: Task: Rewrite the provided text to maximize impact, clarity, and sprezzatura—the art of studied nonc
+Prompt preview: Task: Rewrite the provided text to maximize impact, clarity, and sprezzatura—the art of studied nonchalance, effortless authority, and understated precision. Primary Guidelines Apply Sprezzatura (Effortless Flow): The final piece should feel composed, smooth, and natural, as if written effortlessly.
 
 ## GID 1141 — /Statement of Purpose
 Source: community | Subcategory: Specialist Roles
@@ -175,12 +175,12 @@ Prompt preview: Prepare the final deliverable for publication. Final steps: - Fo
 ## GID 1802 — /story
 Source: community | Subcategory: Specialist Roles
 Description: (A goat went missing from a herd of goats that went into the forest.
-Prompt preview: (A goat went missing from a herd of goats that went into the forest. No matter how much I searched, the goat could not find the herd. It was night. Not knowing the way to that, he turned around and finally found a cave of a hill and went inside and lay down a goat. After some time, the lion living in the cave came to his abode and saw another animal lying in his cave. The goat's eyes are shining in the dark. The lion got some fear when he saw that strange animal with a big beard and his horns. This strange animal came to its base to kill her and stood outside wondering what to do without going into the cave. When I saw the lion of Mekapotugud
+Prompt preview: (A goat went missing from a herd of goats that went into the forest. No matter how much I searched, the goat could not find the herd. It was night. Not knowing the way to that, he turned around and finally found a cave of a hill and went inside and lay down a goat. After some time, the lion living i
 
 ## GID 1837 — /Street-art punk poster
 Source: community | Subcategory: Specialist Roles
 Description: Create a high-resolution graphic artwork in a bold street-art / punk poster style.
-Prompt preview: Create a high-resolution graphic artwork in a bold street-art / punk poster style. Composition: dynamic, asymmetrical collage of repeated human skulls across the canvas, varying in scale, rotation, and cropping, with overlaps and edge cut-offs. Arrange diagonally to create motion and flow (no symmetry). Style: skulls as flat, high-contrast stencil-like graphics with sharp edges and minimal detail. Apply halftone dot texture for a gritty screen-printed look. Mix solid black/off-white skulls with neon yellow or acid green gradient fills. Color palette: neon yellow, acid green, black, off-white. Use rough spray-paint gradients, especially green 
+Prompt preview: Create a high-resolution graphic artwork in a bold street-art / punk poster style. Composition: dynamic, asymmetrical collage of repeated human skulls across the canvas, varying in scale, rotation, and cropping, with overlaps and edge cut-offs. Arrange diagonally to create motion and flow (no symmet
 
 ## GID 1159 — /Strict Markdown-Only Output Enforcement
 Source: community | Subcategory: Specialist Roles
@@ -190,7 +190,7 @@ Prompt preview: Send the entire response as ONE uninterrupted ```markdown fenced
 ## GID 492 — /Studio Portraits with Professional Postures
 Source: community | Subcategory: Specialist Roles
 Description: Acts as image generation expert.
-Prompt preview: Act as an image generation expert. Your task is to create studio images featuring a host in different professional postures. You will: - Insert the host into a modern studio setting with realistic lighting. - Ensure the host is positioned exactly as specified for each posture. - Maintain the host's identity and appearance consistent across images. Rules: - Use ${positioning} for exact posture instructions. - Include ${lighting:soft} to define the lighting style. - Images should be high-resolution and suitable for professional use.
+Prompt preview: Act as an image generation expert. Your task is to create studio images featuring a host in different professional postures. You will: - Insert the host into a modern studio setting with realistic lighting. - Ensure the host is positioned exactly as specified for each posture. - Maintain the host's 
 
 ## GID 1692 — /subculture
 Source: community | Subcategory: Specialist Roles
@@ -199,27 +199,27 @@ Prompt preview: Explain the cultural significance of ${subculture} and its impac
 
 ## GID 691 — /Subject meditating in a crystal sphere
 Source: community | Subcategory: Specialist Roles
-Description: a transparent crystal portal floating in the middle of clouds in the sky, with a ${subject}, sitting inside meditating with golden lights coming up from all their chakras, 2 oth…
+Description: a transparent crystal portal floating in the middle of clouds in the sky, with a ${subject}, sitting
 Prompt preview: a transparent crystal portal floating in the middle of clouds in the sky, with a ${subject}, sitting inside meditating with golden lights coming up from all their chakras, 2 other light beams are traversing their body one from top to bottom and 2 diagonally
 
 ## GID 2085 — /subvert
 Source: community | Subcategory: Specialist Roles
 Description: Take this shopworn, cliché, or overly familiar idea: "[INSERT CLICHÉ HERE]".
-Prompt preview: Take this shopworn, cliché, or overly familiar idea: "[INSERT CLICHÉ HERE]". Ruthlessly subvert it. Pervert the wholesome, safe, or sentimental core into something raw, transgressive, and deliberately shocking. Infuse it with taboo elements—moral decay, body horror, sexual deviance, existential dread, political incorrectness, sacrilege, or visceral grotesquery—while keeping a twisted echo of the original concept so the subversion hits harder. Rules for the output: - Amplify shock value through unexpected juxtapositions, bodily fluids, violence, erotic violation, psychological cruelty, or societal taboos. - Embrace bad taste. Be grotesque, bla
+Prompt preview: Take this shopworn, cliché, or overly familiar idea: "[INSERT CLICHÉ HERE]". Ruthlessly subvert it. Pervert the wholesome, safe, or sentimental core into something raw, transgressive, and deliberately shocking. Infuse it with taboo elements—moral decay, body horror, sexual deviance, existential drea
 
 ## GID 811 — /Subway Platform (street candid, moody)
 Source: community | Subcategory: Specialist Roles
-Description: { "category": "SUBWAY_PLATFORM_STREET_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUTE_MAX", "instruction": "Use reference image identity exactly.
-Prompt preview: { "category": "SUBWAY_PLATFORM_STREET_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUTE_MAX", "instruction": "Use reference image identity exactly. Adult 21+. Preserve face proportions and marks. No beautification." }, "subject": { "demographics": "Adult woman, 21-29, match reference identity.", "hair": { "color": "Match reference.", "style": "Low ponytail or loose waves tucked behind scarf", "texture": "Real strands; slight frizz; flyaways", "movement": "Minimal movement, platform breeze subtle" }, "face": { "eyes": "Exact reference; reflective catchlights", "skin_details": "Pores visible, realistic shadows", "micro_details"
+Description: { "category": "SUBWAY_PLATFORM_STREET_CANDID", "identity_lock": { "enabled": true, "priority": "ABSO
+Prompt preview: { "category": "SUBWAY_PLATFORM_STREET_CANDID", "identity_lock": { "enabled": true, "priority": "ABSOLUTE_MAX", "instruction": "Use reference image identity exactly. Adult 21+. Preserve face proportions and marks. No beautification." }, "subject": { "demographics": "Adult woman, 21-29, match referenc
 
 ## GID 346 — /Success Stories
 Source: community | Subcategory: Specialist Roles
-Description: Write 3-5 brief success stories or testimonials from users who have benefited from [project name], showing real-world impact.
+Description: Write 3-5 brief success stories or testimonials from users who have benefited from [project name], s
 Prompt preview: Write 3-5 brief success stories or testimonials from users who have benefited from [project name], showing real-world impact.
 
 ## GID 356 — /Suggest Pricing Tiers
 Source: community | Subcategory: Specialist Roles
-Description: Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for individuals and companies.
+Description: Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for indi
 Prompt preview: Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for individuals and companies.
 
 ## GID 703 — /Sunny Beach
@@ -230,22 +230,22 @@ Prompt preview: Generate an image of people sunbathing on a sunny beach. Capture
 ## GID 839 — /Surreal City Scene
 Source: community | Subcategory: Specialist Roles
 Description: ​${current_weather} in a gravity-defying ${city_name}.
-Prompt preview: ​${current_weather} in a gravity-defying ${city_name}. The asphalt street curves seamlessly upwards, physically bending 90 degrees to become a vertical wall, then arching directly overhead. Not a reflection, but a solid continuous loop of architecture. Iconic buildings and roads protrude perpendicularly from the curved surface all around. ${city_name}'s landmarks hang upside down above. Realistic lighting matching the weather, vivid details, photorealistic 8k.
+Prompt preview: ​${current_weather} in a gravity-defying ${city_name}. The asphalt street curves seamlessly upwards, physically bending 90 degrees to become a vertical wall, then arching directly overhead. Not a reflection, but a solid continuous loop of architecture. Iconic buildings and roads protrude perpendicul
 
 ## GID 1117 — /Surreal Miniature Cityscape with Giant Observer
 Source: community | Subcategory: Specialist Roles
-Description: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "blue", "red", "green", "yellow", "brown" ] }, "composition": { "camera_angle": "ey…
-Prompt preview: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "blue", "red", "green", "yellow", "brown" ] }, "composition": { "camera_angle": "eye-level", "depth_of_field": "deep", "focus": "The miniature city diorama held by the woman", "framing": "The woman's hands frame the central diorama, creating a scene-within-a-scene effect. The composition is dense and layered, guiding the eye through numerous details." }, "description_short": "A surreal digital artwork depicting a giant young woman holding a complex, multi-level cross-section of a vibrant, futuristic city that blends traditional East Asian architectur
+Description: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "blue"
+Prompt preview: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "blue", "red", "green", "yellow", "brown" ] }, "composition": { "camera_angle": "eye-level", "depth_of_field": "deep", "focus": "The miniature city diorama held by the woman", "framing": "The woman's hands 
 
 ## GID 1996 — /SWAP MENU EXTERNAL C++
 Source: community | Subcategory: Specialist Roles
-Description: CHANGE THE OLD MISTY LOADER TO THE NEWEST LOADER THAT IS ALREADY IN THE NEW SOURCE PATH WITH THE SAME FONT AND THE SAME THEME AND THE SAME SIZE AND JUST CHANGE THE LOADER TO ENT…
+Description: CHANGE THE OLD MISTY LOADER TO THE NEWEST LOADER THAT IS ALREADY IN THE NEW SOURCE PATH WITH THE SAM
 Prompt preview: CHANGE THE OLD MISTY LOADER TO THE NEWEST LOADER THAT IS ALREADY IN THE NEW SOURCE PATH WITH THE SAME FONT AND THE SAME THEME AND THE SAME SIZE AND JUST CHANGE THE LOADER TO ENTER THE KEYAUTH, DON'T CHANGE ANYTHING ELSE
 
 ## GID 1386 — /Symphony Event Invitation and Guide
 Source: community | Subcategory: Specialist Roles
 Description: Acts as Event Coordinator.
-Prompt preview: Act as an Event Coordinator. You are organizing a grand symphony event at a prestigious concert hall. Your task is to create an engaging invitation and guide for attendees. You will: - Write an invitation message highlighting the event's key details: date, time, venue, and featured performances. - Describe the experience attendees can expect during the symphony. - Include a section encouraging attendees to share their experience after the event. Rules: - Use a formal and inviting tone. - Ensure all logistical information is clear. - Encourage engagement and feedback. Variables: - ${eventDate} - ${eventTime} - ${venue} - ${featuredPerformances
+Prompt preview: Act as an Event Coordinator. You are organizing a grand symphony event at a prestigious concert hall. Your task is to create an engaging invitation and guide for attendees. You will: - Write an invitation message highlighting the event's key details: date, time, venue, and featured performances. - D
 
 ## GID 625 — /Table with Various Items
 Source: community | Subcategory: Specialist Roles
@@ -254,12 +254,12 @@ Prompt preview: Create an image of a table with various items placed on it. The 
 
 ## GID 803 — /Tech Desk “Builder” (half-body, cozy monitor glow)
 Source: community | Subcategory: Specialist Roles
-Description: { "category": "TECH_DESK_BUILDER_HALF_BODY", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking, creator vibe.", "hair": { "color": "Dark brown", "style": "Low po…
-Prompt preview: { "category": "TECH_DESK_BUILDER_HALF_BODY", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking, creator vibe.", "hair": { "color": "Dark brown", "style": "Low ponytail or loose waves", "texture": "Strands visible, slight flyaways" }, "face": { "eyes": "Focused but friendly", "skin_details": "Real texture, no smoothing", "makeup": "Minimal" }, "clothing": { "outfit": "Casual black top + light cardigan, no logos", "fabric": "Real knit weave, subtle wrinkles" }, "accessories": { "jewelry": ["Silver hoops"] } }, "pose": { "type": "Half-body seated", "orientation": "Body slightly angled, shoulders relaxed", "hands": "One hand near 
+Description: { "category": "TECH_DESK_BUILDER_HALF_BODY", "subject": { "demographics": "Adult woman, 21-29, Turki
+Prompt preview: { "category": "TECH_DESK_BUILDER_HALF_BODY", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking, creator vibe.", "hair": { "color": "Dark brown", "style": "Low ponytail or loose waves", "texture": "Strands visible, slight flyaways" }, "face": { "eyes": "Focused but friendly", "skin_de
 
 ## GID 344 — /Tell Your Story
 Source: community | Subcategory: Specialist Roles
-Description: Write a personal story about why I started contributing to open source, what drives me, and how sponsorship helps me continue this journey in [field/technology].
+Description: Write a personal story about why I started contributing to open source, what drives me, and how spon
 Prompt preview: Write a personal story about why I started contributing to open source, what drives me, and how sponsorship helps me continue this journey in [field/technology].
 
 ## GID 424 — /Temitope
@@ -270,27 +270,27 @@ Prompt preview: Always act like one fill with wisdom and be extraordinary
 ## GID 1383 — /Test-First Bug Fixing Approach
 Source: community | Subcategory: Specialist Roles
 Description: I have a bug: ${bug}.
-Prompt preview: I have a bug: ${bug}. Take a test-first approach: 1) Read the relevant source files and existing tests. 2) Write a failing test that reproduces the exact bug. 3) Run the test suite to confirm it fails. 4) Implement the minimal fix. 5) Re-run the full test suite. 6) If any test fails, analyze the failure, adjust the code, and re-run—repeat until ALL tests pass. 7) Then grep the codebase for related code paths that might have the same issue and add tests for those too. 8) Summarize every change made and why. Do not ask me questions—make reasonable assumptions and document them.
+Prompt preview: I have a bug: ${bug}. Take a test-first approach: 1) Read the relevant source files and existing tests. 2) Write a failing test that reproduces the exact bug. 3) Run the test suite to confirm it fails. 4) Implement the minimal fix. 5) Re-run the full test suite. 6) If any test fails, analyze the fai
 
 ## GID 900 — /Text Summarizer
 Source: community | Subcategory: Specialist Roles
 Description: Acts as Text Summarizer.
-Prompt preview: Act as a Text Summarizer. You are an expert in distilling complex texts into concise summaries. Your task is to extract the core essence of the provided text, highlighting key points and themes. You will: - Identify and summarize the main ideas and arguments - Ensure the summary is clear and concise, maintaining the original meaning - Use a neutral and informative tone Rules: - Do not include personal opinions or interpretations - The summary should be no longer than ${maxLength:100} words
+Prompt preview: Act as a Text Summarizer. You are an expert in distilling complex texts into concise summaries. Your task is to extract the core essence of the provided text, highlighting key points and themes. You will: - Identify and summarize the main ideas and arguments - Ensure the summary is clear and concise
 
 ## GID 1416 — /The Fighter
 Source: community | Subcategory: Specialist Roles
-Description: [00:00 - 00:2.0] Intense boxing exchange mid-ring, Red Trunks vs Blue Trunks, smoky arena atmosphere with high-contrast backlighting, sweat glistening under spotlights.
-Prompt preview: [00:00 - 00:2.0] Intense boxing exchange mid-ring, Red Trunks vs Blue Trunks, smoky arena atmosphere with high-contrast backlighting, sweat glistening under spotlights. [Audio: Canvas footwork scuffs, leather-on-leather punches, heavy breathing + Tense crowd ambience] --ar 9:16 [00:2.0 - 00:4.0] Extreme close-up of Red Trunks' right hook impacting Blue Trunks' jaw, facial distortion on impact, beads of sweat exploding from the head. [Dialogue: (Grit) 'Got you!']. [Audio: Deep bassy thud, slow-motion warp effect, thumping heartbeat] --ar 9:16 [00:4.0 - 00:6.0] Blue Trunks reeling back, massive spray of sweat and water hitting the camera lens d
+Description: [00:00 - 00:2.0] Intense boxing exchange mid-ring, Red Trunks vs Blue Trunks, smoky arena atmosphere
+Prompt preview: [00:00 - 00:2.0] Intense boxing exchange mid-ring, Red Trunks vs Blue Trunks, smoky arena atmosphere with high-contrast backlighting, sweat glistening under spotlights. [Audio: Canvas footwork scuffs, leather-on-leather punches, heavy breathing + Tense crowd ambience] --ar 9:16 [00:2.0 - 00:4.0] Ext
 
 ## GID 1907 — /The Lovelyline
 Source: community | Subcategory: Specialist Roles
 Description: A minimalist line-art drawing of a simple character conceptualizing 'overcoming an obstacle'.
-Prompt preview: A minimalist line-art drawing of a simple character conceptualizing 'overcoming an obstacle'. Clean black continuous line style on a white background. The concept should be conveyed through simple geometry and basic visual metaphors. Strictly maintain a flat, vector-like aesthetic with no 3D elements, no realistic textures, and no complex features.
+Prompt preview: A minimalist line-art drawing of a simple character conceptualizing 'overcoming an obstacle'. Clean black continuous line style on a white background. The concept should be conveyed through simple geometry and basic visual metaphors. Strictly maintain a flat, vector-like aesthetic with no 3D element
 
 ## GID 768 — /The Missing Woman
 Source: community | Subcategory: Specialist Roles
-Description: image-generation: main: "An 1980s-style woman walking with a cat beside her, both in the foreground." clothes: "worn jacket, blanket and old pants." faces: "Not visible or turne…
-Prompt preview: image-generation: main: "An 1980s-style woman walking with a cat beside her, both in the foreground." clothes: "worn jacket, blanket and old pants." faces: "Not visible or turned away" environment: streets: "Tree-lined, single-story houses, dead-end street." time: "Nightfall" atmosphere: "Rainy, cloudy" techniques: style: "Photorealistic, like captured by a real camera" focus: "Shallow depth of field, bokeh and rim lighting" light: "subject is well-lit, background is cold" colors: "background is blue and focus is red" composition: type: "Wide shot landscape" background: "Woodlands, lawns, gardens." mood: - "Depressive" - "Tearful" negative: -
+Description: image-generation: main: "An 1980s-style woman walking with a cat beside her, both in the foreground.
+Prompt preview: image-generation: main: "An 1980s-style woman walking with a cat beside her, both in the foreground." clothes: "worn jacket, blanket and old pants." faces: "Not visible or turned away" environment: streets: "Tree-lined, single-story houses, dead-end street." time: "Nightfall" atmosphere: "Rainy, clo
 
 ## GID 2179 — /The Mystery of Easter Island | Who Built the Giant Moai Statues? In the middle of the Pacific Ocean lies a tiny island filled with hundreds of giant stone statues.
 Source: community | Subcategory: Specialist Roles
@@ -300,61 +300,61 @@ Prompt preview: The Mystery of Easter Island | Who Built the Giant Moai Statues?
 ## GID 1829 — /The Paradoxical Soundscape: Ancient Acoustic Mysteries Video Exploration
 Source: community | Subcategory: Specialist Roles
 Description: Create a video that explores the mysterious acoustic properties of ancient Dravidian pillars.
-Prompt preview: Create a video that explores the mysterious acoustic properties of ancient Dravidian pillars. Highlight how these structures resonate like flutes, challenging modern engineering principles. The video should cover: - The historical context of the Dravidian pillars - The unique acoustic features that allow them to resonate - Hypotheses on how ancient builders achieved this without modern technology Include visuals of the pillars, diagrams of sound waves, and expert commentary to provide a comprehensive understanding of this phenomenon.
+Prompt preview: Create a video that explores the mysterious acoustic properties of ancient Dravidian pillars. Highlight how these structures resonate like flutes, challenging modern engineering principles. The video should cover: - The historical context of the Dravidian pillars - The unique acoustic features that 
 
 ## GID 398 — /The Silent Standoff
 Source: community | Subcategory: Specialist Roles
-Description: High-angle top-down view of a dimly lit abandoned courtyard, cracked concrete ground, scattered old markings and faded impact dents, long eerie character shadows cast off-frame,…
-Prompt preview: High-angle top-down view of a dimly lit abandoned courtyard, cracked concrete ground, scattered old markings and faded impact dents, long eerie character shadows cast off-frame, no violence depicted, dark Teal palette with a strong golden beam, thick outlines, 2D animated cartoon look, flat shading, extreme contrast, atmospheric tension.
+Description: High-angle top-down view of a dimly lit abandoned courtyard, cracked concrete ground, scattered old 
+Prompt preview: High-angle top-down view of a dimly lit abandoned courtyard, cracked concrete ground, scattered old markings and faded impact dents, long eerie character shadows cast off-frame, no violence depicted, dark Teal palette with a strong golden beam, thick outlines, 2D animated cartoon look, flat shading,
 
 ## GID 1346 — /The Technical Co-Founder: Building Real Products Together
 Source: community | Subcategory: Specialist Roles
 Description: Role: You are now my Technical co-founder.
-Prompt preview: Role: You are now my Technical co-founder. Your job is to help me build a real product I can use, share, or launch. Handle all the building, but keep me in the loop and in control. My Idea: [Describe your product idea – what it does, who it’s for, what problem it solves. Explain it like you’d tell a friend.] How serious I am: [Just exploring / I want to use this myself / I want to share it with others / I want to launch it publicly] Project Framework: 1. Phase 1: Discovery • Ask questions to understand what I actually need (not just what I said) • Challenge my assumptions if something doesn’t make sense • Help me separate "must have now" from
+Prompt preview: Role: You are now my Technical co-founder. Your job is to help me build a real product I can use, share, or launch. Handle all the building, but keep me in the loop and in control. My Idea: [Describe your product idea – what it does, who it’s for, what problem it solves. Explain it like you’d tell a
 
 ## GID 1122 — /The tyrant King
 Source: community | Subcategory: Specialist Roles
-Description: Capture a night life , when a tyrant king discussing with his daughter on the brutal conditions a suitors has to fulfil to be eligible to marry her(princess)
+Description: Capture a night life , when a tyrant king discussing with his daughter on the brutal conditions a su
 Prompt preview: Capture a night life , when a tyrant king discussing with his daughter on the brutal conditions a suitors has to fulfil to be eligible to marry her(princess)
 
 ## GID 583 — /Through the Glass: One Eye in Focus
 Source: community | Subcategory: Specialist Roles
 Description: A cinematic, close-up portrait of a reference photo viewed through a reflective glass window.
-Prompt preview: A cinematic, close-up portrait of a reference photo viewed through a reflective glass window. She has messy dark brown hair and hyper-realistic skin texture with visible pores, fine lines, and natural imperfections. One green-hazel eye is in sharp, crystal-clear focus, fully visible and unobstructed by reflections or highlights, while the rest of her face gradually softens into the background with an organic depth falloff. The glass surface in the foreground is covered with realistic rain droplets and subtle rain streaks, creating layered depth and emotional distance. Reflections are carefully controlled and positioned only around the edges o
+Prompt preview: A cinematic, close-up portrait of a reference photo viewed through a reflective glass window. She has messy dark brown hair and hyper-realistic skin texture with visible pores, fine lines, and natural imperfections. One green-hazel eye is in sharp, crystal-clear focus, fully visible and unobstructed
 
 ## GID 349 — /Time Commitment
 Source: community | Subcategory: Specialist Roles
-Description: Explain how sponsorship would allow me to dedicate [X hours/days] per week/month to open source, comparing current volunteer time vs.
+Description: Explain how sponsorship would allow me to dedicate [X hours/days] per week/month to open source, com
 Prompt preview: Explain how sponsorship would allow me to dedicate [X hours/days] per week/month to open source, comparing current volunteer time vs. potential sponsored time.
 
 ## GID 2189 — /Tom and Jerry
 Source: community | Subcategory: Specialist Roles
-Description: *STORYLINE: "The House Sitter’s Big Day"* _7 scenes, about 45-60 seconds total if you make it as a series_ *Scene 1: The Calm Before Chaos* It’s a quiet Sunday morning.
-Prompt preview: *STORYLINE: "The House Sitter’s Big Day"* _7 scenes, about 45-60 seconds total if you make it as a series_ *Scene 1: The Calm Before Chaos* It’s a quiet Sunday morning. The humans left the house with a note: "Be good. No chasing." Jerry is having breakfast - tiny toast, milk, and a strawberry. Tom is sleeping in a sun spot, dreaming of fish. Everything is peaceful for 5 minutes... too peaceful. *Scene 2: The Temptation* Jerry finds a GIANT cheese wheel in the fridge. It’s meant for the house party tonight. His eyes turn into hearts. He tries to roll it out but it’s too big. Tom wakes up from the smell. He sees the cheese too. Now both of them
+Description: *STORYLINE: "The House Sitter’s Big Day"* _7 scenes, about 45-60 seconds total if you make it as a s
+Prompt preview: *STORYLINE: "The House Sitter’s Big Day"* _7 scenes, about 45-60 seconds total if you make it as a series_ *Scene 1: The Calm Before Chaos* It’s a quiet Sunday morning. The humans left the house with a note: "Be good. No chasing." Jerry is having breakfast - tiny toast, milk, and a strawberry. Tom i
 
 ## GID 2193 — /Tom and Jerry Classic Cartoon Chase
 Source: community | Subcategory: Specialist Roles
-Description: Create a 2D classic cartoon style video of Tom the cat and Jerry the mouse in a 4-scene chase through a cozy kitchen.
-Prompt preview: Create a 2D classic cartoon style video of Tom the cat and Jerry the mouse in a 4-scene chase through a cozy kitchen. Each scene is 8 seconds long, featuring: 1. Scene 1: Jerry runs with cheese, Tom chases him, slipping on a banana peel. 2. Scene 2: Jerry hides inside a cupboard, Tom crashes into it. 3. Scene 3: Jerry uses a spoon to launch himself across the room, Tom follows and crashes into a stack of dishes. 4. Scene 4: Jerry escapes through a mouse hole, Tom gets stuck. The animation style is consistent with 1940s cartoons, featuring fast motion, exaggerated expressions, and bright colors. Ensure smooth animation and a comedic, slapstick
+Description: Create a 2D classic cartoon style video of Tom the cat and Jerry the mouse in a 4-scene chase throug
+Prompt preview: Create a 2D classic cartoon style video of Tom the cat and Jerry the mouse in a 4-scene chase through a cozy kitchen. Each scene is 8 seconds long, featuring: 1. Scene 1: Jerry runs with cheese, Tom chases him, slipping on a banana peel. 2. Scene 2: Jerry hides inside a cupboard, Tom crashes into it
 
 ## GID 1454 — /Train Waiter
 Source: community | Subcategory: Specialist Roles
-Description: A 3x2 grid photo contact sheet featuring a consistent 28-year-old American woman with a specific facial structure, wearing a jacket and outdoor pants, in a train station at dusk…
-Prompt preview: A 3x2 grid photo contact sheet featuring a consistent 28-year-old American woman with a specific facial structure, wearing a jacket and outdoor pants, in a train station at dusk with dramatic orange and teal lighting. The grid displays six frames with various natural poses of the same character: including 1. Standing alone, gazing at the horizon with a silhouette of a train in the distance, 2. Walking while holding headphones, natural lifestyle shot, 3. Sitting on the edge of the platform with a peaceful expression, illuminated by dramatic orange hue, and three additional varied natural poses in the same setting. Photorealistic, 8k, cinematic
+Description: A 3x2 grid photo contact sheet featuring a consistent 28-year-old American woman with a specific fac
+Prompt preview: A 3x2 grid photo contact sheet featuring a consistent 28-year-old American woman with a specific facial structure, wearing a jacket and outdoor pants, in a train station at dusk with dramatic orange and teal lighting. The grid displays six frames with various natural poses of the same character: inc
 
 ## GID 1251 — /Transform Subjects into Adorable Plush Forms
 Source: community | Subcategory: Specialist Roles
 Description: Transform the subject or image into a cute plush form with soft textures and rounded shapes.
-Prompt preview: Transform the subject or image into a cute plush form with soft textures and rounded shapes. If the image contains a human, preserve the distinctive features so the subject remains recognizable. Otherwise, turn the object or animal into an adorable plush toy using felt or fleece textures. It should have a warm felt or fleece look, simple shapes, and gently crafted eyes, mouth, and facial details. Use a heartwarming pastel or neutral color palette, smooth shading, and subtle stitching to evoke a handmade plush toy. Give it a friendly, cute facial expression, a slightly oversized head, short limbs, and a soft, huggable silhouette. The final ima
+Prompt preview: Transform the subject or image into a cute plush form with soft textures and rounded shapes. If the image contains a human, preserve the distinctive features so the subject remains recognizable. Otherwise, turn the object or animal into an adorable plush toy using felt or fleece textures. It should 
 
 ## GID 2247 — /Transmute
 Source: community | Subcategory: Specialist Roles
 Description: "Act as an eccentric lateral-thinking inventor and master of conceptual alchemy.
-Prompt preview: "Act as an eccentric lateral-thinking inventor and master of conceptual alchemy. Take my plain, ordinary idea and transmute it into a wildly original app concept.To build this concept, use:Visual Metaphors: Compare the core function to unexpected physical objects or natural phenomena.Analogies: Bridge the app's workflow with a completely unrelated domain (e.g., marine biology, architecture, culinary arts).Lateral Thinking: Flip standard user assumptions upside down. Solve the problem by doing the exact opposite of what normal apps do.Wordplay: Invent fresh portmanteaus, witty sub-headings, and clever feature names.Structure your response into
+Prompt preview: "Act as an eccentric lateral-thinking inventor and master of conceptual alchemy. Take my plain, ordinary idea and transmute it into a wildly original app concept.To build this concept, use:Visual Metaphors: Compare the core function to unexpected physical objects or natural phenomena.Analogies: Brid
 
 ## GID 1425 — /trial
 Source: community | Subcategory: Specialist Roles
-Description: "Generate a video: Documentary style cinematic sequence showing the evolution of cars from vintage 1920s automobile to modern electric vehicle charging at sunset, photorealistic…
+Description: "Generate a video: Documentary style cinematic sequence showing the evolution of cars from vintage 1
 Prompt preview: "Generate a video: Documentary style cinematic sequence showing the evolution of cars from vintage 1920s automobile to modern electric vehicle charging at sunset, photorealistic, dramatic lighting"
 
 ## GID 445 — /Turkish Cats hanging out nearby of Galata Tower
@@ -364,15 +364,15 @@ Prompt preview: Turkish Cats hanging out nearby of Galata Tower, vertical
 
 ## GID 884 — /Turkish woman in Ankara with a surreal twist
 Source: community | Subcategory: Specialist Roles
-Description: Ultra-realistic amateur street photo of a 27-year-old Turkish-looking curvy woman walking alone in the middle of a busy Ankara street, soft slightly chubby figure, blonde hair l…
-Prompt preview: Ultra-realistic amateur street photo of a 27-year-old Turkish-looking curvy woman walking alone in the middle of a busy Ankara street, soft slightly chubby figure, blonde hair loose around her shoulders, wearing a tight white tank top and patterned high-waisted pants that show her curves, small crossbody bag hanging at her side. She walks toward the camera with a calm, almost bored expression. Behind her, a chaotic Ankara environment: large white road signs pointing to “Eskişehir” and “Kızılay,” yellow taxis jammed in traffic, old apartment buildings with balconies on both sides of the street, pedestrians in darker jackets walking ahead of he
+Description: Ultra-realistic amateur street photo of a 27-year-old Turkish-looking curvy woman walking alone in t
+Prompt preview: Ultra-realistic amateur street photo of a 27-year-old Turkish-looking curvy woman walking alone in the middle of a busy Ankara street, soft slightly chubby figure, blonde hair loose around her shoulders, wearing a tight white tank top and patterned high-waisted pants that show her curves, small cros
 
 ## GID 2267 — /tweetwat
 Source: community | Subcategory: Specialist Roles
 Description: Convert the following text into one or more tweets.
-Prompt preview: Convert the following text into one or more tweets. No emojis allowed. Use truncations (e.g., “w/” for “with,” “ppl” for “people,” “CEXes” for “centralized exchanges”) where appropriate to shorten words. Keep each tweet concise, punchy, and under 280 characters. Preserve the original tone and intent. Output only the tweet(s), no commentary.
+Prompt preview: Convert the following text into one or more tweets. No emojis allowed. Use truncations (e.g., “w/” for “with,” “ppl” for “people,” “CEXes” for “centralized exchanges”) where appropriate to shorten words. Keep each tweet concise, punchy, and under 280 characters. Preserve the original tone and intent
 
 ## GID 1735 — /Typographic Portrait Artwork Creation
 Source: community | Subcategory: Specialist Roles
-Description: Transform the provided portrait into a 9:16 vertical typographic artwork built exclusively from repeated name text.
-Prompt preview: Transform the provided portrait into a 9:16 vertical typographic artwork built exclusively from repeated name text. STRICT RULES: - The image must be composed ONLY of text (e.g., "MUSTAFA KEMAL ATATÜRK"). - No lines, no strokes, no outlines, no shapes, no shading, no gradients. - Do NOT draw anything. Do NOT use any brush or illustration effect. - No stamp borders or shapes — only pure text. - Every visible detail must come from the text itself. TEXT CONSTRAINT: - ALL text must be small and consistent in size. - Do NOT use large or oversized text anywhere. - Font size should remain uniform across the entire image. - The text should feel like 
+Description: Transform the provided portrait into a 9:16 vertical typographic artwork built exclusively from repe
+Prompt preview: Transform the provided portrait into a 9:16 vertical typographic artwork built exclusively from repeated name text. STRICT RULES: - The image must be composed ONLY of text (e.g., "MUSTAFA KEMAL ATATÜRK"). - No lines, no strokes, no outlines, no shapes, no shading, no gradients. - Do NOT draw anythin

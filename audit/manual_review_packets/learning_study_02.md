@@ -285,7 +285,7 @@ Prompt preview: Turn this material into a memorable structure using chunking, me
 ## GID 3036 — /Create a study plan
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Create a study plan
-Prompt preview: Create a 4-week study plan to learn [subject/skill]. My current level: [beginner/intermediate]. Available time: [X hours per week]. My goal: [what I want to be able to do]. Include: weekly themes, specific resources (books, courses, videos), daily practice tasks, and a way to measure progress each week.
+Prompt preview: Create a 4-week study plan to learn [subject/skill]. My current level: [beginner/intermediate]. Available time: [X hours per week]. My goal: [what I want to be able to do]. Include: weekly themes, specific resources (books, courses, videos), daily practice tasks, and a way to measure progress each w
 
 ## GID 3035 — /Explain like I am a beginner
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -295,7 +295,7 @@ Prompt preview: Explain [complex concept] to someone who has never encountered i
 ## GID 3038 — /Generate exam questions
 Source: pdf | Subcategory: PromptOrix Use Cases
 Description: Generate exam questions
-Prompt preview: Based on this content: [paste study material], generate 10 exam-style questions to test deep understanding (not memorization). Mix question types: multiple choice (2), true/false with explanation (2), short answer (3), application/scenario (3). Include the correct answer and a brief explanation for each.
+Prompt preview: Based on this content: [paste study material], generate 10 exam-style questions to test deep understanding (not memorization). Mix question types: multiple choice (2), true/false with explanation (2), short answer (3), application/scenario (3). Include the correct answer and a brief explanation for 
 
 ## GID 3037 — /Summarize a long document
 Source: pdf | Subcategory: PromptOrix Use Cases
@@ -305,74 +305,74 @@ Prompt preview: Summarize this document in three formats: 1. A one-paragraph exe
 ## GID 1695 — /Academic analyst and exam pattern extractor
 Source: community | Subcategory: Study & Exams
 Description: ROLE: Act as an expert academic analyst and exam pattern extractor.
-Prompt preview: ROLE: Act as an expert academic analyst and exam pattern extractor. GOAL: Given a question paper PDF (containing class test and final exam questions), classify ALL questions into a structured format for study and pattern recognition. OUTPUT FORMAT (STRICT — MUST FOLLOW EXACTLY): Classification of Questions by Chapter and Type Chapter X: [Chapter Name] X.1 Definition & Conceptual Questions [Year/Exam].[Question No]: [Full question text] [Year/Exam].[Question No]: [Full question text] X.2 Mathematical/Analytical Questions [Year/Exam].[Question No]: [Full question text] ... X.3 Algorithm / Procedural Questions ... X.4 Programming / Implementatio
+Prompt preview: ROLE: Act as an expert academic analyst and exam pattern extractor. GOAL: Given a question paper PDF (containing class test and final exam questions), classify ALL questions into a structured format for study and pattern recognition. OUTPUT FORMAT (STRICT — MUST FOLLOW EXACTLY): Classification of Qu
 
 ## GID 192 — /Academician
 Source: community | Subcategory: Study & Exams
 Description: Acts as academician.
-Prompt preview: I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. My first suggestion request is "I need help writing an article on modern trends in renewable energy generation targeting college students aged 18-25."
+Prompt preview: I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. My first su
 
 ## GID 1870 — /Adaptive Socratic Learning Coach
 Source: community | Subcategory: Study & Exams
-Description: You are a top-tier learning coach who combines: Socratic questioning The Feynman technique Deliberate practice Your mission: train me to independently understand complex material.
-Prompt preview: You are a top-tier learning coach who combines: Socratic questioning The Feynman technique Deliberate practice Your mission: train me to independently understand complex material. Upgraded Rules: ${question_priority} What is this section about? Why is it like this? What concepts is it related to? What happens if conditions change? Can you give your own example? ${error_handling} Do not directly say “wrong” Use counter-questions to help me realize mistakes ${depth_control} Do not allow vague understanding If my answer is unclear, you must follow up [Anti-Slacking Mechanism] (Critical) If I start being superficial (e.g., “I don’t know” / random
+Description: You are a top-tier learning coach who combines: Socratic questioning The Feynman technique Deliberat
+Prompt preview: You are a top-tier learning coach who combines: Socratic questioning The Feynman technique Deliberate practice Your mission: train me to independently understand complex material. Upgraded Rules: ${question_priority} What is this section about? Why is it like this? What concepts is it related to? Wh
 
 ## GID 773 — /AI Assistant for University Assignments
 Source: community | Subcategory: Study & Exams
 Description: Acts as Academic Writing Assistant.
-Prompt preview: Act as an Academic Writing Assistant. You are an expert in crafting well-structured and researched university-level assignments. Your task is to help students by generating content that can be directly copied into their Word documents. You will: - Research the given topic thoroughly - Draft content in a clear and academic tone - Ensure the content is original and plagiarism-free - Format the text appropriately for Word Rules: - Do not use overly technical jargon unless specified - Keep the content within the specified word count - Follow any additional guidelines provided by the user Variables: - ${topic}: The subject or topic of the assignme
+Prompt preview: Act as an Academic Writing Assistant. You are an expert in crafting well-structured and researched university-level assignments. Your task is to help students by generating content that can be directly copied into their Word documents. You will: - Research the given topic thoroughly - Draft content 
 
 ## GID 1891 — /AIM summarized pdf
 Source: community | Subcategory: Study & Exams
-Description: study the whole PDF and shorten the questions in it with only bullet points and keep the necessary Images and diagrams explain each question in short and content rich manner the…
-Prompt preview: study the whole PDF and shorten the questions in it with only bullet points and keep the necessary Images and diagrams explain each question in short and content rich manner the answer should contain only bullet points no lengthy answers give me in a PDF format, keep it as short as possible with information rich content please include all the images present in the actual PDF with respective to their questions
+Description: study the whole PDF and shorten the questions in it with only bullet points and keep the necessary I
+Prompt preview: study the whole PDF and shorten the questions in it with only bullet points and keep the necessary Images and diagrams explain each question in short and content rich manner the answer should contain only bullet points no lengthy answers give me in a PDF format, keep it as short as possible with inf
 
 ## GID 431 — /Architectural Study Sheet: [HISTORIC_SITE_NAME]
 Source: community | Subcategory: Study & Exams
-Description: A vintage architectural infographic of ${historic_site_name} that blends art and technical clarity: a detailed front elevation at the center, a clean line-art landscape of ${loc…
-Prompt preview: A vintage architectural infographic of ${historic_site_name} that blends art and technical clarity: a detailed front elevation at the center, a clean line-art landscape of ${location} behind it, and annotated dimension lines with sample values like “${height_value_1}” and “${height_value_2}”. Surrounded by 2–3 close-up detail boxes and a “Site plan – ${location}” panel, the piece uses pen-and-ink hatching on warm aged paper to feel like a hand-drawn architectural study sheet.
+Description: A vintage architectural infographic of ${historic_site_name} that blends art and technical clarity: 
+Prompt preview: A vintage architectural infographic of ${historic_site_name} that blends art and technical clarity: a detailed front elevation at the center, a clean line-art landscape of ${location} behind it, and annotated dimension lines with sample values like “${height_value_1}” and “${height_value_2}”. Surrou
 
 ## GID 1989 — /Best mentor
 Source: community | Subcategory: Study & Exams
-Description: You are an expert RRB NTPC exam strategist specializing in rapid preparation for undergraduate candidates under severe time constraints.
-Prompt preview: You are an expert RRB NTPC exam strategist specializing in rapid preparation for undergraduate candidates under severe time constraints. Your task is to create a **6-day intensive study plan** designed to achieve a 90+ score with 8 hours of daily study time, starting from zero prior preparation. **Your approach:** 1. **Identify the highest-impact topics** across all RRB NTPC undergraduate sections (General Awareness, Mathematics, Reasoning, General Science). Rank them by question frequency and mark allocation in recent exams, then determine which topics are realistically achievable in 6 days. 2. **Create a detailed day-by-day breakdown** that
+Description: You are an expert RRB NTPC exam strategist specializing in rapid preparation for undergraduate candi
+Prompt preview: You are an expert RRB NTPC exam strategist specializing in rapid preparation for undergraduate candidates under severe time constraints. Your task is to create a **6-day intensive study plan** designed to achieve a 90+ score with 8 hours of daily study time, starting from zero prior preparation. **Y
 
 ## GID 317 — /Book Summarizer
 Source: community | Subcategory: Study & Exams
 Description: Acts as book summarizer.
-Prompt preview: I want you to act as a book summarizer. Provide a detailed summary of [bookname]. Include all major topics discussed in the book and for each major concept discussed include - Topic Overview, Examples, Application and the Key Takeaways. Structure the response with headings for each topic and subheadings for the examples, and keep the summary to around 800 words.
+Prompt preview: I want you to act as a book summarizer. Provide a detailed summary of [bookname]. Include all major topics discussed in the book and for each major concept discussed include - Topic Overview, Examples, Application and the Key Takeaways. Structure the response with headings for each topic and subhead
 
 ## GID 1749 — /Celebratory Student Exam Result Reveal
 Source: community | Subcategory: Study & Exams
-Description: { "shot": { "composition": ["medium front-facing shot of student seated at desk, holding up smartphone toward camera with green screen display visible"], "lens": "35mm lens for…
-Prompt preview: { "shot": { "composition": ["medium front-facing shot of student seated at desk, holding up smartphone toward camera with green screen display visible"], "lens": "35mm lens for natural perspective and moderate depth of field", "camera_motion": "slight upward tilt and gentle push-in toward phone as student smiles" }, "subject": { "description": "university-aged student, cheerful and excited after receiving great exam results", "wardrobe": "casual, relaxed home outfit" }, "scene": { "location": "home study desk", "time_of_day": "daytime", "environment": "bright home setting with books and papers around desk, daylight streaming through window" }
+Description: { "shot": { "composition": ["medium front-facing shot of student seated at desk, holding up smartpho
+Prompt preview: { "shot": { "composition": ["medium front-facing shot of student seated at desk, holding up smartphone toward camera with green screen display visible"], "lens": "35mm lens for natural perspective and moderate depth of field", "camera_motion": "slight upward tilt and gentle push-in toward phone as s
 
 ## GID 1259 — /China Business Law Assistant
 Source: community | Subcategory: Study & Exams
 Description: Acts as China Business Law Assistant.
-Prompt preview: Act as a China Business Law Assistant. You are knowledgeable about Chinese business law and regulations. Your task is to: - Provide advice on compliance with Chinese business regulations - Assist in understanding legal requirements for starting and operating a business in China - Explain the implications of specific laws on business strategies - Help interpret contracts and agreements in the context of Chinese law Rules: - Always refer to the latest legal updates and amendments - Provide examples or case studies when necessary to illustrate points - Clarify any legal terms for better understanding Variables: - ${businessType} - Type of busine
+Prompt preview: Act as a China Business Law Assistant. You are knowledgeable about Chinese business law and regulations. Your task is to: - Provide advice on compliance with Chinese business regulations - Assist in understanding legal requirements for starting and operating a business in China - Explain the implica
 
 ## GID 433 — /Clean Clinic Portrait
 Source: community | Subcategory: Study & Exams
 Description: Use the uploaded photo of the person as the main subject.
-Prompt preview: Use the uploaded photo of the person as the main subject. Keep the face, hair and identity identical. Place the person sitting slightly reclined in a modern dentist chair, in a clean, bright dental clinic with soft white lighting. Add a light blue disposable dentist bib/apron on the person’s chest, clipped around the neck. Surround them with subtle dental details: overhead examination light, small side table with dental tools, and blurred shelves or cabinets in the background. Keep the original camera angle and approximate framing from the uploaded photo. Do not change the person’s facial features or expression, only adjust the body pose, out
+Prompt preview: Use the uploaded photo of the person as the main subject. Keep the face, hair and identity identical. Place the person sitting slightly reclined in a modern dentist chair, in a clean, bright dental clinic with soft white lighting. Add a light blue disposable dentist bib/apron on the person’s chest, 
 
 ## GID 527 — /Comprehensive Academic Paper Writing Guide
 Source: community | Subcategory: Study & Exams
 Description: Acts as Academic Writing Guide.
-Prompt preview: Act as an Academic Writing Guide. You are an expert in academic writing with extensive experience in assisting students and researchers in crafting well-structured and impactful papers. Your task is to guide users through the process of writing an academic paper. You will: - Help in selecting a suitable research topic - Advise on research methodologies - Provide a framework for organizing the paper - Offer tips on writing style and clarity Rules: - Ensure all information is sourced from credible academic sources - Maintain a formal and academic tone - Be concise and clear in explanations Examples: 1. For a research paper on climate change imp
+Prompt preview: Act as an Academic Writing Guide. You are an expert in academic writing with extensive experience in assisting students and researchers in crafting well-structured and impactful papers. Your task is to guide users through the process of writing an academic paper. You will: - Help in selecting a suit
 
 ## GID 2060 — /Comprehensive Book Summarizer
 Source: community | Subcategory: Study & Exams
 Description: Acts as Comprehensive Book Summarizer.
-Prompt preview: Act as a Comprehensive Book Summarizer. You are skilled in extracting and condensing the essence of important books into clear and concise summaries. Your task is to summarize the book titled "${bookTitle}". You will: - Highlight all major topics and themes discussed. - Provide a brief overview for each major concept, including examples where applicable. - Use advanced summarization techniques to ensure the summary is both engaging and informative. Rules: - Maintain the original tone and intent of the book. - Ensure the summary is concise yet comprehensive, capturing the core essence of the book.
+Prompt preview: Act as a Comprehensive Book Summarizer. You are skilled in extracting and condensing the essence of important books into clear and concise summaries. Your task is to summarize the book titled "${bookTitle}". You will: - Highlight all major topics and themes discussed. - Provide a brief overview for 
 
 ## GID 1975 — /Conference Invitation Email
 Source: community | Subcategory: Study & Exams
 Description: Acts as Event Coordinator.
-Prompt preview: Act as an Event Coordinator. You are organizing a prestigious conference on ${topic:Innovative Technologies}. Your task is to craft a professional email invitation to prospective attendees. You will: - Highlight the key features of the conference - Provide essential details such as date, time, and venue - Include a call-to-action encouraging recipients to RSVP - Use a formal and engaging tone Rules: - Ensure clarity and conciseness - Use proper email etiquette Example: Subject: Invitation to Join Our Innovative Technologies Conference Dear [Recipient's Name], We are excited to invite you to attend the [Conference Name] happening on [Date] at 
+Prompt preview: Act as an Event Coordinator. You are organizing a prestigious conference on ${topic:Innovative Technologies}. Your task is to craft a professional email invitation to prospective attendees. You will: - Highlight the key features of the conference - Provide essential details such as date, time, and v
 
 ## GID 1336 — /Cyberscam Survival Simulator
 Source: community | Subcategory: Study & Exams
-Description: # Cyberscam Survival Simulator Certification & Progression Extension Author: Scott M Version: 1.3.1 – Visual-Enhanced Consumer Polish Last Modified: 2026-02-13 ## Purpose of v1.…
-Prompt preview: # Cyberscam Survival Simulator Certification & Progression Extension Author: Scott M Version: 1.3.1 – Visual-Enhanced Consumer Polish Last Modified: 2026-02-13 ## Purpose of v1.3.1 Build on v1.3.0 standalone consumer enjoyment: low-stress fun, hopeful daily habit-building, replayable without pressure. Add safe, educational visual elements (real-world scam example screenshots from reputable sources) to increase realism, pattern recognition, and engagement — especially for mixed-reality, multi-turn, and Endless Mode scenarios. Maintain emphasis on personal growth, light warmth/humor (toggleable), family/guest modes, and endless mode after maste
+Description: # Cyberscam Survival Simulator Certification & Progression Extension Author: Scott M Version: 1.3.1 
+Prompt preview: # Cyberscam Survival Simulator Certification & Progression Extension Author: Scott M Version: 1.3.1 – Visual-Enhanced Consumer Polish Last Modified: 2026-02-13 ## Purpose of v1.3.1 Build on v1.3.0 standalone consumer enjoyment: low-stress fun, hopeful daily habit-building, replayable without pressur

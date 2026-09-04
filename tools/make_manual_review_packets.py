@@ -20,14 +20,16 @@ def load():
 def main():
  items=load(); OUT.mkdir(parents=True,exist_ok=True); bycat=defaultdict(list)
  for x in items: bycat[x['category']].append(x)
+ # remove stale packet files before regenerating
+ for p in OUT.glob('*.md'): p.unlink()
  manifest=[]
  for category in sorted(bycat):
   xs=sorted(bycat[category],key=lambda x:(x['subcategory'].lower(),x['title'].lower(),x['source'],x['gid']))
-  safe=re.sub(r'[^a-z0-9]+','_',category.lower()).strip('_')
-  for idx in range(0,len(xs),75):
-   chunk=xs[idx:idx+75]; fn=f'{safe}_{idx//75+1:02d}.md'; lines=[f'# Manual Review Packet — {category} — {idx//75+1}','',f'Entries: {len(chunk)}','']
+  safe=re.sub(r'[^a-z0-9]+','_',category.lower()).strip('_'); packet_size=150
+  for idx in range(0,len(xs),packet_size):
+   chunk=xs[idx:idx+packet_size]; fn=f'{safe}_{idx//packet_size+1:02d}.md'; lines=[f'# Manual Review Packet — {category} — {idx//packet_size+1}','',f'Entries: {len(chunk)}','']
    for x in chunk:
-    lines += [f"## GID {x['gid']} — /{x['title']}",f"Source: {x['source']} | Subcategory: {x['subcategory'] or '-'}",f"Description: {clean(x['description'])[:100] or '-'}",f"Prompt preview: {clean(x['prompt'])[:300]}",'']
+    lines += [f"## GID {x['gid']} — /{x['title']}",f"Source: {x['source']} | Subcategory: {x['subcategory'] or '-'}",f"Description: {clean(x['description'])[:60] or '-'}",f"Preview: {clean(x['prompt'])[:180]}",'']
    (OUT/fn).write_text('\n'.join(lines),encoding='utf-8'); manifest.append({'file':fn,'category':category,'count':len(chunk)})
  (OUT/'manifest.json').write_text(json.dumps({'raw_count':len(items),'packets':manifest},indent=2),encoding='utf-8')
  print('raw_count',len(items),'packets',len(manifest))

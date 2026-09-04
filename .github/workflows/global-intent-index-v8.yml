@@ -1,0 +1,25 @@
+name: Global Intent Index V8
+on:
+  workflow_dispatch:
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/prompt-dedup-v1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build global intent index
+        run: python scripts/build_global_intent_index_v8.py
+      - name: Commit index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit/GLOBAL_INTENT_INDEX_V8.json audit/GLOBAL_INTENT_INDEX_V8.md
+          git diff --cached --quiet && exit 0
+          git commit -m "audit: generate global intent index v8"
+          git push origin HEAD:audit/prompt-dedup-v1

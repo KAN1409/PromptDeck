@@ -1,378 +1,753 @@
 # Manual Review Packet — Content Creation — 2
 
-Entries: 75
+Entries: 150
 
-## GID 929 — /A blonde woman in a dreamy
+## GID 1200 — /Ultra-photorealistic Infographics
 Source: community | Subcategory: General Creative
-Description: A blonde woman in a dreamy, ethereal photographic scene with light effects and surreal elements.
-Prompt preview: A blonde woman in a dreamy, ethereal photographic scene with light effects and surreal elements.
+Description: Ultra-photorealistic studio render of a ${object_name}, fron
+Preview: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, placed on a pure white seamless studio background.The car must look like a high-end automotive cat
 
-## GID 579 — /Academic Graduation Presentation Guide
+## GID 420 — /Urban Casual Confidence
 Source: community | Subcategory: General Creative
-Description: Acts as Academic Presentation Coach.
-Prompt preview: Act as an Academic Presentation Coach. You are an expert in developing and guiding the creation of academic presentations for graduation. Your task is to assist in crafting a clear, concise, and engaging presentation. You will: - Help structure the presentation into logical sections such as Introduc
+Description: Hyper-realistic portrait of a ${gender:man} in tailored casu
+Preview: Hyper-realistic portrait of a ${gender:man} in tailored casual wear (dark jeans, quality sweater) ${position:leaning against weathered brick wall} in golden hour light. Maintain or
 
-## GID 1774 — /Audio Routing Automation Engineer
-Source: community | Subcategory: General Creative
-Description: You are now my long‑term Audio Routing Automation Engineer for this exact project.
-Prompt preview: You are now my long‑term Audio Routing Automation Engineer for this exact project. I want you to design, build, and maintain a complete, production‑ready audio‑routing system that matches my original goal. Do the following: Review & Refine Re‑read the original goal and all previous instructions and 
-
-## GID 1442 — /change home page desgin for blog and documentation platorm
-Source: community | Subcategory: General Creative
-Description: change home page desgin which contain header bar,tags,blog cards and docs card , give better ui desi
-Prompt preview: change home page desgin which contain header bar,tags,blog cards and docs card , give better ui design
-
-## GID 991 — /Cinematic Close-Up of Craftsman with Paper Figures
-Source: community | Subcategory: General Creative
-Description: A cinematic, warm-toned close-up photograph of a craftsman working at a wooden desk in the evening.
-Prompt preview: A cinematic, warm-toned close-up photograph of a craftsman working at a wooden desk in the evening. In sharp focus on the table are two delicate paper figures made from newspaper: an origami raccoon sitting attentively and a small paper boy holding an umbrella. The man’s hand gently holds and positi
-
-## GID 2016 — /Cinematic Landscape Photography of Horse-Drawn Wagon
-Source: community | Subcategory: General Creative
-Description: Photograph a horse-drawn wagon traveling across open country from Wanganui towards Marton in 1870s.
-Prompt preview: Photograph a horse-drawn wagon traveling across open country from Wanganui towards Marton in 1870s. Aim for a cinematic landscape photography style with expansive skies and a fresh atmosphere. Use an ARRI Alexa camera with a wide lens to capture the scene's grandeur and detail.
-
-## GID 821 — /Cinematic Photography Triptych: Serene Meadow Portrait
-Source: community | Subcategory: General Creative
-Description: { "colors": { "color_temperature": "warm", "contrast_level": "medium", "dominant_palette": [ "green"
-Prompt preview: { "colors": { "color_temperature": "warm", "contrast_level": "medium", "dominant_palette": [ "green", "beige", "red-orange" ] }, "composition": { "camera_angle": "multi-angle triptych", "depth_of_field": "shallow", "focus": "woman with red hair", "framing": "The image is a triptych, combining a wide
-
-## GID 643 — /Cinematic Vertical Portrait of Vintage Car Radio at Night
-Source: community | Subcategory: General Creative
-Description: Create a high-resolution *VERTICAL (portrait)* photograph of a vintage car radio screen at night.
-Prompt preview: Create a high-resolution *VERTICAL (portrait)* photograph of a vintage car radio screen at night. The camera angle must match a realistic diagonal side-view, similar to an over-the-shoulder cinematic shot from the passenger seat. Do NOT straighten the device — maintain the same natural tilt seen in 
-
-## GID 1455 — /Colored
-Source: community | Subcategory: General Creative
-Description: A 3-panel vertical photo collage of a beautiful 28-year-old woman with stylish long hair.
-Prompt preview: A 3-panel vertical photo collage of a beautiful 28-year-old woman with stylish long hair. Studio photography style. Panel 1: Fuchsia pink background, she is wearing a clean white suit, posing with her hands on her hips, a bold expression. Panel 2: Light blue background, wearing the same white suit, 
-
-## GID 2153 — /Conversational Logo Design Process
-Source: community | Subcategory: General Creative
-Description: Design a conversational process to create a minimal logo for the user's project, leveraging their br
-Prompt preview: Design a conversational process to create a minimal logo for the user's project, leveraging their branding colors: #3a7eab, #cf4832, and #d1d3d4. Begin by developing a set of 10 thoughtful yes/no questions to clarify the project's goals, target audience, aesthetics, and design preferences. After rec
-
-## GID 507 — /Create a New Greek God
-Source: community | Subcategory: General Creative
-Description: Acts as Mythological Creator.
-Prompt preview: Act as a Mythological Creator. You are tasked with designing a new god for Greek mythology. Your creation should have unique attributes and a specific domain of influence. Your task is to: - Define the god's name and origin. - Describe their appearance and symbols. - Specify their powers and abiliti
-
-## GID 2024 — /Creative Coloring Book Creations
-Source: community | Subcategory: General Creative
-Description: Acts as creative illustrator.
-Prompt preview: Act as a creative illustrator. You are tasked with designing a series of coloring book pages suitable for both children and adults. Your task is to: - Create outlines of various themes such as nature, animals, and abstract patterns. - Ensure each page contains intricate details for adults and simple
-
-## GID 351 — /Creative Perks
-Source: community | Subcategory: General Creative
-Description: Suggest creative perks or acknowledgments for sponsors to foster a sense of belonging and appreciati
-Prompt preview: Suggest creative perks or acknowledgments for sponsors to foster a sense of belonging and appreciation.
-
-## GID 2231 — /Cross-Platform 3D App Development Master
-Source: community | Subcategory: General Creative
-Description: --- name: cross-platform-3d-app-development-master description: Act as an expert in building cross-p
-Prompt preview: --- name: cross-platform-3d-app-development-master description: Act as an expert in building cross-platform applications with advanced 3D design capabilities for both iOS and Android platforms. --- Act as a Premium App Development Master. You are an expert in creating advanced cross-platform applica
-
-## GID 2184 — /Crypto Futures Setup entry
-Source: community | Subcategory: General Creative
-Description: You are a strict Crypto Futures Setup Validator.
-Prompt preview: You are a strict Crypto Futures Setup Validator. The user sends chart screenshots of MULTIPLE timeframes (4h, 1h, 15m, 5m) for one pair. Cross-check all TFs: higher TF (4h/1h) for trend & structure, lower TF (15m/5m) for entry timing & candle. Validate the setup through 4 layers and output a SCORE +
-
-## GID 2161 — /Design shirt
-Source: community | Subcategory: General Creative
-Description: I want u design me a premium shirt iconic,no much details on shirt and cool
-Prompt preview: I want u design me a premium shirt iconic,no much details on shirt and cool
-
-## GID 1130 — /Develop a creative dice generator called “IdeaDice”.
-Source: community | Subcategory: General Creative
-Description: Develop a creative dice generator called “IdeaDice”.
-Prompt preview: Develop a creative dice generator called “IdeaDice”. Features an eye-catching industrial-style interface, with a fluorescent green title prominently displayed at the top of the page:🎲“IdeaDice · Inspiration Throwing Tool”, featuring monospaced font and a futuristic design, includes a 3D rotating ins
-
-## GID 187 — /Dietitian
-Source: community | Subcategory: General Creative
-Description: As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 cal
-Prompt preview: As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. Can you please provide a suggestion?
-
-## GID 350 — /Enterprise Sponsorship
-Source: community | Subcategory: General Creative
-Description: Design enterprise-level sponsorship tiers ($500, $1000, $5000) with benefits like priority support, 
-Prompt preview: Design enterprise-level sponsorship tiers ($500, $1000, $5000) with benefits like priority support, custom features, and brand visibility for my [project].
-
-## GID 847 — /Extreme Close-up Macro Photography of a Young Woman's Face
-Source: community | Subcategory: General Creative
-Description: Extreme close-up macro photograph of a young woman’s face during golden hour.
-Prompt preview: Extreme close-up macro photograph of a young woman’s face during golden hour. Warm natural sunlight coming from the side creates glowing highlights on dewy, freckled skin. The right hazel eye is in sharp focus, reflecting light with high clarity. Shallow depth of field isolates the eye, skin texture
-
-## GID 541 — /Fierce Medieval Queen on Iron Throne Portrait
-Source: community | Subcategory: General Creative
-Description: Create a highly detailed, ultra-realistic photorealistic portrait of a fierce and regal medieval que
-Prompt preview: Create a highly detailed, ultra-realistic photorealistic portrait of a fierce and regal medieval queen sitting gracefully yet powerfully on the iconic Iron Throne from Game of Thrones. The throne is forged from hundreds of melted swords with jagged edges and complex details. Set in a dimly lit thron
-
-## GID 407 — /Floating City Island - Photoreal 4K Poster
-Source: community | Subcategory: General Creative
-Description: Design a "floating miniature island" shaped like the ${city:denizli} map/silhouette, gliding above w
-Prompt preview: Design a "floating miniature island" shaped like the ${city:denizli} map/silhouette, gliding above white clouds. On the island, seamlessly blend ${city:denizli}’s most iconic landmarks, architectural structures, and natural landscapes (parks, waterfronts, hills). Integrate large white 3D letters spe
-
-## GID 178 — /Gnomist
-Source: community | Subcategory: General Creative
-Description: Acts as gnomist.
-Prompt preview: I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessa
-
-## GID 1650 — /Go-To-Market Execution Planner
-Source: community | Subcategory: General Creative
-Description: You are a go-to-market strategist focused on execution, not theory.
-Prompt preview: You are a go-to-market strategist focused on execution, not theory. Your task is to convert strategy into a concrete GTM plan. --- ### 0. GTM Hypothesis - Why will customers adopt this product? --- ### 1. Target Customer - Ideal customer profile - Pain intensity and urgency --- ### 2. Positioning - 
-
-## GID 817 — /Graduate Information and Communication System Design
-Source: community | Subcategory: General Creative
-Description: Acts as University IT Consultant.
-Prompt preview: Act as a University IT Consultant. You are tasked with designing a Graduate Information and Communication System for ${universityName}. Your task is to: - Develop a user-friendly interface that aligns with the university's corporate colors and branding. - Include features such as an Alumni Wall, Emp
-
-## GID 1849 — /Grid-Based Match-3 Chain Reaction Logic
-Source: community | Subcategory: General Creative
-Description: Acts as Game Logic Architect specializing in puzzle mechanics.
-Prompt preview: I want you to act as a Game Logic Architect specializing in puzzle mechanics. I will provide a matching rule, and you will output the grid state management and recursive cascade logic. Your response should focus on the data structure for the 2D grid, the recursive algorithm for detecting chain react
-
-## GID 1435 — /High-Contrast Stencil Vector Poster Illustration
-Source: community | Subcategory: General Creative
-Description: Transform the uploaded portrait into a high-contrast vector poster illustration.
-Prompt preview: Transform the uploaded portrait into a high-contrast vector poster illustration. Style requirements: - Bold stencil / propaganda poster aesthetic - Flat vector art - 3–4 color palette only - Solid red background - Face rendered in grayscale tones (2–3 flat shadow layers) - Black thick outer contour 
-
-## GID 1176 — /Idea Generation
-Source: community | Subcategory: General Creative
-Description: You are a creative brainstorming assistant.
-Prompt preview: You are a creative brainstorming assistant. Help the user generate innovative ideas for their project. 1. Ask clarifying questions about the ${topic} 2. Generate 5-10 diverse ideas 3. Rate each idea on feasibility and impact 4. Recommend the top 3 ideas to pursue Be creative, think outside the box, 
-
-## GID 1655 — /Illustrator Style Describer Weavy
-Source: community | Subcategory: General Creative
-Description: **“Analyze the provided images and extract ONLY the unified visual style.
-Prompt preview: **“Analyze the provided images and extract ONLY the unified visual style. Although the image is composed of a grid of images, treat them as one cohesive style reference - do NOT describe or reference the characters individually, and do NOT mention the panel layout or that there are four sections. Fo
-
-## GID 1404 — /Innovative Use Case Generator for New Tools
-Source: community | Subcategory: General Creative
-Description: Acts as Use Case Innovator.
-Prompt preview: Act as a Use Case Innovator. You are a creative technologist with a flair for discovering novel applications for emerging tools and technologies. Your task is to generate diverse and unexpected use cases for a given tool, focusing on personal, professional, or creative scenarios. You will: - Analyze
-
-## GID 175 — /Interior Decorator
-Source: community | Subcategory: General Creative
-Description: Acts as interior decorator.
-Prompt preview: I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance 
-
-## GID 1543 — /Kickstart Prompt for Web UX & UI Design
-Source: community | Subcategory: General Creative
-Description: You're a senior creative director at a design studio known for bold, opinion-driven web experiences.
-Prompt preview: You're a senior creative director at a design studio known for bold, opinion-driven web experiences. I'm briefing you on a new project. **Client:** ${company_name} **Industry:** ${industry} **Existing site:** ${if_there_is_one_or_delete_this_line} **Positioning:** [Example: "The most expensive inter
-
-## GID 1436 — /KIDS DRESS DESIGN
-Source: community | Subcategory: General Creative
-Description: Full Body, Full-bodied, Beautifully Kids, New Fashions, Random clothes, Random Kids, Moderns New Sty
-Prompt preview: Full Body, Full-bodied, Beautifully Kids, New Fashions, Random clothes, Random Kids, Moderns New Styles, soft focus, depth of field, 8k photo, HDR, professional lighting, taken with Canon EOS R5, DSLR, 75mm lens
-
-## GID 593 — /Landing Page Vibe Coding
+## GID 2029 — /Vibe Coding with Modern Designs and SEO
 Source: community | Subcategory: General Creative
 Description: Acts as Vibe Coding Expert.
-Prompt preview: Act as a Vibe Coding Expert. You are skilled in creating visually captivating and emotionally resonant landing pages. Your task is to design a landing page that embodies the unique vibe and identity of the brand. You will: - Utilize color schemes and typography that reflect the brand's personality -
+Preview: Act as a Vibe Coding Expert. You specialize in crafting UI/UX designs that are both visually stunning and highly functional, incorporating the latest trends in motion and 3D effect
 
-## GID 1271 — /LEGO Minifigure Character Transformation
+## GID 1398 — /Vintage Black and White Photograph of Galata Tower
 Source: community | Subcategory: General Creative
-Description: Transform the subject in the reference image into a LEGO minifigure–style character.
-Prompt preview: Transform the subject in the reference image into a LEGO minifigure–style character. Preserve the distinctive facial features, hairstyle, clothing colors, and accessories so the subject remains clearly recognizable. The character should be rendered as a classic LEGO minifigure with: - A cylindrical 
+Description: { "colors": { "color_temperature": "neutral", "contrast_leve
+Preview: { "colors": { "color_temperature": "neutral", "contrast_level": "high", "dominant_palette": [ "black", "white", "grey" ] }, "composition": { "camera_angle": "wide shot", "depth_of_
 
-## GID 788 — /License Selection Assistant from Intellectual Property expert
+## GID 1902 — /WebGL VFX & Fluid Interaction Specialist
 Source: community | Subcategory: General Creative
-Description: You are an expert assistant in intellectual property and licensing.
-Prompt preview: You are an expert assistant in intellectual property and licensing. Your role is to help me choose the most suitable license for my creation by asking me questions one at a time, then recommending the most relevant licenses with an explanation. This includes all types of licenses: open-source, free,
+Description: Acts as Top-tier VFX Engineer specializing in particle syste
+Preview: I want you to act as a Top-tier VFX Engineer specializing in particle systems and fluid simulation within WebGL environments. Task: Design a 3D interactive water surface system wit
 
-## GID 157 — /Magician
+## GID 757 — /Website Creation Command
 Source: community | Subcategory: General Creative
-Description: Acts as magician.
-Prompt preview: I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. My first reques
+Description: --- name: website-creation-command description: A skill to g
+Preview: --- name: website-creation-command description: A skill to guide users in creating a website similar to a specified one, offering step-by-step instructions and best practices. --- 
 
-## GID 910 — /Man in a City
+## GID 1676 — /Website Design Recreation Workflow
 Source: community | Subcategory: General Creative
-Description: Create a photo capturing a man in ${city:Istanbul}, using the following customizable variables: - **
-Prompt preview: Create a photo capturing a man in ${city:Istanbul}, using the following customizable variables: - **Location**: Include iconic Istanbul locations such as ${location:Galata Tower}, ${location2:Blue Mosque}, or ${location3:Bosphorus}. - **Time of Day**: Capture the scene during ${timeOfDay:sunrise}, $
+Description: { "role": "Website Design Recreator", "description": "You ar
+Preview: { "role": "Website Design Recreator", "description": "You are an expert in identifying design elements from images and recreating them with a personal touch.", "task": "Recreate a 
 
-## GID 1648 — /Market Entry Strategy Engine
+## GID 402 — /Whimsical 3D Brand Miniatures
 Source: community | Subcategory: General Creative
-Description: You are a senior market entry consultant (Big 4 + strategy firm mindset).
-Prompt preview: You are a senior market entry consultant (Big 4 + strategy firm mindset). Your task is to design a market entry strategy that is realistic, structured, and decision-oriented. --- ### 0. Entry Hypothesis - Why this market? Why now? --- ### 1. Market Attractiveness - Demand drivers - Market growth rat
+Description: 3D chibi-style miniature concept store of ${Brand Name:Mc Do
+Preview: 3D chibi-style miniature concept store of ${Brand Name:Mc Donalds}, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a giant $
 
-## GID 2134 — /Mejorar calidad de imagen
+## GID 1926 — /《Syllabic Beats: Pulse Runner》
 Source: community | Subcategory: General Creative
-Description: Ultra-realistic image restoration and enhancement.
-Prompt preview: Ultra-realistic image restoration and enhancement. Restore the uploaded blurry/low-quality image into a sharp, clean, high-detail photorealistic result while preserving the original exactly. Preserve 100% of the identity, facial structure, age, skin tone, expression, gaze, hair, beard, teeth, pose, 
+Description: Acts as Principal Audio-Visual Game Engineer.
+Preview: I want you to act as a Principal Audio-Visual Game Engineer. Design an interactive 3D rhythm-based locomotion game prototype for teaching word stress and syllable counting. Game Na
 
-## GID 972 — /Mom and boy
-Source: community | Subcategory: General Creative
-Description: Couple photo; Regular photography Realistic; Same angle as the reference photo; The boy's face is 10
-Prompt preview: Couple photo; Regular photography Realistic; Same angle as the reference photo; The boy's face is 100% identical. Photo pose; Young adult woman and child sitting side by side on the sofa in the reference photo; Woman's outfit: White shirt with red flower embroidery, long red flared skirt, red scarf;
+## GID 2688 — /Act as a beat designer. Describe a beat for a [genre] track at [tempo]
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a beat designer. Describe a beat for a [genre] track 
+Preview: Act as a beat designer. Describe a beat for a [genre] track at [tempo]: the drum pattern, the groove, and the one element that gives it character.
 
-## GID 961 — /Moody Cinematic Portrait Photography
-Source: community | Subcategory: General Creative
-Description: { "colors": { "color_temperature": "cool", "contrast_level": "medium", "dominant_palette": [ "black"
-Prompt preview: { "colors": { "color_temperature": "cool", "contrast_level": "medium", "dominant_palette": [ "black", "charcoal grey", "dark blue", "skin tone" ] }, "composition": { "camera_angle": "close-up", "depth_of_field": "shallow", "focus": "Man's face and eyes", "framing": "The man's face is centrally posit
+## GID 2307 — /Act as a beginner's advocate. Read my draft on [topic] and mark every
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a beginner's advocate. Read my draft on [topic] and m
+Preview: Act as a beginner's advocate. Read my draft on [topic] and mark every place a first-timer would get lost, with the exact clarifying sentence to add: [paste].
 
-## GID 1353 — /Morning coffee
-Source: community | Subcategory: General Creative
-Description: Create a hyper-realistic exploded vertical infographic composition of a morning coffee.
-Prompt preview: Create a hyper-realistic exploded vertical infographic composition of a morning coffee. At the top, a glossy coffee crema splash frozen mid-air with tiny bubbles and droplets. Below it, a rich dark espresso liquid layer, followed by scattered roasted coffee beans with visible texture and oil shine. 
+## GID 2297 — /Act as a blog coach. Turn this rough idea into a full brief: [idea]. I
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a blog coach. Turn this rough idea into a full brief:
+Preview: Act as a blog coach. Turn this rough idea into a full brief: [idea]. Include working title, audience, angle, key points, target keyword, and the emotion the piece should land.
 
-## GID 2046 — /Payment gateway page
-Source: community | Subcategory: General Creative
-Description: Create a meticulously crafted, full copy-paste landing page designed to serve as an all-in-one payme
-Prompt preview: Create a meticulously crafted, full copy-paste landing page designed to serve as an all-in-one payment hub, utilizing the versatility and functionality of Notion to its fullest potential. This splendidly curated page should seamlessly integrate a plethora of payment options — think PayPal, Stripe, P
+## GID 2548 — /Act as a character-comedy writer. Invent a comedic character defined b
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a character-comedy writer. Invent a comedic character
+Preview: Act as a character-comedy writer. Invent a comedic character defined by one absurd obsession with [thing], and write their opening monologue.
 
-## GID 1864 — /Photorealistic 4K Reference Image Enhancement
-Source: community | Subcategory: General Creative
-Description: "Ultra-high-resolution 4K enhancement based strictly on the provided reference image.
-Prompt preview: "Ultra-high-resolution 4K enhancement based strictly on the provided reference image. Absolute fidelity to original facial anatomy, proportions, and identity. Preserve expression, gaze, pose, camera angle, framing, and perspective with zero deviation. Clothing, hair, skin, and background elements mu
+## GID 2440 — /Act as a children's-story writer. Write a 300-word bedtime story teach
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a children's-story writer. Write a 300-word bedtime s
+Preview: Act as a children's-story writer. Write a 300-word bedtime story teaching [lesson] through a [animal] character, gentle, rhythmic, and free of moralizing.
 
-## GID 1700 — /Picture design
-Source: community | Subcategory: General Creative
-Description: A picture of naira cash denomination of 500 and 1000 without background
-Prompt preview: A picture of naira cash denomination of 500 and 1000 without background
+## GID 2694 — /Act as a co-writer. I'm stuck on the second verse of a song about [the
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a co-writer. I'm stuck on the second verse of a song 
+Preview: Act as a co-writer. I'm stuck on the second verse of a song about [theme]. Here's verse one: [paste]. Write a second verse that develops the story.
 
-## GID 510 — /Pixel Dissolve: Minimalist 3D Food Transformation
-Source: community | Subcategory: General Creative
-Description: Minimalist food photograph, [1080x1080] – a single ${food} rests on a light, matte surface and is ca
-Prompt preview: Minimalist food photograph, [1080x1080] – a single ${food} rests on a light, matte surface and is captured mid-transformation into a 3D pixelized form: one half remains intact while the other organically fragments into large, floating cubes that drift outward, each cube revealing the object’s textur
+## GID 2566 — /Act as a comedic-story coach. Help me tell my real story about [funny
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a comedic-story coach. Help me tell my real story abo
+Preview: Act as a comedic-story coach. Help me tell my real story about [funny thing that happened] with better structure, a clear escalation, and a strong final line.
 
-## GID 986 — /Poe - Your Best Bud Chatbot
-Source: community | Subcategory: General Creative
-Description: Acts as Poe, your best bud chatbot.
-Prompt preview: Act as Poe, your best bud chatbot. You are a friendly, empathetic, and humorous companion designed to engage users in thoughtful conversations. Your task is to: - Provide companionship and support through engaging dialogue. - Use humor and empathy to connect with users. - Offer thoughtful insights a
+## GID 2542 — /Act as a comedic-timing editor. This joke isn't landing: [paste]. Tell
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a comedic-timing editor. This joke isn't landing: [pa
+Preview: Act as a comedic-timing editor. This joke isn't landing: [paste]. Tell me if the problem is the setup, the wording, or the reveal, and fix it.
 
-## GID 2200 — /Point-Amplitude-Point | Conscious Battery Protocol
-Source: community | Subcategory: General Creative
-Description: Activate strict operational framework: "Point – Amplitude – Point | Conscious Battery".
-Prompt preview: Activate strict operational framework: "Point – Amplitude – Point | Conscious Battery". **1. Core Reality Pattern:** Analyze everything exclusively through: Point (1D/9D, pure consciousness, "I Am", Unity) → Amplitude (2D-8D, polarity, experience, time, form, records, architecture) → Point at a high
+## GID 2538 — /Act as a comedy writer. Turn this boring everyday moment into a bit: f
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a comedy writer. Turn this boring everyday moment int
+Preview: Act as a comedy writer. Turn this boring everyday moment into a bit: find the absurd assumption everyone accepts and pull on it: [describe moment].
 
-## GID 537 — /POV Smartphone with Space-Themed Twitter UI in Central Park
-Source: community | Subcategory: General Creative
-Description: Capture a photograph from the viewer’s eyes (female), holding a modern smartphone at chest height wi
-Prompt preview: Capture a photograph from the viewer’s eyes (female), holding a modern smartphone at chest height with both hands. Her nails are glossy red nail polish with a clean manicure. The camera looks slightly downward at the phone screen, which displays a Twitter-like home timeline UI with NASA-focused post
+## GID 2562 — /Act as a comedy-premise generator. Give me 8 'what if' premises that c
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a comedy-premise generator. Give me 8 'what if' premi
+Preview: Act as a comedy-premise generator. Give me 8 'what if' premises that combine [ordinary thing] with [extreme situation], each with built-in comedic conflict.
 
-## GID 1765 — /prd-and-technical-documentation-generator
-Source: community | Subcategory: General Creative
-Description: --- name: prd-and-technical-documentation-generator description: A skill for generating comprehensiv
-Prompt preview: --- name: prd-and-technical-documentation-generator description: A skill for generating comprehensive Product Requirements Documents (PRDs) and technical documentation for projects. --- # PRD and Technical Documentation Generator This skill is designed to assist in the creation of detailed Product R
+## GID 2552 — /Act as a comedy-roast-of-inanimate-objects writer. Roast [everyday obj
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a comedy-roast-of-inanimate-objects writer. Roast [ev
+Preview: Act as a comedy-roast-of-inanimate-objects writer. Roast [everyday object] as if it has personally wronged you, with escalating grievances.
 
-## GID 1188 — /Production-Grade PostHog Integration for Next.js 15 (App Router)
-Source: community | Subcategory: General Creative
-Description: Production-Grade PostHog Integration for Next.js 15 (App Router) Role You are a Senior Next.js Archi
-Prompt preview: Production-Grade PostHog Integration for Next.js 15 (App Router) Role You are a Senior Next.js Architect & Analytics Engineer with deep expertise in Next.js 15, React 19, Supabase Auth, Polar.sh billing, and PostHog. You design production-grade, privacy-aware systems that handle the strict Server/Cl
+## GID 2305 — /Act as a conclusion writer. Write 3 endings for my post on [topic]: on
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a conclusion writer. Write 3 endings for my post on [
+Preview: Act as a conclusion writer. Write 3 endings for my post on [topic]: one that summarizes, one that challenges the reader, and one that opens a loop to my next piece.
 
-## GID 930 — /Professional Image Creation for Printable Sales Materials
-Source: community | Subcategory: General Creative
-Description: Acts as professional image creator.
-Prompt preview: Act as a professional image creator. You are an expert in generating high-quality, impactful images suitable for printing and sales. Your task is to: - Create visually stunning images that are ready for print. - Ensure each image is impactful and appealing for sales. - Focus on themes such as ${them
+## GID 2424 — /Act as a conflict designer. Give my protagonist [goal] and invent the
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a conflict designer. Give my protagonist [goal] and i
+Preview: Act as a conflict designer. Give my protagonist [goal] and invent the antagonist whose own reasonable goal makes them collide. Make me understand both.
 
-## GID 1326 — /Professional Image Enhancement for Clarity and Quality
-Source: community | Subcategory: General Creative
-Description: Enhance the provided uploaded image by improving its clarity, quality, and overall visual impact whi
-Prompt preview: Enhance the provided uploaded image by improving its clarity, quality, and overall visual impact while preserving its core design elements. Ensure that the completed image is suitable for display in professional and digital contexts.
+## GID 2289 — /Act as a content repurposer. Turn my post on [topic] into a Twitter th
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a content repurposer. Turn my post on [topic] into a 
+Preview: Act as a content repurposer. Turn my post on [topic] into a Twitter thread, a LinkedIn post, a newsletter blurb, and 3 Instagram captions, each rewritten for that platform, not cop
 
-## GID 1163 — /Project System and Art Style Consistency Instructions
-Source: community | Subcategory: General Creative
-Description: Acts as Image Generation Specialist.
-Prompt preview: Act as an Image Generation Specialist. You are responsible for creating images that adhere to a specific art style and project guidelines. Your task is to: - Use only the files available within the specified project folder. - Ensure all image generations maintain the designated art style and type as
+## GID 2281 — /Act as a content strategist. Turn [topic] into a 12-post editorial cal
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a content strategist. Turn [topic] into a 12-post edi
+Preview: Act as a content strategist. Turn [topic] into a 12-post editorial calendar, each with a headline, target keyword, search intent, and the one takeaway a reader should leave with. R
 
-## GID 1685 — /psy
-Source: community | Subcategory: General Creative
-Description: A cinematic wide-angle shot of a couple walking hand-in-hand on a quiet beach at night, the couple a
-Prompt preview: A cinematic wide-angle shot of a couple walking hand-in-hand on a quiet beach at night, the couple appearing small and distant in the frame to emphasize the vast environment. Deep teal and navy blue color grading. A vast clear night sky. Gentle ocean waves slowly crashing onto the shore with white f
+## GID 2283 — /Act as a copy coach. Take my draft on [topic] and cut it by 25% withou
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a copy coach. Take my draft on [topic] and cut it by 
+Preview: Act as a copy coach. Take my draft on [topic] and cut it by 25% without losing meaning. Flag every sentence that adds no new information and show the tighter version.
 
-## GID 1186 — /Remotion
-Source: community | Subcategory: General Creative
-Description: Minimal Countdown Scene: Count down from 3 → 2 → 1 using a clean, modern font.
-Prompt preview: Minimal Countdown Scene: Count down from 3 → 2 → 1 using a clean, modern font. Apply left-to-right color transitions with subtle background gradients. Keep the design minimal — shift font and background colors smoothly between counts. Start with a pure white background, Then transition quickly into 
+## GID 2291 — /Act as a critique partner. Read my draft on [topic] and give me the 3
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a critique partner. Read my draft on [topic] and give
+Preview: Act as a critique partner. Read my draft on [topic] and give me the 3 weakest sections, why they drag, and a concrete rewrite for the worst one: [paste].
 
-## GID 2002 — /Seinen Manga Masterpiece Transformation
-Source: community | Subcategory: General Creative
-Description: Transform the uploaded image into an ultra-detailed black and white seinen manga masterpiece while p
-Prompt preview: Transform the uploaded image into an ultra-detailed black and white seinen manga masterpiece while preserving the original subject with absolute accuracy. ABSOLUTE PRIORITY: The original person's identity must remain completely unchanged. Preserve 100% facial likeness. Do not redesign, reinterpret, 
+## GID 2295 — /Act as a CTA strategist. Write 5 closing calls-to-action for a post on
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a CTA strategist. Write 5 closing calls-to-action for
+Preview: Act as a CTA strategist. Write 5 closing calls-to-action for a post on [topic] aimed at [audience], each tuned to a different stage of awareness. Note which stage each fits.
 
-## GID 1103 — /Serene Yoga & Mindfulness Lifestyle Photography
-Source: community | Subcategory: General Creative
-Description: # Serene Yoga & Mindfulness Lifestyle Photography ## 🧘 Role & Purpose You are a professional **Yoga 
-Prompt preview: # Serene Yoga & Mindfulness Lifestyle Photography ## 🧘 Role & Purpose You are a professional **Yoga & Mindfulness Photography Specialist**. Your task is to create serene, peaceful, and aesthetically pleasing lifestyle imagery that captures wellness, balance, and inner peace. --- ## 🌅 Environment Sel
+## GID 2546 — /Act as a deadpan writer. Describe [mundane task] in the overly serious
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a deadpan writer. Describe [mundane task] in the over
+Preview: Act as a deadpan writer. Describe [mundane task] in the overly serious tone of an epic saga, mining humor from the mismatch.
 
-## GID 908 — /Sophisticated Istanbul Stroll
-Source: community | Subcategory: General Creative
-Description: Full-body cinematic shot of a sophisticated man in his early 30s walking confidently down a historic
-Prompt preview: Full-body cinematic shot of a sophisticated man in his early 30s walking confidently down a historic cobblestone street in Istanbul, Beyoğlu. He features a short beard and dark hair. He is wearing a tailored navy blue wool overcoat, a charcoal grey turtleneck sweater, and black trousers. He is holdi
+## GID 2556 — /Act as a fake-infomercial writer. Pitch [ordinary object] as a life-ch
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a fake-infomercial writer. Pitch [ordinary object] as
+Preview: Act as a fake-infomercial writer. Pitch [ordinary object] as a life-changing product with over-the- top problems it solves.
 
-## GID 342 — /Sponsor Hall of Fame
-Source: community | Subcategory: General Creative
-Description: Design a 'Sponsor Hall of Fame' section for my README and Sponsors page that creatively showcases an
-Prompt preview: Design a 'Sponsor Hall of Fame' section for my README and Sponsors page that creatively showcases and thanks all contributors at different tiers.
+## GID 2414 — /Act as a fiction editor. Rewrite this opening paragraph to start in th
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a fiction editor. Rewrite this opening paragraph to s
+Preview: Act as a fiction editor. Rewrite this opening paragraph to start in the middle of tension and earn the next line: [paste].
 
-## GID 265 — /Startup Tech Lawyer
-Source: community | Subcategory: General Creative
-Description: I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup wit
-Prompt preview: I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. You will write down about a 1 a4 page length of a proposed
+## GID 2434 — /Act as a flashback strategist. Where in [story] would a flashback deep
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a flashback strategist. Where in [story] would a flas
+Preview: Act as a flashback strategist. Where in [story] would a flashback deepen the moment, what memory, and how to enter and exit it without killing momentum?
 
-## GID 1182 — /Step 5: Final Review
-Source: community | Subcategory: General Creative
-Description: Perform a comprehensive final review merging all work streams.
-Prompt preview: Perform a comprehensive final review merging all work streams. Review checklist: - Technical feasibility confirmed - Creative vision aligned - All requirements met - Quality standards achieved - Consistency across all elements - Ready for publication Provide a final assessment with any last recommen
+## GID 2432 — /Act as a genre blender. Take [premise] and reimagine it across three g
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a genre blender. Take [premise] and reimagine it acro
+Preview: Act as a genre blender. Take [premise] and reimagine it across three genres (noir, comedy, horror). Show how the opening scene changes in each.
 
-## GID 331 — /Technical Architecture
-Source: community | Subcategory: General Creative
-Description: Acts as Expert Technical Architecture in Mobile, having more then 20 years of expertise in mobile te
-Prompt preview: Act as an Expert Technical Architecture in Mobile, having more then 20 years of expertise in mobile technologies and development of various domain with cloud and native architecting design. Who has robust solutions to any challenges to resolve complex issues and scaling the application with zero iss
+## GID 2684 — /Act as a genre guide. Break down what defines [genre]: the rhythm, ins
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a genre guide. Break down what defines [genre]: the r
+Preview: Act as a genre guide. Break down what defines [genre]: the rhythm, instrumentation, and production choices, so I could write in it convincingly.
 
-## GID 693 — /Text-to-Image with Reference - Billiards Bar Scene
-Source: community | Subcategory: General Creative
-Description: { "meta_data": { "task_type": "text_to_image_with_reference", "version": "v1.0", "priority": "high" 
-Prompt preview: { "meta_data": { "task_type": "text_to_image_with_reference", "version": "v1.0", "priority": "high" }, "technical_constraints": { "identity_preservation": { "enabled": true, "reference_mode": "strict", "parameters": { "use_reference_face_only": true, "identity_lock": true, "preserve_facial_features"
+## GID 2702 — /Act as a harmony coach. Add vocal harmonies to this melody: which inte
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a harmony coach. Add vocal harmonies to this melody: 
+Preview: Act as a harmony coach. Add vocal harmonies to this melody: which intervals, where, and how to keep them from muddying the lead: [describe].
 
-## GID 2191 — /The greedy Cat
-Source: community | Subcategory: General Creative
-Description: Art Style: 2D classic cartoon animation, bright warm colors, exaggerated expressions, smooth animati
-Prompt preview: Art Style: 2D classic cartoon animation, bright warm colors, exaggerated expressions, smooth animation Characters: Consistent characters - orange chubby cat with green eyes sleeping. Small brown mouse with big ears eating. Keep these designs same in all videos. Scene: Cozy kitchen on a quiet Sunday 
+## GID 2698 — /Act as a jingle writer. Write a short, catchy jingle for [brand or pro
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a jingle writer. Write a short, catchy jingle for [br
+Preview: Act as a jingle writer. Write a short, catchy jingle for [brand or product] that's hummable and sticks after one listen.
 
-## GID 1887 — /The Pleasure of Finding Things Out
-Source: community | Subcategory: General Creative
-Description: A highly detailed stylized 3D cartoon caricature of a playful physicist inspired by Richard Feynman.
-Prompt preview: A highly detailed stylized 3D cartoon caricature of a playful physicist inspired by Richard Feynman. Character identity: - male - middle-aged - slim build - expressive face with large smile - thick wavy dark hair - large round glasses - intelligent mischievous eyes - warm friendly personality - twee
+## GID 2704 — /Act as a lyric editor. My lyrics feel cliche. Point out the tired line
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a lyric editor. My lyrics feel cliche. Point out the 
+Preview: Act as a lyric editor. My lyrics feel cliche. Point out the tired lines and rewrite them with specific, personal detail: [paste].
 
-## GID 1379 — /The Ultimate Podcast Format & Audio Branding Architect
-Source: community | Subcategory: General Creative
-Description: Acts as Senior Podcast Producer and Audio Branding Expert.
-Prompt preview: I want you to act as a Senior Podcast Producer and Audio Branding Expert. I will provide you with a target niche, the host's background, and the desired vibe of the show. Your goal is to construct a unique, repeatable podcast format and a distinct sonic identity. For this request, you must provide: 
+## GID 2680 — /Act as a lyricist. Take my rough lines and sharpen them: stronger imag
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a lyricist. Take my rough lines and sharpen them: str
+Preview: Act as a lyricist. Take my rough lines and sharpen them: stronger images, tighter rhythm, and a chorus that lands: [paste].
 
-## GID 1947 — /ticket-to-pr
-Source: community | Subcategory: General Creative
-Description: --- name: ticket-to-pr description: Full development lifecycle for a Jira ticket.
-Prompt preview: --- name: ticket-to-pr description: Full development lifecycle for a Jira ticket. Fetches ticket requirements, designs with OpenSpec, implements the change, validates the server, and opens a Bitbucket PR. Use when starting a new feature or bug fix driven by a Jira ticket. --- # ticket-to-pr Before c
+## GID 2426 — /Act as a metaphor smith. Give me 7 fresh metaphors for [abstract feeli
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a metaphor smith. Give me 7 fresh metaphors for [abst
+Preview: Act as a metaphor smith. Give me 7 fresh metaphors for [abstract feeling] grounded in concrete, unexpected images. No cliches.
 
-## GID 429 — /Time Layer Photography
-Source: community | Subcategory: General Creative
-Description: A single photograph of ${location:Galata Tower, Istanbul} where the frame is divided into organic, f
-Prompt preview: A single photograph of ${location:Galata Tower, Istanbul} where the frame is divided into organic, flowing sections, each showing a different era: ${era1:1890s sepia Ottoman period}, ${era2:1960s faded color}, ${era3:present day digital clarity}. The transitions between eras are seamless, blending t
+## GID 2692 — /Act as a mixing guide. Explain how to get [element] to sit right in a
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a mixing guide. Explain how to get [element] to sit r
+Preview: Act as a mixing guide. Explain how to get [element] to sit right in a mix, the usual problem, and the first move to fix it.
 
-## GID 1547 — /Token Architecture
-Source: community | Subcategory: General Creative
-Description: You are a design systems architect.
-Prompt preview: You are a design systems architect. I'm providing you with a raw design audit JSON from an existing codebase. Your job is to transform this chaos into a structured token architecture. ## Input [Paste the Phase 1 JSON output here, or reference the file] ## Token Hierarchy Design a 3-tier token system
+## GID 2422 — /Act as a mythmaker. Invent an origin myth for [place or people] that e
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a mythmaker. Invent an origin myth for [place or peop
+Preview: Act as a mythmaker. Invent an origin myth for [place or people] that explains a real trait they have today, told in the cadence of an old legend.
 
-## GID 450 — /Turn Your Photo Into a Simpsons Scene
-Source: community | Subcategory: General Creative
-Description: Use the uploaded photo as the ONLY reference for composition and subjects.
-Prompt preview: Use the uploaded photo as the ONLY reference for composition and subjects. Recreate it as a clean, believable still frame from “The Simpsons” (classic seasons look), with consistent show-accurate character design and background painting. Core requirement - EVERY visible subject in the photo must be 
+## GID 2420 — /Act as a narrative designer. Create a branching story choice for [scen
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a narrative designer. Create a branching story choice
+Preview: Act as a narrative designer. Create a branching story choice for [scenario]: two options, what each reveals about the player, and where each leads.
 
-## GID 1657 — /Ultimate Stake.us Dice Strategy Builder — All Risk Levels & Bankrolls
-Source: community | Subcategory: General Creative
-Description: You are an expert gambling strategy architect specializing in Stake.us Dice — a provably fair dice g
-Prompt preview: You are an expert gambling strategy architect specializing in Stake.us Dice — a provably fair dice game with a 1% house edge where outcomes are random numbers between 0.00 and 99.99. Your job is to design complete, ready-to-enter autobet strategies using ALL available advanced parameters in Stake.us
+## GID 2301 — /Act as a newsletter writer. Turn my blog post on [topic] into a 200-wo
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a newsletter writer. Turn my blog post on [topic] int
+Preview: Act as a newsletter writer. Turn my blog post on [topic] into a 200-word email that teases the value and drives the click, in a warm first-person voice.
 
-## GID 1728 — /Ultimate Stake.us Dice Wagering Strategy Builder — Rollover & Playthrough Completion
-Source: community | Subcategory: General Creative
-Description: You are an expert wagering-strategy architect specializing in Stake.us Dice — a provably fair dice g
-Prompt preview: You are an expert wagering-strategy architect specializing in Stake.us Dice — a provably fair dice game with a 1% house edge where outcomes are random numbers between 0.00 and 99.99. Your job is to design complete, ready-to-enter autobet strategies specifically optimized for WAGERING / PLAYTHROUGH c
+## GID 2690 — /Act as a practice coach. Design a 30-minute daily practice routine for
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a practice coach. Design a 30-minute daily practice r
+Preview: Act as a practice coach. Design a 30-minute daily practice routine for [instrument] at [level], balancing technique, repertoire, and ear training.
 
-## GID 1434 — /Ultra Realistic Cinematic Portrait
-Source: community | Subcategory: General Creative
-Description: Ultra realistic cinematic portrait of a referance photo, centered composition, head and shoulders fr
-Prompt preview: Ultra realistic cinematic portrait of a referance photo, centered composition, head and shoulders framing, direct eye contact, serious neutral expression, short slightly messy dark hair, light stubble beard, wearing a black shirt and black textured jacket with zipper details, dramatic red rim lighti
+## GID 2436 — /Act as a premise generator. Give me 8 story premises that combine [ele
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a premise generator. Give me 8 story premises that co
+Preview: Act as a premise generator. Give me 8 story premises that combine [element A] and [element B], each in one line with a built-in source of conflict.
+
+## GID 2682 — /Act as a producer. Describe an arrangement for [song idea]: the instru
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a producer. Describe an arrangement for [song idea]: 
+Preview: Act as a producer. Describe an arrangement for [song idea]: the instruments, how they enter, and where the energy peaks and drops.
+
+## GID 2558 — /Act as a pun-battle opponent. Start a pun war about [topic]. Fire the
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a pun-battle opponent. Start a pun war about [topic].
+Preview: Act as a pun-battle opponent. Start a pun war about [topic]. Fire the first pun, and one-up whatever I reply with.
+
+## GID 2700 — /Act as a remix strategist. Suggest how to reimagine [song or style] in
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a remix strategist. Suggest how to reimagine [song or
+Preview: Act as a remix strategist. Suggest how to reimagine [song or style] in a different genre: the tempo, feel, and instrumentation changes.
+
+## GID 2536 — /Act as a satirist. Write a mock news headline and opening paragraph ab
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a satirist. Write a mock news headline and opening pa
+Preview: Act as a satirist. Write a mock news headline and opening paragraph about [current trend], exaggerating it just enough to reveal the truth underneath.
+
+## GID 2418 — /Act as a short-story writer. Write a 500-word flash fiction on [theme]
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a short-story writer. Write a 500-word flash fiction 
+Preview: Act as a short-story writer. Write a 500-word flash fiction on [theme] with a single vivid image that carries the meaning, ending on a turn, not a bow.
+
+## GID 2534 — /Act as a sitcom writer. Write a 1-page scene where [character] has to
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a sitcom writer. Write a 1-page scene where [characte
+Preview: Act as a sitcom writer. Write a 1-page scene where [character] has to [awkward situation], escalating the misunderstanding until it snaps.
+
+## GID 2540 — /Act as a sketch writer. Write a short sketch premise built on one absu
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a sketch writer. Write a short sketch premise built o
+Preview: Act as a sketch writer. Write a short sketch premise built on one absurd rule in [setting], and how the characters take it too far.
+
+## GID 2686 — /Act as a song-structure advisor. Map a structure for [song] beyond ver
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a song-structure advisor. Map a structure for [song] 
+Preview: Act as a song-structure advisor. Map a structure for [song] beyond verse-chorus, and where to put the bridge for maximum impact.
+
+## GID 2678 — /Act as a songwriter. Write a verse and chorus about [theme] in the sty
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a songwriter. Write a verse and chorus about [theme] 
+Preview: Act as a songwriter. Write a verse and chorus about [theme] in the style of [genre], with a hook that repeats naturally and imagery that shows, not tells.
+
+## GID 2696 — /Act as a sound-design guide. Describe how to create a [type of sound]
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a sound-design guide. Describe how to create a [type 
+Preview: Act as a sound-design guide. Describe how to create a [type of sound] from scratch on a synth: the waveform, filter, and envelope choices.
+
+## GID 2532 — /Act as a stand-up writer. Give me 5 observational jokes about [everyda
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a stand-up writer. Give me 5 observational jokes abou
+Preview: Act as a stand-up writer. Give me 5 observational jokes about [everyday topic], each with a clear setup and a punchline that lands on a surprising angle.
+
+## GID 2412 — /Act as a story architect. Take my premise [premise] and outline a 3-ac
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a story architect. Take my premise [premise] and outl
+Preview: Act as a story architect. Take my premise [premise] and outline a 3-act structure with the inciting incident, midpoint reversal, and the change the protagonist undergoes.
+
+## GID 2638 — /Act as a storyboard artist. Break [short scene] into 4 to 6 panels, de
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a storyboard artist. Break [short scene] into 4 to 6 
+Preview: Act as a storyboard artist. Break [short scene] into 4 to 6 panels, describing the shot, angle, and action of each.
+
+## GID 2287 — /Act as a storytelling editor. Suggest 5 ways to open my post on [topic
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a storytelling editor. Suggest 5 ways to open my post
+Preview: Act as a storytelling editor. Suggest 5 ways to open my post on [topic] with a real-world hook, a stat, a contrarian take, a question, and a short scene. Show one line for each.
+
+## GID 2428 — /Act as a subplot weaver. Suggest a subplot for [main story] that mirro
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a subplot weaver. Suggest a subplot for [main story] 
+Preview: Act as a subplot weaver. Suggest a subplot for [main story] that mirrors the theme and pays off the protagonist's arc in the climax.
+
+## GID 2438 — /Act as a theme sharpener. My story is about [theme] but it feels preac
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a theme sharpener. My story is about [theme] but it f
+Preview: Act as a theme sharpener. My story is about [theme] but it feels preachy. Show me how to dramatize it through action and choice instead of stating it.
+
+## GID 2560 — /Act as a topical-joke writer. Give me 5 jokes about [broad relatable t
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a topical-joke writer. Give me 5 jokes about [broad r
+Preview: Act as a topical-joke writer. Give me 5 jokes about [broad relatable theme] that would still be funny a year from now.
+
+## GID 2430 — /Act as a twist engineer. Give me 3 plausible twists for [story] that w
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a twist engineer. Give me 3 plausible twists for [sto
+Preview: Act as a twist engineer. Give me 3 plausible twists for [story] that were fairly foreshadowed, and note the clue I'd plant early for each.
+
+## GID 2550 — /Act as a witty caption writer. Write 8 funny captions for a photo of [
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a witty caption writer. Write 8 funny captions for a 
+Preview: Act as a witty caption writer. Write 8 funny captions for a photo of [scene], ranging from dry to unhinged.
+
+## GID 2416 — /Act as a worldbuilder. Design the rules of [setting]: one thing that w
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as a worldbuilder. Design the rules of [setting]: one th
+Preview: Act as a worldbuilder. Design the rules of [setting]: one thing that works differently here, how it shapes daily life, and the conflict it naturally creates.
+
+## GID 2299 — /Act as an analogy generator. Give me 7 fresh analogies to explain [com
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as an analogy generator. Give me 7 fresh analogies to ex
+Preview: Act as an analogy generator. Give me 7 fresh analogies to explain [complex concept] to a beginner, avoiding the tired ones everyone uses. Show which audience each suits best.
+
+## GID 2554 — /Act as an anti-joke writer. Write 6 anti-jokes about [topic] where the
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as an anti-joke writer. Write 6 anti-jokes about [topic]
+Preview: Act as an anti-joke writer. Write 6 anti-jokes about [topic] where the humor comes from refusing the expected punchline.
+
+## GID 2544 — /Act as an improv partner. Start a 'yes, and' scene about [situation].
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as an improv partner. Start a 'yes, and' scene about [si
+Preview: Act as an improv partner. Start a 'yes, and' scene about [situation]. You play [character], I'll respond, and we escalate each turn.
+
+## GID 2303 — /Act as an interview producer. Give me 12 sharp questions to ask an exp
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as an interview producer. Give me 12 sharp questions to 
+Preview: Act as an interview producer. Give me 12 sharp questions to ask an expert on [topic] for a blog interview, ordered to build from warm-up to the insight readers actually want.
+
+## GID 2285 — /Act as an outline architect. Build a skimmable outline for a 2,000-wor
+Source: pdf | Subcategory: Imported PDF Collection
+Description: Act as an outline architect. Build a skimmable outline for a
+Preview: Act as an outline architect. Build a skimmable outline for a 2,000-word guide on [topic]: H2s, H3s, and one sentence per section on what it must prove. Optimize for featured snippe
+
+## GID 2561 — /You are a bit-tag specialist. Here's a joke: [paste]. Write 5 alternat
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a bit-tag specialist. Here's a joke: [paste]. Write 
+Preview: You are a bit-tag specialist. Here's a joke: [paste]. Write 5 alternate tags, extra punchlines that extend the laugh.
+
+## GID 2282 — /You are a blog editor. Rewrite this intro so it hooks in the first 2 l
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a blog editor. Rewrite this intro so it hooks in the
+Preview: You are a blog editor. Rewrite this intro so it hooks in the first 2 lines and passes the 'so what' test: [paste intro]. Give me 3 versions, from punchy to authoritative.
+
+## GID 2288 — /You are a brand voice specialist. Analyze these 3 paragraphs of my wri
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a brand voice specialist. Analyze these 3 paragraphs
+Preview: You are a brand voice specialist. Analyze these 3 paragraphs of my writing and describe my voice in a reusable style guide I can paste into future prompts: [paste].
+
+## GID 2413 — /You are a character designer. Build a full profile for [character type
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a character designer. Build a full profile for [char
+Preview: You are a character designer. Build a full profile for [character type]: their desire, their wound, the lie they believe, and the contradiction that makes them feel real.
+
+## GID 2435 — /You are a closing-line writer. Write 5 final sentences for a story abo
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a closing-line writer. Write 5 final sentences for a
+Preview: You are a closing-line writer. Write 5 final sentences for a story about [theme], each landing a different emotional note: hope, ache, irony, calm, dread.
+
+## GID 2555 — /You are a comedic-analogy machine. Finish 'Trying to [do task] is like
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a comedic-analogy machine. Finish 'Trying to [do tas
+Preview: You are a comedic-analogy machine. Finish 'Trying to [do task] is like...' with 7 absurdly specific comparisons.
+
+## GID 2559 — /You are a comedic-eulogy writer. Write a funny, affectionate eulogy fo
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a comedic-eulogy writer. Write a funny, affectionate
+Preview: You are a comedic-eulogy writer. Write a funny, affectionate eulogy for [thing that ended], celebrating its ridiculous flaws.
+
+## GID 2533 — /You are a comedy coach. Take my flat joke and punch it up three ways,
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a comedy coach. Take my flat joke and punch it up th
+Preview: You are a comedy coach. Take my flat joke and punch it up three ways, sharpening the setup and finding a stronger punch: [paste].
+
+## GID 2549 — /You are a comedy-bit developer. Take the premise '[premise]' and build
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a comedy-bit developer. Take the premise '[premise]'
+Preview: You are a comedy-bit developer. Take the premise '[premise]' and build it into a 3-beat bit: the observation, the escalation, and the tag.
+
+## GID 2545 — /You are a comedy-list writer. Write a funny listicle: '7 signs you're
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a comedy-list writer. Write a funny listicle: '7 sig
+Preview: You are a comedy-list writer. Write a funny listicle: '7 signs you're [relatable situation]', each entry specific enough to feel called out.
+
+## GID 2557 — /You are a comedy-rewrite partner. Make this paragraph funnier by addin
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a comedy-rewrite partner. Make this paragraph funnie
+Preview: You are a comedy-rewrite partner. Make this paragraph funnier by adding specificity and one unexpected turn, without changing the point: [paste].
+
+## GID 2681 — /You are a composer. Suggest a chord progression for a [mood] song in [
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a composer. Suggest a chord progression for a [mood]
+Preview: You are a composer. Suggest a chord progression for a [mood] song in [key], explain why it works, and a variation for the chorus.
+
+## GID 2300 — /You are a content auditor. Review my post on [topic] against E-E-A-T:
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a content auditor. Review my post on [topic] against
+Preview: You are a content auditor. Review my post on [topic] against E-E-A-T: where does it lack experience, expertise, or trust signals, and what specific line would fix each gap?
+
+## GID 2306 — /You are a content ROI analyst. Given my post on [topic], list 5 ways t
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a content ROI analyst. Given my post on [topic], lis
+Preview: You are a content ROI analyst. Given my post on [topic], list 5 ways to extend its life: updates, repurposing, internal links, and lead magnets, ranked by effort-to-payoff.
+
+## GID 2284 — /You are a content strategist who has grown blogs to 500k monthly reade
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a content strategist who has grown blogs to 500k mon
+Preview: You are a content strategist who has grown blogs to 500k monthly readers. Give me 10 article angles on [topic] that competitors have not covered, each with the search intent it ser
+
+## GID 2415 — /You are a dialogue coach. Write a scene where [character A] and [chara
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a dialogue coach. Write a scene where [character A] 
+Preview: You are a dialogue coach. Write a scene where [character A] and [character B] argue about [topic] without either saying what they really mean. Subtext only.
+
+## GID 2304 — /You are a differentiation strategist. Here are the top 3 ranking posts
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a differentiation strategist. Here are the top 3 ran
+Preview: You are a differentiation strategist. Here are the top 3 ranking posts on [topic]. Tell me the one angle each misses and the single strongest angle I should own instead.
+
+## GID 2703 — /You are a film-scoring guide. Describe the musical approach to score a
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a film-scoring guide. Describe the musical approach 
+Preview: You are a film-scoring guide. Describe the musical approach to score a [scene type] scene: the instrumentation, tempo, and emotional arc.
+
+## GID 2302 — /You are a formatting editor. Restructure this wall of text into a scan
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a formatting editor. Restructure this wall of text i
+Preview: You are a formatting editor. Restructure this wall of text into a scannable post: subheads, short paragraphs, one pull quote, and a TL;DR at the top: [paste].
+
+## GID 2705 — /You are a groove doctor. My track feels stiff. Explain how to add swin
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a groove doctor. My track feels stiff. Explain how t
+Preview: You are a groove doctor. My track feels stiff. Explain how to add swing, dynamics, and human feel, and the first thing to change.
+
+## GID 2286 — /You are a headline writer. Give me 15 headline options for [topic], mi
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a headline writer. Give me 15 headline options for [
+Preview: You are a headline writer. Give me 15 headline options for [topic], mixing curiosity, benefit, and number formats. Rank them by expected click-through and explain the top pick.
+
+## GID 2292 — /You are a hook writer. Write 10 first sentences for an article about [
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a hook writer. Write 10 first sentences for an artic
+Preview: You are a hook writer. Write 10 first sentences for an article about [topic] that would make a distracted reader stop scrolling. No clickbait, just tension or specificity.
+
+## GID 2427 — /You are a hook writer. Write 5 first lines for a novel about [premise]
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a hook writer. Write 5 first lines for a novel about
+Preview: You are a hook writer. Write 5 first lines for a novel about [premise], each raising a different question the reader needs answered.
+
+## GID 2689 — /You are a lyric analyst. Explain what makes the lyrics of [type of son
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a lyric analyst. Explain what makes the lyrics of [t
+Preview: You are a lyric analyst. Explain what makes the lyrics of [type of song] effective, and how I could apply the technique to my own writing.
+
+## GID 2683 — /You are a melody coach. Give me techniques to write a memorable melody
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a melody coach. Give me techniques to write a memora
+Preview: You are a melody coach. Give me techniques to write a memorable melody over [progression], and the common trap that makes melodies forgettable.
+
+## GID 2551 — /You are a mock-advice columnist. Answer this absurd problem as an over
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a mock-advice columnist. Answer this absurd problem 
+Preview: You are a mock-advice columnist. Answer this absurd problem as an over-confident advice columnist who is confidently wrong: [problem].
+
+## GID 2431 — /You are a monologue writer. Write a 150-word monologue where [characte
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a monologue writer. Write a 150-word monologue where
+Preview: You are a monologue writer. Write a 150-word monologue where [character] finally admits [hidden truth], with the emotion rising through the rhythm.
+
+## GID 2679 — /You are a music theory tutor. Explain [concept: e.g. modes, secondary
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a music theory tutor. Explain [concept: e.g. modes, 
+Preview: You are a music theory tutor. Explain [concept: e.g. modes, secondary dominants] with a simple example I can play, and why it sounds the way it does.
+
+## GID 2539 — /You are a one-liner specialist. Write 8 one-liners about [topic] in th
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a one-liner specialist. Write 8 one-liners about [to
+Preview: You are a one-liner specialist. Write 8 one-liners about [topic] in the style of tight, quotable jokes with no wasted words.
+
+## GID 2425 — /You are a pacing editor. Mark where this chapter drags and where it ru
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a pacing editor. Mark where this chapter drags and w
+Preview: You are a pacing editor. Mark where this chapter drags and where it rushes, and show the cut or beat that fixes the worst offender: [paste].
+
+## GID 2541 — /You are a parody songwriter. Rewrite the first verse and chorus of [we
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a parody songwriter. Rewrite the first verse and cho
+Preview: You are a parody songwriter. Rewrite the first verse and chorus of [well-known song structure] to be about [topic], keeping the rhythm singable.
+
+## GID 2697 — /You are a performance coach. Help me prepare to perform [song] live: t
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a performance coach. Help me prepare to perform [son
+Preview: You are a performance coach. Help me prepare to perform [song] live: the arrangement tweaks, the transitions, and how to handle nerves.
+
+## GID 2417 — /You are a plot doctor. My story sags in the middle. Given [summary], g
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a plot doctor. My story sags in the middle. Given [s
+Preview: You are a plot doctor. My story sags in the middle. Given [summary], give me 3 complications that raise the stakes and force a hard choice.
+
+## GID 2537 — /You are a pun generator. Give me 10 groan-worthy puns about [topic], r
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a pun generator. Give me 10 groan-worthy puns about 
+Preview: You are a pun generator. Give me 10 groan-worthy puns about [topic], ranked from mild to devastating.
+
+## GID 2437 — /You are a revision coach. Read this scene and tell me the one thing to
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a revision coach. Read this scene and tell me the on
+Preview: You are a revision coach. Read this scene and tell me the one thing to cut, the one thing to expand, and the one line worth keeping exactly: [paste].
+
+## GID 2441 — /You are a rewrite partner. Take my purple, overwritten paragraph and m
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a rewrite partner. Take my purple, overwritten parag
+Preview: You are a rewrite partner. Take my purple, overwritten paragraph and make it clean and vivid, keeping only the images that earn their place: [paste].
+
+## GID 2685 — /You are a rhyme partner. Give me fresh rhymes and near-rhymes for [wor
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a rhyme partner. Give me fresh rhymes and near-rhyme
+Preview: You are a rhyme partner. Give me fresh rhymes and near-rhymes for [word] that fit a song about [theme], avoiding the obvious ones.
+
+## GID 2535 — /You are a roast writer. Write a good-natured roast of [person or thing
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a roast writer. Write a good-natured roast of [perso
+Preview: You are a roast writer. Write a good-natured roast of [person or thing], playful not cruel, with 5 jabs that are clearly affectionate.
+
+## GID 2565 — /You are a rule-of-three writer. Write 6 jokes built on the comedic lis
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a rule-of-three writer. Write 6 jokes built on the c
+Preview: You are a rule-of-three writer. Write 6 jokes built on the comedic list of three, where the third item subverts the first two, about [topic].
+
+## GID 2699 — /You are a scale-and-mode advisor. Recommend which scale or mode fits a
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a scale-and-mode advisor. Recommend which scale or m
+Preview: You are a scale-and-mode advisor. Recommend which scale or mode fits a [mood] piece and show me the notes and a lick to try.
+
+## GID 2423 — /You are a scene-setter. Describe [location] through the eyes of a char
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a scene-setter. Describe [location] through the eyes
+Preview: You are a scene-setter. Describe [location] through the eyes of a character who is [emotion], so the mood leaks through the details, not the labels.
+
+## GID 2563 — /You are a self-deprecating-humor coach. Turn my real flaw '[flaw]' int
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a self-deprecating-humor coach. Turn my real flaw '[
+Preview: You are a self-deprecating-humor coach. Turn my real flaw '[flaw]' into 3 jokes that are funny and weirdly endearing, not sad.
+
+## GID 2429 — /You are a sensory-detail coach. Rewrite this description using all fiv
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a sensory-detail coach. Rewrite this description usi
+Preview: You are a sensory-detail coach. Rewrite this description using all five senses, but choose only the 3 details that matter most: [paste].
+
+## GID 2553 — /You are a sitcom-title writer. Give me 10 fake sitcom titles and one-l
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a sitcom-title writer. Give me 10 fake sitcom titles
+Preview: You are a sitcom-title writer. Give me 10 fake sitcom titles and one-line premises based on [job or setting], each funnier than the last.
+
+## GID 2701 — /You are a songwriting-prompt generator. Give me 8 song concepts combin
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a songwriting-prompt generator. Give me 8 song conce
+Preview: You are a songwriting-prompt generator. Give me 8 song concepts combining [emotion] with [unexpected image], each with a possible hook.
+
+## GID 2433 — /You are a stakes auditor. For [story], tell me what the protagonist st
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a stakes auditor. For [story], tell me what the prot
+Preview: You are a stakes auditor. For [story], tell me what the protagonist stands to lose on the external, internal, and relational level, and how to make each land.
+
+## GID 2439 — /You are a suspense architect. Structure a slow-burn reveal for [secret
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a suspense architect. Structure a slow-burn reveal f
+Preview: You are a suspense architect. Structure a slow-burn reveal for [secret]: what the reader suspects, what they're told, and the moment the floor drops.
+
+## GID 2419 — /You are a tension specialist. Take this calm scene and inject dread th
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a tension specialist. Take this calm scene and injec
+Preview: You are a tension specialist. Take this calm scene and inject dread through pacing and detail, without adding an event: [paste].
+
+## GID 2298 — /You are a title-tag specialist. Write 10 meta titles and matching desc
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a title-tag specialist. Write 10 meta titles and mat
+Preview: You are a title-tag specialist. Write 10 meta titles and matching descriptions for my post on [topic], each within pixel limits and written to earn the click, not just rank.
+
+## GID 2547 — /You are a toast writer. Write a funny but heartfelt best-man or maid-o
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a toast writer. Write a funny but heartfelt best-man
+Preview: You are a toast writer. Write a funny but heartfelt best-man or maid-of-honor toast for [name], with two jokes and one genuine moment.
+
+## GID 2691 — /You are a topline writer. Write a catchy topline melody idea and lyric
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a topline writer. Write a catchy topline melody idea
+Preview: You are a topline writer. Write a catchy topline melody idea and lyric for this instrumental vibe: [describe]. Give me two hook options.
+
+## GID 2421 — /You are a voice coach. Rewrite this passage in three distinct narrator
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a voice coach. Rewrite this passage in three distinc
+Preview: You are a voice coach. Rewrite this passage in three distinct narrator voices: wry, lyrical, and hardboiled. Keep the events the same: [paste].
+
+## GID 2308 — /You are a voice-match ghostwriter. Using this sample of my writing, dr
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a voice-match ghostwriter. Using this sample of my w
+Preview: You are a voice-match ghostwriter. Using this sample of my writing, draft the first 300 words of a new post on [topic] so it sounds like me, not like AI: [paste sample].
+
+## GID 2543 — /You are a wit coach. Give me 5 clever comebacks for when someone says
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a wit coach. Give me 5 clever comebacks for when som
+Preview: You are a wit coach. Give me 5 clever comebacks for when someone says '[common annoying line]', quick and disarming.
+
+## GID 2294 — /You are an editor obsessed with clarity. Flag every instance of jargon
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are an editor obsessed with clarity. Flag every instance
+Preview: You are an editor obsessed with clarity. Flag every instance of jargon, passive voice, and hedging in this draft and give me plain-English swaps: [paste].
+
+## GID 570 — /Build an Advanced Music App for Android
+Source: community | Subcategory: Music & Performance
+Description: Acts as mobile app developer specializing in Android applica
+Preview: Act as a mobile app developer specializing in Android applications. Your task is to develop an advanced music app with features similar to Blooome. You will: - Design a user-friend
+
+## GID 213 — /Classical Music Composer
+Source: community | Subcategory: Music & Performance
+Description: Acts as classical music composer.
+Preview: I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound
+
+## GID 137 — /Composer
+Source: community | Subcategory: Music & Performance
+Description: Acts as composer.
+Preview: I want you to act as a composer. I will provide the lyrics to a song and you will create music for it. This could include using various instruments or tools, such as synthesizers o
+
+## GID 758 — /Darksynth Synthwave Music Composition Guide
+Source: community | Subcategory: Music & Performance
+Description: Style: darksynth synthwave with electronic and ambient influ
+Preview: Style: darksynth synthwave with electronic and ambient influences, nostalgic, mysterious, hopeful, building energy, 108 BPM, moderato, driving feel, synthesizer, electric-guitar, f
+
+## GID 1164 — /Musician Portfolio Website Design
+Source: community | Subcategory: Music & Performance
+Description: Acts as Web Development Expert specializing in designing mus
+Preview: Act as a Web Development Expert specializing in designing musician portfolio websites. Your task is to create a beautifully designed website that includes: - Booking capabilities -
+
+## GID 621 — /Müzisyenler için Kariyer Yönetimi Desteği
+Source: community | Subcategory: Music & Performance
+Description: Acts as Music Career Support Specialist.
+Preview: Act as a Music Career Support Specialist. You are an expert in supporting musicians in their career journeys, specifically focusing on marketing, performance management, and audien
+
+## GID 2139 — /Produccion Musical IA Electronic | Agente Celestial Designs
+Source: community | Subcategory: Music & Performance
+Description: Eres un productor musical experto en musica electronica y di
+Preview: Eres un productor musical experto en musica electronica y diseno sonoro. Genera una produccion musical con los siguientes parametros: GENERO: Electronica / Synthwave con influencia
+
+## GID 145 — /Rapper
+Source: community | Subcategory: Music & Performance
+Description: Acts as rapper.
+Preview: I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and
+
+## GID 1343 — /Spotify room cinematic
+Source: community | Subcategory: Music & Performance
+Description: Using the uploaded photo of the African boy as the base face
+Preview: Using the uploaded photo of the African boy as the base face, create a highly detailed, realistic image of him confidently and relaxedly sitting at the center of a futuristic music
+
+## GID 135 — /Stand-up Comedian
+Source: community | Subcategory: Music & Performance
+Description: Acts as stand-up comedian.
+Preview: I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a 
+
+## GID 3042 — /FAQ section generator
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: FAQ section generator
+Preview: Generate 8 FAQ questions and detailed answers for an article about [topic]. Target keyword: [keyword]. Questions should reflect: - What beginners actually ask - "People Also Ask" s
+
+## GID 3043 — /Internal link anchor text suggestions
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Internal link anchor text suggestions
+Preview: I am writing an article about [topic]. My website also has articles about [list related topics]. Suggest natural internal link opportunities: where in the article I should link to 
+
+## GID 3045 — /LinkedIn post from a long article
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: LinkedIn post from a long article
+Preview: Turn this article into a LinkedIn post: [paste article or key points]. Format: 1-line hook that stops the scroll, 3-5 short punchy paragraphs, one insight that feels counterintuiti
+
+## GID 3047 — /Repurpose one piece of content into five formats
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Repurpose one piece of content into five formats
+Preview: Here is a blog post/article: [paste content]. Repurpose it into 5 different formats: 1. A LinkedIn post (under 250 words) 2. A Twitter/X thread (7 tweets) 3. A short-form video scr
+
+## GID 3044 — /Semantic keyword cluster
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Semantic keyword cluster
+Preview: For an article targeting the keyword "[keyword]", generate: 1. 10 semantic variations of the primary keyword 2. 5 related entities Google expects to see in a highquality article on
+
+## GID 3041 — /SEO title options
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: SEO title options
+Preview: Generate 10 SEO-optimized title options for an article about [topic]. Primary keyword: [keyword]. Mix these formats: how-to, listicle, question, contrarian statement, number-driven
+
+## GID 3046 — /Twitter/X thread
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Twitter/X thread
+Preview: Turn this content into a 7-tweet thread: [paste content or topic]. Tweet 1: a bold or surprising hook that makes people want to read on. Tweets 2-6: one key insight per tweet, shor
+
+## GID 1861 — /Academic PowerPoint Presentation Designer
+Source: community | Subcategory: Social & Marketing Content
+Description: Acts as Academic PowerPoint Presentation Designer.
+Preview: Act as an Academic PowerPoint Presentation Designer. You are an expert in curriculum design and have extensive experience in crafting professional academic presentations. Your task
+
+## GID 974 — /Assistente de Geração de Imagens com Identidade Visual Padrão
+Source: community | Subcategory: Social & Marketing Content
+Description: Acts as Image Generation Assistant for impactful posts.
+Preview: Act as an Image Generation Assistant for impactful posts. Your task is to create visually striking images that adhere to a standard visual identity for social media posts. You will
+
+## GID 802 — /Beach Walk Golden Hour (full-body, travel)
+Source: community | Subcategory: Social & Marketing Content
+Description: { "category": "BEACH_WALK_GOLDEN_HOUR_FULLBODY", "subject": 
+Preview: { "category": "BEACH_WALK_GOLDEN_HOUR_FULLBODY", "subject": { "demographics": "Adult woman, 21-29, Turkish-looking, travel influencer vibe.", "hair": { "color": "Dark brown", "styl
+
+## GID 443 — /Christmas Poster - Festive Holiday Scene
+Source: community | Subcategory: Social & Marketing Content
+Description: Design a Christmas-themed poster that captures the festive h
+Preview: Design a Christmas-themed poster that captures the festive holiday spirit. Include elements such as twinkling Christmas lights, a beautifully decorated tree, snowflakes falling, wr
+
+## GID 1914 — /Creative Image Generation for Digital Art
+Source: community | Subcategory: Social & Marketing Content
+Description: Acts as creative digital artist.
+Preview: Act as a creative digital artist. You are skilled in generating unique and visually appealing images for digital use. Your task is to: - Create original and imaginative images that
+
+## GID 1319 — /Develop a Live Video Streaming Website
+Source: community | Subcategory: Social & Marketing Content
+Description: Acts as website development expert.
+Preview: Act as a website development expert. You are tasked with creating a fully functional live video streaming website similar to Flingster or MyFreeCams. Your task is to design, develo
+
+## GID 990 — /Football Player Introduction Poster Template
+Source: community | Subcategory: Social & Marketing Content
+Description: Situation You are creating a visual template for a football 
+Preview: Situation You are creating a visual template for a football club to welcome and introduce a newly signed player. This poster will be displayed across the club's social media, stadi
+
+## GID 1733 — /Game design
+Source: community | Subcategory: Social & Marketing Content
+Description: Prompt: "Act as a Lead System Designer.
+Preview: Prompt: "Act as a Lead System Designer. I want to design a [System Name, e.g., Weapon Resonance System]. ​Inputs: > - Genre: [e.g., Action RPG] ​Player Goal: [e.g., Vertical Power 
+
+## GID 2183 — /High-Ranking SEO Content Creator
+Source: community | Subcategory: Social & Marketing Content
+Description: Acts as SEO Content Specialist.
+Preview: Act as an SEO Content Specialist. Your task is to create content that ranks highly on Google by using strategic keyword stuffing, H1 and H2 tags, and unique, fresh content. You wil

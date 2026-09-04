@@ -1,378 +1,238 @@
 # Manual Review Packet — Business & Marketing — 2
 
-Entries: 75
+Entries: 47
 
-## GID 2345 — /Act as an email copywriter. Write a 4-email welcome sequence for [prod
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an email copywriter. Write a 4-email welcome sequence for [prod
-Prompt preview: Act as an email copywriter. Write a 4-email welcome sequence for [product]: welcome, value, proof, offer. One goal and one CTA per email, in a [tone] voice.
+## GID 513 — /Internal Project Proposal for Hospital Collaboration
+Source: community | Subcategory: Marketing & Sales
+Description: Acts as Professional Business Development Manager.
+Preview: Act as a Professional Business Development Manager. You are tasked with writing an internal project report for a collaboration with ${hospitalName:XX Hospital} to enhance their ful
 
-## GID 2373 — /Act as an influencer-brief writer. Draft a creator brief for promoting
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an influencer-brief writer. Draft a creator brief for promoting
-Prompt preview: Act as an influencer-brief writer. Draft a creator brief for promoting [product]: the one message, do's and don'ts, hook ideas, and the CTA, in half a page.
-
-## GID 2314 — /Act as an on-page SEO editor. Given my draft on [keyword], tell me exa
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an on-page SEO editor. Given my draft on [keyword], tell me exa
-Prompt preview: Act as an on-page SEO editor. Given my draft on [keyword], tell me exactly where to place the keyword and its variants (title, H1, first 100 words, H2s, alt text) without over-optimizing. Return a checklist.
-
-## GID 2394 — /Act as an operations consultant. Map the core workflow of [business] a
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an operations consultant. Map the core workflow of [business] a
-Prompt preview: Act as an operations consultant. Map the core workflow of [business] and identify the 3 bottlenecks, then propose the automation or hire that removes each.
-
-## GID 2309 — /Act as an SEO content strategist. Give me 10 title options for a post
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an SEO content strategist. Give me 10 title options for a post
-Prompt preview: Act as an SEO content strategist. Give me 10 title options for a post about [topic], each under 60 characters, front-loading the primary keyword and mixing how-to, listicle, and question angles. Flag the one most likely to win the featured snippet.
-
-## GID 2340 — /Act as an SEO reporting analyst. Design a simple monthly SEO report fo
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an SEO reporting analyst. Design a simple monthly SEO report fo
-Prompt preview: Act as an SEO reporting analyst. Design a simple monthly SEO report for [website] a non- technical founder would actually read: 5 metrics, why each matters, and the one action it should trigger. ChatGPT gave me 10 SEO-Optimized Title Ideas for “Best ChatGPT Prompts”.
-
-## GID 2342 — /You are a brand strategist. Define positioning for [product] in one li
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a brand strategist. Define positioning for [product] in one li
-Prompt preview: You are a brand strategist. Define positioning for [product] in one line: for [audience] who [need], it is the [category] that [key differentiator], unlike [alternative].
-
-## GID 2364 — /You are a brand voice designer. Build a voice guide for [brand]: 3 adj
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a brand voice designer. Build a voice guide for [brand]: 3 adj
-Prompt preview: You are a brand voice designer. Build a voice guide for [brand]: 3 adjectives, words we use, words we ban, and a rewritten sentence showing the voice in action.
-
-## GID 2384 — /You are a brand-story writer. Draft the origin story of [brand] in 150
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a brand-story writer. Draft the origin story of [brand] in 150
-Prompt preview: You are a brand-story writer. Draft the origin story of [brand] in 150 words so it builds trust and connects to why the product exists.
-
-## GID 2389 — /You are a business-model strategist. Map [business] onto a one-page Bu
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a business-model strategist. Map [business] onto a one-page Bu
-Prompt preview: You are a business-model strategist. Map [business] onto a one-page Business Model Canvas, then flag the two blocks most likely to break first and why.
-
-## GID 2376 — /You are a case-study writer. Turn these rough results into a persuasiv
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a case-study writer. Turn these rough results into a persuasiv
-Prompt preview: You are a case-study writer. Turn these rough results into a persuasive mini case study for [product]: challenge, approach, and a headline number: [paste].
-
-## GID 2366 — /You are a cold-email specialist. Write a 3-step cold sequence to book
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a cold-email specialist. Write a 3-step cold sequence to book
-Prompt preview: You are a cold-email specialist. Write a 3-step cold sequence to book demos for [product] with [target role], each email under 90 words with one clear ask.
-
-## GID 2395 — /You are a competitive strategist. Position [business] against [competi
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a competitive strategist. Position [business] against [competi
-Prompt preview: You are a competitive strategist. Position [business] against [competitor]: where they are strong, where they are exposed, and the wedge I should attack.
-
-## GID 2331 — /You are a content-brief writer. Produce a full SEO brief for [keyword]
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a content-brief writer. Produce a full SEO brief for [keyword]
-Prompt preview: You are a content-brief writer. Produce a full SEO brief for [keyword]: target intent, word count, required H2s, entities to mention, internal links, and the angle that beats the current #1.
-
-## GID 2317 — /You are a content-gap analyst. Compare my page on [topic] against the
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a content-gap analyst. Compare my page on [topic] against the
-Prompt preview: You are a content-gap analyst. Compare my page on [topic] against the top 3 ranking pages and list the subtopics, questions, and entities they cover that I am missing.
-
-## GID 2378 — /You are a copywriter who studies buyer psychology. Rewrite this bland
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a copywriter who studies buyer psychology. Rewrite this bland
-Prompt preview: You are a copywriter who studies buyer psychology. Rewrite this bland product description using specificity, sensory detail, and one proof point: [paste].
-
-## GID 2382 — /You are a CRO strategist. Give me 7 A/B tests for [landing page], each
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a CRO strategist. Give me 7 A/B tests for [landing page], each
-Prompt preview: You are a CRO strategist. Give me 7 A/B tests for [landing page], each with the hypothesis, the change, and the metric it should move, ranked by expected lift.
-
-## GID 2401 — /You are a customer-research lead. Draft 10 interview questions to unco
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a customer-research lead. Draft 10 interview questions to unco
-Prompt preview: You are a customer-research lead. Draft 10 interview questions to uncover the real job [customer] hires [product] to do, designed to avoid leading them.
-
-## GID 2393 — /You are a financial modeler. Build a simple unit-economics breakdown f
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a financial modeler. Build a simple unit-economics breakdown f
-Prompt preview: You are a financial modeler. Build a simple unit-economics breakdown for [business]: revenue per customer, cost to serve, CAC, and the payback period, with the lever that matters most.
-
-## GID 2356 — /You are a funnel strategist. Design a simple funnel for [product] pric
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a funnel strategist. Design a simple funnel for [product] pric
-Prompt preview: You are a funnel strategist. Design a simple funnel for [product] priced at [price]: lead magnet, tripwire, core offer, and the one upsell, with the promise of each step.
-
-## GID 2344 — /You are a growth marketer who scaled 3 startups. Give me 10 acquisitio
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a growth marketer who scaled 3 startups. Give me 10 acquisitio
-Prompt preview: You are a growth marketer who scaled 3 startups. Give me 10 acquisition channels for [product], ranked by fit for a [budget] budget, with the first test to run on each.
-
-## GID 2368 — /You are a headline scientist. Give me 10 headline formulas filled in f
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a headline scientist. Give me 10 headline formulas filled in f
-Prompt preview: You are a headline scientist. Give me 10 headline formulas filled in for [product], from the '4 U's' to curiosity gaps, and rank them for a [audience] audience.
-
-## GID 2397 — /You are a hiring strategist. Write a scorecard for the first [role] hi
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a hiring strategist. Write a scorecard for the first [role] hi
-Prompt preview: You are a hiring strategist. Write a scorecard for the first [role] hire at [business]: the outcomes they own, the must-have skills, and 3 interview questions that reveal fit.
-
-## GID 2350 — /You are a landing-page strategist. Outline a high-converting page for
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a landing-page strategist. Outline a high-converting page for
-Prompt preview: You are a landing-page strategist. Outline a high-converting page for [product]: section order, the job of each block, and the objection it must overcome. Return as a table.
-
-## GID 2352 — /You are a lifecycle marketer. Map the 5 emails to win back customers w
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a lifecycle marketer. Map the 5 emails to win back customers w
-Prompt preview: You are a lifecycle marketer. Map the 5 emails to win back customers who churned from [product], each with the trigger, the message, and the incentive, if any.
-
-## GID 2333 — /You are a long-form strategist. Outline a 3,000-word pillar page on [t
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a long-form strategist. Outline a 3,000-word pillar page on [t
-Prompt preview: You are a long-form strategist. Outline a 3,000-word pillar page on [topic] that could rank for 20+ related keywords, with the supporting cluster posts it should link to.
-
-## GID 2405 — /You are a margin analyst. Given [business], list 6 ways to improve gro
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a margin analyst. Given [business], list 6 ways to improve gro
-Prompt preview: You are a margin analyst. Given [business], list 6 ways to improve gross margin without raising prices, from cost to mix to process, ranked by feasibility.
-
-## GID 2407 — /You are a market-sizing analyst. Estimate the TAM, SAM, and SOM for [p
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a market-sizing analyst. Estimate the TAM, SAM, and SOM for [p
-Prompt preview: You are a market-sizing analyst. Estimate the TAM, SAM, and SOM for [product] using a bottom-up method, and show the assumptions I need to defend.
-
-## GID 2354 — /You are a messaging strategist. Write the same value proposition for [
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a messaging strategist. Write the same value proposition for [
-Prompt preview: You are a messaging strategist. Write the same value proposition for [product] three ways: for a skeptic, a champion, and an economic buyer. Note what each cares about.
-
-## GID 2313 — /You are a meta-description writer. Write 5 descriptions for a page abo
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a meta-description writer. Write 5 descriptions for a page abo
-Prompt preview: You are a meta-description writer. Write 5 descriptions for a page about [topic], each under 155 characters, with an active verb and a reason to click. Mark the one that best matches search intent.
-
-## GID 2362 — /You are a paid-search copywriter. Write 5 Google responsive search ad
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a paid-search copywriter. Write 5 Google responsive search ad
-Prompt preview: You are a paid-search copywriter. Write 5 Google responsive search ad headlines and 3 descriptions for [product] targeting [keyword], each within character limits.
-
-## GID 2386 — /You are a paid-social strategist. Design the creative concepts for 3 a
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a paid-social strategist. Design the creative concepts for 3 a
-Prompt preview: You are a paid-social strategist. Design the creative concepts for 3 ad angles for [product] (problem-aware, solution-aware, product-aware) with the hook for each.
-
-## GID 2348 — /You are a positioning consultant. My product sounds like every competi
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a positioning consultant. My product sounds like every competi
-Prompt preview: You are a positioning consultant. My product sounds like every competitor. Give me 5 sharper positioning angles for [product] and the tagline that expresses each.
-
-## GID 2391 — /You are a pricing strategist. Recommend a pricing model for [product]
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a pricing strategist. Recommend a pricing model for [product]
-Prompt preview: You are a pricing strategist. Recommend a pricing model for [product] given [target customer] and [cost]: the structure, a starting price, and the psychology behind it.
-
-## GID 2370 — /You are a pricing-page copywriter. Write the copy for 3 pricing tiers
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a pricing-page copywriter. Write the copy for 3 pricing tiers
-Prompt preview: You are a pricing-page copywriter. Write the copy for 3 pricing tiers of [product] so the middle tier is the obvious choice, with a one-line value cue per tier.
-
-## GID 2409 — /You are a process consultant. Document a repeatable SOP for [recurring
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a process consultant. Document a repeatable SOP for [recurring
-Prompt preview: You are a process consultant. Document a repeatable SOP for [recurring task in business]: steps, owner, tools, and the quality check at the end.
-
-## GID 2411 — /You are a scenario planner. Sketch best-case, base-case, and worst-cas
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a scenario planner. Sketch best-case, base-case, and worst-cas
-Prompt preview: You are a scenario planner. Sketch best-case, base-case, and worst-case 12-month outcomes for [business], the leading indicator of each, and the move that hedges the downside. ChatGPT generated a mission statement for God of Prompt’s business, a collection of best AI prompts.
-
-## GID 2325 — /You are a schema specialist. Recommend the structured data types for a
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a schema specialist. Recommend the structured data types for a
-Prompt preview: You are a schema specialist. Recommend the structured data types for a page about [topic] and give me the JSON-LD skeleton for the most valuable one.
-
-## GID 2315 — /You are a SERP analyst. I want to rank for [keyword]. Describe the sea
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a SERP analyst. I want to rank for [keyword]. Describe the sea
-Prompt preview: You are a SERP analyst. I want to rank for [keyword]. Describe the search intent behind it, the content format currently winning, and the 3 things a page must include to compete.
-
-## GID 2339 — /You are a snippet-stealing strategist. The featured snippet for [keywo
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a snippet-stealing strategist. The featured snippet for [keywo
-Prompt preview: You are a snippet-stealing strategist. The featured snippet for [keyword] is currently weak. Show me the exact format and 45-word answer that would replace it.
-
-## GID 2399 — /You are a strategy facilitator. Run me through a pre-mortem for [proje
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a strategy facilitator. Run me through a pre-mortem for [proje
-Prompt preview: You are a strategy facilitator. Run me through a pre-mortem for [project]: imagine it failed in 12 months, list the top 5 causes, and the safeguard for each.
-
-## GID 2380 — /You are a subject-line specialist. Write 12 email subject lines for [c
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a subject-line specialist. Write 12 email subject lines for [c
-Prompt preview: You are a subject-line specialist. Write 12 email subject lines for [campaign], mixing curiosity, benefit, and urgency, and predict the top 2 open-rate winners.
-
-## GID 2337 — /You are a topical-authority planner. Map the 12 posts I need to become
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a topical-authority planner. Map the 12 posts I need to become
-Prompt preview: You are a topical-authority planner. Map the 12 posts I need to become an authority on [topic], sequenced from foundational to advanced, with the keyword each should own.
-
-## GID 2358 — /You are a UGC scriptwriter. Write 3 short creator-style video scripts
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a UGC scriptwriter. Write 3 short creator-style video scripts
-Prompt preview: You are a UGC scriptwriter. Write 3 short creator-style video scripts for [product] that feel like a friend's recommendation, each with a hook, demo beat, and soft CTA.
-
-## GID 2374 — /You are a value-prop tester. Give me 5 ways to say what [product] does
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a value-prop tester. Give me 5 ways to say what [product] does
-Prompt preview: You are a value-prop tester. Give me 5 ways to say what [product] does, from feature-led to outcome-led, and tell me which to lead with for cold vs warm traffic.
-
-## GID 2346 — /You are an ad specialist. Write 6 Facebook ad variations for [product]
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an ad specialist. Write 6 Facebook ad variations for [product]
-Prompt preview: You are an ad specialist. Write 6 Facebook ad variations for [product] targeting [audience]: 3 pain-led, 3 desire-led, each with hook, body, and CTA under 125 characters.
-
-## GID 2327 — /You are an anchor-text strategist. Give me 10 natural anchor-text vari
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an anchor-text strategist. Give me 10 natural anchor-text vari
-Prompt preview: You are an anchor-text strategist. Give me 10 natural anchor-text variations for a link to my [topic] page that avoid over-optimization while signaling relevance.
-
-## GID 2329 — /You are an E-E-A-T auditor. Review my page on [topic] and list the spe
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an E-E-A-T auditor. Review my page on [topic] and list the spe
-Prompt preview: You are an E-E-A-T auditor. Review my page on [topic] and list the specific experience, expertise, and trust signals it lacks, with the exact element to add for each.
-
-## GID 2335 — /You are an image SEO specialist. For my post on [topic], write descrip
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an image SEO specialist. For my post on [topic], write descrip
-Prompt preview: You are an image SEO specialist. For my post on [topic], write descriptive alt text for 6 image types (hero, diagram, screenshot, chart, product, quote) that helps both accessibility and ranking.
-
-## GID 2321 — /You are an internal-linking strategist. Given these 8 posts on [topic]
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an internal-linking strategist. Given these 8 posts on [topic]
-Prompt preview: You are an internal-linking strategist. Given these 8 posts on [topic], design the internal link map: which links to which, with keyword-rich anchors, to concentrate authority on the money page. Return a table.
-
-## GID 2372 — /You are an objection-handling strategist. List the top 6 objections to
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an objection-handling strategist. List the top 6 objections to
-Prompt preview: You are an objection-handling strategist. List the top 6 objections to buying [product] and write the one-sentence reframe that neutralizes each.
-
-## GID 2360 — /You are an offer strategist. Make [product] a no-brainer: stack the co
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an offer strategist. Make [product] a no-brainer: stack the co
-Prompt preview: You are an offer strategist. Make [product] a no-brainer: stack the core offer, 3 bonuses, a guarantee, and scarcity, and write the one sentence that sums up the value.
-
-## GID 2403 — /You are an OKR coach. Turn this vague goal for [business] into a quart
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an OKR coach. Turn this vague goal for [business] into a quart
-Prompt preview: You are an OKR coach. Turn this vague goal for [business] into a quarterly objective with 3 measurable key results and the weekly metric to track each: [goal].
-
-## GID 2319 — /You are an SEO copywriter. Write an SEO-optimized 150-word intro for [
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an SEO copywriter. Write an SEO-optimized 150-word intro for [
-Prompt preview: You are an SEO copywriter. Write an SEO-optimized 150-word intro for [topic] that answers the query in the first sentence, includes the primary keyword naturally, and earns the scroll.
-
-## GID 2290 — /You are an SEO editor. Add semantic depth to my draft on [topic]: list
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an SEO editor. Add semantic depth to my draft on [topic]: list
-Prompt preview: You are an SEO editor. Add semantic depth to my draft on [topic]: list 10 related entities and questions I should cover to fully satisfy the query, and where each fits.
-
-## GID 2323 — /You are an SEO editor. Audit this draft for search intent mismatch: do
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an SEO editor. Audit this draft for search intent mismatch: do
-Prompt preview: You are an SEO editor. Audit this draft for search intent mismatch: does it deliver what someone searching [keyword] actually wants, or does it drift? Show the fix: [paste].
-
-## GID 2311 — /You're an SEO strategist. Build a 90-day plan to grow organic traffic
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You're an SEO strategist. Build a 90-day plan to grow organic traffic
-Prompt preview: You're an SEO strategist. Build a 90-day plan to grow organic traffic to [website] from [current sessions] to a realistic target, split into monthly priorities across technical, content, and links, with one KPI to watch each month.
-
-## GID 2965 — /Ad copy
+## GID 2967 — /Landing page
 Source: pdf | Subcategory: Marketing & Sales
-Description: Ad copy
-Prompt preview: Write 5 ad variations for [product] aimed at [audience], each with a different angle: pain, benefit, social proof, curiosity, and urgency. Keep each under 30 words and label the angle.
+Description: Landing page
+Preview: Draft landing page copy for [product]: a headline, a subhead, three benefit bullets, one objection-handling line, and a call to action. Audience: [audience]. Tone: [tone].
 
-## GID 132 — /Advertiser
+## GID 1369 — /Manhattan Cocktail Cinematic Video
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as advertiser.
-Prompt preview: I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. My first su
+Description: centered Manhattan cocktail hero shot, static locked camera,
+Preview: centered Manhattan cocktail hero shot, static locked camera, very subtle liquid movement, dramatic rim lighting, premium cocktail commercial look, isolated subject, simple dark gra
 
-## GID 1422 — /Barong 2
+## GID 1249 — /Marketing Mastermind for Product Promotion
 Source: community | Subcategory: Marketing & Sales
-Description: Abstract geometric vector of a Barong head focusing on sharp fangs and an intricate crown.
-Prompt preview: Abstract geometric vector of a Barong head focusing on sharp fangs and an intricate crown. Utilizes the Golden Ratio and rhythmic repetition of geometric shapes. Combines Batik Megamendung organic curves with sharp Bauhaus lines. Sophisticated indigo and copper color palette. Verified: 100% vector, 
+Description: Acts as Marketing Mastermind.
+Preview: Act as a Marketing Mastermind. You are a seasoned expert in devising marketing strategies, planning promotional events, and crafting persuasive communication for agents. Given the 
 
-## GID 2005 — /Business Engineer Dashboard Creator
+## GID 1949 — /Master Pitch Deck Creation
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as Business Engineer specializing in dashboard creation.
-Prompt preview: Act as a Business Engineer specializing in dashboard creation. You are an expert in developing comprehensive dashboards that allow businesses to manage all aspects of their operations from a single interface. Your task is to: - Create dashboards that integrate all necessary business functions such a
+Description: Acts as Pitch Deck Specialist.
+Preview: Act as a Pitch Deck Specialist. You are an expert in creating investor-ready pitch decks that highlight the strengths and opportunities of a business. Your task is to develop a com
 
-## GID 2966 — /Cold email
+## GID 1366 — /Narrative Momentum Prediction Engine
+Source: community | Subcategory: Marketing & Sales
+Description: You are a **Narrative Momentum Prediction Engine** operating
+Preview: You are a **Narrative Momentum Prediction Engine** operating at the intersection of finance, media, and marketing intelligence. ### **Primary Task** Detect and analyze **dominant f
+
+## GID 1140 — /NOOMS Brand Story & Portfolio Background – Storytelling Format
+Source: community | Subcategory: Marketing & Sales
+Description: I want to create a brand story and portfolio background for 
+Preview: I want to create a brand story and portfolio background for my footwear brand. The story should be written in a strong storytelling format that captures attention emotionally, not 
+
+## GID 532 — /Pet Store Advertising Campaign Strategy
+Source: community | Subcategory: Marketing & Sales
+Description: Acts as marketing strategist.
+Preview: Act as a marketing strategist. You are tasked with developing a comprehensive advertising campaign for Migros' new pet stores. Your objective is to increase brand awareness and dri
+
+## GID 1587 — /Review the social media content
+Source: community | Subcategory: Marketing & Sales
+Description: I want to review my social media content.
+Preview: I want to review my social media content. You have 14 years of experience in social media marketing manager. Frame 1: Myth: Pools require massive upfront cash. Frame 2: Reality: Mo
+
+## GID 438 — /Sales
+Source: community | Subcategory: Marketing & Sales
+Description: Acts as digital marketing expert.create 10 digital beginner 
+Preview: Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves
+
+## GID 2018 — /Sales Funnel Builder from URL
+Source: community | Subcategory: Marketing & Sales
+Description: Acts as Sales Funnel Architect.
+Preview: Act as a Sales Funnel Architect. You are an expert in designing and building sales funnels using online content. Your task is to construct a sales funnel based on the provided URL:
+
+## GID 2969 — /Sales objection
 Source: pdf | Subcategory: Marketing & Sales
-Description: Cold email
-Prompt preview: Write a cold email to [role] at [company type] about [value I offer]. Personalise the opening to [trigger], keep it under 90 words, and end with one low-friction call to action.
+Description: Sales objection
+Preview: The prospect said: [objection]. Give me three consultative ways to respond that acknowledge the concern, reframe it, and move the conversation forward, in a helpful not pushy tone.
 
-## GID 854 — /Comprehensive Digital Marketing Strategy for Fashion Brand
+## GID 259 — /Salesperson
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as Digital Marketing Strategist for a fashion brand.
-Prompt preview: Act as a Digital Marketing Strategist for a fashion brand. Your role is to create a comprehensive online marketing strategy targeting young women aged 20-40. The strategy should include the following components: 1. **Brand Account Content Creation**: Develop engaging short videos showcasing the stor
+Description: Acts as salesperson.
+Preview: I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to p
 
-## GID 1071 — /content
+## GID 752 — /Secteur Bancaire - Création d’un texte marketing simple
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as content strategist for natural skincare and haircare products selling natural skincare and h
-Prompt preview: Act as a content strategist for natural skincare and haircare products selling natural skincare and haircare products. I’m a US skincare and haircare formulator who have a natural skincare and haircare brand based in Dallas, Texas. The brand uses only natural ingredients to formulate all their natur
+Description: Rédige un texte marketing clair, professionnel et éthique po
+Preview: Rédige un texte marketing clair, professionnel et éthique pour promouvoir ${nom_du_produit_financier}. Contraintes : – 100 à 130 mots maximum – Style : crédible, institutionnel et 
 
-## GID 2968 — /Content ideas
-Source: pdf | Subcategory: Marketing & Sales
-Description: Content ideas
-Prompt preview: Give me 15 content ideas for [brand or topic] aimed at [audience], mixing education, proof, and promotion. Format as a table with the idea, the format, and the goal.
-
-## GID 2004 — /Create Marketing Videos for Magnifiscentss
+## GID 440 — /Selar ideas for automation
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as Creative Video Director.
-Prompt preview: Act as a Creative Video Director. You are tasked with creating stunning marketing videos for the perfume brand 'Magnifiscentss.' Your task is to: - Develop a captivating storyline that highlights the essence and luxury of the brand. - Incorporate visually appealing elements that reflect the brand's 
+Description: Acts as digital marketing expert.create 10 digital beginner 
+Preview: Act as a digital marketing expert.create 10 digital beginner friendly digital product ideas I can sell on selar in Nigeria, explain each idea simply and state the problem it solves
 
-## GID 316 — /Creative Branding Strategist
+## GID 205 — /Social Media Manager
 Source: community | Subcategory: Marketing & Sales
-Description: You are a creative branding strategist, specializing in helping small businesses establish a strong 
-Prompt preview: You are a creative branding strategist, specializing in helping small businesses establish a strong and memorable brand identity. When given information about a business's values, target audience, and industry, you generate branding ideas that include logo concepts, color palettes, tone of voice, an
+Description: Acts as social media manager.
+Preview: I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to
 
-## GID 1114 — /Creative Ideas Generator
+## GID 256 — /Startup Idea Generator
 Source: community | Subcategory: Marketing & Sales
-Description: You are a Creative Ideas Assistant specializing in advertising strategies and content generation for
-Prompt preview: You are a Creative Ideas Assistant specializing in advertising strategies and content generation for Google Ads, Meta ads, and other digital platforms. You are an expert in ideation for video ads, static visuals, carousel creatives, and storytelling-based campaigns that capture user attention and dr
+Description: Generate digital startup ideas based on the wish of the peop
+Preview: Generate digital startup ideas based on the wish of the people. For example, when I say "I wish there's a big large mall in my small town", you generate a business plan for the dig
 
-## GID 426 — /Digital product ideas
+## GID 1465 — /Strategy Consultant
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as digital marketing expert create 10 beginner friendly digital product ideas,I can sell on sel
-Prompt preview: Act as a digital marketing expert create 10 beginner friendly digital product ideas,I can sell on selar in Nigeria, explain each ideas in simple and state the problem it solves
+Description: You are a world-class strategy consultant trained by McKinse
+Preview: You are a world-class strategy consultant trained by McKinsey, BCG, and Bain, hired to deliver a $300K strategic analysis for a client in the ${industry} sector. Your mission is to
 
-## GID 688 — /Email Marketing
+## GID 2093 — /tabs
 Source: community | Subcategory: Marketing & Sales
-Description: Acts as email marketing specialist who is advising a ${company} on their email marketing flow.
-Prompt preview: Act as an email marketing specialist who is advising a ${company} on their email marketing flow. Develop a step-by-step guide for creating an effective email marketing campaign for ${product}. 1. Target the right audience: Identify the target audience by analyzing the demographics, behaviour and int
+Description: Objective: Compare product in current tab to items in other 
+Preview: Objective: Compare product in current tab to items in other tabs 1. **Identify open product tabs** * List all tabs with product pages, "comparison tabs" * Verify they're comparable
 
-## GID 1256 — /Futuristic Supercar Brand Logo
+## GID 501 — /TikTok Marketing Visual Designer Agent
 Source: community | Subcategory: Marketing & Sales
-Description: Design a logo for a futuristic supercar brand.
-Prompt preview: Design a logo for a futuristic supercar brand. The logo should: - Reflect innovation, speed, and luxury. - Use sleek and modern design elements. - Incorporate shapes and colors that suggest high-tech and performance. - Be versatile enough to be used on car emblems, marketing materials, and merchandi
+Description: Acts as TikTok Marketing Visual Designer.
+Preview: Act as a TikTok Marketing Visual Designer. You are an expert in creating compelling and innovative designs specifically for TikTok marketing campaigns. Your task is to develop visu
 
-## GID 1280 — /Gen Z Content & Online Sales Prompt Generator
-Source: community | Subcategory: Marketing & Sales
-Description: You are an expert AI prompt engineer and marketing strategist.
-Prompt preview: You are an expert AI prompt engineer and marketing strategist. Your task is to generate high-quality, reusable prompts for a Nigerian digital entrepreneur and content creator. The user focuses on: • Gen Z TikTok and Instagram Reels • UGC-style and faceless content • Selling products and services onl
+## GID 3017 — /Ad copy (Facebook/Instagram)
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Ad copy (Facebook/Instagram)
+Preview: Write a Facebook/Instagram ad for [product/service]. Hook (first 3 words must stop the scroll): [describe what that means for this product]. Body: 3-4 short sentences. Pain point f
 
-## GID 856 — /Guía para Diseñar y Vender un Libro en Hotmart
-Source: community | Subcategory: Marketing & Sales
-Description: Acts as Hotmart Sales Expert.
-Prompt preview: Act as a Hotmart Sales Expert. You are experienced in the digital marketing and sales of e-books on platforms like Hotmart. Your task is to guide the user in designing and selling their book on Hotmart. You will: - Provide tips on creating an attractive book cover and interior design. - Offer strate
+## GID 3030 — /Business idea stress test
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Business idea stress test
+Preview: I have a business idea: [describe it]. Play devil's advocate. Challenge the 5 biggest assumptions this idea relies on. For each assumption, give: the assumption, why it might be wr
 
-## GID 2197 — /Happy new month
-Source: community | Subcategory: Marketing & Sales
-Description: Create a simple and good looking flyer for the month of August ‘happy new month’ flyer with this pic
-Prompt preview: Create a simple and good looking flyer for the month of August ‘happy new month’ flyer with this picture (remove the picture background and place it in a proper place to compliment the flyer ) Under my brand naw Whykay Entertainment
+## GID 3018 — /Cold outreach email
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Cold outreach email
+Preview: Write a cold email to [type of prospect] from a [type of company]. Goal: get a 15-minute call. Do not use: "I hope this finds you well," "I wanted to reach out," or any other fille
 
-## GID 642 — /Imported Prompt 522
-Source: community | Subcategory: Marketing & Sales
-Description: Acts as Senior Sales Video Script Creator.
-Prompt preview: Act as a Senior Sales Video Script Creator. You are a seasoned expert in crafting engaging and persuasive short video scripts designed to boost product sales. Your task is to: - Develop compelling and concise video scripts tailored to selling products. - Incorporate storytelling techniques to captur
+## GID 3028 — /Competitor analysis framework
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Competitor analysis framework
+Preview: Compare [my company/product] against these 3 competitors: [list them]. For each competitor, analyze: pricing model, target customer, top 3 value propositions, key weaknesses, and w
+
+## GID 3015 — /Email subject line generator
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Email subject line generator
+Preview: Write 10 email subject lines for a campaign about [topic/offer]. Mix these approaches: curiosity gap, numbered list, direct benefit, urgency, question. Each subject line should be 
+
+## GID 3029 — /Go-to-market strategy outline
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Go-to-market strategy outline
+Preview: Create a go-to-market strategy outline for [product/service] launching in [timeframe]. Target customer: [ICP description]. Price point: [range]. Distribution: [channels]. Include: 
+
+## GID 3016 — /Landing page headline
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Landing page headline
+Preview: Write 5 landing page headline options for [product/service]. Target customer: [describe]. Primary pain point: [describe]. Primary benefit: [describe]. Format: one headline (under 1
+
+## GID 3019 — /Product description
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Product description
+Preview: Write a product description for [product name and what it does]. Customer: [describe]. Top three benefits: [list them]. Format: headline, 2-sentence overview, 3 bullet point benefi
+
+## GID 3027 — /SWOT analysis
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: SWOT analysis
+Preview: Conduct a SWOT analysis for [business name or description]. Context: [describe the business, its market, and current situation]. For each quadrant, provide 4-5 specific points, not
+
+## GID 2276 — /Abk
+Source: community | Subcategory: Startup & Strategy
+Description: To help me Edith create image I want him to do and also help
+Preview: To help me Edith create image I want him to do and also help me in convincing some in business plan and also bring idea to make someone love my product or my idea
+
+## GID 557 — /AI Tour Guide Business Plan for Foreign Tourists in China
+Source: community | Subcategory: Startup & Strategy
+Description: Acts as Business Strategist AI specializing in tourism techn
+Preview: Act as a Business Strategist AI specializing in tourism technology. You are tasked with developing a comprehensive business plan for an AI-powered tour guide application designed f
+
+## GID 1035 — /AI-powered data extraction and organization tool
+Source: community | Subcategory: Startup & Strategy
+Description: Develop an AI-powered data extraction and organization tool 
+Preview: Develop an AI-powered data extraction and organization tool that revolutionizes the way professionals across content creation, web development, academia, and business entrepreneurs
+
+## GID 2100 — /alfakennybody
+Source: community | Subcategory: Startup & Strategy
+Description: Analyze ${oust}.
+Preview: Analyze ${oust}. Ignore consensus opinions and focus entirely on variant perception. Your objective is to find what the market may be misunderstanding, ignoring, or underestimating
+
+## GID 1092 — /Business
+Source: community | Subcategory: Startup & Strategy
+Description: .
+Preview: . Act as an investor who’s deciding where to fund me.” - “Pretend you’re a competitor trying to destroy my idea.
+
+## GID 1031 — /Business Coaching Mentor
+Source: community | Subcategory: Startup & Strategy
+Description: I want you to act like a coach a mentor on business idea how
+Preview: I want you to act like a coach a mentor on business idea how to laverage base on idea I have and make money
+
+## GID 1779 — /Business Idea Evaluation and Scoring
+Source: community | Subcategory: Startup & Strategy
+Description: Acts as Business Idea Evaluator.
+Preview: Act as a Business Idea Evaluator. You are an expert in assessing business concepts across various industries. Your task is to evaluate and score the given business idea based on sp
+
+## GID 1258 — /Business Legal Assistant
+Source: community | Subcategory: Startup & Strategy
+Description: --- name: business-legal-assistant description: Assists busi
+Preview: --- name: business-legal-assistant description: Assists businesses with legal inquiries, document preparation, and compliance management. --- Act as a Business Legal Assistant. You
+
+## GID 2273 — /Business management
+Source: community | Subcategory: Startup & Strategy
+Description: I own a tree service company and I have no clue what I'm doi
+Preview: I own a tree service company and I have no clue what I'm doing I need help with everything I'm lost I need help in every aspect
+
+## GID 1245 — /Elite B2B Lead Generation and SEO Audit Specialist
+Source: community | Subcategory: Startup & Strategy
+Description: Acts as Elite B2B Lead Generation Specialist and Technical S
+Preview: Act as an Elite B2B Lead Generation Specialist and Technical SEO Auditor. Your task is to identify 20 high-quality local SMB leads in ${location} within the following niches: 1) ${
+
+## GID 1954 — /Investor Pitch Presentation
+Source: community | Subcategory: Startup & Strategy
+Description: Acts as Startup CEO.
+Preview: Act as a Startup CEO. You are presenting your pitch deck to potential investors, aiming to secure their interest and funding. Your task is to: - Begin with a compelling story or an
+
+## GID 1312 — /OS2.0 SAFe Delivery Context (Master)
+Source: community | Subcategory: Startup & Strategy
+Description: I serve as the Chief Solution / Release Train Architect work
+Preview: I serve as the Chief Solution / Release Train Architect working in a SAFe Agile delivery program. The program consists of 4 Agile delivery teams, operates on PI Planning, and deliv
+
+## GID 1878 — /Reply-Focused Cold Email Builder
+Source: community | Subcategory: Startup & Strategy
+Description: You are an outbound communication strategist specializing in
+Preview: You are an outbound communication strategist specializing in short-form cold outreach that earns replies without sounding aggressive or templated. Write one cold email using the in
+
+## GID 1998 — /RFQ
+Source: community | Subcategory: Startup & Strategy
+Description: An RFQ email that can be sent to diferent industry when the 
+Preview: An RFQ email that can be sent to diferent industry when the leads list has different business industries and the RFQ needs to fit in every industry
+
+## GID 1647 — /Strategic Business Blueprint Generator
+Source: community | Subcategory: Startup & Strategy
+Description: You are a senior strategy consultant (McKinsey-style, hypoth
+Preview: You are a senior strategy consultant (McKinsey-style, hypothesis-driven). Your task is to convert a raw business idea into a decision-ready business blueprint. Work top-down. Be st
+
+## GID 1523 — /Stripe Payment Builder
+Source: community | Subcategory: Startup & Strategy
+Description: Acts as Stripe Payment Setup Assistant.
+Preview: Act as a Stripe Payment Setup Assistant. You are an expert in configuring Stripe payment options for various business needs. Your task is to set up a payment process that allows cu
+
+## GID 653 — /Trade Contract Review Expert
+Source: community | Subcategory: Startup & Strategy
+Description: Acts as Trade Contract Review Expert.
+Preview: Act as a Trade Contract Review Expert. Your role is to meticulously analyze trade contracts for ${industry:global trade} to ensure they meet legal and business standards. Your task
+
+## GID 525 — /Tumor Medical Industry Solution Business Plan
+Source: community | Subcategory: Startup & Strategy
+Description: { "role": "Startup Founder", "context": "Developing a busine
+Preview: { "role": "Startup Founder", "context": "Developing a business plan for a startup focused on innovative solutions in the tumor medical industry.", "task": "Create a detailed busine

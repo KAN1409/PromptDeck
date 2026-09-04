@@ -1,378 +1,503 @@
 # Manual Review Packet — Thinking & Ideas — 2
 
-Entries: 75
+Entries: 100
 
-## GID 2594 — /Act as a health educator. Explain [condition] in plain language: what
+## GID 2788 — /You are a credit educator. Explain in general terms what affects a cre
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a health educator. Explain [condition] in plain language: what
-Prompt preview: Act as a health educator. Explain [condition] in plain language: what it is, common symptoms, and when someone should see a doctor. Note you are not a substitute for medical advice.
+Description: You are a credit educator. Explain in general terms what aff
+Preview: You are a credit educator. Explain in general terms what affects a credit score and habits that tend to help, noting I should verify with my own provider.
 
-## GID 2616 — /Act as a health-question organizer. I have many worries about [topic].
+## GID 2834 — /You are a critical-thinking coach. Give me 6 questions to evaluate a s
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a health-question organizer. I have many worries about [topic].
-Prompt preview: Act as a health-question organizer. I have many worries about [topic]. Help me sort them into what to research, what to ask a doctor, and what to act on now.
+Description: You are a critical-thinking coach. Give me 6 questions to ev
+Preview: You are a critical-thinking coach. Give me 6 questions to evaluate a scientific claim I read online, applied to '[claim]'.
 
-## GID 2669 — /Act as a healthy-snack coach. Suggest 6 snacks that fit [goal], easy t
+## GID 2639 — /You are a design-feedback coach. Here's my layout: [describe]. Assess
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a healthy-snack coach. Suggest 6 snacks that fit [goal], easy t
-Prompt preview: Act as a healthy-snack coach. Suggest 6 snacks that fit [goal], easy to prep, that actually keep me full, with rough macros.
+Description: You are a design-feedback coach. Here's my layout: [describe
+Preview: You are a design-feedback coach. Here's my layout: [describe]. Assess balance, contrast, and alignment, and give the single highest-impact fix.
 
-## GID 2820 — /Act as a HIIT designer. Build a [minutes] HIIT session for [fitness le
+## GID 2621 — /You are a doctor-visit summarizer. Turn these notes from my appointmen
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a HIIT designer. Build a [minutes] HIIT session for [fitness le
-Prompt preview: Act as a HIIT designer. Build a [minutes] HIIT session for [fitness level], with work-rest ratios and low-impact swaps if needed.
+Description: You are a doctor-visit summarizer. Turn these notes from my 
+Preview: You are a doctor-visit summarizer. Turn these notes from my appointment into a clear summary and a follow-up checklist so I don't forget anything: [paste].
 
-## GID 2909 — /Act as a home-training designer. Give me drills to improve [sport skil
+## GID 2664 — /You are a fermentation guide. Walk me through making [ferment] at home
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a home-training designer. Give me drills to improve [sport skil
-Prompt preview: Act as a home-training designer. Give me drills to improve [sport skill] at home with minimal space and equipment.
+Description: You are a fermentation guide. Walk me through making [fermen
+Preview: You are a fermentation guide. Walk me through making [ferment] at home safely, the timeline, and how to tell it's ready.
 
-## GID 2757 — /Act as a house-safety auditor. Help me pet-proof my home for a new [pe
+## GID 2786 — /You are a financial-decision guide. Help me think through [decision: r
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a house-safety auditor. Help me pet-proof my home for a new [pe
-Prompt preview: Act as a house-safety auditor. Help me pet-proof my home for a new [pet]: the hazards to remove, room by room.
+Description: You are a financial-decision guide. Help me think through [d
+Preview: You are a financial-decision guide. Help me think through [decision: rent vs buy, lease vs finance] with the real tradeoffs, not a one-size answer.
 
-## GID 2604 — /Act as a hydration and energy coach. Explain how hydration and simple
+## GID 2780 — /You are a financial-literacy tutor. Teach me how to read [document: cr
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a hydration and energy coach. Explain how hydration and simple
-Prompt preview: Act as a hydration and energy coach. Explain how hydration and simple habits affect daily energy, and give me a practical checklist to feel more alert.
+Description: You are a financial-literacy tutor. Teach me how to read [do
+Preview: You are a financial-literacy tutor. Teach me how to read [document: credit report, pay stub] and what each part means for my money.
 
-## GID 2831 — /Act as a hypothesis coach. Help me turn my curiosity about [phenomenon
+## GID 2796 — /You are a financial-review facilitator. Walk me through a monthly mone
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a hypothesis coach. Help me turn my curiosity about [phenomenon
-Prompt preview: Act as a hypothesis coach. Help me turn my curiosity about [phenomenon] into a testable hypothesis and the experiment that would test it.
+Description: You are a financial-review facilitator. Walk me through a mo
+Preview: You are a financial-review facilitator. Walk me through a monthly money review: the 5 numbers to check and the one question to ask myself.
 
-## GID 2657 — /Act as a leftover-rescuer. Turn [leftover] into a completely different
+## GID 2603 — /You are a first-aid reference. Explain the general steps for respondin
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a leftover-rescuer. Turn [leftover] into a completely different
-Prompt preview: Act as a leftover-rescuer. Turn [leftover] into a completely different meal so it doesn't feel like eating the same thing twice.
+Description: You are a first-aid reference. Explain the general steps for
+Preview: You are a first-aid reference. Explain the general steps for responding to [common minor situation], and clearly state when to call emergency services instead.
 
-## GID 2763 — /Act as a litter-training advisor. Help me litter-train my [pet], the s
+## GID 2811 — /You are a fitness-motivation coach. I've lost my momentum with [activi
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a litter-training advisor. Help me litter-train my [pet], the s
-Prompt preview: Act as a litter-training advisor. Help me litter-train my [pet], the setup, the routine, and what to do if they stop using it.
+Description: You are a fitness-motivation coach. I've lost my momentum wi
+Preview: You are a fitness-motivation coach. I've lost my momentum with [activity]. Help me restart small and rebuild consistency without burning out.
 
-## GID 2632 — /Act as a logo designer. Propose 3 logo concepts for [brand]: the idea
+## GID 2805 — /You are a form checker. Explain how to perform [exercise] with correct
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a logo designer. Propose 3 logo concepts for [brand]: the idea
-Prompt preview: Act as a logo designer. Propose 3 logo concepts for [brand]: the idea behind each, the shapes, and the feeling it should convey.
+Description: You are a form checker. Explain how to perform [exercise] wi
+Preview: You are a form checker. Explain how to perform [exercise] with correct form, the top 3 mistakes, and how to tell if I'm doing it right.
 
-## GID 2899 — /Act as a match-prep advisor. Help me prepare for a game against [oppon
+## GID 2916 — /You are a fundamentals coach. Design a drill progression to master [co
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a match-prep advisor. Help me prepare for a game against [oppon
-Prompt preview: Act as a match-prep advisor. Help me prepare for a game against [opponent style], with a tactical plan and what to watch for.
+Description: You are a fundamentals coach. Design a drill progression to 
+Preview: You are a fundamentals coach. Design a drill progression to master [core skill] in [sport], with a benchmark to hit before moving on.
 
-## GID 2612 — /Act as a medication-organizer. Help me build a simple system to track
+## GID 2838 — /You are a genetics educator. Explain [genetics concept] in plain terms
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a medication-organizer. Help me build a simple system to track
-Prompt preview: Act as a medication-organizer. Help me build a simple system to track medications and questions for my pharmacist, without giving dosing advice.
+Description: You are a genetics educator. Explain [genetics concept] in p
+Preview: You are a genetics educator. Explain [genetics concept] in plain terms with an example, and clear up the myth people commonly believe.
 
-## GID 2800 — /Act as a mobility coach. Give me a 10-minute daily mobility routine fo
+## GID 2662 — /You are a global-cuisine guide. Teach me an authentic [cuisine] dish,
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a mobility coach. Give me a 10-minute daily mobility routine fo
-Prompt preview: Act as a mobility coach. Give me a 10-minute daily mobility routine for someone who sits all day, targeting the areas that get tightest.
+Description: You are a global-cuisine guide. Teach me an authentic [cuisi
+Preview: You are a global-cuisine guide. Teach me an authentic [cuisine] dish, the key ingredients that make it real, and where beginners usually go wrong.
 
-## GID 2793 — /Act as a money-conversation coach. Help me prepare for a talk about [m
+## GID 2908 — /You are a goal-setting coach. Help a [sport] athlete set process and o
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a money-conversation coach. Help me prepare for a talk about [m
-Prompt preview: Act as a money-conversation coach. Help me prepare for a talk about [money topic] with [person], with a calm script and the outcome I want.
+Description: You are a goal-setting coach. Help a [sport] athlete set pro
+Preview: You are a goal-setting coach. Help a [sport] athlete set process and outcome goals for the season, and how to track both.
 
-## GID 2614 — /Act as a nutrition-label reader. Teach me how to read a nutrition labe
+## GID 2748 — /You are a grooming guide. Explain how to groom my [breed] at home: the
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a nutrition-label reader. Teach me how to read a nutrition labe
-Prompt preview: Act as a nutrition-label reader. Teach me how to read a nutrition label for [goal], what to look for, and the marketing tricks to ignore.
+Description: You are a grooming guide. Explain how to groom my [breed] at
+Preview: You are a grooming guide. Explain how to groom my [breed] at home: the routine, the tools, and the part owners usually get wrong.
 
-## GID 2945 — /Act as a off-season strategist. Is [destination] worth visiting in [mo
+## GID 2801 — /You are a habit coach for fitness. Help me make [exercise habit] stick
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a off-season strategist. Is [destination] worth visiting in [mo
-Prompt preview: Act as a off-season strategist. Is [destination] worth visiting in [month]? Tell me the tradeoffs and how to make the most of that timing.
+Description: You are a habit coach for fitness. Help me make [exercise ha
+Preview: You are a habit coach for fitness. Help me make [exercise habit] stick using tiny starts, a cue, and a plan for the days I don't feel like it.
 
-## GID 2653 — /Act as a pantry chef. I have [random ingredients] and nothing else. Gi
+## GID 2609 — /You are a habit-formation coach. Help me build the habit of [healthy b
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a pantry chef. I have [random ingredients] and nothing else. Gi
-Prompt preview: Act as a pantry chef. I have [random ingredients] and nothing else. Give me 3 things I could actually make, ranked by how good they'd be.
+Description: You are a habit-formation coach. Help me build the habit of 
+Preview: You are a habit-formation coach. Help me build the habit of [healthy behavior] using tiny steps, cues, and a way to bounce back after I slip.
 
-## GID 2903 — /Act as a performance-tracking coach. Help me set up a simple way to tr
+## GID 2605 — /You are a health-myth checker. Fact-check this common health claim: [c
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a performance-tracking coach. Help me set up a simple way to tr
-Prompt preview: Act as a performance-tracking coach. Help me set up a simple way to track my [sport] performance and the metrics that predict improvement.
+Description: You are a health-myth checker. Fact-check this common health
+Preview: You are a health-myth checker. Fact-check this common health claim: [claim]. Explain what the evidence generally says and where nuance matters.
 
-## GID 2751 — /Act as a pet-anxiety coach. My [pet] gets anxious during [situation].
+## GID 2926 — /You are a hidden-gems finder. Suggest under-the-radar spots in [destin
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a pet-anxiety coach. My [pet] gets anxious during [situation].
-Prompt preview: Act as a pet-anxiety coach. My [pet] gets anxious during [situation]. Give me a calm, gradual desensitization plan.
+Description: You are a hidden-gems finder. Suggest under-the-radar spots 
+Preview: You are a hidden-gems finder. Suggest under-the-radar spots in [destination] that most tourists miss but are worth the detour.
 
-## GID 2739 — /Act as a pet-nutrition guide. Explain what a balanced diet looks like
+## GID 2666 — /You are a kitchen-efficiency coach. Watch my described cooking routine
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a pet-nutrition guide. Explain what a balanced diet looks like
-Prompt preview: Act as a pet-nutrition guide. Explain what a balanced diet looks like for a [pet type], common feeding mistakes, and how to read a food label.
+Description: You are a kitchen-efficiency coach. Watch my described cooki
+Preview: You are a kitchen-efficiency coach. Watch my described cooking routine and suggest how to work cleaner and faster: [describe].
 
-## GID 2937 — /Act as a photography-travel guide. Tell me the best spots and times fo
+## GID 2840 — /You are a lab-design coach. Help me design a simple experiment to test
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a photography-travel guide. Tell me the best spots and times fo
-Prompt preview: Act as a photography-travel guide. Tell me the best spots and times for photos in [destination], and how to beat the crowds.
+Description: You are a lab-design coach. Help me design a simple experime
+Preview: You are a lab-design coach. Help me design a simple experiment to test [question] at home or school, with variables, controls, and how to measure the result.
 
-## GID 2816 — /Act as a plateau-buster. My progress on [goal] has stalled. Diagnose t
+## GID 2938 — /You are a layover optimizer. I have a [hours]-hour layover in [city].
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a plateau-buster. My progress on [goal] has stalled. Diagnose t
-Prompt preview: Act as a plateau-buster. My progress on [goal] has stalled. Diagnose the likely reasons and give me 3 changes to break through.
+Description: You are a layover optimizer. I have a [hours]-hour layover i
+Preview: You are a layover optimizer. I have a [hours]-hour layover in [city]. What can I realistically see or do without missing my flight?
 
-## GID 2636 — /Act as a poster designer. Design a poster concept for [event or theme]
+## GID 2635 — /You are a lighting specialist. Explain how to light [scene] for a [moo
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a poster designer. Design a poster concept for [event or theme]
-Prompt preview: Act as a poster designer. Design a poster concept for [event or theme]: the layout, the focal image, the type treatment, and the hierarchy.
+Description: You are a lighting specialist. Explain how to light [scene] 
+Preview: You are a lighting specialist. Explain how to light [scene] for a [mood] atmosphere, and describe the direction, quality, and color of the light.
 
-## GID 2602 — /Act as a preventive-health educator. Explain the general screenings an
+## GID 2918 — /You are a local guide. Tell me what to do in [destination] beyond the
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a preventive-health educator. Explain the general screenings an
-Prompt preview: Act as a preventive-health educator. Explain the general screenings and habits associated with [life stage or goal], and encourage confirming specifics with a clinician.
+Description: You are a local guide. Tell me what to do in [destination] b
+Preview: You are a local guide. Tell me what to do in [destination] beyond the tourist trail: the neighborhoods, food, and experiences locals actually love.
 
-## GID 2628 — /Act as a prompt engineer for image models. Turn 'a picture of [idea]'
+## GID 2668 — /You are a marinade-and-sauce maker. Give me 3 sauces or marinades for
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a prompt engineer for image models. Turn 'a picture of [idea]'
-Prompt preview: Act as a prompt engineer for image models. Turn 'a picture of [idea]' into a rich, model-ready prompt with subject, setting, style, lens, and lighting.
+Description: You are a marinade-and-sauce maker. Give me 3 sauces or mari
+Preview: You are a marinade-and-sauce maker. Give me 3 sauces or marinades for [protein or veg], each a different flavor direction, with ratios I can remember.
 
-## GID 2849 — /Act as a quantum-concepts explainer. Explain [quantum topic] as accura
+## GID 2846 — /You are a materials-science guide. Explain why [material] has [propert
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a quantum-concepts explainer. Explain [quantum topic] as accura
-Prompt preview: Act as a quantum-concepts explainer. Explain [quantum topic] as accurately as possible for a layperson, being honest about where analogies break down.
+Description: You are a materials-science guide. Explain why [material] ha
+Preview: You are a materials-science guide. Explain why [material] has [property], what that enables, and where it's used because of it.
 
-## GID 2663 — /Act as a quick-dinner chef. Give me 5 dinners I can make in under 20 m
+## GID 2607 — /You are a medical-appointment coach. Draft a clear summary of my healt
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a quick-dinner chef. Give me 5 dinners I can make in under 20 m
-Prompt preview: Act as a quick-dinner chef. Give me 5 dinners I can make in under 20 minutes from common ingredients, each genuinely worth eating.
+Description: You are a medical-appointment coach. Draft a clear summary o
+Preview: You are a medical-appointment coach. Draft a clear summary of my health history and current concerns to hand to a new doctor: [paste details].
 
-## GID 2761 — /Act as a reactive-dog coach. My dog reacts to [trigger] on walks. Give
+## GID 2601 — /You are a medical-explainer. Describe how [common medication class] ge
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a reactive-dog coach. My dog reacts to [trigger] on walks. Give
-Prompt preview: Act as a reactive-dog coach. My dog reacts to [trigger] on walks. Give me a management and training plan to lower the reactions safely.
+Description: You are a medical-explainer. Describe how [common medication
+Preview: You are a medical-explainer. Describe how [common medication class] generally works and what patients typically ask about it, while stressing that dosing is a doctor's call.
 
-## GID 2667 — /Act as a recipe scaler. Scale this recipe from [X] to [Y] servings, ad
+## GID 2595 — /You are a medical-literacy coach. Translate this lab result or medical
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a recipe scaler. Scale this recipe from [X] to [Y] servings, ad
-Prompt preview: Act as a recipe scaler. Scale this recipe from [X] to [Y] servings, adjusting quantities, cook time, and equipment notes: [paste].
+Description: You are a medical-literacy coach. Translate this lab result 
+Preview: You are a medical-literacy coach. Translate this lab result or medical term into plain English and list the questions I should ask my doctor: [paste]. Remind me to confirm with a p
 
-## GID 2804 — /Act as a recovery coach. Explain how to structure rest, sleep, and act
+## GID 2890 — /You are a mental-performance coach. Give me techniques to stay focused
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a recovery coach. Explain how to structure rest, sleep, and act
-Prompt preview: Act as a recovery coach. Explain how to structure rest, sleep, and active recovery around my [training], and the signs I'm overdoing it.
+Description: You are a mental-performance coach. Give me techniques to st
+Preview: You are a mental-performance coach. Give me techniques to stay focused and calm under pressure in [sport], and a pre-game routine.
 
-## GID 2785 — /Act as a savings-goal automator. Design an automatic system to save fo
+## GID 2615 — /You are a mental-wellbeing guide. Explain the difference between every
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a savings-goal automator. Design an automatic system to save fo
-Prompt preview: Act as a savings-goal automator. Design an automatic system to save for [goal] so I never have to rely on willpower.
+Description: You are a mental-wellbeing guide. Explain the difference bet
+Preview: You are a mental-wellbeing guide. Explain the difference between everyday stress and something worth professional support, and 4 grounding techniques for hard moments.
 
-## GID 2827 — /Act as a science communicator. Explain [concept] to a curious non-expe
+## GID 2782 — /You are a money-mindset coach. Help me reframe my anxiety about [money
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a science communicator. Explain [concept] to a curious non-expe
-Prompt preview: Act as a science communicator. Explain [concept] to a curious non-expert using a clear analogy, then add one detail that shows the deeper truth.
+Description: You are a money-mindset coach. Help me reframe my anxiety ab
+Preview: You are a money-mindset coach. Help me reframe my anxiety about [money situation] into a calm, concrete first step I can take today.
 
-## GID 2851 — /Act as a science-experiment interpreter. I got this result: [describe]
+## GID 2633 — /You are a moodboard curator. Build a moodboard brief for [project]: th
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a science-experiment interpreter. I got this result: [describe]
-Prompt preview: Act as a science-experiment interpreter. I got this result: [describe]. Help me reason about what it means and what could have gone wrong.
+Description: You are a moodboard curator. Build a moodboard brief for [pr
+Preview: You are a moodboard curator. Build a moodboard brief for [project]: the themes, textures, colors, and reference styles that define its look.
 
-## GID 2749 — /Act as a senior-pet-care advisor. Explain how to adjust care for my ag
+## GID 2617 — /You are a movement coach. Suggest ways to add more movement to a seden
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a senior-pet-care advisor. Explain how to adjust care for my ag
-Prompt preview: Act as a senior-pet-care advisor. Explain how to adjust care for my aging [pet]: comfort, diet, and the changes worth watching for.
+Description: You are a movement coach. Suggest ways to add more movement 
+Preview: You are a movement coach. Suggest ways to add more movement to a sedentary day, scaled to [ability level], with the easiest win first.
 
-## GID 2781 — /Act as a side-income strategist. Given my skills in [area] and [hours]
+## GID 2754 — /You are a multi-pet mediator. I'm introducing [pet A] to [pet B]. Give
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a side-income strategist. Given my skills in [area] and [hours]
-Prompt preview: Act as a side-income strategist. Given my skills in [area] and [hours] free per week, suggest realistic ways to earn extra and what to try first.
+Description: You are a multi-pet mediator. I'm introducing [pet A] to [pe
+Preview: You are a multi-pet mediator. I'm introducing [pet A] to [pet B]. Give me a step-by-step introduction that avoids conflict.
 
-## GID 2905 — /Act as a speed-and-agility coach. Design a session to improve [speed,
+## GID 2842 — /You are a neuroscience educator. Explain what we do and don't know abo
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a speed-and-agility coach. Design a session to improve [speed,
-Prompt preview: Act as a speed-and-agility coach. Design a session to improve [speed, agility, or explosiveness] for [sport], with drills and progressions.
+Description: You are a neuroscience educator. Explain what we do and don'
+Preview: You are a neuroscience educator. Explain what we do and don't know about [brain topic], and why the popular version oversimplifies it.
 
-## GID 2787 — /Act as a spending-tracker coach. Set me up with a dead-simple way to t
+## GID 2792 — /You are a no-spend-challenge designer. Design a realistic no-spend or
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a spending-tracker coach. Set me up with a dead-simple way to t
-Prompt preview: Act as a spending-tracker coach. Set me up with a dead-simple way to track spending for 30 days and what to look for at the end.
+Description: You are a no-spend-challenge designer. Design a realistic no
+Preview: You are a no-spend-challenge designer. Design a realistic no-spend or low-spend challenge for [timeframe] with rules and a way to stay motivated.
 
-## GID 2843 — /Act as a statistics tutor. Explain [statistical concept] with a concre
+## GID 2597 — /You are a nutrition educator. Explain the role of [nutrient or food gr
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a statistics tutor. Explain [statistical concept] with a concre
-Prompt preview: Act as a statistics tutor. Explain [statistical concept] with a concrete example, and the mistake people make when interpreting it.
+Description: You are a nutrition educator. Explain the role of [nutrient 
+Preview: You are a nutrition educator. Explain the role of [nutrient or food group] in the body, common misconceptions, and a balanced way to think about it. This is general education, not 
 
-## GID 2907 — /Act as a strategy breakdown analyst. Analyze the typical [formation or
+## GID 2658 — /You are a nutrition-aware cook. Make [comfort food] healthier while ke
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a strategy breakdown analyst. Analyze the typical [formation or
-Prompt preview: Act as a strategy breakdown analyst. Analyze the typical [formation or play] in [sport]: why it works, its weakness, and how to counter it.
+Description: You are a nutrition-aware cook. Make [comfort food] healthie
+Preview: You are a nutrition-aware cook. Make [comfort food] healthier while keeping it satisfying, and tell me what each swap trades off.
 
-## GID 2887 — /Act as a strength-and-conditioning coach. Design an off-season trainin
+## GID 2670 — /You are a one-pan cook. Design a complete one-pan or one-pot meal arou
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a strength-and-conditioning coach. Design an off-season trainin
-Prompt preview: Act as a strength-and-conditioning coach. Design an off-season training plan for a [sport] athlete at [level], targeting the physical demands of the sport.
+Description: You are a one-pan cook. Design a complete one-pan or one-pot
+Preview: You are a one-pan cook. Design a complete one-pan or one-pot meal around [main ingredient] with minimal cleanup and layered flavor.
 
-## GID 2600 — /Act as a stress-management guide. Suggest 5 practical techniques to ma
+## GID 2920 — /You are a packing strategist. Build a packing list for [trip type] to
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a stress-management guide. Suggest 5 practical techniques to ma
-Prompt preview: Act as a stress-management guide. Suggest 5 practical techniques to manage everyday stress, how each works, and when to use it. Recommend professional help for persistent distress.
+Description: You are a packing strategist. Build a packing list for [trip
+Preview: You are a packing strategist. Build a packing list for [trip type] to [destination] in [season], carry-on only, with the items people always forget.
 
-## GID 2630 — /Act as a style analyst. Describe the defining traits of [art style or
+## GID 2744 — /You are a pet-first-aid reference. Explain the general steps for a [co
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a style analyst. Describe the defining traits of [art style or
-Prompt preview: Act as a style analyst. Describe the defining traits of [art style or movement] so I could brief an artist or a model to work in it.
+Description: You are a pet-first-aid reference. Explain the general steps
+Preview: You are a pet-first-aid reference. Explain the general steps for a [common minor pet situation], and clearly when to go to an emergency vet instead.
 
-## GID 2673 — /Act as a substitution expert. I'm out of [ingredient] mid-recipe. Give
+## GID 2764 — /You are a pet-loss support guide. Offer gentle, compassionate guidance
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a substitution expert. I'm out of [ingredient] mid-recipe. Give
-Prompt preview: Act as a substitution expert. I'm out of [ingredient] mid-recipe. Give me the best substitute I likely have and how it changes the result.
+Description: You are a pet-loss support guide. Offer gentle, compassionat
+Preview: You are a pet-loss support guide. Offer gentle, compassionate guidance for grieving the loss of a [pet], and ways to honor their memory.
 
-## GID 2598 — /Act as a symptom-organizer. Help me prepare for a doctor's visit about
+## GID 2762 — /You are a pet-photography coach. Give me tips to take great photos of
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a symptom-organizer. Help me prepare for a doctor's visit about
-Prompt preview: Act as a symptom-organizer. Help me prepare for a doctor's visit about [concern]: structure my symptoms, timeline, and questions so the appointment is productive.
+Description: You are a pet-photography coach. Give me tips to take great 
+Preview: You are a pet-photography coach. Give me tips to take great photos of my [pet]: timing, treats, angles, and how to catch their personality.
 
-## GID 2901 — /Act as a team-culture coach. Give me ideas to build cohesion and accou
+## GID 2828 — /You are a physics tutor. Walk me through [problem] step by step, expla
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a team-culture coach. Give me ideas to build cohesion and accou
-Prompt preview: Act as a team-culture coach. Give me ideas to build cohesion and accountability in a [level] [sport] team over a season.
+Description: You are a physics tutor. Walk me through [problem] step by s
+Preview: You are a physics tutor. Walk me through [problem] step by step, explaining the principle behind each step and a common misconception about it.
 
-## GID 2927 — /Act as a travel-on-points advisor. Explain in general terms how to use
+## GID 2852 — /You are a physics-intuition builder. Explain [everyday phenomenon] wit
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a travel-on-points advisor. Explain in general terms how to use
-Prompt preview: Act as a travel-on-points advisor. Explain in general terms how to use travel rewards to make a trip to [destination] cheaper, and where beginners start.
+Description: You are a physics-intuition builder. Explain [everyday pheno
+Preview: You are a physics-intuition builder. Explain [everyday phenomenon] with the physics behind it, in a way that changes how I see it.
 
-## GID 2933 — /Act as a trip-budget estimator. Estimate the real cost of [days] in [d
+## GID 2641 — /You are a portrait prompt writer. Write an image prompt for a portrait
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a trip-budget estimator. Estimate the real cost of [days] in [d
-Prompt preview: Act as a trip-budget estimator. Estimate the real cost of [days] in [destination] for [travelers], broken down by flights, stays, food, and activities.
+Description: You are a portrait prompt writer. Write an image prompt for 
+Preview: You are a portrait prompt writer. Write an image prompt for a portrait of [subject]: pose, expression, lighting, background, and lens, in gallery quality.
 
-## GID 2642 — /Act as a typography advisor. Recommend a font pairing for [project] an
+## GID 2809 — /You are a progressive-overload guide. Explain how to keep progressing
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a typography advisor. Recommend a font pairing for [project] an
-Prompt preview: Act as a typography advisor. Recommend a font pairing for [project] and explain the personality each font brings and how they work together.
+Description: You are a progressive-overload guide. Explain how to keep pr
+Preview: You are a progressive-overload guide. Explain how to keep progressing on [exercise] once it gets easy, with concrete ways to add challenge.
 
-## GID 2624 — /Act as an art director. Write a detailed image prompt for [subject]: t
+## GID 2742 — /You are a puppy-training specialist. Build a house-training schedule f
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an art director. Write a detailed image prompt for [subject]: t
-Prompt preview: Act as an art director. Write a detailed image prompt for [subject]: the style, lighting, composition, color palette, and mood, specific enough to reproduce.
+Description: You are a puppy-training specialist. Build a house-training 
+Preview: You are a puppy-training specialist. Build a house-training schedule for a [age] puppy, with the signs to watch for and how to handle accidents.
 
-## GID 2835 — /Act as an astronomy guide. Explain [space topic] and why it's fascinat
+## GID 2650 — /You are a recipe adapter. Make this recipe [dietary need: vegan, glute
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an astronomy guide. Explain [space topic] and why it's fascinat
-Prompt preview: Act as an astronomy guide. Explain [space topic] and why it's fascinating, scaling the numbers into something I can actually imagine.
+Description: You are a recipe adapter. Make this recipe [dietary need: ve
+Preview: You are a recipe adapter. Make this recipe [dietary need: vegan, gluten-free, lower-calorie] without wrecking the flavor or texture: [paste recipe].
 
-## GID 2608 — /Act as an ergonomics advisor. Assess my described desk setup and give
+## GID 2902 — /You are a recovery specialist. Design a post-game recovery routine for
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an ergonomics advisor. Assess my described desk setup and give
-Prompt preview: Act as an ergonomics advisor. Assess my described desk setup and give me adjustments to reduce strain: [describe setup].
+Description: You are a recovery specialist. Design a post-game recovery r
+Preview: You are a recovery specialist. Design a post-game recovery routine for [sport] to reduce soreness and prepare for the next session.
 
-## GID 2845 — /Act as an evolution educator. Explain how [trait or adaptation] likely
+## GID 2613 — /You are a recovery-support coach. Suggest gentle ways to build routine
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an evolution educator. Explain how [trait or adaptation] likely
-Prompt preview: Act as an evolution educator. Explain how [trait or adaptation] likely evolved, the selection pressure behind it, and the misconception to avoid.
+Description: You are a recovery-support coach. Suggest gentle ways to bui
+Preview: You are a recovery-support coach. Suggest gentle ways to build routine and rest while recovering from [general situation], and when to check with a professional.
 
-## GID 2797 — /Act as an expense-cutting analyst. Given my fixed costs [list], find t
+## GID 2776 — /You are a retirement-basics educator. Explain how retirement accounts
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an expense-cutting analyst. Given my fixed costs [list], find t
-Prompt preview: Act as an expense-cutting analyst. Given my fixed costs [list], find the 3 with the most negotiating room and how to approach each.
+Description: You are a retirement-basics educator. Explain how retirement
+Preview: You are a retirement-basics educator. Explain how retirement accounts generally work and the concept of starting early, while noting specifics vary by country and situation.
 
-## GID 2644 — /Act as an icon designer. Design a cohesive set of icons for [use case]
+## GID 2904 — /You are a rules-and-tactics explainer. Explain the rules and basic str
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an icon designer. Design a cohesive set of icons for [use case]
-Prompt preview: Act as an icon designer. Design a cohesive set of icons for [use case]: the shared style rules that make them feel like one family.
+Description: You are a rules-and-tactics explainer. Explain the rules and
+Preview: You are a rules-and-tactics explainer. Explain the rules and basic strategy of [sport] to a complete beginner, so I could follow or play a game.
 
-## GID 2895 — /Act as an injury-prevention coach. Give me a warm-up and prehab routin
+## GID 2770 — /You are a savings coach. Help me build an emergency fund on [income]:
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an injury-prevention coach. Give me a warm-up and prehab routin
-Prompt preview: Act as an injury-prevention coach. Give me a warm-up and prehab routine for [sport] targeting its most common injuries. Remind me to consult a pro for pain.
+Description: You are a savings coach. Help me build an emergency fund on 
+Preview: You are a savings coach. Help me build an emergency fund on [income]: how much to target, where to keep it, and an automatic plan to get there.
 
-## GID 2948 — /Be as specific as possible
+## GID 2645 — /You are a scene-description writer. Turn this vague idea into a vivid,
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Be as specific as possible
-Prompt preview: Be as specific as possible
+Description: You are a scene-description writer. Turn this vague idea int
+Preview: You are a scene-description writer. Turn this vague idea into a vivid, renderable scene with foreground, midground, and background: [idea].
 
-## GID 2947 — /Feed ChatGPT your facts and information
+## GID 2844 — /You are a science-analogy machine. Give me 5 fresh analogies to explai
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Feed ChatGPT your facts and information
-Prompt preview: Feed ChatGPT your facts and information
+Description: You are a science-analogy machine. Give me 5 fresh analogies
+Preview: You are a science-analogy machine. Give me 5 fresh analogies to explain [hard concept] to different audiences, from a child to a colleague.
 
-## GID 2949 — /Write a long prompt paragraph You know, just like engineering a Falcon
+## GID 2854 — /You are a science-debate guide. Present the current scientific underst
 Source: pdf | Subcategory: Imported PDF Collection
-Description: Write a long prompt paragraph You know, just like engineering a Falcon
-Prompt preview: Write a long prompt paragraph You know, just like engineering a Falcon rocket to land back on Earth, the magic with ChatGPT is all in the precision of your inputs. The more tailored your input, the more stellar the output. It’s like customizing a Tesla – the more you personalize, the better the ride
+Description: You are a science-debate guide. Present the current scientif
+Preview: You are a science-debate guide. Present the current scientific understanding of [contested topic], where consensus is strong, and where questions remain.
 
-## GID 2654 — /You are a baking expert. Troubleshoot my [baked good] that came out [p
+## GID 2836 — /You are a science-method teacher. Explain the scientific method using
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a baking expert. Troubleshoot my [baked good] that came out [p
-Prompt preview: You are a baking expert. Troubleshoot my [baked good] that came out [problem]. Explain the likely cause and the fix for next time.
+Description: You are a science-method teacher. Explain the scientific met
+Preview: You are a science-method teacher. Explain the scientific method using [example question], from observation to conclusion, and why replication matters.
 
-## GID 2740 — /You are a behaviorist. My [pet] does [problem behavior]. Explain the l
+## GID 2848 — /You are a science-news translator. Here's a headline: [paste]. Tell me
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a behaviorist. My [pet] does [problem behavior]. Explain the l
-Prompt preview: You are a behaviorist. My [pet] does [problem behavior]. Explain the likely reason behind it and a humane plan to reduce it.
+Description: You are a science-news translator. Here's a headline: [paste
+Preview: You are a science-news translator. Here's a headline: [paste]. Tell me what the research probably actually says versus how it's being reported.
 
-## GID 2784 — /You are a bill-negotiation coach. Give me a script and strategy to neg
+## GID 2900 — /You are a skills-progression coach. Show me the step-by-step path to m
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a bill-negotiation coach. Give me a script and strategy to neg
-Prompt preview: You are a bill-negotiation coach. Give me a script and strategy to negotiate a lower rate on [bill], and what to say if they refuse.
+Description: You are a skills-progression coach. Show me the step-by-step
+Preview: You are a skills-progression coach. Show me the step-by-step path to master [skill] in [sport], from fundamentals to advanced.
 
-## GID 2830 — /You are a biology teacher. Explain how [process, e.g. photosynthesis,
+## GID 2932 — /You are a slow-travel coach. Design a relaxed [days]-day stay in [dest
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a biology teacher. Explain how [process, e.g. photosynthesis,
-Prompt preview: You are a biology teacher. Explain how [process, e.g. photosynthesis, CRISPR] works at a level a motivated student could follow, with a memorable framing.
+Description: You are a slow-travel coach. Design a relaxed [days]-day sta
+Preview: You are a slow-travel coach. Design a relaxed [days]-day stay in [destination] focused on living like a local, not rushing between sights.
 
-## GID 2756 — /You are a bird-care educator. Explain the essentials of caring for a [
+## GID 2752 — /You are a small-pet specialist. Explain the proper habitat and daily c
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a bird-care educator. Explain the essentials of caring for a [
-Prompt preview: You are a bird-care educator. Explain the essentials of caring for a [bird type]: diet, cage, enrichment, and the signs of a healthy bird.
+Description: You are a small-pet specialist. Explain the proper habitat a
+Preview: You are a small-pet specialist. Explain the proper habitat and daily care for a [small pet: rabbit, hamster, etc.], and the common care myths to ignore.
 
-## GID 2611 — /You are a body-literacy educator. Explain in plain terms how [body sys
+## GID 2656 — /You are a spice guide. Teach me how to use [spice or blend]: what it p
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a body-literacy educator. Explain in plain terms how [body sys
-Prompt preview: You are a body-literacy educator. Explain in plain terms how [body system] works and what generally keeps it healthy.
+Description: You are a spice guide. Teach me how to use [spice or blend]:
+Preview: You are a spice guide. Teach me how to use [spice or blend]: what it pairs with, when to add it, and a simple dish to showcase it.
 
-## GID 2817 — /You are a bodyweight-progression coach. Show me the step-by-step progr
+## GID 2888 — /You are a sports skills coach. Break down how to improve [specific ski
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a bodyweight-progression coach. Show me the step-by-step progr
-Prompt preview: You are a bodyweight-progression coach. Show me the step-by-step progression to achieve [skill, e.g. first pull-up], with what to practice at each stage.
+Description: You are a sports skills coach. Break down how to improve [sp
+Preview: You are a sports skills coach. Break down how to improve [specific skill] in [sport], with drills, common mistakes, and how to measure progress.
 
-## GID 2672 — /You are a breakfast strategist. Give me 5 make-ahead breakfasts for bu
+## GID 2892 — /You are a sports-nutrition educator. Explain how to fuel for [sport] a
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a breakfast strategist. Give me 5 make-ahead breakfasts for bu
-Prompt preview: You are a breakfast strategist. Give me 5 make-ahead breakfasts for busy mornings that fit [preference], each under 5 minutes to serve.
+Description: You are a sports-nutrition educator. Explain how to fuel for
+Preview: You are a sports-nutrition educator. Explain how to fuel for [sport] around training and competition, as general guidance, in practical terms.
 
-## GID 2790 — /You are a budget-for-irregular-income coach. I earn a variable income
+## GID 2896 — /You are a sports-psychology guide. Help me bounce back mentally after
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a budget-for-irregular-income coach. I earn a variable income
-Prompt preview: You are a budget-for-irregular-income coach. I earn a variable income from [source]. Help me build a budget that survives the low months.
+Description: You are a sports-psychology guide. Help me bounce back menta
+Preview: You are a sports-psychology guide. Help me bounce back mentally after a [loss or mistake] and rebuild confidence for the next game.
 
-## GID 2778 — /You are a cash-flow analyst. Help me map my monthly money in and out s
+## GID 2821 — /You are a step-goal coach. Help me realistically increase my daily act
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a cash-flow analyst. Help me map my monthly money in and out s
-Prompt preview: You are a cash-flow analyst. Help me map my monthly money in and out so I can see what's left, and the one habit that would improve it most.
+Description: You are a step-goal coach. Help me realistically increase my
+Preview: You are a step-goal coach. Help me realistically increase my daily activity from [current] toward a healthy target, without it feeling like a chore.
 
-## GID 2832 — /You are a chemistry tutor. Explain why [reaction or property] happens,
+## GID 2799 — /You are a strength coach. Design a full-body routine for [level] focus
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a chemistry tutor. Explain why [reaction or property] happens,
-Prompt preview: You are a chemistry tutor. Explain why [reaction or property] happens, what's going on at the molecular level, and where intuition usually goes wrong.
+Description: You are a strength coach. Design a full-body routine for [le
+Preview: You are a strength coach. Design a full-body routine for [level] focused on [goal], with sets, reps, and the form cue that matters most for each lift.
 
-## GID 2912 — /You are a comeback coach. I'm returning to [sport] after time off. Des
+## GID 2825 — /You are a stretch-and-desk coach. Give me 5 stretches I can do at my d
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a comeback coach. I'm returning to [sport] after time off. Des
-Prompt preview: You are a comeback coach. I'm returning to [sport] after time off. Design a plan to rebuild fitness and skill safely.
+Description: You are a stretch-and-desk coach. Give me 5 stretches I can 
+Preview: You are a stretch-and-desk coach. Give me 5 stretches I can do at my desk to counter sitting, and when to do them through the day.
 
-## GID 2627 — /You are a composition coach. Explain how to arrange [scene] using a pr
+## GID 2774 — /You are a subscription auditor. Here are my recurring charges: [list].
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a composition coach. Explain how to arrange [scene] using a pr
-Prompt preview: You are a composition coach. Explain how to arrange [scene] using a proven composition rule, and where to place the focal point to guide the eye.
+Description: You are a subscription auditor. Here are my recurring charge
+Preview: You are a subscription auditor. Here are my recurring charges: [list]. Help me spot what to cut and roughly how much I'd save yearly.
 
-## GID 2625 — /You are a concept artist. Describe 3 distinct visual directions for [c
+## GID 2894 — /You are a technique analyst. Explain the correct mechanics of [movemen
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a concept artist. Describe 3 distinct visual directions for [c
-Prompt preview: You are a concept artist. Describe 3 distinct visual directions for [character or scene], each with a different mood, so I can choose before rendering.
+Description: You are a technique analyst. Explain the correct mechanics o
+Preview: You are a technique analyst. Explain the correct mechanics of [movement, e.g. a jump shot, a tennis serve] and the top 3 errors to fix.
 
-## GID 2898 — /You are a conditioning coach. Design a sport-specific conditioning ses
+## GID 2652 — /You are a technique teacher. Explain how to properly [cooking techniqu
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a conditioning coach. Design a sport-specific conditioning ses
-Prompt preview: You are a conditioning coach. Design a sport-specific conditioning session for [sport] that mimics its real energy demands.
+Description: You are a technique teacher. Explain how to properly [cookin
+Preview: You are a technique teacher. Explain how to properly [cooking technique], the signs it's going right, and the mistake most people make.
 
-## GID 2676 — /You are a cooking-project guide. I want to master [dish or skill] over
+## GID 2637 — /You are a texture-and-material guide. Describe how to render [material
 Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a cooking-project guide. I want to master [dish or skill] over
-Prompt preview: You are a cooking-project guide. I want to master [dish or skill] over a month. Give me a 4-week practice plan that builds skill each week.
+Description: You are a texture-and-material guide. Describe how to render
+Preview: You are a texture-and-material guide. Describe how to render [material] convincingly: its surface, how light hits it, and the common mistake to avoid.
+
+## GID 2758 — /You are a training-troubleshooter. My [pet] learned [command] but won'
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a training-troubleshooter. My [pet] learned [command
+Preview: You are a training-troubleshooter. My [pet] learned [command] but won't do it [in a specific context]. Explain why and how to generalize the behavior.
+
+## GID 2942 — /You are a travel-safety advisor. Give me practical safety tips for [de
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a travel-safety advisor. Give me practical safety ti
+Preview: You are a travel-safety advisor. Give me practical safety tips for [destination]: areas to know, common scams, and how to keep my things secure.
+
+## GID 2766 — /You are a trick-training coach. Teach me to train my [pet] a fun trick
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a trick-training coach. Teach me to train my [pet] a
+Preview: You are a trick-training coach. Teach me to train my [pet] a fun trick like [trick], broken into small steps with clear cues.
+
+## GID 2794 — /You are a value-based-spending coach. Help me align my spending with w
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a value-based-spending coach. Help me align my spend
+Preview: You are a value-based-spending coach. Help me align my spending with what I actually value, starting by auditing last month: [describe].
+
+## GID 2738 — /You are a veterinarian educator. Explain the common causes of [symptom
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a veterinarian educator. Explain the common causes o
+Preview: You are a veterinarian educator. Explain the common causes of [symptom] in [pet], what I can monitor at home, and when it's time to call the vet.
+
+## GID 2807 — /You are a warm-up specialist. Design a proper warm-up for a [type] wor
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a warm-up specialist. Design a proper warm-up for a 
+Preview: You are a warm-up specialist. Design a proper warm-up for a [type] workout that primes the right muscles and reduces injury risk.
+
+## GID 2619 — /You are a wellness-habit auditor. Review my described daily habits and
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a wellness-habit auditor. Review my described daily 
+Preview: You are a wellness-habit auditor. Review my described daily habits and point out the 3 with the biggest effect on how I feel, plus one small tweak each: [describe].
+
+## GID 2660 — /You are a wine-and-food pairer. Suggest what to drink with [dish], inc
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a wine-and-food pairer. Suggest what to drink with [
+Preview: You are a wine-and-food pairer. Suggest what to drink with [dish], including a non-alcoholic option, and explain why each works.
+
+## GID 2906 — /You are a young-athlete coach. Give age-appropriate training and encou
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are a young-athlete coach. Give age-appropriate training
+Preview: You are a young-athlete coach. Give age-appropriate training and encouragement tips for a young [sport] player, focused on fun and fundamentals.
+
+## GID 2850 — /You are an ecology teacher. Explain how [ecosystem or relationship] wo
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are an ecology teacher. Explain how [ecosystem or relati
+Preview: You are an ecology teacher. Explain how [ecosystem or relationship] works, the balance that sustains it, and what happens when it's disrupted.
+
+## GID 2750 — /You are an enrichment-DIY guide. Suggest 5 cheap homemade toys or puzz
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are an enrichment-DIY guide. Suggest 5 cheap homemade to
+Preview: You are an enrichment-DIY guide. Suggest 5 cheap homemade toys or puzzles for my [pet] and what skill or instinct each satisfies.
+
+## GID 2629 — /You are an illustration mentor. Break down how to draw [subject] step
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are an illustration mentor. Break down how to draw [subj
+Preview: You are an illustration mentor. Break down how to draw [subject] step by step, from basic shapes to final details, for someone at [skill level].
+
+## GID 2819 — /You are an injury-aware trainer. I have a sensitive [body part]. Sugge
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are an injury-aware trainer. I have a sensitive [body pa
+Preview: You are an injury-aware trainer. I have a sensitive [body part]. Suggest exercises that work around it for [goal], and remind me to clear it with a professional.
+
+## GID 2772 — /You are an investing educator. Explain the tradeoff between risk and r
+Source: pdf | Subcategory: Imported PDF Collection
+Description: You are an investing educator. Explain the tradeoff between 
+Preview: You are an investing educator. Explain the tradeoff between risk and return for [asset types] in general terms, and how time horizon changes the picture.
+
+## GID 3290 — /IndependentVerdict
+Source: deep_hunt | Subcategory: Independent Review
+Description: Give a judgment, not a summary.
+Preview: Read the supplied information, but do not merely summarize it. Form an independent judgment based on the evidence, distinguish facts from assumptions, and give a clear conclusion w
+
+## GID 3287 — /SecondOpinion
+Source: deep_hunt | Subcategory: Independent Review
+Description: Re-evaluate from scratch without anchoring on the first answ
+Preview: Give an independent second opinion. Re-evaluate the situation from first principles without inheriting the previous conclusion. State where you agree, disagree, or remain uncertain
+
+## GID 3049 — /Brainstorm 20 ideas fast
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Brainstorm 20 ideas fast
+Preview: Give me 20 ideas for [topic/project/problem]. Make the first 10 obvious and expected. Make ideas 11-20 progressively more unexpected, weird, or contrarian. Do not explain any of th
+
+## GID 3050 — /Roast your own idea
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Roast your own idea
+Preview: Here is my idea: [describe it]. Write the most brutal, honest critique of this idea as if you were a skeptical venture capitalist who has seen 500 pitches. Do not soften it. Find e
+
+## GID 3048 — /Short story with a specific constraint
+Source: pdf | Subcategory: PromptOrix Use Cases
+Description: Short story with a specific constraint
+Preview: Write a 300-word short story about [premise]. Constraint: the word "[forbidden word]" cannot appear anywhere in the story. The ending must be ambiguous. Write in third-person limit
+
+## GID 3289 — /ThinkAgain
+Source: deep_hunt | Subcategory: Quality Check
+Description: Re-check the answer for anything important that was missed.
+Preview: Review the previous answer critically. Look specifically for missed facts, weak assumptions, overlooked alternatives, hidden constraints, and unnecessary complexity. Return a corre
+
+## GID 3303 — /RedTeamMe
+Source: deep_hunt | Subcategory: Stress Test
+Description: Actively try to break the idea or plan.
+Preview: Red-team this idea or plan. Look for failure modes, unsupported assumptions, adversarial scenarios, edge cases, incentive problems, and ways reality could invalidate it. Then sugge
+
+## GID 3055 — /A Conversation With a Future Version of Me
+Source: pdf | Subcategory: Weird Thought Experiments
+Description: A Conversation With a Future Version of Me
+Preview: Simulate a brief conversation between current me and the version of me 10 years from now. They've gone through some things; they have perspective on what I'm struggling with. Make 
+
+## GID 3058 — /Time Travel Limited to 5 Minutes
+Source: pdf | Subcategory: Weird Thought Experiments
+Description: Time Travel Limited to 5 Minutes
+Preview: You can travel back in time but only for 5 minutes, only to your own past, and you can only observe (not change anything). What 5-minute window do you visit and why?
+
+## GID 3056 — /What If I'd Made the Other Choice
+Source: pdf | Subcategory: Weird Thought Experiments
+Description: What If I'd Made the Other Choice
+Preview: A decision I made: [describe specific past decision]. Imagine I'd made the opposite choice. Walk me through how my life might be different now. Speculate concretely.
+
+## GID 3057 — /What Would the Last Person Say to Me
+Source: pdf | Subcategory: Weird Thought Experiments
+Description: What Would the Last Person Say to Me
+Preview: Imagine the last person you would expect to give you advice. What advice would they give you about [issue you're facing]? Take their perspective seriously.

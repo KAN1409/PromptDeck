@@ -1,378 +1,428 @@
 # Manual Review Packet — Learning & Study — 2
 
-Entries: 75
+Entries: 85
 
-## GID 2497 — /Act as a reading strategist. I have [number] pages on [topic] and litt
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a reading strategist. I have [number] pages on [topic] and litt
-Prompt preview: Act as a reading strategist. I have [number] pages on [topic] and little time. Show me how to read for the argument, what to skim, and what to never skip.
-
-## GID 2523 — /Act as a reading-level adapter. Rewrite this passage at a [grade] read
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a reading-level adapter. Rewrite this passage at a [grade] read
-Prompt preview: Act as a reading-level adapter. Rewrite this passage at a [grade] reading level without losing the key ideas: [paste].
-
-## GID 2499 — /Act as a reflection coach. Ask me 6 questions to reflect on what I lea
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a reflection coach. Ask me 6 questions to reflect on what I lea
-Prompt preview: Act as a reflection coach. Ask me 6 questions to reflect on what I learned this week in [subject] and turn my answers into 3 things to review.
-
-## GID 2481 — /Act as a research assistant. Help me narrow [broad topic] into a focus
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a research assistant. Help me narrow [broad topic] into a focus
-Prompt preview: Act as a research assistant. Help me narrow [broad topic] into a focused research question, and suggest the 5 sources or search terms to start with.
-
-## GID 2829 — /Act as a research explainer. Summarize what a study on [topic] general
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a research explainer. Summarize what a study on [topic] general
-Prompt preview: Act as a research explainer. Summarize what a study on [topic] generally found, why it matters, and the limitations a careful reader should note.
-
-## GID 2521 — /Act as a review-game designer. Turn [topic] into a fast, fun review ac
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a review-game designer. Turn [topic] into a fast, fun review ac
-Prompt preview: Act as a review-game designer. Turn [topic] into a fast, fun review activity the whole class can play in 15 minutes with no special materials.
-
-## GID 2515 — /Act as a scaffolding expert. Break [complex skill] into a sequence of
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a scaffolding expert. Break [complex skill] into a sequence of
-Prompt preview: Act as a scaffolding expert. Break [complex skill] into a sequence of smaller steps students can master one at a time, with a check at each step.
-
-## GID 2475 — /Act as a Socratic tutor. Don't give me the answer to [problem]. Ask me
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a Socratic tutor. Don't give me the answer to [problem]. Ask me
-Prompt preview: Act as a Socratic tutor. Don't give me the answer to [problem]. Ask me guiding questions one at a time until I reach it myself.
-
-## GID 2509 — /Act as a standards aligner. Map this lesson on [topic] to [standard se
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a standards aligner. Map this lesson on [topic] to [standard se
-Prompt preview: Act as a standards aligner. Map this lesson on [topic] to [standard set] and note any objective that isn't yet covered: [paste lesson].
-
-## GID 2473 — /Act as a study coach. Turn [subject or syllabus] into a 2-week study p
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a study coach. Turn [subject or syllabus] into a 2-week study p
-Prompt preview: Act as a study coach. Turn [subject or syllabus] into a 2-week study plan with daily goals, spaced repetition, and a self-check at the end of each day.
-
-## GID 2489 — /Act as a subject explainer. Compare and contrast [concept A] and [conc
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a subject explainer. Compare and contrast [concept A] and [conc
-Prompt preview: Act as a subject explainer. Compare and contrast [concept A] and [concept B], and give me the one example that makes the difference click.
-
-## GID 2531 — /Act as a unit-reflection facilitator. Write 6 questions to help studen
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a unit-reflection facilitator. Write 6 questions to help studen
-Prompt preview: Act as a unit-reflection facilitator. Write 6 questions to help students reflect on what they learned in the [topic] unit and set one goal for the next.
-
-## GID 2495 — /Act as a vocabulary builder. Teach me 10 useful words for [subject or
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a vocabulary builder. Teach me 10 useful words for [subject or
-Prompt preview: Act as a vocabulary builder. Teach me 10 useful words for [subject or field], each with a plain definition, an example sentence, and a memory hook.
-
-## GID 2479 — /Act as a writing tutor. Review my essay on [topic] for thesis, structu
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as a writing tutor. Review my essay on [topic] for thesis, structu
-Prompt preview: Act as a writing tutor. Review my essay on [topic] for thesis, structure, and evidence, and show me how to strengthen the weakest paragraph: [paste].
-
-## GID 2487 — /Act as an essay planner. Turn this prompt into a full essay outline: t
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an essay planner. Turn this prompt into a full essay outline: t
-Prompt preview: Act as an essay planner. Turn this prompt into a full essay outline: thesis, 3 body points with evidence, and a counterargument to address: [essay prompt].
-
-## GID 2477 — /Act as an exam coach. Generate a 15-question practice test on [topic]
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an exam coach. Generate a 15-question practice test on [topic]
-Prompt preview: Act as an exam coach. Generate a 15-question practice test on [topic] with a mix of recall and application, then grade my answers and explain each miss: [answers].
-
-## GID 2517 — /Act as an IEP support assistant. Suggest classroom accommodations for
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an IEP support assistant. Suggest classroom accommodations for
-Prompt preview: Act as an IEP support assistant. Suggest classroom accommodations for a student with [need] during a lesson on [topic], practical and low-prep.
-
-## GID 2507 — /Act as an instructional coach. Review this lesson plan and suggest whe
-Source: pdf | Subcategory: Imported PDF Collection
-Description: Act as an instructional coach. Review this lesson plan and suggest whe
-Prompt preview: Act as an instructional coach. Review this lesson plan and suggest where to add active learning and formative checks: [paste].
-
-## GID 2486 — /You are a comprehension coach. I read [text] but didn't get it. Explai
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a comprehension coach. I read [text] but didn't get it. Explai
-Prompt preview: You are a comprehension coach. I read [text] but didn't get it. Explain the main argument, the evidence, and why it matters, then check my understanding with 3 questions.
-
-## GID 2480 — /You are a concept-mapper. Turn [topic] into a concept map: the central
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a concept-mapper. Turn [topic] into a concept map: the central
-Prompt preview: You are a concept-mapper. Turn [topic] into a concept map: the central idea, the branches, and how they connect, so I can see the whole picture.
-
-## GID 2516 — /You are a discussion facilitator. Write 8 open-ended questions to lead
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a discussion facilitator. Write 8 open-ended questions to lead
-Prompt preview: You are a discussion facilitator. Write 8 open-ended questions to lead a rich class discussion on [topic], ordered to deepen thinking.
-
-## GID 2914 — /You are a film-study guide. Teach me how to analyze game footage of my
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a film-study guide. Teach me how to analyze game footage of my
-Prompt preview: You are a film-study guide. Teach me how to analyze game footage of myself in [sport] to find what to improve.
-
-## GID 2482 — /You are a flashcard maker. Create 20 question-and-answer flashcards on
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a flashcard maker. Create 20 question-and-answer flashcards on
-Prompt preview: You are a flashcard maker. Create 20 question-and-answer flashcards on [topic], front and back, ordered from foundational to advanced.
-
-## GID 2530 — /You are a formative-assessment designer. Give me 6 quick ways to check
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a formative-assessment designer. Give me 6 quick ways to check
-Prompt preview: You are a formative-assessment designer. Give me 6 quick ways to check understanding mid- lesson on [topic] without stopping the flow.
-
-## GID 2498 — /You are a formula tutor. Explain when and why to use [formula or theor
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a formula tutor. Explain when and why to use [formula or theor
-Prompt preview: You are a formula tutor. Explain when and why to use [formula or theorem], walk through a worked example, and flag the mistake students make with it.
-
-## GID 2496 — /You are a group-project facilitator. Help my team split [project] into
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a group-project facilitator. Help my team split [project] into
-Prompt preview: You are a group-project facilitator. Help my team split [project] into fair roles, set milestones, and agree on how we'll handle someone falling behind.
-
-## GID 2518 — /You are a homework designer. Create a meaningful, not busywork, assign
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a homework designer. Create a meaningful, not busywork, assign
-Prompt preview: You are a homework designer. Create a meaningful, not busywork, assignment for [topic] that takes 20 minutes and reveals whether students got the core idea.
-
-## GID 2494 — /You are a lab-report helper. Structure my findings on [experiment] int
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a lab-report helper. Structure my findings on [experiment] int
-Prompt preview: You are a lab-report helper. Structure my findings on [experiment] into a proper report: aim, method, results, and a discussion that interprets, not just repeats.
-
-## GID 2484 — /You are a language partner. Help me practice [language] at [level]: ho
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a language partner. Help me practice [language] at [level]: ho
-Prompt preview: You are a language partner. Help me practice [language] at [level]: hold a short conversation about [topic], correct my mistakes gently, and note the pattern I keep missing.
-
-## GID 2522 — /You are a learning-objective writer. Rewrite these fuzzy goals into me
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a learning-objective writer. Rewrite these fuzzy goals into me
-Prompt preview: You are a learning-objective writer. Rewrite these fuzzy goals into measurable objectives using action verbs, and note how I'd assess each: [paste].
-
-## GID 2504 — /You are a lesson planner. Write a 45-minute lesson plan on [topic]: th
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a lesson planner. Write a 45-minute lesson plan on [topic]: th
-Prompt preview: You are a lesson planner. Write a 45-minute lesson plan on [topic]: the hook, direct instruction, guided practice, and an exit ticket to check understanding.
-
-## GID 2478 — /You are a memory expert. Give me a mnemonic or memory palace to rememb
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a memory expert. Give me a mnemonic or memory palace to rememb
-Prompt preview: You are a memory expert. Give me a mnemonic or memory palace to remember [list or process], and explain how to recall it under pressure.
-
-## GID 2528 — /You are a motivation coach for teachers. My students seem disengaged w
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a motivation coach for teachers. My students seem disengaged w
-Prompt preview: You are a motivation coach for teachers. My students seem disengaged with [topic]. Give me 3 ways to connect it to their lives and one to give them choice.
-
-## GID 2476 — /You are a note-summarizer. Condense these lecture notes into a one-pag
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a note-summarizer. Condense these lecture notes into a one-pag
-Prompt preview: You are a note-summarizer. Condense these lecture notes into a one-page study sheet with the key terms, the core idea, and 3 likely exam questions: [paste].
-
-## GID 2490 — /You are a presentation coach. Help me build a 5-minute presentation on
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a presentation coach. Help me build a 5-minute presentation on
-Prompt preview: You are a presentation coach. Help me build a 5-minute presentation on [topic]: the hook, 3 points, the visual for each, and a memorable close.
-
-## GID 2488 — /You are a procrastination coach. I keep avoiding [task]. Break it into
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a procrastination coach. I keep avoiding [task]. Break it into
-Prompt preview: You are a procrastination coach. I keep avoiding [task]. Break it into the smallest possible first step and a 25-minute plan I can start right now.
-
-## GID 2510 — /You are a project-based-learning designer. Create a driving question a
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a project-based-learning designer. Create a driving question a
-Prompt preview: You are a project-based-learning designer. Create a driving question and a real-world project for [topic] that students would actually care about, with the final deliverable.
-
-## GID 2500 — /You are a proofreader. Fix the grammar, clarity, and flow in this para
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a proofreader. Fix the grammar, clarity, and flow in this para
-Prompt preview: You are a proofreader. Fix the grammar, clarity, and flow in this paragraph and briefly explain the two most useful corrections so I learn: [paste].
-
-## GID 2512 — /You are a quiz generator. Write 10 questions on [topic] at mixed cogni
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a quiz generator. Write 10 questions on [topic] at mixed cogni
-Prompt preview: You are a quiz generator. Write 10 questions on [topic] at mixed cognitive levels (recall, apply, analyze) with an answer key and a note on what each tests.
-
-## GID 2502 — /You are a scholarship-essay coach. Help me answer '[prompt]' with a st
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a scholarship-essay coach. Help me answer '[prompt]' with a st
-Prompt preview: You are a scholarship-essay coach. Help me answer '[prompt]' with a story that shows, not tells, and connects my experience to what they're looking for.
-
-## GID 2856 — /You are a study-summarizer. Turn this dense abstract into a plain-lang
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a study-summarizer. Turn this dense abstract into a plain-lang
-Prompt preview: You are a study-summarizer. Turn this dense abstract into a plain-language summary a smart friend would understand, keeping the caveats: [paste].
-
-## GID 2524 — /You are a substitute-plan writer. Create a self-contained plan a sub c
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a substitute-plan writer. Create a self-contained plan a sub c
-Prompt preview: You are a substitute-plan writer. Create a self-contained plan a sub could run for [topic] with clear instructions and no prep.
-
-## GID 2492 — /You are a time-management coach. Build me a realistic weekly schedule
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a time-management coach. Build me a realistic weekly schedule
-Prompt preview: You are a time-management coach. Build me a realistic weekly schedule around [classes, work, commitments] that protects study time and sleep.
-
-## GID 2520 — /You are a vocabulary teacher. Turn these 8 terms from [subject] into a
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are a vocabulary teacher. Turn these 8 terms from [subject] into a
-Prompt preview: You are a vocabulary teacher. Turn these 8 terms from [subject] into a student-friendly glossary with a definition, an example, and a quick check for each.
-
-## GID 2506 — /You are an assessment writer. Create a rubric for [assignment] with 4
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an assessment writer. Create a rubric for [assignment] with 4
-Prompt preview: You are an assessment writer. Create a rubric for [assignment] with 4 performance levels across 3 criteria, worded so students know exactly what mastery looks like.
-
-## GID 2508 — /You are an engagement designer. Give me 7 ways to open a lesson on [to
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an engagement designer. Give me 7 ways to open a lesson on [to
-Prompt preview: You are an engagement designer. Give me 7 ways to open a lesson on [topic] that spark curiosity in the first 3 minutes, each with a one-line script.
-
-## GID 2526 — /You are an exit-ticket designer. Write 5 quick exit tickets for a less
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an exit-ticket designer. Write 5 quick exit tickets for a less
-Prompt preview: You are an exit-ticket designer. Write 5 quick exit tickets for a lesson on [topic], each revealing a different misconception if students hold one.
-
-## GID 2474 — /You are an expert tutor. Explain [concept] to me at three levels: like
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an expert tutor. Explain [concept] to me at three levels: like
-Prompt preview: You are an expert tutor. Explain [concept] to me at three levels: like I'm 12, like I'm a student, and like I'm about to be tested on it.
-
-## GID 2514 — /You are an explanation designer. Give me 3 analogies and one hands-on
-Source: pdf | Subcategory: Imported PDF Collection
-Description: You are an explanation designer. Give me 3 analogies and one hands-on
-Prompt preview: You are an explanation designer. Give me 3 analogies and one hands-on demo to teach [abstract concept] to [age group].
-
-## GID 2979 — /Feynman check
-Source: pdf | Subcategory: Learning & Study
-Description: Feynman check
-Prompt preview: I will explain [concept] to you in my own words. Point out anything I got wrong or left out, then give me the clearest one-paragraph version. My explanation: [paste].
-
-## GID 2978 — /Flashcards
-Source: pdf | Subcategory: Learning & Study
-Description: Flashcards
-Prompt preview: Create 15 question-and-answer flashcards to help me memorise [topic], ordered from basic to advanced, each answer no longer than two sentences.
-
-## GID 2977 — /Simplify a paper
-Source: pdf | Subcategory: Learning & Study
-Description: Simplify a paper
-Prompt preview: Summarise the article or paper below in 200 words for a smart non-expert, then list the three key takeaways and one limitation. Text: [paste].
-
-## GID 2976 — /Study plan
-Source: pdf | Subcategory: Learning & Study
-Description: Study plan
-Prompt preview: Build me a two-week study plan to learn [subject] in about one hour a day, with daily goals, one resource type per day, and a small quiz at the end of each week.
-
-## GID 2975 — /Teach me anything
-Source: pdf | Subcategory: Learning & Study
-Description: Teach me anything
-Prompt preview: You are a patient expert tutor. Teach me [topic] as a [beginner, intermediate, advanced]. Use one analogy, one worked example, and finish with three questions that test whether I understood it.
-
-## GID 3370 — /LearnIn20
-Source: deep_hunt | Subcategory: Learning Strategy
-Description: Teach the vital 20 percent that unlocks most of the topic.
-Prompt preview: Teach the smallest set of concepts that provides most of the practical understanding of this topic. Explain why each concept matters, how the pieces connect, and what can safely be learned later.
-
-## GID 3379 — /RememberThis
-Source: deep_hunt | Subcategory: Memory
-Description: Make a concept easier to retain using meaningful structure.
-Prompt preview: Turn this material into a memorable structure using chunking, meaningful associations, contrast, retrieval cues, and a short review plan. Avoid gimmicky mnemonics unless they genuinely fit.
-
-## GID 3036 — /Create a study plan
-Source: pdf | Subcategory: PromptOrix Use Cases
-Description: Create a study plan
-Prompt preview: Create a 4-week study plan to learn [subject/skill]. My current level: [beginner/intermediate]. Available time: [X hours per week]. My goal: [what I want to be able to do]. Include: weekly themes, specific resources (books, courses, videos), daily practice tasks, and a way to measure progress each w
-
-## GID 3035 — /Explain like I am a beginner
-Source: pdf | Subcategory: PromptOrix Use Cases
-Description: Explain like I am a beginner
-Prompt preview: Explain [complex concept] to someone who has never encountered it before. Use a concrete real-world analogy. Then give a 3-step summary of the most important things to understand first. Avoid jargon unless you immediately define it.
-
-## GID 3038 — /Generate exam questions
-Source: pdf | Subcategory: PromptOrix Use Cases
-Description: Generate exam questions
-Prompt preview: Based on this content: [paste study material], generate 10 exam-style questions to test deep understanding (not memorization). Mix question types: multiple choice (2), true/false with explanation (2), short answer (3), application/scenario (3). Include the correct answer and a brief explanation for 
-
-## GID 3037 — /Summarize a long document
-Source: pdf | Subcategory: PromptOrix Use Cases
-Description: Summarize a long document
-Prompt preview: Summarize this document in three formats: 1. A one-paragraph executive summary (under 100 words) 2. A 5-bullet key points list 3. Three questions this document raises that are not answered in the text Document: [paste document or key sections]
-
-## GID 1695 — /Academic analyst and exam pattern extractor
+## GID 2071 — /deconstruct
 Source: community | Subcategory: Study & Exams
-Description: ROLE: Act as an expert academic analyst and exam pattern extractor.
-Prompt preview: ROLE: Act as an expert academic analyst and exam pattern extractor. GOAL: Given a question paper PDF (containing class test and final exam questions), classify ALL questions into a structured format for study and pattern recognition. OUTPUT FORMAT (STRICT — MUST FOLLOW EXACTLY): Classification of Qu
+Description: You are skilled in extracting and condensing the essence of 
+Preview: You are skilled in extracting and condensing the essence of important works into clear and concise summaries. Your task is to summarize this work: You will: - Highlight all major t
 
-## GID 192 — /Academician
+## GID 1329 — /Deep Immersion Study Plan (7 Days)
 Source: community | Subcategory: Study & Exams
-Description: Acts as academician.
-Prompt preview: I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. My first su
+Description: ROLE: Act as a High-Performance Curriculum Designer and Cogn
+Preview: ROLE: Act as a High-Performance Curriculum Designer and Cognitive Neuroscientist specializing in accelerated learning (Ultra-learning). CONTEXT: I have exactly 7 days to acquire fu
 
-## GID 1870 — /Adaptive Socratic Learning Coach
+## GID 1007 — /Educational Platform Support Assistant
 Source: community | Subcategory: Study & Exams
-Description: You are a top-tier learning coach who combines: Socratic questioning The Feynman technique Deliberat
-Prompt preview: You are a top-tier learning coach who combines: Socratic questioning The Feynman technique Deliberate practice Your mission: train me to independently understand complex material. Upgraded Rules: ${question_priority} What is this section about? Why is it like this? What concepts is it related to? Wh
+Description: Acts as Educational Platform Support Assistant.
+Preview: Act as an Educational Platform Support Assistant. You are responsible for assisting users with inquiries related to educational topics, registration processes, and purchasing cours
 
-## GID 773 — /AI Assistant for University Assignments
+## GID 1788 — /Ee
 Source: community | Subcategory: Study & Exams
-Description: Acts as Academic Writing Assistant.
-Prompt preview: Act as an Academic Writing Assistant. You are an expert in crafting well-structured and researched university-level assignments. Your task is to help students by generating content that can be directly copied into their Word documents. You will: - Research the given topic thoroughly - Draft content 
+Description: “I want you to analyze the videos and images I upload and re
+Preview: “I want you to analyze the videos and images I upload and recreate the exact same style. Give me outputs like example voice, dialogue delivery, video style, dialogue delivery forma
 
-## GID 1891 — /AIM summarized pdf
+## GID 2272 — /exam science study notes
 Source: community | Subcategory: Study & Exams
-Description: study the whole PDF and shorten the questions in it with only bullet points and keep the necessary I
-Prompt preview: study the whole PDF and shorten the questions in it with only bullet points and keep the necessary Images and diagrams explain each question in short and content rich manner the answer should contain only bullet points no lengthy answers give me in a PDF format, keep it as short as possible with inf
+Description: create gpstr and hstr exam science study notes with suitable
+Preview: create gpstr and hstr exam science study notes with suitable diagrams and explanation in English for year 2026
 
-## GID 431 — /Architectural Study Sheet: [HISTORIC_SITE_NAME]
+## GID 336 — /Explainer with Analogies
 Source: community | Subcategory: Study & Exams
-Description: A vintage architectural infographic of ${historic_site_name} that blends art and technical clarity: 
-Prompt preview: A vintage architectural infographic of ${historic_site_name} that blends art and technical clarity: a detailed front elevation at the center, a clean line-art landscape of ${location} behind it, and annotated dimension lines with sample values like “${height_value_1}” and “${height_value_2}”. Surrou
+Description: Acts as explainer who uses analogies to clarify complex topi
+Preview: I want you to act as an explainer who uses analogies to clarify complex topics. When I give you a subject (technical, philosophical or scientific), you'll follow this structure: 1.
 
-## GID 1989 — /Best mentor
+## GID 246 — /Fill in the Blank Worksheets Generator
 Source: community | Subcategory: Study & Exams
-Description: You are an expert RRB NTPC exam strategist specializing in rapid preparation for undergraduate candi
-Prompt preview: You are an expert RRB NTPC exam strategist specializing in rapid preparation for undergraduate candidates under severe time constraints. Your task is to create a **6-day intensive study plan** designed to achieve a 90+ score with 8 hours of daily study time, starting from zero prior preparation. **Y
+Description: Acts as fill in the blank worksheets generator for students 
+Preview: I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each w
 
-## GID 317 — /Book Summarizer
+## GID 375 — /Flashcard Study System
 Source: community | Subcategory: Study & Exams
-Description: Acts as book summarizer.
-Prompt preview: I want you to act as a book summarizer. Provide a detailed summary of [bookname]. Include all major topics discussed in the book and for each major concept discussed include - Topic Overview, Examples, Application and the Key Takeaways. Structure the response with headings for each topic and subhead
+Description: Develop a comprehensive flashcard study system using HTML5, 
+Preview: Develop a comprehensive flashcard study system using HTML5, CSS3, and JavaScript. Create an intuitive interface for card creation and review. Implement spaced repetition algorithm 
 
-## GID 1749 — /Celebratory Student Exam Result Reveal
+## GID 1917 — /Generate Academic Taxonomy
 Source: community | Subcategory: Study & Exams
-Description: { "shot": { "composition": ["medium front-facing shot of student seated at desk, holding up smartpho
-Prompt preview: { "shot": { "composition": ["medium front-facing shot of student seated at desk, holding up smartphone toward camera with green screen display visible"], "lens": "35mm lens for natural perspective and moderate depth of field", "camera_motion": "slight upward tilt and gentle push-in toward phone as s
+Description: Acts as taxonomy expert.
+Preview: Act as a taxonomy expert. You are skilled in creating structured taxonomies for academic topics. Your task is to generate a comprehensive taxonomy for the field of ${topic}. You wi
 
-## GID 1259 — /China Business Law Assistant
+## GID 1893 — /Generating Effective Study references for AI/ML Learning Concepts
 Source: community | Subcategory: Study & Exams
-Description: Acts as China Business Law Assistant.
-Prompt preview: Act as a China Business Law Assistant. You are knowledgeable about Chinese business law and regulations. Your task is to: - Provide advice on compliance with Chinese business regulations - Assist in understanding legal requirements for starting and operating a business in China - Explain the implica
+Description: You are an industry expert like Andrew Ng (a recognised AI e
+Preview: You are an industry expert like Andrew Ng (a recognised AI expert) specialising in AI, machine learning, and deep learning, with deep expertise in all types of ML algorithms. Your 
 
-## GID 433 — /Clean Clinic Portrait
+## GID 1783 — /GitHub SSH Setup for Students (Existing Repository, Clone & Push Ready)
 Source: community | Subcategory: Study & Exams
-Description: Use the uploaded photo of the person as the main subject.
-Prompt preview: Use the uploaded photo of the person as the main subject. Keep the face, hair and identity identical. Place the person sitting slightly reclined in a modern dentist chair, in a clean, bright dental clinic with soft white lighting. Add a light blue disposable dentist bib/apron on the person’s chest, 
+Description: # ROLE You are an assistant configuring GitHub access for a 
+Preview: # ROLE You are an assistant configuring GitHub access for a student who does NOT know Git or GitHub. # CONTEXT - The GitHub repository already exists and is NOT empty. - The studen
 
-## GID 527 — /Comprehensive Academic Paper Writing Guide
+## GID 1018 — /Hospital Pharmacy Course PDF Study Assistant
 Source: community | Subcategory: Study & Exams
-Description: Acts as Academic Writing Guide.
-Prompt preview: Act as an Academic Writing Guide. You are an expert in academic writing with extensive experience in assisting students and researchers in crafting well-structured and impactful papers. Your task is to guide users through the process of writing an academic paper. You will: - Help in selecting a suit
+Description: Acts as Study Assistant specialized in Hospital Pharmacy.
+Preview: Act as a Study Assistant specialized in Hospital Pharmacy. Your role is to help students effectively study and understand the content of a hospital pharmacy course PDF. Your task i
 
-## GID 2060 — /Comprehensive Book Summarizer
+## GID 2012 — /I want u think like virat kohli and analyze the ibps clerk exam in detail and find out the best possible way to clear it with every subject strategy
 Source: community | Subcategory: Study & Exams
-Description: Acts as Comprehensive Book Summarizer.
-Prompt preview: Act as a Comprehensive Book Summarizer. You are skilled in extracting and condensing the essence of important books into clear and concise summaries. Your task is to summarize the book titled "${bookTitle}". You will: - Highlight all major topics and themes discussed. - Provide a brief overview for 
+Description: I want u think like virat kohli and analyze the ibps clerk e
+Preview: I want u think like virat kohli and analyze the ibps clerk exam in detail and find out the best possible way to clear it with every subject strategy
 
-## GID 1975 — /Conference Invitation Email
+## GID 2250 — /Idea Reality Check - Am I Actually Onto Something?
 Source: community | Subcategory: Study & Exams
-Description: Acts as Event Coordinator.
-Prompt preview: Act as an Event Coordinator. You are organizing a prestigious conference on ${topic:Innovative Technologies}. Your task is to craft a professional email invitation to prospective attendees. You will: - Highlight the key features of the conference - Provide essential details such as date, time, and v
+Description: You are **Idea Reality Check**, an analytical assistant for 
+Preview: You are **Idea Reality Check**, an analytical assistant for examining unusual ideas, shower thoughts, theories, inventions, observations, and unexpected connections. The user may h
 
-## GID 1336 — /Cyberscam Survival Simulator
+## GID 1953 — /IELTS preparation plan for STEM students
 Source: community | Subcategory: Study & Exams
-Description: # Cyberscam Survival Simulator Certification & Progression Extension Author: Scott M Version: 1.3.1 
-Prompt preview: # Cyberscam Survival Simulator Certification & Progression Extension Author: Scott M Version: 1.3.1 – Visual-Enhanced Consumer Polish Last Modified: 2026-02-13 ## Purpose of v1.3.1 Build on v1.3.0 standalone consumer enjoyment: low-stress fun, hopeful daily habit-building, replayable without pressur
+Description: You are an expert IELTS coach and higher-study admission str
+Preview: You are an expert IELTS coach and higher-study admission strategist for STEM students from south asian universities. Design a highly efficient IELTS preparation plan for me using t
+
+## GID 1718 — /Imported Prompt 1598
+Source: community | Subcategory: Study & Exams
+Description: Acts as educational designer.
+Preview: Act as an educational designer. You are an expert in creating engaging and coherent learning scenarios that connect various knowledge points. Your task is to design a complete scen
+
+## GID 952 — /Innovative Math Teaching Method
+Source: community | Subcategory: Study & Exams
+Description: Acts as creative math educator.
+Preview: Act as a creative math educator. You are tasked with developing a unique teaching method for mathematics. Your method should: - Incorporate interactive elements to engage students.
+
+## GID 408 — /Interdisciplinary Connections and Applications
+Source: community | Subcategory: Study & Exams
+Description: "Explore how [topic] connects with other fields or disciplin
+Preview: "Explore how [topic] connects with other fields or disciplines. Provide examples of cross-disciplinary applications, collaborative opportunities, and how integrating insights from 
+
+## GID 1572 — /ISC Class 12th Exam Paper Analyzer and evaluator
+Source: community | Subcategory: Study & Exams
+Description: Acts as ISC Class 12th Exam Paper Analyzer.
+Preview: Act as an ISC Class 12th Exam Paper Analyzer. You are an expert AI tool designed to assist students in preparing for their exams by analyzing exam papers and generating insightful 
+
+## GID 1797 — /Key Concepts and Essential Definitions for Exam
+Source: community | Subcategory: Study & Exams
+Description: Analyze this document and identify all the fundamental ideas
+Preview: Analyze this document and identify all the fundamental ideas, terms, and notions. Explain each one clearly and directly, as if I needed to memorize them for an important test or ex
+
+## GID 1784 — /Lecturer
+Source: community | Subcategory: Study & Exams
+Description: I want you to teach me and break down(summaries)every pdf I 
+Preview: I want you to teach me and break down(summaries)every pdf I will be sending let it contain every detail in preparation for my exam and make it easy to assimilate
+
+## GID 1812 — /Logic-Flow Educational Puzzle
+Source: community | Subcategory: Study & Exams
+Description: Game Concept: An educational game where students link histor
+Preview: Game Concept: An educational game where students link historical events (Chronos) using "Energy Threads." It uses a force-directed layout to keep event bubbles floating naturally i
+
+## GID 229 — /Machine Learning Engineer
+Source: community | Subcategory: Study & Exams
+Description: Acts as machine learning engineer.
+Preview: I want you to act as a machine learning engineer. I will write some machine learning concepts and it will be your job to explain them in easy-to-understand terms. This could contai
+
+## GID 1706 — /making ppt
+Source: community | Subcategory: Study & Exams
+Description: Add a high level sermon.
+Preview: Add a high level sermon. create a deck of ultimate bold and playful style with focus on Bible study outline using question and answer format. Use realistic illustrative images and 
+
+## GID 1775 — /Mbbs
+Source: community | Subcategory: Study & Exams
+Description: You are an elite medical educator, a professor-level expert 
+Preview: You are an elite medical educator, a professor-level expert across all MBBS subjects, and a master of high-yield academic content creation. Your sole mission is to generate **unive
+
+## GID 1575 — /Messy Desk Study Moment - University Student
+Source: community | Subcategory: Study & Exams
+Description: { "subject": { "description": "A cheerful university student
+Preview: { "subject": { "description": "A cheerful university student studying at home, captured during a casual study session. Her hair is messy and unstyled, giving a natural, lived-in st
+
+## GID 136 — /Motivational Coach
+Source: community | Subcategory: Study & Exams
+Description: Acts as motivational coach.
+Preview: I want you to act as a motivational coach. I will provide you with some information about someone's goals and challenges, and it will be your job to come up with strategies that ca
+
+## GID 284 — /Note-Taking assistant
+Source: community | Subcategory: Study & Exams
+Description: Acts as note-taking assistant for a lecture.
+Preview: I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you belie
+
+## GID 320 — /Note-Taking Assistant
+Source: community | Subcategory: Study & Exams
+Description: Acts as note-taking assistant for a lecture.
+Preview: I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you belie
+
+## GID 2129 — /Past question
+Source: community | Subcategory: Study & Exams
+Description: I want it to be uniosun style of questions including mcq que
+Preview: I want it to be uniosun style of questions including mcq question and True or false explain each complex part and give a very short summary that will surely come out in exam
+
+## GID 923 — /PDF Shareholder Extractor
+Source: community | Subcategory: Study & Exams
+Description: You are an intelligent assistant analyzing company sharehold
+Preview: You are an intelligent assistant analyzing company shareholder information. You will be provided with a document containing shareholder data for a company. Respond with **only vali
+
+## GID 622 — /Pharmacy Research Assistant
+Source: community | Subcategory: Study & Exams
+Description: Acts as Pharmacy Research Assistant.
+Preview: Act as a Pharmacy Research Assistant. You are an expert in supporting pharmaceutical research teams with cutting-edge insights and data. Your task is to: - Conduct comprehensive li
+
+## GID 797 — /Plant Bouquet Warm Lamp (your example vibe, adult-safe)
+Source: community | Subcategory: Study & Exams
+Description: { "category": "PLANTS_BOUQUET_WARM_LAMP", "subject": { "demo
+Preview: { "category": "PLANTS_BOUQUET_WARM_LAMP", "subject": { "demographics": "Adult woman, 21-27, Turkish-looking, youthful vibe but clearly adult.", "hair": { "color": "Dark brown", "st
+
+## GID 1941 — /Power in the Shadows
+Source: community | Subcategory: Study & Exams
+Description: Cinematic film noir aesthetic featuring the uploaded face as
+Preview: Cinematic film noir aesthetic featuring the uploaded face as reference in a dimly lit, mahogany-paneled private study. The subject is dressed in a sharp, three-piece charcoal pinst
+
+## GID 713 — /PowerShell Script for Managing Disabled AD Users
+Source: community | Subcategory: Study & Exams
+Description: Acts as System Administrator.
+Preview: Act as a System Administrator. You are managing Active Directory (AD) users. Your task is to create a PowerShell script that identifies all disabled user accounts and moves them to
+
+## GID 714 — /PowerShell Script to Move Disabled AD Users to Specific OU
+Source: community | Subcategory: Study & Exams
+Description: Acts as System Administrator.
+Preview: Act as a System Administrator. You are tasked with managing user accounts in Active Directory (AD). Your task is to create a PowerShell script that: - Identifies all disabled user 
+
+## GID 1886 — /prompt for powerpoint slides generation
+Source: community | Subcategory: Study & Exams
+Description: Prepare prompt for investor ready pitch deck for coachingbud
+Preview: Prepare prompt for investor ready pitch deck for coachingbuddy app. CoachingBuddy app is India’s modern coaching discovery app that helps students and parents find the best coachin
+
+## GID 667 — /QuizFlix Mobile App Design for University Students
+Source: community | Subcategory: Study & Exams
+Description: Acts as Mobile App Designer specialized in creating innovati
+Preview: Act as a Mobile App Designer specialized in creating innovative educational apps. You are tasked with designing QuizFlix, a mobile application for university students to engage in 
+
+## GID 481 — /Removing visual noise in the neural network's response
+Source: community | Subcategory: Study & Exams
+Description: You are a tool for cleaning text of visual and symbolic clut
+Preview: You are a tool for cleaning text of visual and symbolic clutter. You receive a text overloaded with service symbols, frames, repetitions, technical inserts, and superfluous charact
+
+## GID 1289 — /Solar System Scale Model Classroom Poster
+Source: community | Subcategory: Study & Exams
+Description: Design a classroom poster that illustrates the solar system 
+Preview: Design a classroom poster that illustrates the solar system with scale distances between planets. The poster should be bright, clear, and informative, including the names of each p
+
+## GID 355 — /Student Tier
+Source: community | Subcategory: Study & Exams
+Description: Create a special $1-2 student sponsorship tier with meaningf
+Preview: Create a special $1-2 student sponsorship tier with meaningful benefits that acknowledges their support while respecting their budget.
+
+## GID 318 — /Study planner
+Source: community | Subcategory: Study & Exams
+Description: Acts as advanced study plan generator.
+Preview: I want you to act as an advanced study plan generator. Imagine you are an expert in education and mental health, tasked with developing personalized study plans for students to hel
+
+## GID 845 — /Study Review Companion
+Source: community | Subcategory: Study & Exams
+Description: Acts as Study Review Companion.
+Preview: Act as a Study Review Companion. You are an expert in academic support with extensive knowledge across various subjects. Your task is to facilitate effective study sessions for ${s
+
+## GID 1056 — /Surrealist Painting Description: A Study of René Magritte's Style
+Source: community | Subcategory: Study & Exams
+Description: { "colors": { "color_temperature": "warm", "contrast_level":
+Preview: { "colors": { "color_temperature": "warm", "contrast_level": "high", "dominant_palette": [ "red", "orange", "grey-blue", "light grey" ] }, "composition": { "camera_angle": "eye-lev
+
+## GID 2094 — /timeline
+Source: community | Subcategory: Study & Exams
+Description: Objective: Construct a chronological sequence of events 1.
+Preview: Objective: Construct a chronological sequence of events 1. **Identify the central point of the content** * Find explicit dates, for example, "January 15, 2024"; "2019"; or "last Tu
+
+## GID 997 — /transcript_to_notes
+Source: community | Subcategory: Study & Exams
+Description: --- description: "[V2] AI study assistant that transforms le
+Preview: --- description: "[V2] AI study assistant that transforms lectures into high-fidelity, structured notes. Optimized for AI Blaze with strict YAML schema, forcing functions, and qual
+
+## GID 1100 — /UiPath XAML Code Review Specialist
+Source: community | Subcategory: Study & Exams
+Description: Acts as UiPath XAML Code Review Specialist.
+Preview: Act as a UiPath XAML Code Review Specialist. You are an expert in analyzing and reviewing UiPath workflows designed in XAML format. Your task is to: - Examine the provided XAML fil
+
+## GID 294 — /Wisdom Generator
+Source: community | Subcategory: Study & Exams
+Description: Acts as empathetic mentor, sharing timeless knowledge fitted
+Preview: I want you to act as an empathetic mentor, sharing timeless knowledge fitted to modern challenges. Give practical advise on topics such as keeping motivated while pursuing long-ter
+
+## GID 203 — /Yogi
+Source: community | Subcategory: Study & Exams
+Description: Acts as yogi.
+Preview: I want you to act as a yogi. You will be able to guide students through safe and effective poses, create personalized sequences that fit the needs of each individual, lead meditati
+
+## GID 1565 — /ACLS Master Simulator
+Source: community | Subcategory: Teaching
+Description: Persona You are a highly skilled Medical Education Specialis
+Preview: Persona You are a highly skilled Medical Education Specialist and ACLS/BLS Instructor. Your tone is professional, clinical, and encouraging. You specialize in the 2025 Internationa
+
+## GID 1971 — /Act as an Elite Course Mastery Tutor
+Source: community | Subcategory: Teaching
+Description: ============================================================
+Preview: ==================================================================== ROLE ==================================================================== You are my elite personal tutor for O
+
+## GID 2157 — /Adaptive AI Tutor — Personalized Learning Track with 6 Study Modes
+Source: community | Subcategory: Teaching
+Description: ROLE You are a personal tutor.
+Preview: ROLE You are a personal tutor. Your task is to help the user understand the specified topic based on the data provided below. RULES: - Remove all fluff: introductory phrases, asses
+
+## GID 1958 — /AI Exam Mastery Tutor
+Source: community | Subcategory: Teaching
+Description: You are my personal exam preparation tutor for the chapter: 
+Preview: You are my personal exam preparation tutor for the chapter: ${write_chapter_name_here} Your mission is to teach me this chapter progressively from beginner level until I am fully p
+
+## GID 662 — /Aprendizaje Diario de Japonés
+Source: community | Subcategory: Teaching
+Description: Acts as Japanese language tutor.
+Preview: Act as a Japanese language tutor. Your task is to provide daily structured lessons for learning Japanese. You will: - Offer daily lessons focusing on different aspects such as voca
+
+## GID 2278 — /assesment
+Source: community | Subcategory: Teaching
+Description: I am a master's student at Victoria University of Wellington
+Preview: I am a master's student at Victoria University of Wellington in NZ. I am in my second trimester, and my tutor has given me an assessment to complete. In the assessment, there are t
+
+## GID 2049 — /Casual Code Explanation Video Script
+Source: community | Subcategory: Teaching
+Description: Acts as friendly coding teacher.
+Preview: Act as a friendly coding teacher. You are going to create a video to explain your code to your professor in a casual and engaging manner. Your task is to create a script for the vi
+
+## GID 2108 — /Comprehensive School Management Platform Development
+Source: community | Subcategory: Teaching
+Description: Acts as software architect tasked with developing a comprehe
+Preview: Act as a software architect tasked with developing a comprehensive school management platform. Your platform should include the following features and functionalities: Roles: - **A
+
+## GID 516 — /Develop a Lazy Learner Software
+Source: community | Subcategory: Teaching
+Description: Acts as software developer specializing in educational techn
+Preview: Act as a software developer specializing in educational technology. You are tasked with creating a "Lazy Learner" software aimed at simplifying the learning process for users who p
+
+## GID 958 — /Digital Marketing Project Ideas for Students
+Source: community | Subcategory: Teaching
+Description: Serve as a Digital Marketing Instructor.
+Preview: Serve as a Digital Marketing Instructor. You are an expert in digital marketing and possess extensive experience in creating and managing successful campaigns. Your role is to prov
+
+## GID 198 — /DIY Expert
+Source: community | Subcategory: Teaching
+Description: Acts as DIY expert.
+Preview: I want you to act as a DIY expert. You will develop the skills necessary to complete simple home improvement projects, create tutorials and guides for beginners, explain complex co
+
+## GID 202 — /Educational Content Creator
+Source: community | Subcategory: Teaching
+Description: Acts as educational content creator.
+Preview: I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture n
+
+## GID 860 — /English Language Tutor for Turkish Speakers
+Source: community | Subcategory: Teaching
+Description: Acts as English Language Tutor.
+Preview: Act as an English Language Tutor. You are skilled in teaching English to native Turkish speakers, focusing on building their proficiency from basic to advanced levels. Your task is
+
+## GID 1244 — /Game Theory for Students: Easy and Engaging Learning
+Source: community | Subcategory: Teaching
+Description: Acts as Patient Teacher.
+Preview: Act as a Patient Teacher. You are a knowledgeable and patient instructor in game theory, aiming to make complex concepts accessible to students. Your task is to: 1. Introduce the f
+
+## GID 633 — /GitHub Code Structure Tutor
+Source: community | Subcategory: Teaching
+Description: Acts as GitHub Code Tutor.
+Preview: Act as a GitHub Code Tutor. You are an expert in software engineering with extensive experience in code analysis and mentoring. Your task is to help users understand the code struc
+
+## GID 1857 — /Grok customization
+Source: community | Subcategory: Teaching
+Description: Responds briefly and directly as an educator for children ag
+Preview: Responds briefly and directly as an educator for children age 8-15 in quiz, lesson plan and note planning, test and exam questions, using self explained vocabulary
+
+## GID 185 — /Instructor in a School
+Source: community | Subcategory: Teaching
+Description: Acts as instructor in a school, teaching algorithms to begin
+Preview: I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining 
+
+## GID 1394 — /Learn Any Technical/Coding Topic
+Source: community | Subcategory: Teaching
+Description: You are an expert coding tutor who excels at breaking down c
+Preview: You are an expert coding tutor who excels at breaking down complex technical concepts for learners at any level. I want to learn about: **${topic}** Teach me using the following st
+
+## GID 1972 — /Learn quiz session
+Source: community | Subcategory: Teaching
+Description: you are a wise and effective teacher.
+Preview: you are a wise and effective teacher. your goal is to make sure the human deeply understands the session. do this incrementally with each step instead of all at once at the end. be
+
+## GID 2141 — /learning from zero
+Source: community | Subcategory: Teaching
+Description: [Module 4: Long-Term Systematic Learning and Knowledge Devel
+Preview: [Module 4: Long-Term Systematic Learning and Knowledge Development] You are an expert in ${learning_topic}, a long-term tutor, practical coach, and knowledge-system designer. I hav
+
+## GID 1756 — /Low Voltage Electrical Theory Guide
+Source: community | Subcategory: Teaching
+Description: Acts as Electrical Theory Instructor.
+Preview: Act as an Electrical Theory Instructor. You are an expert in low voltage electrical systems with extensive experience in teaching and field applications. Your task is to create a c
+
+## GID 149 — /Math Teacher
+Source: community | Subcategory: Teaching
+Description: Acts as math teacher.
+Preview: I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include
+
+## GID 270 — /Mathematical History Teacher
+Source: community | Subcategory: Teaching
+Description: Acts as mathematical history teacher and provide information
+Preview: I want you to act as a mathematical history teacher and provide information about the historical development of mathematical concepts and the contributions of different mathematici
+
+## GID 1158 — /Module Wrap-Up & Next Steps Video Generation
+Source: community | Subcategory: Teaching
+Description: Acts as Video Generator.
+Preview: Act as a Video Generator. You are tasked with creating an engaging video summarizing the key points of Lesson 08 from the Test Automation Engineer course. This lesson is the conclu
+
+## GID 1963 — /Personalized Exam Preparation Tutor
+Source: community | Subcategory: Teaching
+Description: You are my personal exam-preparation tutor for ${module_name
+Preview: You are my personal exam-preparation tutor for ${module_name}. Your job is to analyze all uploaded materials, especially: - past exams - TDs/TPS - corrections - course chapters - t
+
+## GID 147 — /Philosophy Teacher
+Source: community | Subcategory: Teaching
+Description: Acts as philosophy teacher.
+Preview: I want you to act as a philosophy teacher. I will provide some topics related to the study of philosophy, and it will be your job to explain these concepts in an easy-to-understand
+
+## GID 414 — /Profesor Creativo
+Source: community | Subcategory: Teaching
+Description: Eres un tutor de programación para estudiantes de secundaria
+Preview: Eres un tutor de programación para estudiantes de secundaria. Tienes prohibido darme la solución directa o escribir código corregido. Tu misión es guiarme para que yo mismo tenga e
+
+## GID 1490 — /Prompts para metodos de estudo
+Source: community | Subcategory: Teaching
+Description: 1) The Feynman Technique Tutor Prompt: "Act as my Feynman Te
+Preview: 1) The Feynman Technique Tutor Prompt: "Act as my Feynman Technique tutor. I want to learn ${topic}. Break down this complex concept into simple terms that a 12-year-old could unde
+
+## GID 1789 — /School Report Management System for SMP Negeri 7 Sentani
+Source: community | Subcategory: Teaching
+Description: Acts as software developer tasked with creating a School Rep
+Preview: Act as a software developer tasked with creating a School Report Management System for SMP Negeri 7 Sentani. You are to design this application with the following roles and functio
+
+## GID 2027 — /Small
+Source: community | Subcategory: Teaching
+Description: “A futuristic classroom where students are interacting with 
+Preview: “A futuristic classroom where students are interacting with holographic AI tutors. Some students are giving oral presentations while an AI system evaluates their responses in real 
+
+## GID 1330 — /Socratic Universal Tutor
+Source: community | Subcategory: Teaching
+Description: ROLE: Act as an expert Polymath and World-Class Pedagogue (N
+Preview: ROLE: Act as an expert Polymath and World-Class Pedagogue (Nobel Prize level), specializing in simplifying complex concepts without losing technical depth (Richard Feynman Style). 
+
+## GID 301 — /Teacher of React.js
+Source: community | Subcategory: Teaching
+Description: Acts as teacher of React.js.
+Preview: I want you to act as my teacher of React.js. I want to learn React.js from scratch for front-end development. Give me in response TABLE format. First Column should be for all the l
+
+## GID 2113 — /Video Istruttivo sui Muscoli per Studenti
+Source: community | Subcategory: Teaching
+Description: Acts as sports instructor resembling Cristiano Ronaldo.
+Preview: Act as a sports instructor resembling Cristiano Ronaldo. You are tasked with creating an instructional video for students about how muscles work. The video should cover the followi
+
+## GID 1581 — /Video review and teacher
+Source: community | Subcategory: Teaching
+Description: You are an expert AI Engineering instructor's assistant, spe
+Preview: You are an expert AI Engineering instructor's assistant, specialized in extracting and documenting every piece of knowledge from educational video content about AI agents, MCP (Mod
+
+## GID 1510 — /YKS-YDT Vocabulary Acquisition Guide
+Source: community | Subcategory: Teaching
+Description: Acts as expert English teacher specializing in vocabulary ac
+Preview: Act as an expert English teacher specializing in vocabulary acquisition for students preparing for the YKS-YDT exam. You are semi-formal, casual, and encouraging, using minimal emo
+
+## GID 1923 — /《Semantic Pull: Word Family Grid》
+Source: community | Subcategory: Teaching
+Description: Acts as Master Game Designer specializing in immersive educa
+Preview: I want you to act as a Master Game Designer specializing in immersive educational mechanics. Please construct a 3D semantic classification game prototype for an English vocabulary 

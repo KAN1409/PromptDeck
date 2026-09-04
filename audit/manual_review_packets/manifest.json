@@ -4,80 +4,45 @@
     {
       "file": "ai_prompting_01.md",
       "category": "AI & Prompting",
-      "count": 75
+      "count": 150
     },
     {
       "file": "ai_prompting_02.md",
       "category": "AI & Prompting",
-      "count": 75
+      "count": 150
     },
     {
       "file": "ai_prompting_03.md",
       "category": "AI & Prompting",
-      "count": 75
+      "count": 150
     },
     {
       "file": "ai_prompting_04.md",
       "category": "AI & Prompting",
-      "count": 75
-    },
-    {
-      "file": "ai_prompting_05.md",
-      "category": "AI & Prompting",
-      "count": 75
-    },
-    {
-      "file": "ai_prompting_06.md",
-      "category": "AI & Prompting",
-      "count": 75
-    },
-    {
-      "file": "ai_prompting_07.md",
-      "category": "AI & Prompting",
-      "count": 75
-    },
-    {
-      "file": "ai_prompting_08.md",
-      "category": "AI & Prompting",
-      "count": 25
+      "count": 100
     },
     {
       "file": "business_marketing_01.md",
       "category": "Business & Marketing",
-      "count": 75
+      "count": 150
     },
     {
       "file": "business_marketing_02.md",
-      "category": "Business & Marketing",
-      "count": 75
-    },
-    {
-      "file": "business_marketing_03.md",
       "category": "Business & Marketing",
       "count": 47
     },
     {
       "file": "content_creation_01.md",
       "category": "Content Creation",
-      "count": 75
+      "count": 150
     },
     {
       "file": "content_creation_02.md",
       "category": "Content Creation",
-      "count": 75
+      "count": 150
     },
     {
       "file": "content_creation_03.md",
-      "category": "Content Creation",
-      "count": 75
-    },
-    {
-      "file": "content_creation_04.md",
-      "category": "Content Creation",
-      "count": 75
-    },
-    {
-      "file": "content_creation_05.md",
       "category": "Content Creation",
       "count": 69
     },
@@ -94,32 +59,17 @@
     {
       "file": "learning_study_01.md",
       "category": "Learning & Study",
-      "count": 75
+      "count": 150
     },
     {
       "file": "learning_study_02.md",
       "category": "Learning & Study",
-      "count": 75
-    },
-    {
-      "file": "learning_study_03.md",
-      "category": "Learning & Study",
-      "count": 75
-    },
-    {
-      "file": "learning_study_04.md",
-      "category": "Learning & Study",
-      "count": 10
+      "count": 85
     },
     {
       "file": "lifestyle_personal_01.md",
       "category": "Lifestyle & Personal",
-      "count": 75
-    },
-    {
-      "file": "lifestyle_personal_02.md",
-      "category": "Lifestyle & Personal",
-      "count": 5
+      "count": 80
     },
     {
       "file": "meta_01.md",
@@ -129,15 +79,10 @@
     {
       "file": "photo_editing_image_generation_01.md",
       "category": "Photo Editing & Image Generation",
-      "count": 75
+      "count": 150
     },
     {
       "file": "photo_editing_image_generation_02.md",
-      "category": "Photo Editing & Image Generation",
-      "count": 75
-    },
-    {
-      "file": "photo_editing_image_generation_03.md",
       "category": "Photo Editing & Image Generation",
       "count": 70
     },
@@ -149,97 +94,52 @@
     {
       "file": "problem_solving_technical_01.md",
       "category": "Problem Solving & Technical",
-      "count": 75
+      "count": 150
     },
     {
       "file": "problem_solving_technical_02.md",
       "category": "Problem Solving & Technical",
-      "count": 75
+      "count": 150
     },
     {
       "file": "problem_solving_technical_03.md",
       "category": "Problem Solving & Technical",
-      "count": 75
-    },
-    {
-      "file": "problem_solving_technical_04.md",
-      "category": "Problem Solving & Technical",
-      "count": 75
-    },
-    {
-      "file": "problem_solving_technical_05.md",
-      "category": "Problem Solving & Technical",
-      "count": 75
-    },
-    {
-      "file": "problem_solving_technical_06.md",
-      "category": "Problem Solving & Technical",
-      "count": 68
+      "count": 143
     },
     {
       "file": "research_analysis_01.md",
       "category": "Research & Analysis",
-      "count": 75
+      "count": 150
     },
     {
       "file": "research_analysis_02.md",
       "category": "Research & Analysis",
-      "count": 75
-    },
-    {
-      "file": "research_analysis_03.md",
-      "category": "Research & Analysis",
-      "count": 75
-    },
-    {
-      "file": "research_analysis_04.md",
-      "category": "Research & Analysis",
-      "count": 51
+      "count": 126
     },
     {
       "file": "specialist_roles_01.md",
       "category": "Specialist Roles",
-      "count": 75
+      "count": 150
     },
     {
       "file": "specialist_roles_02.md",
       "category": "Specialist Roles",
-      "count": 75
+      "count": 150
     },
     {
       "file": "specialist_roles_03.md",
-      "category": "Specialist Roles",
-      "count": 75
-    },
-    {
-      "file": "specialist_roles_04.md",
-      "category": "Specialist Roles",
-      "count": 75
-    },
-    {
-      "file": "specialist_roles_05.md",
       "category": "Specialist Roles",
       "count": 31
     },
     {
       "file": "thinking_ideas_01.md",
       "category": "Thinking & Ideas",
-      "count": 75
+      "count": 150
     },
     {
       "file": "thinking_ideas_02.md",
       "category": "Thinking & Ideas",
-      "count": 75
-    },
-    {
-      "file": "thinking_ideas_03.md",
-      "category": "Thinking & Ideas",
-      "count": 75
-    },
-    {
-      "file": "thinking_ideas_04.md",
-      "category": "Thinking & Ideas",
-      "count": 25
+      "count": 100
     },
     {
       "file": "work_career_01.md",
@@ -249,15 +149,10 @@
     {
       "file": "writing_rewriting_01.md",
       "category": "Writing & Rewriting",
-      "count": 75
+      "count": 150
     },
     {
       "file": "writing_rewriting_02.md",
-      "category": "Writing & Rewriting",
-      "count": 75
-    },
-    {
-      "file": "writing_rewriting_03.md",
       "category": "Writing & Rewriting",
       "count": 59
     }

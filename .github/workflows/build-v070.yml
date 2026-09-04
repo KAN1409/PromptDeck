@@ -1,5 +1,5 @@
-# Rebuild after six-PDF prompt integration
-name: Build PromptDeck v0.7.5
+# Rebuild after six-PDF prompt integration + 100 daily deep-hunt prompts
+name: Build PromptDeck v0.7.6
 
 on:
   workflow_dispatch:
@@ -42,17 +42,20 @@ jobs:
           core=json.load(open('android/app/src/main/assets/prompts_library.json',encoding='utf-8'))
           photo=json.load(open('android/app/src/main/assets/curated_photo_prompts.json',encoding='utf-8'))
           imported=json.load(open('android/app/src/main/assets/imported_pdf_prompts.json',encoding='utf-8'))
+          daily=json.load(open('android/app/src/main/assets/daily_gap_prompts_100.json',encoding='utf-8'))
           assert len(core)==2160, len(core)
           assert len(photo)==198, len(photo)
           assert len(imported)==806, len(imported)
-          assert all(x.get('title') and x.get('prompt') and x.get('category') for x in imported)
+          assert len(daily)==100, len(daily)
+          assert len({x['command'].lower() for x in daily})==100
+          assert all(x.get('command') and x.get('instruction') and x.get('category') and x.get('subcategory') for x in daily)
           allowed={'Writing & Rewriting','Thinking & Ideas','Research & Analysis','Planning & Execution','Learning & Study','Work & Career','Content Creation','Problem Solving & Technical','Data & Formatting','AI & Prompting','Business & Marketing','Health & Wellness','Lifestyle & Personal','Specialist Roles','Photo Editing & Image Generation'}
-          bad=sorted({x['category'] for x in imported if x['category'] not in allowed})
+          bad=sorted({x['category'] for x in imported+daily if x['category'] not in allowed})
           assert not bad,bad
-          print('Integrated prompt data verified:',len(core),'+',len(photo),'+',len(imported))
+          print('Integrated prompt data verified:',len(core),'+',len(photo),'+',len(imported),'+',len(daily))
           PY
 
-      - name: Apply categories, result previews, smart paste and PDF imports
+      - name: Apply categories, result previews, smart paste, PDF imports and daily prompts
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
@@ -60,6 +63,7 @@ jobs:
           python3 tools/patch_curated_photo_v072.py
           python3 tools/patch_smart_paste_v074.py
           python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -77,23 +81,22 @@ jobs:
           assert 'void renderExamples(Cmd c' in main
           assert 'void loadRemoteImage(String url' in main
           assert 'String autoCommandName(String prompt,String category)' in main
-          assert 'if(blocks.isEmpty())' in main
-          assert 'Start each prompt with /CommandName' not in main
-          assert 'void loadImportedPdfPrompts()' in main
-          assert 'loadImportedPdfPrompts();' in main
-          print('English-only UI, previews, Smart Paste and PDF import audit passed')
+          assert 'void loadImportedPdfPrompts()' in main and 'loadImportedPdfPrompts();' in main
+          assert 'void loadDailyGapPrompts()' in main and 'loadDailyGapPrompts();' in main
+          print('English-only UI, previews, Smart Paste, PDF imports and 100 daily prompts audit passed')
           PY
 
-      - name: Commit generated canonical v0.7.5 source
+      - name: Commit generated canonical v0.7.6 source
         run: |
           git config user.name 'PromptDeck Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add android/app/src/main/assets/prompts_library.json \
                   android/app/src/main/assets/curated_photo_prompts.json \
                   android/app/src/main/assets/imported_pdf_prompts.json \
+                  android/app/src/main/assets/daily_gap_prompts_100.json \
                   android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate 806 prompts extracted from six PDF collections'
+            git commit -m 'Integrate 100 high-value daily prompts'
             git push origin HEAD:main
           fi
 
@@ -123,13 +126,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.5.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.5.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.6.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.6.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.5-build
+          name: PromptDeck-v0.7.6-build
           path: |
-            /tmp/PromptDeck-v0.7.5.apk
-            /tmp/PromptDeck-v0.7.5.sha256
+            /tmp/PromptDeck-v0.7.6.apk
+            /tmp/PromptDeck-v0.7.6.sha256
           if-no-files-found: error

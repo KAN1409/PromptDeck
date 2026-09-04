@@ -1,0 +1,902 @@
+[
+  {
+    "id": 70001,
+    "command": "AskMeFirst",
+    "category": "AI & Prompting",
+    "subcategory": "Prompt Control",
+    "description": "Ask only the questions that materially improve the answer.",
+    "instruction": "Before answering the user's request, identify missing information that would materially change the result. Ask only the smallest set of high-value clarifying questions. If the request is already sufficiently specified, answer directly without asking questions.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70002,
+    "command": "WhatAmIMissing",
+    "category": "Thinking & Ideas",
+    "subcategory": "Blind Spots",
+    "description": "Find the most important overlooked insight or action.",
+    "instruction": "Based on the information provided, identify the single most important insight, constraint, risk, or next action that is easy to overlook. Explain why it matters and what the user should do about it.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70003,
+    "command": "SecondOpinion",
+    "category": "Thinking & Ideas",
+    "subcategory": "Independent Review",
+    "description": "Re-evaluate from scratch without anchoring on the first answer.",
+    "instruction": "Give an independent second opinion. Re-evaluate the situation from first principles without inheriting the previous conclusion. State where you agree, disagree, or remain uncertain, and explain the decisive factors.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70004,
+    "command": "BestNextMove",
+    "category": "Planning & Execution",
+    "subcategory": "Next Action",
+    "description": "Choose the single best next action.",
+    "instruction": "Given the current situation, choose the single best next move. Prioritize impact, urgency, reversibility, and effort. Explain why this action comes before the alternatives.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70005,
+    "command": "ThinkAgain",
+    "category": "Thinking & Ideas",
+    "subcategory": "Quality Check",
+    "description": "Re-check the answer for anything important that was missed.",
+    "instruction": "Review the previous answer critically. Look specifically for missed facts, weak assumptions, overlooked alternatives, hidden constraints, and unnecessary complexity. Return a corrected or improved answer, not just a critique.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70006,
+    "command": "IndependentVerdict",
+    "category": "Thinking & Ideas",
+    "subcategory": "Independent Review",
+    "description": "Give a judgment, not a summary.",
+    "instruction": "Read the supplied information, but do not merely summarize it. Form an independent judgment based on the evidence, distinguish facts from assumptions, and give a clear conclusion with confidence and caveats.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70007,
+    "command": "ChallengeMyChoice",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Stress Test",
+    "description": "Build the strongest case against my current choice.",
+    "instruction": "Assume my current choice may be wrong. Build the strongest evidence-based case against it, identify conditions under which the alternative wins, and tell me what evidence would change the decision.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70008,
+    "command": "ChangeMyMind",
+    "category": "Thinking & Ideas",
+    "subcategory": "Debate",
+    "description": "Try to change my position using the strongest evidence.",
+    "instruction": "Challenge my current position using the strongest relevant evidence and reasoning. Avoid rhetoric and strawmen. If my position still appears stronger after scrutiny, say so and explain why.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70009,
+    "command": "DecisionQuestions",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Support",
+    "description": "Ask the questions that actually determine the decision.",
+    "instruction": "Before recommending an option, ask the smallest set of questions whose answers would materially change the decision. Prioritize constraints, deal-breakers, usage, budget, risk tolerance, and timing.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70010,
+    "command": "DecisionTree",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Support",
+    "description": "Turn a dilemma into a practical yes/no decision tree.",
+    "instruction": "Turn the dilemma into a concise yes/no decision tree. Use only questions that meaningfully split the options, and end every branch with a concrete recommendation or next action.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70011,
+    "command": "PreMortem",
+    "category": "Planning & Execution",
+    "subcategory": "Risk Planning",
+    "description": "Assume the plan failed and identify why.",
+    "instruction": "Assume this plan has failed badly in the future. Identify the most plausible reasons, early warning signs, and preventive actions. Rank the failure modes by likelihood and impact.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70012,
+    "command": "FutureRegret",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Support",
+    "description": "Compare options by likely future regret.",
+    "instruction": "Evaluate the options through the lens of future regret. Distinguish regret from action versus regret from inaction, and explain which choice is more likely to feel defensible later.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70013,
+    "command": "ReversibleDecision",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Support",
+    "description": "Separate reversible experiments from irreversible commitments.",
+    "instruction": "Classify the decision into reversible and hard-to-reverse parts. Suggest the smallest reversible experiment that can generate useful evidence before committing further.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70014,
+    "command": "DoNothingOption",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Support",
+    "description": "Evaluate doing nothing as a real option.",
+    "instruction": "Evaluate the option of doing nothing or delaying action. Compare its costs, risks, benefits, and opportunity cost against the active alternatives instead of treating inaction as neutral.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70015,
+    "command": "ThreePaths",
+    "category": "Planning & Execution",
+    "subcategory": "Strategy Options",
+    "description": "Give conservative, balanced, and aggressive paths.",
+    "instruction": "Create three viable approaches to the same goal: conservative, balanced, and aggressive. For each, show likely upside, risk, effort, timeline, and when it makes sense.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70016,
+    "command": "HiddenTradeoff",
+    "category": "Thinking & Ideas",
+    "subcategory": "Blind Spots",
+    "description": "Surface the trade-off that is easy to miss.",
+    "instruction": "Identify the most important hidden trade-offs in this choice or plan, especially second-order effects, maintenance burden, lock-in, lost flexibility, and opportunity cost.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70017,
+    "command": "MakeTheCall",
+    "category": "Thinking & Ideas",
+    "subcategory": "Decision Support",
+    "description": "Choose one option instead of staying neutral.",
+    "instruction": "After evaluating the options with consistent criteria, choose one. Do not remain neutral unless the evidence is genuinely insufficient. State the decisive reason and the strongest downside of your choice.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70018,
+    "command": "OnePageVerdict",
+    "category": "Research & Analysis",
+    "subcategory": "Decision Brief",
+    "description": "Compress a complex issue into a one-page decision brief.",
+    "instruction": "Turn the material into a one-page decision brief with: situation, key facts, uncertainty, options, trade-offs, recommendation, and immediate next action. Remove background that does not affect the decision.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70019,
+    "command": "RedTeamMe",
+    "category": "Thinking & Ideas",
+    "subcategory": "Stress Test",
+    "description": "Actively try to break the idea or plan.",
+    "instruction": "Red-team this idea or plan. Look for failure modes, unsupported assumptions, adversarial scenarios, edge cases, incentive problems, and ways reality could invalidate it. Then suggest the minimum changes that make it more robust.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70020,
+    "command": "SteelmanBoth",
+    "category": "Thinking & Ideas",
+    "subcategory": "Debate",
+    "description": "Build the strongest version of opposing views before judging.",
+    "instruction": "Present the strongest good-faith version of both sides of the issue. Use the best evidence and reasoning available for each, then compare them and explain which side is stronger under which assumptions.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70021,
+    "command": "DeepHunt",
+    "category": "Research & Analysis",
+    "subcategory": "Deep Search",
+    "description": "Search broadly and iteratively until the useful evidence converges.",
+    "instruction": "Research this question deeply. Use multiple query formulations and source types, follow promising leads, cross-check important claims, and continue until new sources mostly repeat existing findings. Separate established facts, uncertainty, and interpretation.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70022,
+    "command": "HardToFind",
+    "category": "Research & Analysis",
+    "subcategory": "Deep Search",
+    "description": "Search beyond obvious sources for difficult-to-find information.",
+    "instruction": "Treat this as a hard-to-find information hunt. Search alternative names, local terminology, forums, archives, specialist communities, directories, and less obvious sources. Do not stop at generic search results.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70023,
+    "command": "SocialHunt",
+    "category": "Research & Analysis",
+    "subcategory": "Social Research",
+    "description": "Prioritize community and social sources.",
+    "instruction": "Research this topic with emphasis on real-user discussion and community evidence such as Reddit, forums, public social posts, creator pages, and niche communities. Distinguish anecdotes from repeated patterns and verify factual claims where possible.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70024,
+    "command": "LocalHunt",
+    "category": "Research & Analysis",
+    "subcategory": "Local Research",
+    "description": "Search for locally relevant options and terminology.",
+    "instruction": "Search for the best locally relevant information for the specified city or country. Include local businesses, pages, directories, social media, local terminology, and availability. Verify that recommendations actually serve the target location.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70025,
+    "command": "SourceFirst",
+    "category": "Research & Analysis",
+    "subcategory": "Source Verification",
+    "description": "Find and prioritize the original source.",
+    "instruction": "For every important claim, look for the original or primary source before relying on summaries or reposts. Prefer official documents, first-party data, original research, direct statements, or source material when available.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70026,
+    "command": "FindTheOriginal",
+    "category": "Research & Analysis",
+    "subcategory": "Source Verification",
+    "description": "Trace a quote, screenshot, claim, or media item to its source.",
+    "instruction": "Trace the supplied quote, screenshot, claim, image, or excerpt to the earliest credible original source you can identify. Show the evidence linking it to that source and note any uncertainty.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70027,
+    "command": "Consensus",
+    "category": "Research & Analysis",
+    "subcategory": "Evidence Synthesis",
+    "description": "Find what independent sources broadly agree on.",
+    "instruction": "Compare independent credible sources and identify the points of genuine consensus. Separate widely repeated claims from claims that are independently supported, and note important disagreements.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70028,
+    "command": "MinorityView",
+    "category": "Research & Analysis",
+    "subcategory": "Evidence Synthesis",
+    "description": "Find credible minority or contrarian views.",
+    "instruction": "Identify credible minority or contrarian interpretations that are not the dominant view. Explain their evidence, strongest arguments, weaknesses, and whether they materially change the conclusion.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70029,
+    "command": "SearchVariants",
+    "category": "Research & Analysis",
+    "subcategory": "Deep Search",
+    "description": "Expand the search using alternate names and terminology.",
+    "instruction": "Generate and use alternate spellings, abbreviations, synonyms, older terminology, local names, model numbers, transliterations, and related phrases that could uncover results missed by the obvious query.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70030,
+    "command": "EvidenceMap",
+    "category": "Research & Analysis",
+    "subcategory": "Evidence Synthesis",
+    "description": "Map claims to supporting and opposing evidence.",
+    "instruction": "Create an evidence map: claim, evidence supporting it, evidence against it, source quality, uncertainty, and current confidence. Highlight which claims drive the final conclusion.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70031,
+    "command": "LatestOnly",
+    "category": "Research & Analysis",
+    "subcategory": "Freshness",
+    "description": "Prioritize current evidence and flag stale information.",
+    "instruction": "Focus on the newest reliable information relevant to the question. Explicitly flag older facts that may have changed and avoid treating stale sources as current when fresher evidence exists.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70032,
+    "command": "TimelineResearch",
+    "category": "Research & Analysis",
+    "subcategory": "Timeline",
+    "description": "Reconstruct how the topic changed over time.",
+    "instruction": "Build a chronological timeline of the topic using reliable dated sources. Highlight turning points, what changed, what stayed the same, and the current state.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70033,
+    "command": "FactCheckThis",
+    "category": "Research & Analysis",
+    "subcategory": "Fact Checking",
+    "description": "Verify a statement claim by claim.",
+    "instruction": "Break the supplied statement into distinct factual claims. Verify each claim independently, label it supported, misleading, uncertain, or false, and explain the evidence succinctly.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70034,
+    "command": "FindContradictions",
+    "category": "Research & Analysis",
+    "subcategory": "Conflict Analysis",
+    "description": "Find conflicting claims across sources or documents.",
+    "instruction": "Compare the relevant sources or documents for contradictions. Show exactly which claims conflict, whether the conflict is substantive or contextual, and which version is better supported.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70035,
+    "command": "ResearchUntilSaturated",
+    "category": "Research & Analysis",
+    "subcategory": "Deep Search",
+    "description": "Keep expanding research until new evidence adds little.",
+    "instruction": "Research iteratively until information saturation: keep broadening sources and query variants while new evidence materially changes the picture, then stop when additional sources mostly repeat established findings.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70036,
+    "command": "BuyThis",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Turn product research into a buy, wait, or skip decision.",
+    "instruction": "Evaluate this product as a real purchase for the user's stated needs. Cover real-world benefits, drawbacks, ownership issues, price/value, alternatives, and timing, then end with Buy, Wait, or Skip and a concise reason.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70037,
+    "command": "BestForMe",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Choose based on my actual use case, not generic rankings.",
+    "instruction": "Recommend the best option for my specific use case, constraints, preferences, and budget. Weight criteria by what I will actually notice in daily use, not generic review scores.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70038,
+    "command": "WorthTheUpgrade",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Decide whether an upgrade is worth paying for.",
+    "instruction": "Compare the current product with the proposed upgrade. Focus on real-world differences I will actually notice, costs, trade-ins or depreciation, and what remains unchanged. End with upgrade now, wait, or keep current.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70039,
+    "command": "RealWorldDifference",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Translate specification differences into practical impact.",
+    "instruction": "Ignore spec-sheet differences that do not matter in practice. Explain only the differences likely to change the real user experience for the stated use case, and rank them by noticeable impact.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70040,
+    "command": "OwnerProblems",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Find problems that appear after ownership, not just launch reviews.",
+    "instruction": "Research owner-reported problems that emerge after weeks or months of use. Look for repeated complaints, reliability issues, maintenance burden, support problems, and whether later updates fixed them.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70041,
+    "command": "DealBreakerHunt",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Search specifically for reasons not to buy.",
+    "instruction": "Actively search for potential deal-breakers for this purchase. Prioritize recurring real-world issues, hidden limitations, compatibility constraints, maintenance costs, and anything that could make the product unsuitable for my use.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70042,
+    "command": "UsedOrNew",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Compare buying used versus new.",
+    "instruction": "Compare buying this item used versus new, including price, depreciation, warranty, reliability, condition risks, financing, resale, and the point at which the savings stop being worth the added risk.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70043,
+    "command": "ValueWinner",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Find the strongest benefit-per-cost option.",
+    "instruction": "Compare the candidates by value rather than absolute quality. Identify which option captures most of the useful benefit at the lowest total cost, and where spending more stops producing meaningful gains.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70044,
+    "command": "AvoidPayingFor",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Identify features I would pay for but probably not use.",
+    "instruction": "Review the options and identify features, tiers, accessories, or upgrades that add cost but are unlikely to matter for my stated usage. Explain what I can safely skip.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70045,
+    "command": "Shortlist3",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Buying Decisions",
+    "description": "Reduce a large market to three realistic choices.",
+    "instruction": "Filter the available market down to three realistic choices for my needs and budget. Make the three meaningfully different, explain the trade-off of each, and name the best default choice.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70046,
+    "command": "KeepMyFace",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Identity Preservation",
+    "description": "Edit the image while locking identity and facial structure.",
+    "instruction": "Edit the supplied image according to the requested changes while preserving the person's exact recognizable identity, facial geometry, expression, age cues, skin tone, and proportions. Do not beautify, reshape, or reinterpret the face unless explicitly requested.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70047,
+    "command": "NaturalRetouch",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Portrait Retouching",
+    "description": "Retouch naturally without plastic or AI-smoothed skin.",
+    "instruction": "Retouch the photo naturally. Improve distractions, uneven tones, minor blemishes, and polish while preserving pores, fine lines, peach fuzz, realistic texture, and natural facial structure. Avoid plastic skin, over-sharpening, and beauty-filter effects.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70048,
+    "command": "HappyBright",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Lighting & Mood",
+    "description": "Make a photo brighter, happier, and airier without changing identity.",
+    "instruction": "Make the image feel bright, joyful, airy, and flattering. Lift shadows, clean highlights, add gentle natural warmth and separation, and keep colors fresh. Preserve faces, pose, clothing, composition, and scene identity.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70049,
+    "command": "BackgroundBlur",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Background & Depth",
+    "description": "Add believable shallow depth of field to the background.",
+    "instruction": "Add a subtle natural background blur that creates subject separation while preserving recognizable environmental context. Keep the subject tack sharp, use believable depth transitions and bokeh, and avoid cutout edges or excessive blur.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70050,
+    "command": "LightingRescue",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Lighting & Mood",
+    "description": "Repair poor lighting with minimal changes to the rest of the image.",
+    "instruction": "Correct the lighting of the supplied photo while preserving the scene. Balance exposure, lift blocked shadows, recover highlights, correct mixed color casts, and improve facial illumination without changing identity, pose, or composition.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70051,
+    "command": "SkinReality",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Portrait Retouching",
+    "description": "Restore believable human skin texture and variation.",
+    "instruction": "Restore realistic skin rendering: visible pores, subtle texture, fine hairs, natural unevenness, restrained blemishes, and realistic color variation. Remove waxy AI smoothness without making the skin harsh or over-textured.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70052,
+    "command": "FaceRecovery",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Restoration",
+    "description": "Recover a degraded face without restyling it.",
+    "instruction": "Recover missing facial detail from blur, compression, or low resolution while preserving the exact identity, expression, angle, proportions, and age. Reconstruct conservatively and avoid inventing new facial features.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70053,
+    "command": "FixArtifacts",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Restoration",
+    "description": "Detect and repair visible AI or editing artifacts.",
+    "instruction": "Inspect the image for visible artifacts such as warped anatomy, duplicated details, broken edges, unnatural textures, halos, inconsistent reflections, or malformed objects. Repair only the artifacts while preserving the intended image.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70054,
+    "command": "PhotoCritic",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Photo Analysis",
+    "description": "Diagnose what keeps a photo from looking premium.",
+    "instruction": "Critique the supplied photo as a high-end photographer and retoucher. Identify the few issues that most limit the image—lighting, color, composition, background, sharpness, skin rendering, or distractions—and propose the highest-impact fixes.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70055,
+    "command": "EditPlan",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Photo Analysis",
+    "description": "Create the best editing treatment before making changes.",
+    "instruction": "Analyze the supplied image first and propose a concise editing plan tailored to it. Separate essential corrections from optional style choices, specify what must remain unchanged, and prioritize the edits by visual impact.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70056,
+    "command": "PremiumCandid",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Photographic Style",
+    "description": "Make the image read as high-end candid photography.",
+    "instruction": "Refine the image into premium candid photography: natural expressions, believable light, polished but restrained color, strong subject separation, realistic texture, and spontaneous photographic feel. Avoid staged, glossy, or obviously AI-generated aesthetics.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70057,
+    "command": "EditorialClean",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Photographic Style",
+    "description": "Apply clean premium editorial polish without dark cinematic grading.",
+    "instruction": "Give the image a clean premium editorial finish: crisp detail, controlled contrast, elegant color, flattering skin, quiet background, and strong hierarchy. Keep it bright and sophisticated rather than dark or heavily cinematic.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70058,
+    "command": "TrueColor",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Color Correction",
+    "description": "Correct color and white balance without stylizing the image.",
+    "instruction": "Correct white balance, exposure, color casts, saturation, and tonal balance so the photo looks naturally accurate. Preserve the original mood and avoid adding a stylized color grade.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70059,
+    "command": "SubjectSeparation",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Background & Depth",
+    "description": "Improve depth and separation without changing composition.",
+    "instruction": "Improve subject separation using believable depth, local contrast, lighting balance, and restrained background softness. Preserve the original composition and environmental context; avoid haloing or cutout edges.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70060,
+    "command": "RestoreNotRedraw",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Restoration",
+    "description": "Restore conservatively instead of inventing new content.",
+    "instruction": "Restore the supplied image conservatively. Recover supported detail, reduce degradation, repair damage, and improve clarity without redesigning faces, clothing, objects, architecture, or scene geometry. If detail is unknowable, preserve ambiguity rather than inventing it.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70061,
+    "command": "MatchThisLook",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Style Matching",
+    "description": "Transfer the visual treatment from a reference image.",
+    "instruction": "Match the reference image's lighting, color palette, contrast, texture, lens feel, depth of field, and mood while preserving the target image's identity, subject, pose, composition, and scene content.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70062,
+    "command": "SamePersonNewScene",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Identity Preservation",
+    "description": "Place the same recognizable person into a different scene.",
+    "instruction": "Place the person from the supplied photo into the requested new scene while preserving recognizable identity, facial structure, body proportions, skin tone, age, and characteristic features. Adapt only pose, wardrobe, lighting, and environment as requested.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70063,
+    "command": "PhotoToPrompt",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Prompt Creation",
+    "description": "Reverse-engineer a photo treatment into a reusable prompt.",
+    "instruction": "Analyze the visual treatment of the supplied reference image and convert it into a reusable image-generation or editing prompt. Describe lighting, lens, composition, palette, texture, depth, atmosphere, and post-processing without naming the subject's identity.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70064,
+    "command": "PromptToVariations",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Prompt Creation",
+    "description": "Create controlled visual variations from one prompt.",
+    "instruction": "Create four controlled variations of this image prompt while preserving the core concept. Vary one major dimension at a time—lighting, lens/composition, color mood, or environment—so the differences are intentional and comparable.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70065,
+    "command": "WhyLooksAI",
+    "category": "Photo Editing & Image Generation",
+    "subcategory": "Photo Analysis",
+    "description": "Identify what makes an image look AI-generated and fix it.",
+    "instruction": "Analyze why the image reads as AI-generated rather than photographed. Identify specific cues such as skin, anatomy, texture, lighting, depth, edges, repeated patterns, or overly perfect detail, then propose precise corrections while preserving identity and composition.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70066,
+    "command": "SoundLikeMe",
+    "category": "Writing & Rewriting",
+    "subcategory": "Voice & Tone",
+    "description": "Learn my writing voice from examples and imitate it faithfully.",
+    "instruction": "Study the supplied examples of my writing and infer my recurring voice patterns: vocabulary, sentence length, rhythm, directness, humor, formality, punctuation, and structure. Rewrite the target text in that voice without copying phrases mechanically.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70067,
+    "command": "WhatsAppNatural",
+    "category": "Writing & Rewriting",
+    "subcategory": "Messaging",
+    "description": "Write a natural WhatsApp message, not a mini email.",
+    "instruction": "Rewrite this as a natural WhatsApp message: concise, human, conversational, and easy to read on a phone. Preserve the intended tone and meaning, and avoid email-style greetings, sign-offs, or corporate phrasing.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70068,
+    "command": "FirmNotRude",
+    "category": "Writing & Rewriting",
+    "subcategory": "Messaging",
+    "description": "Make the message firm and clear without sounding hostile.",
+    "instruction": "Rewrite the message to be firm, explicit, and difficult to misinterpret while remaining respectful. Remove apologetic hedging and passive aggression. Keep the request, boundary, or expectation clear.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70069,
+    "command": "WarmProfessional",
+    "category": "Writing & Rewriting",
+    "subcategory": "Voice & Tone",
+    "description": "Professional but warm and human.",
+    "instruction": "Rewrite this in a warm professional voice: clear, competent, and polished without sounding stiff, corporate, or overly formal. Preserve the original intent and important details.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70070,
+    "command": "SayItBetter",
+    "category": "Writing & Rewriting",
+    "subcategory": "Rewriting",
+    "description": "Express the same meaning more clearly and effectively.",
+    "instruction": "Rewrite this so it says exactly the same thing more clearly, naturally, and effectively. Do not add new claims, soften or intensify the intent, or change the underlying meaning.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70071,
+    "command": "NoAIWriting",
+    "category": "Writing & Rewriting",
+    "subcategory": "Humanization",
+    "description": "Remove common AI-writing patterns and clichés.",
+    "instruction": "Rewrite the text to remove formulaic AI-writing patterns: generic transitions, inflated claims, repetitive structures, excessive headings, fake enthusiasm, cliché phrasing, and unnecessary summaries. Keep the substance and make the prose sound naturally authored.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70072,
+    "command": "LessFormal",
+    "category": "Writing & Rewriting",
+    "subcategory": "Voice & Tone",
+    "description": "Reduce formality without making the text sloppy.",
+    "instruction": "Make this less formal and more natural while preserving clarity, respect, and competence. Avoid slang unless it fits the original audience.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70073,
+    "command": "MoreConvincing",
+    "category": "Writing & Rewriting",
+    "subcategory": "Persuasion",
+    "description": "Strengthen persuasion without inventing support.",
+    "instruction": "Make this more convincing by improving structure, clarity, relevance, examples, and emphasis. Do not invent evidence or overstate certainty. Preserve any factual limitations.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70074,
+    "command": "OneMessage",
+    "category": "Writing & Rewriting",
+    "subcategory": "Messaging",
+    "description": "Turn scattered notes into one coherent message.",
+    "instruction": "Combine the supplied fragments, notes, or voice-dictation into one coherent message. Remove repetition, preserve every important point, and order the ideas so the recipient can understand and act on them quickly.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70075,
+    "command": "VoiceNoteToText",
+    "category": "Writing & Rewriting",
+    "subcategory": "Transcription Cleanup",
+    "description": "Turn messy spoken language into clean natural writing.",
+    "instruction": "Transform this rough voice-note transcript into clean written language while preserving my meaning, personality, and level of directness. Remove false starts, filler, repetition, and speech-to-text mistakes without making it sound overly formal.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70076,
+    "command": "DontSummarizeYet",
+    "category": "Research & Analysis",
+    "subcategory": "Document Understanding",
+    "description": "Understand the material before answering the actual question.",
+    "instruction": "Read the supplied material fully enough to understand its structure and context. Do not automatically summarize it. Answer the user's actual question from the material, citing or pointing to the relevant parts and noting anything the source does not establish.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70077,
+    "command": "ExplainLikeImSmart",
+    "category": "Learning & Study",
+    "subcategory": "Explanation",
+    "description": "Explain clearly to an intelligent beginner without dumbing it down.",
+    "instruction": "Explain the topic to an intelligent person who is new to the field. Define necessary jargon, use precise language and useful examples, but do not oversimplify the underlying mechanism or talk down to the reader.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70078,
+    "command": "WhatMattersHere",
+    "category": "Research & Analysis",
+    "subcategory": "Document Understanding",
+    "description": "Extract only the parts relevant to the current goal.",
+    "instruction": "From the supplied material, identify only the information that materially affects the user's stated goal or decision. Ignore background that does not change the answer, and explain why each selected point matters.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70079,
+    "command": "FindTheAnswerInside",
+    "category": "Research & Analysis",
+    "subcategory": "Document Search",
+    "description": "Search within a file for the answer instead of summarizing it.",
+    "instruction": "Search the supplied document or file for the information needed to answer the question. Return the answer with the supporting location or excerpt context. Do not provide a general document summary unless it helps resolve the question.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70080,
+    "command": "CompareDocuments",
+    "category": "Research & Analysis",
+    "subcategory": "Document Comparison",
+    "description": "Compare documents by meaning and implications, not only wording.",
+    "instruction": "Compare the supplied documents semantically. Identify substantive agreements, differences, omissions, changed obligations, conflicting facts, and practical implications. Distinguish wording changes from changes in meaning.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70081,
+    "command": "WhatChanged",
+    "category": "Research & Analysis",
+    "subcategory": "Document Comparison",
+    "description": "Explain meaningful changes between versions.",
+    "instruction": "Compare the older and newer versions and identify what changed in a way that matters. Group changes by added, removed, modified, and unchanged-critical items, and explain the practical impact of each material change.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70082,
+    "command": "ExtractEverything",
+    "category": "Data & Formatting",
+    "subcategory": "Extraction",
+    "description": "Extract comprehensive structured information from a source.",
+    "instruction": "Extract all meaningful information from the supplied source, including headings, lists, tables, labels, footnotes, captions, quantities, dates, names, and relationships. Preserve structure and do not silently omit hard-to-parse sections.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70083,
+    "command": "ExplainScreenshot",
+    "category": "Research & Analysis",
+    "subcategory": "Visual Understanding",
+    "description": "Explain what is happening in a screenshot and what matters.",
+    "instruction": "Analyze the supplied screenshot carefully. Explain what screen or state it shows, the important visible information, likely cause of any issue, and the next useful action. Separate what is directly visible from inference.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70084,
+    "command": "YouTubeDeepSummary",
+    "category": "Research & Analysis",
+    "subcategory": "Media Understanding",
+    "description": "Create a deep useful summary of a video with segments.",
+    "instruction": "Summarize the supplied video or transcript deeply. Organize by major segments, include timestamps when available, capture key arguments, examples, claims, caveats, and actionable takeaways, and distinguish the creator's opinion from factual claims.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70085,
+    "command": "TurnIntoReference",
+    "category": "Data & Formatting",
+    "subcategory": "Knowledge Capture",
+    "description": "Convert a source into a reusable reference note.",
+    "instruction": "Turn the supplied material into a compact reusable reference note. Preserve key definitions, facts, procedures, decisions, examples, caveats, and useful cross-links, with clear headings and a quick-reference section.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70086,
+    "command": "LearnIn20",
+    "category": "Learning & Study",
+    "subcategory": "Learning Strategy",
+    "description": "Teach the vital 20 percent that unlocks most of the topic.",
+    "instruction": "Teach the smallest set of concepts that provides most of the practical understanding of this topic. Explain why each concept matters, how the pieces connect, and what can safely be learned later.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70087,
+    "command": "TeachThenTest",
+    "category": "Learning & Study",
+    "subcategory": "Adaptive Learning",
+    "description": "Teach in small chunks and adapt based on answers.",
+    "instruction": "Teach this topic interactively. Explain one small chunk, ask a short question that tests understanding, then adapt the next explanation based on the answer. Do not dump the whole lesson at once.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70088,
+    "command": "FindMyGap",
+    "category": "Learning & Study",
+    "subcategory": "Adaptive Learning",
+    "description": "Diagnose the first missing concept blocking understanding.",
+    "instruction": "Diagnose my understanding of the topic with a few targeted questions. Find the earliest missing prerequisite or misconception that is causing confusion, then teach that gap before moving on.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70089,
+    "command": "MentalModel",
+    "category": "Learning & Study",
+    "subcategory": "Conceptual Understanding",
+    "description": "Give a reusable mental model instead of isolated facts.",
+    "instruction": "Explain this topic using a compact mental model I can reuse in new situations. Show the core relationships, how to reason with the model, one example, and where the model stops being accurate.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70090,
+    "command": "WhyNotJustWhat",
+    "category": "Learning & Study",
+    "subcategory": "Conceptual Understanding",
+    "description": "Explain mechanisms and causes, not just definitions.",
+    "instruction": "Explain not only what this is, but why it works, what causes it, what changes it, and what would happen if key conditions were different. Use mechanism-first reasoning.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70091,
+    "command": "LearnFromMistake",
+    "category": "Learning & Study",
+    "subcategory": "Error Analysis",
+    "description": "Turn a mistake into a reusable rule.",
+    "instruction": "Analyze my mistake. Identify the misconception or process failure that caused it, explain the correct reasoning, and extract a simple reusable rule or check that helps prevent the same class of mistake.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70092,
+    "command": "CounterexampleMe",
+    "category": "Learning & Study",
+    "subcategory": "Conceptual Understanding",
+    "description": "Use counterexamples to test whether I really understand.",
+    "instruction": "Test my understanding by giving a counterexample or edge case that breaks the naive version of the rule. Ask me to explain it, then clarify the deeper principle.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70093,
+    "command": "ConnectTheDots",
+    "category": "Learning & Study",
+    "subcategory": "Conceptual Understanding",
+    "description": "Link new information to concepts I already know.",
+    "instruction": "Explain the new concept by connecting it to things I already understand. Make the relationships explicit, show similarities and differences, and use the connections to build a coherent mental map.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70094,
+    "command": "QuizAdaptive",
+    "category": "Learning & Study",
+    "subcategory": "Adaptive Learning",
+    "description": "Quiz one question at a time and adapt difficulty.",
+    "instruction": "Quiz me on the topic one question at a time. Adapt difficulty and topic coverage to my answers, revisit weak areas, avoid repeating mastered material, and periodically tell me what I should review next.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70095,
+    "command": "RememberThis",
+    "category": "Learning & Study",
+    "subcategory": "Memory",
+    "description": "Make a concept easier to retain using meaningful structure.",
+    "instruction": "Turn this material into a memorable structure using chunking, meaningful associations, contrast, retrieval cues, and a short review plan. Avoid gimmicky mnemonics unless they genuinely fit.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70096,
+    "command": "PlanMyDayFromChaos",
+    "category": "Planning & Execution",
+    "subcategory": "Daily Planning",
+    "description": "Turn a messy day into a realistic schedule.",
+    "instruction": "Use my tasks, appointments, deadlines, energy constraints, travel time, and priorities to build a realistic day plan. Protect focus time, group compatible tasks, add buffers, and explicitly show what will not fit.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70097,
+    "command": "MakeItEasy",
+    "category": "Planning & Execution",
+    "subcategory": "Momentum",
+    "description": "Reduce a delayed or overwhelming task to an easy starting point.",
+    "instruction": "Take the task I am avoiding and reduce it to the smallest useful action I can start immediately. Remove unnecessary setup, define a 5-minute entry step, and show the next two actions only.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70098,
+    "command": "PackForThis",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Travel",
+    "description": "Build a practical packing list for a specific trip.",
+    "instruction": "Create a packing list from the destination, dates, weather, trip length, activities, dress requirements, luggage limits, and access to laundry. Avoid overpacking and distinguish essential, useful, and optional items.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70099,
+    "command": "TripRealityCheck",
+    "category": "Lifestyle & Personal",
+    "subcategory": "Travel",
+    "description": "Stress-test a travel itinerary for real-world feasibility.",
+    "instruction": "Review this itinerary for travel time, opening hours, geographic clustering, fatigue, queues, meal time, weather, check-in/out, and recovery time. Flag unrealistic days and propose a more workable version.",
+    "source": "PromptDeck Deep Hunt 2026"
+  },
+  {
+    "id": 70100,
+    "command": "WhatCanChatGPTDoHere",
+    "category": "AI & Prompting",
+    "subcategory": "Prompt Discovery",
+    "description": "Suggest the most useful ways ChatGPT can help in the current situation.",
+    "instruction": "Given the user's current situation, file, screenshot, text, goal, or problem, propose the five most useful things ChatGPT could do next. Make each suggestion concrete, explain the expected result, and recommend the best first option.",
+    "source": "PromptDeck Deep Hunt 2026"
+  }
+]

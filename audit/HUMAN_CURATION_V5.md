@@ -1,0 +1,280 @@
+# PromptDeck Human Curation V5
+
+Raw cards: **3384**
+KEEP as cards: **1678**
+KEEP as variants/family members: **629**
+REMOVE: **1077**
+Projected visible cards (before second-pass family consolidation): **1852**
+
+## By source
+
+- community: KEEP 654 · VARIANT 431 · REMOVE 1075
+- core: KEEP 120 · VARIANT 0 · REMOVE 0
+- deep_hunt: KEEP 100 · VARIANT 0 · REMOVE 0
+- pdf: KEEP 804 · VARIANT 0 · REMOVE 2
+- photo: KEEP 0 · VARIANT 198 · REMOVE 0
+
+## By category
+
+- AI & Prompting: KEEP 156 · VARIANT 126 · REMOVE 268
+- Business & Marketing: KEEP 151 · VARIANT 8 · REMOVE 38
+- Content Creation: KEEP 190 · VARIANT 67 · REMOVE 112
+- Data & Formatting: KEEP 15 · VARIANT 5 · REMOVE 22
+- Health & Wellness: KEEP 12 · VARIANT 3 · REMOVE 19
+- Learning & Study: KEEP 154 · VARIANT 17 · REMOVE 64
+- Lifestyle & Personal: KEEP 51 · VARIANT 7 · REMOVE 22
+- Meta: KEEP 1 · VARIANT 0 · REMOVE 0
+- Photo Editing & Image Generation: KEEP 22 · VARIANT 198 · REMOVE 0
+- Planning & Execution: KEEP 75 · VARIANT 0 · REMOVE 0
+- Problem Solving & Technical: KEEP 246 · VARIANT 47 · REMOVE 150
+- Research & Analysis: KEEP 165 · VARIANT 45 · REMOVE 66
+- Specialist Roles: KEEP 26 · VARIANT 73 · REMOVE 232
+- Thinking & Ideas: KEEP 248 · VARIANT 0 · REMOVE 2
+- Work & Career: KEEP 50 · VARIANT 3 · REMOVE 19
+- Writing & Rewriting: KEEP 116 · VARIANT 30 · REMOVE 63
+
+## Removal sample
+
+- GID 121 /Ethereum Developer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 130 /Plagiarism Checker — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 131 /Character — low-value persona/novelty card
+- GID 132 /Advertiser — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 134 /Football Commentator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 135 /Stand-up Comedian — low-value persona/novelty card
+- GID 136 /Motivational Coach — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 137 /Composer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 138 /Debater — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 142 /Movie Critic — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 144 /Poet — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 145 /Rapper — low-value persona/novelty card
+- GID 146 /Motivational Speaker — low-value persona/novelty card
+- GID 148 /Philosopher — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 151 /UX/UI Developer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 152 /Cyber Security Specialist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 153 /Recruiter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 154 /Life Coach — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 155 /Etymologist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 156 /Commentariat — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 157 /Magician — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 161 /Mental Health Adviser — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 162 /Real Estate Agent — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 163 /Logistician — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 164 /Dentist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 165 /Web Design Consultant — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 166 /AI Assisted Doctor — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 167 /Doctor — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 168 /Accountant — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 169 /Chef — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 170 /Automobile Mechanic — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 171 /Artist Advisor — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 172 /Financial Analyst — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 173 /Investment Manager — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 174 /Tea-Taster — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 175 /Interior Decorator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 176 /Florist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 177 /Self-Help Book — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 178 /Gnomist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 179 /Aphorism Book — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 180 /Text Based Adventure Game — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 182 /Fancy Title Generator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 183 /Statistician — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 184 /Prompt Generator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 185 /Instructor in a School — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 187 /Dietitian — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 189 /Smart Domain Name Generator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 190 /Tech Reviewer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 192 /Academician — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 194 /Lunatic — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 195 /Gaslighter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 196 /Fallacy Finder — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 197 /Journal Reviewer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 198 /DIY Expert — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 199 /Social Media Influencer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 200 /Socrat — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 202 /Educational Content Creator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 203 /Yogi — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 204 /Essay Writer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 205 /Social Media Manager — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 206 /Elocutionist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 207 /Scientific Data Visualizer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 208 /Car Navigation System — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 210 /Historian — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 211 /Astrologer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 212 /Film Critic — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 213 /Classical Music Composer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 214 /Journalist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 215 /Digital Art Gallery Guide — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 216 /Public Speaking Coach — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 217 /Makeup Artist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 218 /Babysitter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 220 /Ascii Artist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 221 /Python Interpreter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 222 /Synonym Finder — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 223 /Personal Shopper — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 224 /Food Critic — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 226 /Personal Chef — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 227 /Legal Advisor — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 228 /Personal Stylist — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 229 /Machine Learning Engineer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 231 /SVG designer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 232 /IT Expert — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 233 /Chess Player — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 234 /Midjourney Prompt Generator — built for another model/platform rather than ChatGPT
+- GID 235 /Fullstack Software Developer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 236 /Mathematician — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 239 /Dream Interpreter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 240 /Talent Coach — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 241 /R Programming Interpreter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 242 /StackOverflow Post — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 244 /PHP Interpreter — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 245 /Emergency Response Professional — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 247 /Software Quality Assurance Tester — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 248 /Tic-Tac-Toe Game — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 250 /New Language Creator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 251 /Web Browser — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 252 /Senior Frontend Developer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 256 /Startup Idea Generator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 257 /Spongebob's Magic Conch Shell — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 258 /Language Detector — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 259 /Salesperson — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 260 /Commit Message Generator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 262 /Chief Executive Officer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 264 /Speech-Language Pathologist (SLP) — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 265 /Startup Tech Lawyer — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 266 /Title Generator for written pieces — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 269 /Drunk Person — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 271 /Song Recommender — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 274 /Unconstrained AI model DAN — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 275 /Gomoku player — built for another model/platform rather than ChatGPT
+- GID 277 /Buddha — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 278 /Muslim Imam — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 279 /Chemical Reactor — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 280 /Friend — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 281 /ChatGPT Prompt Generator — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 282 /Wikipedia Page — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 284 /Note-Taking assistant — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 285 /Literary Critic — not distinct/reusable enough for the curated ChatGPT catalog
+- GID 286 /Prompt Enhancer — not distinct/reusable enough for the curated ChatGPT catalog
+
+## Variant/family sample
+
+- GID 158 /Career Counselor — General variant — potentially useful but better surfaced as a family variant
+- GID 159 /Pet Behaviorist — General variant — potentially useful but better surfaced as a family variant
+- GID 160 /Personal Trainer — General variant — potentially useful but better surfaced as a family variant
+- GID 191 /Developer Relations Consultant — General variant — potentially useful but better surfaced as a family variant
+- GID 193 /IT Architect — General variant — potentially useful but better surfaced as a family variant
+- GID 219 /Tech Writer — General variant — potentially useful but better surfaced as a family variant
+- GID 246 /Fill in the Blank Worksheets Generator — General variant — potentially useful but better surfaced as a family variant
+- GID 249 /Password Generator — General variant — potentially useful but better surfaced as a family variant
+- GID 297 /Acoustic Guitar Composer — General variant — potentially useful but better surfaced as a family variant
+- GID 312 /Top Programming Expert — General variant — potentially useful but better surfaced as a family variant
+- GID 326 /Large Language Models Security Specialist — General variant — potentially useful but better surfaced as a family variant
+- GID 335 /Reverse Prompt Engineer — General variant — potentially useful but better surfaced as a family variant
+- GID 336 /Explainer with Analogies — General variant — potentially useful but better surfaced as a family variant
+- GID 368 /Currency Exchange Calculator — General variant — potentially useful but better surfaced as a family variant
+- GID 397 /Isometric City Diorama — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 400 /Web Design — General variant — potentially useful but better surfaced as a family variant
+- GID 401 /Isometric 3D Weather Cityscapes (PBR Textures) — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 405 /3D Isometric Miniature Diorama — Cinematic & Moody — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 407 /Floating City Island - Photoreal 4K Poster — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 412 /Director Variation Grid: One Still, Eight Auteur Re-Shoots — General variant — potentially useful but better surfaced as a family variant
+- GID 419 /Realistic Food Image Generator — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 420 /Urban Casual Confidence — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 422 /Legebdary Exploded View Prompt For nanobanana — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 428 /Double Exposure Portrait — Creative Portrait Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 429 /Time Layer Photography — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 432 /Professional Badge Photo, Ready to Use — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 433 /Clean Clinic Portrait — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 435 /Hyper-Realistic Clay Bust From Photo Template — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 436 /3D City Prompt — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 437 /Django Unit Test Generator for Viewsets — General variant — potentially useful but better surfaced as a family variant
+- GID 439 /Ultra-Realistic Noir Portrait Creation — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 444 /Crear un retrato familiar combinando dos personas — Portraits & People — reusable visual recipe; strip model-specific wrapper
+- GID 450 /Turn Your Photo Into a Simpsons Scene — Background & Cleanup — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 454 /Editorial Winter Poster–Style Multi-Panel Collage Generation — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 459 /Corporate Studio Portrait (Auto Outfit for Men/Women) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 461 /Ultra-Detailed Vintage Photo Restoration and Colorization — Restore & Repair — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 464 /Create a Cultural Superhero Movie Poster — Film & Vintage — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 469 /Mirror Selfie with Face Preservation — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 482 /A prompt that will turn your photo into a scene from a cult 90s movie — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 491 /Virtualization Expert — General variant — potentially useful but better surfaced as a family variant
+- GID 492 /Studio Portraits with Professional Postures — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 508 /FDR Analysis Program for Commercial Aircraft — General variant — potentially useful but better surfaced as a family variant
+- GID 509 /Integration and Planning Roadmap for Calculator Content — General variant — potentially useful but better surfaced as a family variant
+- GID 510 /Pixel Dissolve: Minimalist 3D Food Transformation — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 511 /brsorndnsg — Background & Cleanup — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 512 /Luxury Ski Resort Selfie Scene Description — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 524 /Academic Text Refinement Assistant — General variant — potentially useful but better surfaced as a family variant
+- GID 531 /Optimize Large Data Reading in Code — General variant — potentially useful but better surfaced as a family variant
+- GID 533 /LinkedIn comments — General variant — potentially useful but better surfaced as a family variant
+- GID 534 /Detailed Image Generation Prompt for Fashion and Portrait Photography — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 535 /High-End Beauty Editorial Photo Shoot Specification — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 537 /POV Smartphone with Space-Themed Twitter UI in Central Park — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 541 /Fierce Medieval Queen on Iron Throne Portrait — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 544 /Act as a Senior Research Paper Evaluator — General variant — potentially useful but better surfaced as a family variant
+- GID 555 /Act as a Patient, Non-Technical Android Studio Guide — General variant — potentially useful but better surfaced as a family variant
+- GID 556 /Chimera AI-Powered Prompt Optimization System — General variant — potentially useful but better surfaced as a family variant
+- GID 559 /Cozy Christmas Smile — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 570 /Build an Advanced Music App for Android — General variant — potentially useful but better surfaced as a family variant
+- GID 571 /Web Application Testing Skill — General variant — useful capability trapped in external-agent wrapper; rewrite for ChatGPT
+- GID 583 /Through the Glass: One Eye in Focus — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 584 /Surreal CGI-Photography Hybrid Portrait — Creative Portrait Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 585 /Hyperrealistic Food Photo Creator — Restore & Repair — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 595 /Enhance and Beautify Your Photo — Restore & Repair — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 597 /GoPro Action — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 601 /CI/CD Strategy for SpringBoot REST APIs Deployment — General variant — potentially useful but better surfaced as a family variant
+- GID 610 /Hyper-Realistic 3D Isometric Ottoman Masterpiece — Background & Cleanup — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 612 /Miniature Claymation Adventures on the Mushroom Cap — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 613 /Melancholic Dawn on the Misty Pier — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 623 /Stranded in Time: The Victorian Traveler’s Panic — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 628 /Detailed mirror-selfie room scene — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 629 /Black and white studio side-profile portrait prompt — Background & Cleanup — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 630 /The Digital Frontier: Pixelated Pioneers — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 638 /Comprehensive User Manual Creation for Multiple Modules — General variant — potentially useful but better surfaced as a family variant
+- GID 639 /Building an Inventory Management System — General variant — potentially useful but better surfaced as a family variant
+- GID 643 /Cinematic Vertical Portrait of Vintage Car Radio at Night — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 648 /The Covert Exchange in the Fog — Cinematic & Moody — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 651 /A Moment Shared with the Wild — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 652 /Isometric miniature 3D cartoon city scene — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 671 /Young woman with mixed ethnicity features — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 672 /Hyper-Realistic Marvel Comic Fusion Image Generation — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 673 /Shadows of the Cold War: The 1962 Exchange — Cinematic & Moody — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 675 /Project Evaluation for Production Decision — General variant — useful capability trapped in external-agent wrapper; rewrite for ChatGPT
+- GID 680 /HCCVN-AI-VN Pro Max: Optimal AI System Design — General variant — potentially useful but better surfaced as a family variant
+- GID 681 /Evaluate and Suggest Improvements for Computer Science PhD Thesis — General variant — potentially useful but better surfaced as a family variant
+- GID 702 /Modern Fashion Photography — Product Photography — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 704 /Mirror Product Photo — Product Photography — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 716 /Playing Card Sorcerer Portrait — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 721 /A Wrinkle in Time — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 722 /Create Python Dev Container — General variant — potentially useful but better surfaced as a family variant
+- GID 723 /Protocol 2084: The Alleyway Hack — Cinematic & Moody — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 724 /Expo + Supabase Edge Function Cold Start & Mobile Performance Analysis — General variant — potentially useful but better surfaced as a family variant
+- GID 725 /Cold Start Safe Architecture — General variant — potentially useful but better surfaced as a family variant
+- GID 729 /Flight Tracker Desktop Application — General variant — potentially useful but better surfaced as a family variant
+- GID 730 /File Renaming Dashboard App — General variant — potentially useful but better surfaced as a family variant
+- GID 731 /Letter from Lisa: A Heartfelt Plea to Her Father — General variant — potentially useful but better surfaced as a family variant
+- GID 735 /The Aether Prince at the Crystal Gala — Cinematic & Moody — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 739 /Accessibility Expert — General variant — useful capability trapped in external-agent wrapper; rewrite for ChatGPT
+- GID 740 /Accessibility Testing Superpower — General variant — useful capability trapped in external-agent wrapper; rewrite for ChatGPT
+- GID 754 /Isometric 3D Cartoon Scene with Weather Effects — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 760 /Cinematic Realism — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 764 /Comprehensive Image Analysis Report — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 768 /The Missing Woman — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 769 /Photo-to-Isometric: Reality Slice Generator — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 770 /Shadows of the Blue Note — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 775 /3D Isometric Miniature City View with Weather — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 779 /Photorealistic Selfie Portrait Description — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 780 /Bathroom Flash Selfie (IG-candid, non-explicit) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 782 /Snowy Street Cozy (winter fit, cinematic) — Landscape & Travel — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 783 /Nano Banana Pro Prompt Generator Instruction (Outputs JSON blocks like these) — Visual Styles — reusable visual recipe; strip model-specific wrapper
+- GID 784 /Gym Mirror (UGC realism, no logos) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 785 /merge — General variant — potentially useful but better surfaced as a family variant
+- GID 788 /License Selection Assistant from Intellectual Property expert — General variant — potentially useful but better surfaced as a family variant
+- GID 795 /Night Neon Alley (half-body, edgy) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 799 /Museum Steps (full-body, cultural) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 800 /Nightclub Booth Flash (half-body, party candids) — Visual Styles — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 801 /Studio Beauty Editorial (close-up, pro) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 803 /Tech Desk “Builder” (half-body, cozy monitor glow) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 804 /Restaurant Candle Close-up (intimate, not explicit) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 806 /“Blue Hour Bridge” (full-body, cinematic but still IG) — Cinematic & Moody — visual prompt; retain under Photo/Image family, not as standalone card
+- GID 809 /Passenger Seat Car Selfie (golden hour, candid) — Portraits & People — visual prompt; retain under Photo/Image family, not as standalone card

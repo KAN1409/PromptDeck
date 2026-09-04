@@ -1,0 +1,46 @@
+name: Audit Prompt Catalog
+
+on:
+  push:
+    branches:
+      - audit/prompt-dedup-v1
+    paths:
+      - 'tools/audit_prompt_catalog.py'
+      - 'android/app/src/main/assets/**'
+      - '.github/workflows/audit-prompt-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install audit dependencies
+        run: python -m pip install --disable-pip-version-check scikit-learn==1.7.2
+      - name: Run semantic catalog audit
+        run: python tools/audit_prompt_catalog.py
+      - name: Show summary
+        run: sed -n '1,35p' audit/PROMPT_CATALOG_AUDIT.md
+      - name: Commit audit report to audit branch
+        run: |
+          git config user.name 'PromptDeck Audit Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audit/PROMPT_CATALOG_AUDIT.md audit/PROMPT_CATALOG_AUDIT.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add semantic prompt catalog audit report'
+            git push origin HEAD:audit/prompt-dedup-v1
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prompt-catalog-audit
+          path: |
+            audit/PROMPT_CATALOG_AUDIT.md
+            audit/PROMPT_CATALOG_AUDIT.json

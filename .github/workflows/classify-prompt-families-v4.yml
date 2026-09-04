@@ -1,0 +1,46 @@
+name: Classify Prompt Families V4
+
+on:
+  push:
+    branches:
+      - audit/prompt-dedup-v1
+    paths:
+      - 'tools/classify_prompt_families_v4.py'
+      - '.github/workflows/classify-prompt-families-v4.yml'
+      - 'android/app/src/main/assets/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install semantic dependencies
+        run: python -m pip install --disable-pip-version-check sentence-transformers==5.1.1 scikit-learn==1.7.2
+      - name: Run family classifier and facet audit
+        run: python tools/classify_prompt_families_v4.py
+      - name: Show summary
+        run: sed -n '1,100p' audit/PROMPT_FAMILY_CLASSIFICATION_V4.md
+      - name: Commit reports
+        run: |
+          git config user.name 'PromptDeck Audit Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audit/PROMPT_FAMILY_CLASSIFICATION_V4.md audit/PROMPT_FAMILY_CLASSIFICATION_V4.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add Stage 2 prompt family classification report'
+            git push origin HEAD:audit/prompt-dedup-v1
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prompt-family-classification-v4
+          path: |
+            audit/PROMPT_FAMILY_CLASSIFICATION_V4.md
+            audit/PROMPT_FAMILY_CLASSIFICATION_V4.json

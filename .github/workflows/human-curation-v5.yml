@@ -1,0 +1,38 @@
+name: Human Curate Prompt Catalog V5
+
+on:
+  push:
+    branches:
+      - audit/prompt-dedup-v1
+    paths:
+      - 'tools/human_curate_catalog_v5.py'
+      - '.github/workflows/human-curation-v5.yml'
+      - 'android/app/src/main/assets/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run human-authored ChatGPT-first curation policy
+        run: python tools/human_curate_catalog_v5.py
+      - name: Show summary
+        run: sed -n '1,80p' audit/HUMAN_CURATION_V5.md
+      - name: Commit report
+        run: |
+          git config user.name 'PromptDeck Review Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add audit/HUMAN_CURATION_V5.md audit/HUMAN_CURATION_V5.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add ChatGPT-first human curation V5 report'
+            git push origin HEAD:audit/prompt-dedup-v1
+          fi

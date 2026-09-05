@@ -1,5 +1,5 @@
-# Rebuild after integrated prompt catalog + Export All
-name: Build PromptDeck v0.7.7
+# One-pass canonical cleanup build
+name: Build PromptDeck v0.7.8
 
 on:
   workflow_dispatch:
@@ -50,7 +50,7 @@ jobs:
           print('Integrated prompt data verified:',len(core),'+',len(photo),'+',len(imported),'+',len(daily))
           PY
 
-      - name: Apply app patches including Export All
+      - name: Apply app patches and one-pass canonical cleanup
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
@@ -60,6 +60,7 @@ jobs:
           python3 tools/patch_imported_pdf_prompts_v075.py
           python3 tools/patch_daily_gap_v076.py
           python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -68,7 +69,9 @@ jobs:
           assert 'Export All' in main
           assert 'void exportAllPack(Uri u)' in main
           assert 'EXPORT_ALL_REQ=1004' in main
-          print('English-only UI and Export All audit passed')
+          assert 'void canonicalizeLibrary()' in main
+          assert 'canonicalizeLibrary();' in main
+          print('English-only UI, Export All, and canonical cleanup audit passed')
           PY
 
       - uses: actions/setup-java@v4
@@ -97,13 +100,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.7.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.7.sha256
+          cp "$APK" /tmp/PromptDeck-v0.7.8.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.8.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.7-build
+          name: PromptDeck-v0.7.8-build
           path: |
-            /tmp/PromptDeck-v0.7.7.apk
-            /tmp/PromptDeck-v0.7.7.sha256
+            /tmp/PromptDeck-v0.7.8.apk
+            /tmp/PromptDeck-v0.7.8.sha256
           if-no-files-found: error

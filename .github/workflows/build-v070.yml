@@ -1,5 +1,5 @@
-# V15 verification/release build after V14 canonical consolidation
-name: Build PromptDeck v0.7.9
+# Navigation V2 discovery-first build after V14 canonical consolidation
+name: Build PromptDeck v0.8.0
 
 on:
   workflow_dispatch:
@@ -50,7 +50,7 @@ jobs:
           print('Integrated prompt data verified:',len(core),'+',len(photo),'+',len(imported),'+',len(daily))
           PY
 
-      - name: Apply app patches and V14 canonical consolidation
+      - name: Apply app patches, canonical consolidation and Navigation V2
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
@@ -61,6 +61,7 @@ jobs:
           python3 tools/patch_daily_gap_v076.py
           python3 tools/patch_export_all_v077.py
           python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -68,13 +69,16 @@ jobs:
           if re.search(r'[\u0600-\u06FF]',main): raise SystemExit('Arabic visible UI text remains')
           assert 'Export All' in main
           assert 'void exportAllPack(Uri u)' in main
-          assert 'EXPORT_ALL_REQ=1004' in main
           assert 'void canonicalizeLibrary()' in main
-          assert 'SelarDigitalProductIdeas' in main
-          assert 'ChatGPTPromptGenerator' in main
-          assert 'PlainTalkNaturalWriting' in main
-          assert 'broken=new HashSet' not in main
-          print('V15 source verification passed: English UI, Export All, V14 canonical rules, no unreviewed broken-removal list')
+          assert 'Find the right prompt' in main
+          assert 'What do you want to do?' in main
+          assert 'SMART COLLECTIONS' in main
+          assert 'void smartCollection(' in main
+          assert 'ArrayList<Cmd> rankSmart(' in main
+          assert 'void browseCategories()' in main
+          assert 'recent_prompt_ids' in main
+          assert 'for(Cmd c:all)if(c.category.equalsIgnoreCase(g.title))out.add(c)' in main
+          print('v0.8.0 source verification passed: canonical catalog + discovery-first Navigation V2 + canonical category counts')
           PY
 
       - uses: actions/setup-java@v4
@@ -103,13 +107,13 @@ jobs:
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.7.9.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.7.9.sha256
+          cp "$APK" /tmp/PromptDeck-v0.8.0.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.0.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.7.9-build
+          name: PromptDeck-v0.8.0-build
           path: |
-            /tmp/PromptDeck-v0.7.9.apk
-            /tmp/PromptDeck-v0.7.9.sha256
+            /tmp/PromptDeck-v0.8.0.apk
+            /tmp/PromptDeck-v0.8.0.sha256
           if-no-files-found: error

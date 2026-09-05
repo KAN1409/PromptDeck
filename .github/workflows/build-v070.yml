@@ -9,6 +9,7 @@ on:
       - 'tools/**'
       - 'audit/apply_v081_design_and_chatgpt_native.py'
       - 'audit/apply_v081_pixel_lock_v2.py'
+      - 'audit/apply_v081_pixel_identical_v3.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -69,11 +70,13 @@ jobs:
           python3 tools/patch_onepass_canonical_v078.py
           python3 tools/patch_navigation_v2_v080.py
 
-      - name: Apply v0.8.1 ChatGPT-native catalog and visual lock
+      - name: Apply v0.8.1 ChatGPT-native catalog and pixel-identical proposal lock
         run: |
           python3 audit/apply_v081_design_and_chatgpt_native.py
           python3 audit/fix_v081_java_escapes.py
           python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
           python3 audit/fix_v081_java_escapes.py
 
       - name: Verify v0.8.1 source and design gates
@@ -85,7 +88,7 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375, pack['expected_builtin_count']
-          assert "versionCode 25" in gradle
+          assert "versionCode 26" in gradle
           assert "versionName '0.8.1'" in gradle
           required=[
             'Find the right prompt','Quick Goals','Smart Collections',
@@ -93,14 +96,20 @@ jobs:
             'Browse Categories','Variables (optional)','Add to Stack',
             'Run with ChatGPT','Run Stack with ChatGPT','My Prompts',
             'displayTitle(Cmd c)','resolveTemplate(Cmd c,String user)',
-            'applyChatGPTNativeFinal()','gradientShape(ACCENT,PURPLE',
+            'applyChatGPTNativeFinal()','applyProposalTaxonomy()','gradientShape(ACCENT,PURPLE',
             'R.drawable.promptdeck_mark','R.drawable.pd_nav_home','R.drawable.pd_nav_search',
             'R.drawable.pd_nav_stack','R.drawable.pd_nav_document','R.drawable.pd_nav_settings',
             'base("Settings","",false)','base("Search","",false)',
-            'base("Prompt Stack","",false)','base("My Prompts","",false)'
+            'base("Prompt Stack","",false)','base("My Prompts","",false)',
+            'plan a marketing strategy','Meeting Notes Summarizer','seedProposalStackOnce()',
+            'new LinearLayout.LayoutParams(dp(96),dp(88))'
           ]
           for token in required: assert token in main, token
-          for p in ['promptdeck_mark.xml','pd_nav_home.xml','pd_nav_search.xml','pd_nav_stack.xml','pd_nav_document.xml','pd_nav_settings.xml']:
+          exact_categories=['Writing & Content','Research & Learning','Productivity & Planning','Career & Business','Technology & Development','Creativity & Design','Health & Lifestyle','Science & Education','Images & Visuals']
+          group_block=main[main.index('final Group[] groups='):main.index('};',main.index('final Group[] groups='))+2]
+          for cat in exact_categories: assert cat in group_block, cat
+          assert group_block.count('new Group(')==9, group_block.count('new Group(')
+          for p in ['promptdeck_mark.xml','pd_nav_home.xml','pd_nav_search.xml','pd_nav_stack.xml','pd_nav_document.xml','pd_nav_settings.xml','pd_ic_write.xml','pd_ic_research.xml','pd_ic_calendar.xml','pd_ic_briefcase.xml','pd_ic_code.xml','pd_ic_creative.xml','pd_ic_heart.xml','pd_ic_flask.xml','pd_ic_image.xml']:
             assert Path('android/app/src/main/res/drawable/'+p).exists(), p
           assert 'base("Prompt Library"' not in main
           assert 'menuCard("⌕","Prompt Library"' not in main
@@ -108,11 +117,10 @@ jobs:
           assert not re.search(r'(?<!\\)\\s',main), 'single-backslash Java \\s escape remains'
           nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
           assert nav.count('navItem(')==5, nav.count('navItem(')
-          # Proposal structure: brand row is conditional to Home, not global.
           base=main[main.index('void base('):main.index('LinearLayout bottomNav()',main.index('void base('))]
           assert 'if("home".equals(page))' in base
           assert 'TextView brand=text("PromptDeck"' in base
-          print('v0.8.1 source gates PASS: pixel-lock v2 + five-tab navigation + ChatGPT-native runtime + 3375 target')
+          print('v0.8.1 source gates PASS: pixel-identical v3 normalized proposal + five-tab navigation + ChatGPT-native runtime + 3375 target')
           PY
 
       - uses: actions/setup-java@v4
@@ -146,7 +154,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-pixel-lock-v2
+          name: PromptDeck-v0.8.1-pixel-identical-v3
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

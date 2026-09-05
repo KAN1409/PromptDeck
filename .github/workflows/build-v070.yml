@@ -1,4 +1,4 @@
-# PromptDeck v0.8.1 — two-page ChatGPT-native UI
+# PromptDeck v0.8.1 — hybrid one-screen Ask or Browse UI
 name: Build PromptDeck v0.8.1
 
 on:
@@ -12,6 +12,7 @@ on:
       - 'audit/apply_v081_pixel_identical_v3.py'
       - 'audit/apply_v081_organization_fix_v4.py'
       - 'audit/apply_v081_two_page_ui_v5.py'
+      - 'audit/apply_v081_hybrid_one_screen_v6.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -67,7 +68,7 @@ jobs:
           python3 tools/patch_onepass_canonical_v078.py
           python3 tools/patch_navigation_v2_v080.py
 
-      - name: Apply v0.8.1 ChatGPT-native catalog and two-page UI
+      - name: Apply v0.8.1 ChatGPT-native catalog and hybrid one-screen UI
         run: |
           python3 audit/apply_v081_design_and_chatgpt_native.py
           python3 audit/fix_v081_java_escapes.py
@@ -79,8 +80,10 @@ jobs:
           python3 audit/fix_v081_java_escapes.py
           python3 audit/apply_v081_two_page_ui_v5.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
 
-      - name: Verify two-page architecture and catalog gates
+      - name: Verify hybrid one-screen architecture and catalog gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -89,30 +92,31 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375
-          assert "versionCode 28" in gradle
+          assert "versionCode 29" in gradle
           assert "versionName '0.8.1'" in gradle
-          required=['What do you want to do?','Search or describe your goal...','void showCategoryPicker()','void showMoreMenu()','void showPromptDialog(Cmd c)','void renderDiscoverResults','Run with ChatGPT','Add another prompt','No custom prompts yet.','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()']
+          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','BEST APPROACH','SUGGESTED WORKFLOW','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','workflowForGoal(String goal)','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','R.drawable.pd_mode_ask','R.drawable.pd_mode_browse']
           for token in required: assert token in main, token
           exact_categories=['Writing & Content','Research & Learning','Productivity & Planning','Career & Business','Technology & Development','Creativity & Design','Health & Lifestyle','Science & Education','Images & Visuals']
           group_block=main[main.index('final Group[] groups='):main.index('};',main.index('final Group[] groups='))+2]
           assert group_block.count('new Group(')==9
           for cat in exact_categories: assert cat in group_block
-          nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
-          assert nav.count('navItem(')==2, nav.count('navItem(')
-          assert '"Discover"' in nav and '"Stack"' in nav
-          assert '"Home"' not in nav and '"Browse"' not in nav and '"My Prompts"' not in nav and '"Settings"' not in nav
+          base=main[main.index('void base('):main.index('LinearLayout bottomNav()',main.index('void base('))]
+          assert 'bottomNav()' not in base
           home=main[main.index('void home()'):main.index('void addGoalCard',main.index('void home()')) if 'void addGoalCard' in main[main.index('void home()'):] else main.index('void browseCategories()',main.index('void home()'))]
           assert 'Quick Goals' not in home
           assert 'Smart Collections' not in home
+          assert 'modeChoiceCard' in home and 'modeSwitch()' in home
           stack=main[main.index('void stack()'):main.index('void addMore()',main.index('void stack()'))]
+          assert 'showStackSheet();' in stack
           assert 'seedProposalStackOnce();' not in stack
-          assert 'Button up=mini("↑")' not in stack
-          assert 'showStackMenu(v,k)' in stack
+          assert 'Button up=mini("↑")' not in main
           assert 'starterPreview("Meeting Notes Summarizer"' not in main
           assert 'searchPage("plan a marketing strategy","All")' not in main
           assert 'base("Prompt Library"' not in main
+          assert Path('android/app/src/main/res/drawable/pd_mode_ask.xml').exists()
+          assert Path('android/app/src/main/res/drawable/pd_mode_browse.xml').exists()
           assert not re.search(r'(?<!\\)\\s',main)
-          print('v0.8.1 TWO-PAGE gates PASS — Discover + Stack only, overlays for everything else, 3375 canonical prompts')
+          print('v0.8.1 HYBRID ONE-SCREEN gates PASS — Ask PromptDeck or Browse, contextual Review & Run, 3375 canonical prompts')
           PY
 
       - uses: actions/setup-java@v4
@@ -140,7 +144,7 @@ jobs:
           sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-two-page-v5
+          name: PromptDeck-v0.8.1-hybrid-one-screen-v6
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

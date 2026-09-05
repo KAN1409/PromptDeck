@@ -1,57 +1,98 @@
-# PromptDeck v0.8.1 — Two-Page UI Lock
+# PromptDeck v0.8.1 — Hybrid One-Screen UI/UX Lock
 
-This file supersedes the earlier five-tab / pixel-mockup navigation specification.
-The product must be understandable without learning an app hierarchy first.
+This supersedes the earlier five-tab and two-page navigation specs.
+The app must be understandable immediately: either let PromptDeck choose, or browse manually.
 
-## 1. Core rule
-- [ ] Maximum **two main pages** in the app.
-- [ ] Page 1: **Discover**.
-- [ ] Page 2: **Stack**.
-- [ ] No separate Home, Search, Browse, Categories, Collections, My Prompts, Favorites or Settings pages.
-- [ ] My Prompts, Favorites, Settings, Import and Export are dialogs/sheets/overlays.
-- [ ] Prompt Detail is an overlay/dialog, not a navigation page.
-- [ ] The user should be able to reach any prompt and run it without traversing a hierarchy of screens.
+## 1. Core architecture
+- [ ] Exactly **one main workspace**.
+- [ ] Landing presents two explicit paths:
+  - [ ] **Ask PromptDeck** — intelligent prompt/workflow selection.
+  - [ ] **Browse all prompts** — manual access to the complete catalog.
+- [ ] Ask and Browse are modes inside the same workspace, not separate navigation destinations.
+- [ ] A compact segmented switch lets the user change between Ask and Browse at any time.
+- [ ] No persistent bottom navigation.
+- [ ] No empty Stack page.
+- [ ] No separate Search, Browse, Categories, Collections, My Prompts, Favorites or Settings pages.
+- [ ] Prompt Detail and Review & Run are contextual bottom sheets/overlays.
 
-## 2. Main navigation
-- [ ] Bottom navigation has exactly **2 destinations**: Discover and Stack.
-- [ ] Discover uses the search/discovery icon.
-- [ ] Stack uses the layered-stack icon.
-- [ ] Stack label may show the current selected count, e.g. `Stack (3)`.
-- [ ] No five-tab navigation.
-- [ ] No separate Browse/Search duplication.
+## 2. Landing
+- [ ] PromptDeck mark + wordmark at top left.
+- [ ] One compact More affordance at top right.
+- [ ] Heading: `How do you want to start?`.
+- [ ] Supporting copy explains the choice in one sentence.
+- [ ] Two premium entry cards only:
+  - [ ] Ask PromptDeck — `Describe your goal and get the best prompt or workflow automatically.`
+  - [ ] Browse all prompts — `Search and explore the complete 3,375-prompt library yourself.`
+- [ ] No dashboard grid.
+- [ ] No Smart Collections section.
+- [ ] No categories dumped on the landing state.
 
-## 3. Discover page
-- [ ] PromptDeck brand mark and title at top.
-- [ ] One small `More` overflow affordance at the top right.
-- [ ] Primary heading: `What do you want to do?`.
-- [ ] One natural-language field: `Search or describe your goal...`.
-- [ ] Search and browsing are the same interaction, not separate pages.
-- [ ] One compact category filter button.
-- [ ] One compact Favorites filter button.
-- [ ] Optional Clear filter chip appears only when needed.
-- [ ] Quick intents are compact horizontal chips only: Write, Research, Plan, Learn, Code, Images.
-- [ ] No large Quick Goal dashboard tiles.
-- [ ] No Smart Collection dashboard section.
-- [ ] No category dashboard.
-- [ ] Default state shows a short Recommended list.
-- [ ] Query state shows Best matches.
-- [ ] Category selection happens in a picker dialog.
-- [ ] Result rows show only: icon, capability-first title, one-line description, add/check affordance.
-- [ ] No star + overflow + add trio on every result row.
-- [ ] Tapping the row opens Prompt Detail overlay.
-- [ ] Tapping `+` adds directly to Stack.
+## 3. Ask PromptDeck mode
+- [ ] Heading asks what the user wants ChatGPT to help with.
+- [ ] One natural-language goal field; multiline is allowed.
+- [ ] Explicit CTA: `Find the best approach`.
+- [ ] The app does not flood results while the user is typing; recommendation generation happens on explicit action.
+- [ ] Output hierarchy:
+  - [ ] `BEST APPROACH` — one strongest prompt.
+  - [ ] `SUGGESTED WORKFLOW` — only when the task benefits from multiple capabilities.
+  - [ ] `MORE MATCHES` — maximum three concise alternatives.
+- [ ] Suggested workflow contains 2–4 distinct steps maximum.
+- [ ] Workflow composition is intent-aware: e.g. research → compare → recommend for comparison/decision tasks.
+- [ ] `Use this prompt` or `Use workflow` adds to the current selection without creating a new page.
+- [ ] The user's goal becomes the default request/context for Review & Run.
 
-## 4. Prompt Detail overlay
-- [ ] Opens as a dialog/sheet over Discover, not a new page.
-- [ ] Shows capability-first title and short description.
-- [ ] Shows a compact prompt preview; extremely long instructions are truncated for readability.
-- [ ] Template variables appear as fields when present.
-- [ ] Actions: Add to Stack, Run now, Favorite, Close.
-- [ ] No back-navigation hierarchy is created.
+## 4. Browse all prompts mode
+- [ ] Search field: `Search prompts...`.
+- [ ] Category filter opens a picker, not a page.
+- [ ] Favorites filter is optional and compact.
+- [ ] All 3,375 canonical prompts remain reachable.
+- [ ] No-query state can show canonical order with progressive `Show more` pagination.
+- [ ] Search state ranks by intent relevance.
+- [ ] Category state filters the same result surface.
+- [ ] Result rows contain only:
+  - [ ] category/prompt icon
+  - [ ] capability-first title
+  - [ ] one-line outcome description
+  - [ ] `+` / check affordance
+- [ ] Tapping the row opens Prompt Detail sheet.
+- [ ] Tapping `+` adds directly to the selection.
 
-## 5. Category browsing
-- [ ] Categories remain the canonical organization layer for the 3,375 prompts.
-- [ ] Categories are selected from one dialog/picker, not a page.
+## 5. Selection / Stack behavior
+- [ ] Stack is **not** a page or navigation destination.
+- [ ] Nothing stack-related is shown while zero prompts are selected.
+- [ ] After the first selection, a sticky bottom bar appears:
+  - [ ] `<N> selected`
+  - [ ] `Review & Run →`
+- [ ] The sticky bar remains available in both Ask and Browse modes.
+- [ ] Review & Run opens a bottom sheet over the current workspace.
+- [ ] The sheet shows ordered selected prompts, request/context, Add prompt, and Run with ChatGPT.
+- [ ] Reorder and Remove live behind each row overflow menu.
+- [ ] No giant up/down/remove controls.
+- [ ] Closing Review & Run returns to the exact workspace/mode the user was using.
+
+## 6. Review & Run sheet
+- [ ] Title: `Review & Run`.
+- [ ] Selected count is visible.
+- [ ] Prompt rows are compact and ordered.
+- [ ] One request/context field.
+- [ ] `Add prompt` returns to Browse mode.
+- [ ] Primary CTA: `Run with ChatGPT`.
+- [ ] Running sends directly to ChatGPT; no intermediate Final Prompt page.
+- [ ] Template variables are resolved before sending.
+- [ ] Stack modules execute in order and cannot override later modules.
+- [ ] Final answer is coherent, not a pasted sequence of separate answers.
+
+## 7. Prompt Detail sheet
+- [ ] Bottom sheet, never a navigation page.
+- [ ] Capability-first title + short description.
+- [ ] Compact instruction preview; very long prompt bodies are truncated for UI readability.
+- [ ] Template variables render as fields.
+- [ ] Favorite action available.
+- [ ] `Run now` and `Add to Stack` are the two primary actions.
+- [ ] Close returns to the exact workspace state.
+
+## 8. Categories and catalog
+- [ ] Categories remain the canonical organization layer, not a navigation hierarchy.
 - [ ] Exact primary categories remain:
   - [ ] Writing & Content
   - [ ] Research & Learning
@@ -62,76 +103,68 @@ The product must be understandable without learning an app hierarchy first.
   - [ ] Health & Lifestyle
   - [ ] Science & Education
   - [ ] Images & Visuals
-- [ ] Each built-in prompt belongs to exactly one primary category.
-- [ ] Category counts are shown only where useful, not as a dashboard requirement.
+- [ ] Every built-in prompt belongs to exactly one primary category.
+- [ ] Category counts reflect unique canonical ownership only.
 
-## 6. Stack page
-- [ ] Page title: `Stack`.
-- [ ] Small selected-count badge in the header.
-- [ ] Clear action appears only when Stack is non-empty.
-- [ ] Empty state: one sentence + `Discover prompts` CTA.
-- [ ] No fake starter stack.
-- [ ] Each populated row: step number, icon, capability title, one-line description, one overflow button.
-- [ ] Reorder and Remove live inside the row overflow menu.
-- [ ] No giant up/down/remove buttons inside the row.
-- [ ] One `Your request` context field below selected prompts.
-- [ ] `Add another prompt` returns to Discover.
-- [ ] Primary CTA: `Run with ChatGPT`.
-- [ ] Template resolution and stack-safe composition remain unchanged.
-
-## 7. My Prompts and Favorites
-- [ ] Accessible from More menu as overlays.
+## 9. More menu
+- [ ] More contains My Prompts, Favorites and Settings.
+- [ ] These open overlays/dialogs only.
 - [ ] My Prompts contains real custom prompts only.
 - [ ] Favorites contains real favorites only.
-- [ ] No fake preview content to imitate a mockup.
-- [ ] Creating a custom prompt may open an editor dialog.
-- [ ] Built-in prompts are never duplicated into My Prompts.
-
-## 8. Settings and data utilities
-- [ ] Accessible from More menu as an overlay.
 - [ ] Settings contains App Preferences, ChatGPT Connection, Data & Storage and About.
-- [ ] Import, Export and bulk Paste live under Data & Storage.
-- [ ] Settings do not consume a persistent navigation destination.
+- [ ] Import, Export and bulk Paste remain under Data & Storage.
+- [ ] No persistent utility tabs.
 
-## 9. Visual system
-- [ ] Root background: `#07111D`.
-- [ ] Surface 1: `#0D1A2A`.
-- [ ] Surface 2: `#122235`.
-- [ ] Input: `#132338`.
-- [ ] Border: `#24364C`.
-- [ ] Primary text: `#F3F7FD`.
-- [ ] Secondary text: `#A6B5C8`.
-- [ ] Tertiary text: `#7E90A7`.
-- [ ] Primary blue: `#2C7BFF`.
-- [ ] Primary purple: `#6B5DFF`.
-- [ ] CTA gradient remains blue → purple.
-- [ ] Standard radius approximately 14dp.
+## 10. Visual system
+- [ ] Root background `#07111D`.
+- [ ] Surface 1 `#0D1A2A`.
+- [ ] Surface 2 `#122235`.
+- [ ] Input `#132338`.
+- [ ] Border `#24364C`.
+- [ ] Primary text `#F3F7FD`.
+- [ ] Secondary text `#A6B5C8`.
+- [ ] Tertiary text `#7E90A7`.
+- [ ] Primary blue `#2C7BFF`.
+- [ ] Primary purple `#6B5DFF`.
+- [ ] Primary CTA gradient blue → purple.
+- [ ] Ask PromptDeck uses a restrained blue intelligence accent.
+- [ ] Browse uses a restrained green/neutral discovery accent.
+- [ ] Standard radius approximately 14–16dp.
 - [ ] Main horizontal padding approximately 14dp.
-- [ ] Bottom navigation height approximately 58dp.
-- [ ] Dense, dark, compact, premium.
-- [ ] No oversized Material-You cards.
+- [ ] Bottom sheets use larger approximately 24dp top/surface radius.
+- [ ] Dense, premium, calm; no Material-You bloat.
 
-## 10. Content quality
-- [ ] Capability-first titles only.
-- [ ] Raw imported names are cleaned before display.
-- [ ] Descriptions do not expose imported metadata wrappers such as `# TITLE`, `Act as`, or workflow scaffolding.
-- [ ] Search ranking prioritizes the actual user intent, not generic keyword expansion.
-- [ ] Every built-in prompt remains ChatGPT-ready.
-- [ ] No raw `${...}` or genuine placeholder variables reach ChatGPT unresolved.
-- [ ] No private chain-of-thought request.
+## 11. Presentation quality
+- [ ] UI never derives an ugly raw imported command name as a primary title when clean metadata is available.
+- [ ] Capability-first titles dominate.
+- [ ] One-line descriptions state outcomes, not imported role scaffolding.
+- [ ] Raw `# TITLE`, `Act as`, `You are`, agent/runtime wrappers do not dominate cards.
+- [ ] Search/Ask ranking prioritizes actual user intent over generic words.
+- [ ] Suggested workflow steps are distinct, not near-duplicate prompt variants.
 
-## 11. Hard failures
-The build fails product review if any of the following returns:
-- [ ] More than two main pages.
-- [ ] Five-item bottom navigation.
+## 12. ChatGPT-first behavior
+- [ ] 3,375 canonical built-ins remain available.
+- [ ] Every built-in is ChatGPT-ready.
+- [ ] Raw `${...}` and genuine placeholders never reach ChatGPT unresolved.
+- [ ] External tools/models are conditional on actual availability.
+- [ ] No forced private chain-of-thought exposure.
+- [ ] Ask PromptDeck may choose one prompt or a 2–4 step workflow depending on task complexity.
+
+## 13. Hard failures
+The build fails product review if any of these return:
+- [ ] Persistent bottom navigation.
+- [ ] Empty Stack page.
 - [ ] Separate Search and Browse pages.
-- [ ] Separate Categories or Smart Collections pages.
-- [ ] My Prompts or Settings as persistent tabs.
-- [ ] Fake custom prompts or fake stack contents.
-- [ ] Large dashboard grids on Discover.
-- [ ] More than one primary search field.
-- [ ] Result rows with unnecessary competing controls.
-- [ ] Layout-breaking Stack controls.
-- [ ] Raw imported prompt names/descriptions dominating the UI.
+- [ ] Categories as a page hierarchy.
+- [ ] Smart Collections dashboard.
+- [ ] Fake starter Stack/custom prompts/search query.
+- [ ] More than one main workspace.
+- [ ] Intermediate Final Prompt navigation page.
+- [ ] Large dashboard grids before the user chooses Ask or Browse.
+- [ ] Result rows with star + overflow + add competing simultaneously.
+- [ ] Layout-breaking reorder buttons.
+- [ ] Raw imported names/descriptions dominating the UI.
 
-**Product principle:** Search first. Choose. Stack. Run. Everything else stays out of the way.
+**Product principle:**
+
+> **Choose how you want to work: PromptDeck can think for you, or you can browse everything yourself. Selection appears only when it exists.**

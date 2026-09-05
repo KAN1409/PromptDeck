@@ -1,4 +1,4 @@
-# PromptDeck v0.8.1 — approved visual lock + organized ChatGPT-native catalog
+# PromptDeck v0.8.1 — two-page ChatGPT-native UI
 name: Build PromptDeck v0.8.1
 
 on:
@@ -11,6 +11,7 @@ on:
       - 'audit/apply_v081_pixel_lock_v2.py'
       - 'audit/apply_v081_pixel_identical_v3.py'
       - 'audit/apply_v081_organization_fix_v4.py'
+      - 'audit/apply_v081_two_page_ui_v5.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -53,7 +54,7 @@ jobs:
           assert len(json.load(open('android/app/src/main/assets/daily_gap_prompts_100.json',encoding='utf-8')))==100
           PY
 
-      - name: Apply canonical catalog and Navigation V2
+      - name: Apply canonical catalog and Navigation V2 base
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
@@ -66,7 +67,7 @@ jobs:
           python3 tools/patch_onepass_canonical_v078.py
           python3 tools/patch_navigation_v2_v080.py
 
-      - name: Apply v0.8.1 ChatGPT-native visual and organization locks
+      - name: Apply v0.8.1 ChatGPT-native catalog and two-page UI
         run: |
           python3 audit/apply_v081_design_and_chatgpt_native.py
           python3 audit/fix_v081_java_escapes.py
@@ -76,8 +77,10 @@ jobs:
           python3 audit/fix_v081_java_escapes.py
           python3 audit/apply_v081_organization_fix_v4.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
 
-      - name: Verify v0.8.1 source design and organization gates
+      - name: Verify two-page architecture and catalog gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -86,22 +89,30 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375
-          assert "versionCode 27" in gradle
+          assert "versionCode 28" in gradle
           assert "versionName '0.8.1'" in gradle
-          required=['Find the right prompt','Quick Goals','Smart Collections','LinearLayout bottomNav()','void searchPage()','void settings()','Browse Categories','Variables (optional)','Add to Stack','Run with ChatGPT','Run Stack with ChatGPT','My Prompts','displayTitle(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','void showStackMenu(View anchor,int index)','meaningfulQueryTerms(String q)','Import, export and bulk paste are in Settings','R.drawable.promptdeck_mark']
+          required=['What do you want to do?','Search or describe your goal...','void showCategoryPicker()','void showMoreMenu()','void showPromptDialog(Cmd c)','void renderDiscoverResults','Run with ChatGPT','Add another prompt','No custom prompts yet.','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()']
           for token in required: assert token in main, token
           exact_categories=['Writing & Content','Research & Learning','Productivity & Planning','Career & Business','Technology & Development','Creativity & Design','Health & Lifestyle','Science & Education','Images & Visuals']
           group_block=main[main.index('final Group[] groups='):main.index('};',main.index('final Group[] groups='))+2]
           assert group_block.count('new Group(')==9
           for cat in exact_categories: assert cat in group_block
-          assert 'Button up=mini("↑")' not in main[main.index('void stack()'):main.index('void addMore()',main.index('void stack()'))]
-          assert 'starterPreview("Meeting Notes Summarizer"' not in main[main.index('void library(boolean favoritesMode)'):main.index('void customDetail',main.index('void library(boolean favoritesMode)'))]
+          nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
+          assert nav.count('navItem(')==2, nav.count('navItem(')
+          assert '"Discover"' in nav and '"Stack"' in nav
+          assert '"Home"' not in nav and '"Browse"' not in nav and '"My Prompts"' not in nav and '"Settings"' not in nav
+          home=main[main.index('void home()'):main.index('void addGoalCard',main.index('void home()')) if 'void addGoalCard' in main[main.index('void home()'):] else main.index('void browseCategories()',main.index('void home()'))]
+          assert 'Quick Goals' not in home
+          assert 'Smart Collections' not in home
+          stack=main[main.index('void stack()'):main.index('void addMore()',main.index('void stack()'))]
+          assert 'seedProposalStackOnce();' not in stack
+          assert 'Button up=mini("↑")' not in stack
+          assert 'showStackMenu(v,k)' in stack
+          assert 'starterPreview("Meeting Notes Summarizer"' not in main
           assert 'searchPage("plan a marketing strategy","All")' not in main
           assert 'base("Prompt Library"' not in main
           assert not re.search(r'(?<!\\)\\s',main)
-          nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
-          assert nav.count('navItem(')==5
-          print('v0.8.1 organization gates PASS — real data, clean stack, intent ranking, no fake custom/search state')
+          print('v0.8.1 TWO-PAGE gates PASS — Discover + Stack only, overlays for everything else, 3375 canonical prompts')
           PY
 
       - uses: actions/setup-java@v4
@@ -129,7 +140,7 @@ jobs:
           sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-organized-v4
+          name: PromptDeck-v0.8.1-two-page-v5
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

@@ -8,6 +8,7 @@ on:
       - '.github/workflows/build-v070.yml'
       - 'tools/**'
       - 'audit/apply_v081_design_and_chatgpt_native.py'
+      - 'audit/apply_v081_pixel_lock_v2.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -15,6 +16,7 @@ on:
       - 'android/app/src/main/AndroidManifest.xml'
       - 'android/app/src/main/java/com/kareem/promptdeck/**'
       - 'android/app/src/main/assets/**'
+      - 'android/app/src/main/res/**'
 
 permissions:
   contents: read
@@ -71,6 +73,8 @@ jobs:
         run: |
           python3 audit/apply_v081_design_and_chatgpt_native.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
 
       - name: Verify v0.8.1 source and design gates
         run: |
@@ -81,7 +85,7 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375, pack['expected_builtin_count']
-          assert "versionCode 24" in gradle
+          assert "versionCode 25" in gradle
           assert "versionName '0.8.1'" in gradle
           required=[
             'Find the right prompt','Quick Goals','Smart Collections',
@@ -89,16 +93,26 @@ jobs:
             'Browse Categories','Variables (optional)','Add to Stack',
             'Run with ChatGPT','Run Stack with ChatGPT','My Prompts',
             'displayTitle(Cmd c)','resolveTemplate(Cmd c,String user)',
-            'applyChatGPTNativeFinal()','gradientShape(ACCENT,PURPLE'
+            'applyChatGPTNativeFinal()','gradientShape(ACCENT,PURPLE',
+            'R.drawable.promptdeck_mark','R.drawable.pd_nav_home','R.drawable.pd_nav_search',
+            'R.drawable.pd_nav_stack','R.drawable.pd_nav_document','R.drawable.pd_nav_settings',
+            'base("Settings","",false)','base("Search","",false)',
+            'base("Prompt Stack","",false)','base("My Prompts","",false)'
           ]
           for token in required: assert token in main, token
+          for p in ['promptdeck_mark.xml','pd_nav_home.xml','pd_nav_search.xml','pd_nav_stack.xml','pd_nav_document.xml','pd_nav_settings.xml']:
+            assert Path('android/app/src/main/res/drawable/'+p).exists(), p
           assert 'base("Prompt Library"' not in main
           assert 'menuCard("⌕","Prompt Library"' not in main
           if re.search(r'[\u0600-\u06FF]',main): raise AssertionError('Arabic visible/source UI text remains')
           assert not re.search(r'(?<!\\)\\s',main), 'single-backslash Java \\s escape remains'
           nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
           assert nav.count('navItem(')==5, nav.count('navItem(')
-          print('v0.8.1 source gates PASS: visual lock + five-tab navigation + ChatGPT-native runtime + 3375 target')
+          # Proposal structure: brand row is conditional to Home, not global.
+          base=main[main.index('void base('):main.index('LinearLayout bottomNav()',main.index('void base('))]
+          assert 'if("home".equals(page))' in base
+          assert 'TextView brand=text("PromptDeck"' in base
+          print('v0.8.1 source gates PASS: pixel-lock v2 + five-tab navigation + ChatGPT-native runtime + 3375 target')
           PY
 
       - uses: actions/setup-java@v4
@@ -132,7 +146,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-design-lock-build
+          name: PromptDeck-v0.8.1-pixel-lock-v2
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

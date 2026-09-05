@@ -1,5 +1,5 @@
-# Navigation V2 discovery-first build after V14 canonical consolidation
-name: Build PromptDeck v0.8.0
+# PromptDeck v0.8.1 — approved visual lock + ChatGPT-native final catalog
+name: Build PromptDeck v0.8.1
 
 on:
   workflow_dispatch:
@@ -7,6 +7,9 @@ on:
     paths:
       - '.github/workflows/build-v070.yml'
       - 'tools/**'
+      - 'audit/apply_v081_design_and_chatgpt_native.py'
+      - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
+      - 'audit/chatgpt_native_final_data/**'
       - 'android/app/build.gradle'
       - 'android/app/src/main/AndroidManifest.xml'
       - 'android/app/src/main/java/com/kareem/promptdeck/**'
@@ -47,10 +50,10 @@ jobs:
           assert len(photo)==198, len(photo)
           assert len(imported)==806, len(imported)
           assert len(daily)==100, len(daily)
-          print('Integrated prompt data verified:',len(core),'+',len(photo),'+',len(imported),'+',len(daily))
+          print('Integrated source verified:',len(core),'+',len(photo),'+',len(imported),'+',len(daily))
           PY
 
-      - name: Apply app patches, canonical consolidation and Navigation V2
+      - name: Apply canonical catalog and Navigation V2
         run: |
           python3 tools/patch_main_v070.py
           python3 tools/fix_legacy_java_escapes.py
@@ -62,23 +65,38 @@ jobs:
           python3 tools/patch_export_all_v077.py
           python3 tools/patch_onepass_canonical_v078.py
           python3 tools/patch_navigation_v2_v080.py
+
+      - name: Apply v0.8.1 ChatGPT-native catalog and visual lock
+        run: |
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+
+      - name: Verify v0.8.1 source and design gates
+        run: |
           python3 - <<'PY'
           from pathlib import Path
-          import re
+          import json,re
           main=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text(encoding='utf-8')
-          if re.search(r'[\u0600-\u06FF]',main): raise SystemExit('Arabic visible UI text remains')
-          assert 'Export All' in main
-          assert 'void exportAllPack(Uri u)' in main
-          assert 'void canonicalizeLibrary()' in main
-          assert 'Find the right prompt' in main
-          assert 'What do you want to do?' in main
-          assert 'SMART COLLECTIONS' in main
-          assert 'void smartCollection(' in main
-          assert 'ArrayList<Cmd> rankSmart(' in main
-          assert 'void browseCategories()' in main
-          assert 'recent_prompt_ids' in main
-          assert 'for(Cmd c:all)if(c.category.equalsIgnoreCase(g.title))out.add(c)' in main
-          print('v0.8.0 source verification passed: canonical catalog + discovery-first Navigation V2 + canonical category counts')
+          gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
+          pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
+          assert pack['expected_builtin_count']==3375, pack['expected_builtin_count']
+          assert "versionCode 24" in gradle
+          assert "versionName '0.8.1'" in gradle
+          required=[
+            'Find the right prompt','Quick Goals','Smart Collections',
+            'LinearLayout bottomNav()','void searchPage()','void settings()',
+            'Browse Categories','Variables (optional)','Add to Stack',
+            'Run with ChatGPT','Run Stack with ChatGPT','My Prompts',
+            'displayTitle(Cmd c)','resolveTemplate(Cmd c,String user)',
+            'applyChatGPTNativeFinal()','gradientShape(ACCENT,PURPLE'
+          ]
+          for token in required: assert token in main, token
+          assert 'base("Prompt Library"' not in main
+          assert 'menuCard("⌕","Prompt Library"' not in main
+          if re.search(r'[\u0600-\u06FF]',main): raise AssertionError('Arabic visible/source UI text remains')
+          # Bottom navigation is deliberately locked to five destinations.
+          nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
+          assert nav.count('navItem(')==5, nav.count('navItem(')
+          print('v0.8.1 source gates PASS: visual lock + five-tab navigation + ChatGPT-native runtime + 3375 target')
           PY
 
       - uses: actions/setup-java@v4
@@ -106,14 +124,15 @@ jobs:
           APK=android/app/build/outputs/apk/debug/app-debug.apk
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
-          cp "$APK" /tmp/PromptDeck-v0.8.0.apk
-          sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.0.sha256
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/PromptDeck-v0.8.1-badging.txt | head -20
+          cp "$APK" /tmp/PromptDeck-v0.8.1.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.0-build
+          name: PromptDeck-v0.8.1-design-lock-build
           path: |
-            /tmp/PromptDeck-v0.8.0.apk
-            /tmp/PromptDeck-v0.8.0.sha256
+            /tmp/PromptDeck-v0.8.1.apk
+            /tmp/PromptDeck-v0.8.1.sha256
+            /tmp/PromptDeck-v0.8.1-badging.txt
           if-no-files-found: error

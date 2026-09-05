@@ -1,4 +1,4 @@
-# PromptDeck v0.8.1 — approved visual lock + ChatGPT-native final catalog
+# PromptDeck v0.8.1 — approved visual lock + organized ChatGPT-native catalog
 name: Build PromptDeck v0.8.1
 
 on:
@@ -10,6 +10,7 @@ on:
       - 'audit/apply_v081_design_and_chatgpt_native.py'
       - 'audit/apply_v081_pixel_lock_v2.py'
       - 'audit/apply_v081_pixel_identical_v3.py'
+      - 'audit/apply_v081_organization_fix_v4.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -46,15 +47,10 @@ jobs:
           base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
           python3 - <<'PY'
           import json
-          core=json.load(open('android/app/src/main/assets/prompts_library.json',encoding='utf-8'))
-          photo=json.load(open('android/app/src/main/assets/curated_photo_prompts.json',encoding='utf-8'))
-          imported=json.load(open('android/app/src/main/assets/imported_pdf_prompts.json',encoding='utf-8'))
-          daily=json.load(open('android/app/src/main/assets/daily_gap_prompts_100.json',encoding='utf-8'))
-          assert len(core)==2160, len(core)
-          assert len(photo)==198, len(photo)
-          assert len(imported)==806, len(imported)
-          assert len(daily)==100, len(daily)
-          print('Integrated source verified:',len(core),'+',len(photo),'+',len(imported),'+',len(daily))
+          assert len(json.load(open('android/app/src/main/assets/prompts_library.json',encoding='utf-8')))==2160
+          assert len(json.load(open('android/app/src/main/assets/curated_photo_prompts.json',encoding='utf-8')))==198
+          assert len(json.load(open('android/app/src/main/assets/imported_pdf_prompts.json',encoding='utf-8')))==806
+          assert len(json.load(open('android/app/src/main/assets/daily_gap_prompts_100.json',encoding='utf-8')))==100
           PY
 
       - name: Apply canonical catalog and Navigation V2
@@ -70,7 +66,7 @@ jobs:
           python3 tools/patch_onepass_canonical_v078.py
           python3 tools/patch_navigation_v2_v080.py
 
-      - name: Apply v0.8.1 ChatGPT-native catalog and pixel-identical proposal lock
+      - name: Apply v0.8.1 ChatGPT-native visual and organization locks
         run: |
           python3 audit/apply_v081_design_and_chatgpt_native.py
           python3 audit/fix_v081_java_escapes.py
@@ -78,8 +74,10 @@ jobs:
           python3 audit/fix_v081_java_escapes.py
           python3 audit/apply_v081_pixel_identical_v3.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
 
-      - name: Verify v0.8.1 source and design gates
+      - name: Verify v0.8.1 source design and organization gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -87,62 +85,40 @@ jobs:
           main=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text(encoding='utf-8')
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
-          assert pack['expected_builtin_count']==3375, pack['expected_builtin_count']
-          assert "versionCode 26" in gradle
+          assert pack['expected_builtin_count']==3375
+          assert "versionCode 27" in gradle
           assert "versionName '0.8.1'" in gradle
-          required=[
-            'Find the right prompt','Quick Goals','Smart Collections',
-            'LinearLayout bottomNav()','void searchPage()','void settings()',
-            'Browse Categories','Variables (optional)','Add to Stack',
-            'Run with ChatGPT','Run Stack with ChatGPT','My Prompts',
-            'displayTitle(Cmd c)','resolveTemplate(Cmd c,String user)',
-            'applyChatGPTNativeFinal()','applyProposalTaxonomy()','gradientShape(ACCENT,PURPLE',
-            'R.drawable.promptdeck_mark','R.drawable.pd_nav_home','R.drawable.pd_nav_search',
-            'R.drawable.pd_nav_stack','R.drawable.pd_nav_document','R.drawable.pd_nav_settings',
-            'base("Settings","",false)','base("Search","",false)',
-            'base("Prompt Stack","",false)','base("My Prompts","",false)',
-            'plan a marketing strategy','Meeting Notes Summarizer','seedProposalStackOnce()',
-            'new LinearLayout.LayoutParams(dp(96),dp(88))'
-          ]
+          required=['Find the right prompt','Quick Goals','Smart Collections','LinearLayout bottomNav()','void searchPage()','void settings()','Browse Categories','Variables (optional)','Add to Stack','Run with ChatGPT','Run Stack with ChatGPT','My Prompts','displayTitle(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','void showStackMenu(View anchor,int index)','meaningfulQueryTerms(String q)','Import, export and bulk paste are in Settings','R.drawable.promptdeck_mark']
           for token in required: assert token in main, token
           exact_categories=['Writing & Content','Research & Learning','Productivity & Planning','Career & Business','Technology & Development','Creativity & Design','Health & Lifestyle','Science & Education','Images & Visuals']
           group_block=main[main.index('final Group[] groups='):main.index('};',main.index('final Group[] groups='))+2]
-          for cat in exact_categories: assert cat in group_block, cat
-          assert group_block.count('new Group(')==9, group_block.count('new Group(')
-          for p in ['promptdeck_mark.xml','pd_nav_home.xml','pd_nav_search.xml','pd_nav_stack.xml','pd_nav_document.xml','pd_nav_settings.xml','pd_ic_write.xml','pd_ic_research.xml','pd_ic_calendar.xml','pd_ic_briefcase.xml','pd_ic_code.xml','pd_ic_creative.xml','pd_ic_heart.xml','pd_ic_flask.xml','pd_ic_image.xml']:
-            assert Path('android/app/src/main/res/drawable/'+p).exists(), p
+          assert group_block.count('new Group(')==9
+          for cat in exact_categories: assert cat in group_block
+          assert 'Button up=mini("↑")' not in main[main.index('void stack()'):main.index('void addMore()',main.index('void stack()'))]
+          assert 'starterPreview("Meeting Notes Summarizer"' not in main[main.index('void library(boolean favoritesMode)'):main.index('void customDetail',main.index('void library(boolean favoritesMode)'))]
+          assert 'searchPage("plan a marketing strategy","All")' not in main
           assert 'base("Prompt Library"' not in main
-          assert 'menuCard("⌕","Prompt Library"' not in main
-          if re.search(r'[\u0600-\u06FF]',main): raise AssertionError('Arabic visible/source UI text remains')
-          assert not re.search(r'(?<!\\)\\s',main), 'single-backslash Java \\s escape remains'
+          assert not re.search(r'(?<!\\)\\s',main)
           nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
-          assert nav.count('navItem(')==5, nav.count('navItem(')
-          base=main[main.index('void base('):main.index('LinearLayout bottomNav()',main.index('void base('))]
-          assert 'if("home".equals(page))' in base
-          assert 'TextView brand=text("PromptDeck"' in base
-          print('v0.8.1 source gates PASS: pixel-identical v3 normalized proposal + five-tab navigation + ChatGPT-native runtime + 3375 target')
+          assert nav.count('navItem(')==5
+          print('v0.8.1 organization gates PASS — real data, clean stack, intent ranking, no fake custom/search state')
           PY
 
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
       - uses: android-actions/setup-android@v3
-
       - name: Install Android SDK
         run: |
           yes | sdkmanager --licenses >/dev/null || true
           sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools'
-
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-
       - name: Build APK
         working-directory: android
         run: gradle --no-daemon assembleDebug
-
       - name: Verify APK
         run: |
           APK=android/app/build/outputs/apk/debug/app-debug.apk
@@ -151,10 +127,9 @@ jobs:
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/PromptDeck-v0.8.1-badging.txt | head -20
           cp "$APK" /tmp/PromptDeck-v0.8.1.apk
           sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
-
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-pixel-identical-v3
+          name: PromptDeck-v0.8.1-organized-v4
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

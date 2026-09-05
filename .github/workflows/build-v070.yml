@@ -8,6 +8,7 @@ on:
       - '.github/workflows/build-v070.yml'
       - 'tools/**'
       - 'audit/apply_v081_design_and_chatgpt_native.py'
+      - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
       - 'android/app/build.gradle'
@@ -69,6 +70,7 @@ jobs:
       - name: Apply v0.8.1 ChatGPT-native catalog and visual lock
         run: |
           python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
 
       - name: Verify v0.8.1 source and design gates
         run: |
@@ -93,7 +95,7 @@ jobs:
           assert 'base("Prompt Library"' not in main
           assert 'menuCard("⌕","Prompt Library"' not in main
           if re.search(r'[\u0600-\u06FF]',main): raise AssertionError('Arabic visible/source UI text remains')
-          # Bottom navigation is deliberately locked to five destinations.
+          assert not re.search(r'(?<!\\)\\s',main), 'single-backslash Java \\s escape remains'
           nav=main[main.index('LinearLayout bottomNav()'):main.index('View navItem(',main.index('LinearLayout bottomNav()'))]
           assert nav.count('navItem(')==5, nav.count('navItem(')
           print('v0.8.1 source gates PASS: visual lock + five-tab navigation + ChatGPT-native runtime + 3375 target')

@@ -48,6 +48,12 @@ s=replace_method(s,'  ArrayList<Cmd> rankSmart(',r'''  ArrayList<Cmd> rankSmart(
     if(candidates.size()<=limit)return candidates;return new ArrayList<>(candidates.subList(0,limit));
   }''')
 
+# Remove the legacy scorer completely so no future path can accidentally re-enable full-body scanning.
+legacy='  int smartScore(Cmd c,String expanded)'
+if legacy in s:
+    a,b=method_span(s,legacy)
+    s=s[:a]+s[b:]
+
 fast_helpers=r'''  int fastSmartScore(Cmd c,String[] toks){
     String command=c.command==null?"":c.command.toLowerCase(Locale.ROOT);String title=displayTitle(c).toLowerCase(Locale.ROOT);String desc=c.description==null?"":c.description.toLowerCase(Locale.ROOT);String cat=c.category==null?"":c.category.toLowerCase(Locale.ROOT);String sub=c.subcategory==null?"":c.subcategory.toLowerCase(Locale.ROOT);int score=0,matched=0;
     for(String t:toks){if(t==null||t.length()<2)continue;boolean hit=false;if(command.equals(t)){score+=16;hit=true;}else if(command.contains(t)){score+=9;hit=true;}if(title.contains(t)){score+=11;hit=true;}if(desc.contains(t)){score+=6;hit=true;}if(cat.contains(t)){score+=5;hit=true;}if(sub.contains(t)){score+=3;hit=true;}if(hit)matched++;}
@@ -90,7 +96,8 @@ required=['fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayo
 for token in required:
     hay=s if token!='versionCode 30' else g
     if token not in hay: raise SystemExit('v7 stability gate missing: '+token)
-if 'body=c.instruction.toLowerCase' in s[s.find('ArrayList<Cmd> rankSmart'):s.find('String expandIntent')]:
-    raise SystemExit('full prompt body still used by interactive ranker')
+rank=s[s.find('ArrayList<Cmd> rankSmart'):s.find('String expandIntent')]
+if 'instruction.toLowerCase' in rank or 'body.contains' in rank or 'int smartScore(Cmd c,String expanded)' in rank:
+    raise SystemExit('full prompt body scorer still present in interactive ranking path')
 JAVA.write_text(s,encoding='utf-8');GRADLE.write_text(g,encoding='utf-8')
 print('v0.8.1 runtime stability v7 applied: lightweight ranker + explicit hybrid back navigation')

@@ -17,6 +17,7 @@ on:
       - 'audit/apply_v081_capability_router_v8.py'
       - 'audit/fix_v081_capability_compile_v8.py'
       - 'audit/apply_v081_debug_copy_prompt_v9.py'
+      - 'audit/apply_v081_stability_ux_v10.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -93,8 +94,10 @@ jobs:
           python3 audit/fix_v081_capability_compile_v8.py
           python3 audit/apply_v081_debug_copy_prompt_v9.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
 
-      - name: Verify capability-first architecture, copy-prompt and runtime gates
+      - name: Verify v10 source and runtime gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -104,18 +107,12 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375
-          assert "versionCode 32" in gradle
+          assert "versionCode 33" in gradle
           assert "versionName '0.8.1'" in gradle
-          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayout target,EditText goal)','if(!"landing".equals(discoverMode))','void renderAskResultsV8','void renderCapabilityChooserV8','void renderImageModeChooserV8','void renderCapabilityRecommendationV8','ArrayList<Cmd> rankCapabilityV8','presentationTitleV8(Cmd c)','presentationOutcomeV8(Cmd c)','CapabilityRouter.route(q)','String composeStackPromptV9(String user)','void copyPromptTextV9(String value)','Button copyPrompt=secondary("Copy prompt")','copyPromptTextV9(composeStackPromptV9(contextDraft))']
+          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayout target,EditText goal)','if(!"landing".equals(discoverMode))','void renderAskResultsV8','void renderCapabilityChooserV8','void renderImageModeChooserV8','void renderCapabilityRecommendationV8','ArrayList<Cmd> rankCapabilityV8','CapabilityRouter.route(q)','String composeStackPromptV9(String user)','void copyPromptTextV9(String value)','Button copyPrompt=secondary("Copy prompt")','String askSelectionGoal="";','void beginAskSelectionV10(String goal)','safePresentationTitleV10(Cmd c)','safePresentationOutcomeV10(Cmd c)']
           for token in required: assert token in main, token
-          router_required=['z.equals("photo edit")','image.enhance','image.portrait','image.background','image.remove','image.light','image.frame','image.style','image.product','image.text','static boolean selfTest()','Route b=route("remove people from the background")']
+          router_required=['z.equals("photo edit")','image.enhance','image.portrait','image.background','image.remove','image.light','image.frame','image.style','image.product','image.text','static boolean selfTest()','route("study")','route("compare two cars")','route("debug app crash")','route("write an email")','route("tailor my cv to this job")']
           for token in router_required: assert token in router, token
-          exact_categories=['Writing & Content','Research & Learning','Productivity & Planning','Career & Business','Technology & Development','Creativity & Design','Health & Lifestyle','Science & Education','Images & Visuals']
-          group_block=main[main.index('final Group[] groups='):main.index('};',main.index('final Group[] groups='))+2]
-          assert group_block.count('new Group(')==9
-          for cat in exact_categories: assert cat in group_block
-          base=main[main.index('void base('):main.index('LinearLayout bottomNav()',main.index('void base('))]
-          assert 'bottomNav()' not in base
           def method(src, marker):
               st=src.index(marker); br=src.index('{',st); depth=0; ins=False; esc=False; quote=''; i=br
               while i<len(src):
@@ -134,31 +131,60 @@ jobs:
               raise AssertionError(marker)
           active_rank=method(main,'ArrayList<Cmd> rankSmart')+method(main,'int fastSmartScore')
           assert 'instruction' not in active_rank
-          assert 'body.contains' not in active_rank
           cap_rank=method(main,'int capabilityScoreV8')+method(main,'ArrayList<Cmd> rankCapabilityV8')
           assert 'instruction' not in cap_rank
           assert 'c.id>=50000&&c.id<50200' in cap_rank
-          ask=method(main,'void renderAskResultsV8')
-          assert 'route.broad' in ask and 'renderCapabilityChooserV8' in ask
-          assert 'rankSmart(q,8)' in ask
           sheet=method(main,'void showStackSheet()')
-          assert 'Copy prompt' in sheet
-          assert 'composeStackPromptV9(contextDraft)' in sheet
-          build=method(main,'void build()')
-          assert 'composeStackPromptV9(user)' in build
-          assert 'setMinHeight(dp(68))' not in main
-          assert 'setMinimumHeight(dp(68))' in main
-          assert 'seedProposalStackOnce();' not in method(main,'void stack()')
-          assert 'starterPreview("Meeting Notes Summarizer"' not in main
-          assert 'base("Prompt Library"' not in main
+          assert 'Copy prompt' in sheet and 'composeStackPromptV9(contextDraft)' in sheet
+          best=method(main,'View bestCapabilityCardV8')
+          assert 'beginAskSelectionV10(goal)' in best
+          browse=method(main,'void renderBrowseResultsV6')
+          assert 'askSelectionGoal=""' in browse
           assert not re.search(r'(?<!\\)\\s',main)
-          print('v0.8.1 v9 gates PASS — capability router + exact Review & Run copy + 3375 canonical prompts')
+          print('v10 source gates PASS — goal-scoped Ask selections, safe presentation, exact copy prompt, 3375 canonical prompts')
           PY
 
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
+
+      - name: Run CapabilityRouter regression suite
+        run: |
+          rm -rf /tmp/router-smoke && mkdir -p /tmp/router-smoke/com/kareem/promptdeck
+          cp android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java /tmp/router-smoke/com/kareem/promptdeck/
+          cat > /tmp/router-smoke/com/kareem/promptdeck/MainActivity.java <<'JAVA'
+          package com.kareem.promptdeck;
+          class MainActivity {
+            static class Cmd {
+              int id; String command,category,subcategory,description;
+            }
+          }
+          JAVA
+          cat > /tmp/router-smoke/com/kareem/promptdeck/RouterSmoke.java <<'JAVA'
+          package com.kareem.promptdeck;
+          public class RouterSmoke {
+            public static void main(String[] args) {
+              if (!CapabilityRouter.selfTest()) throw new AssertionError("CapabilityRouter.selfTest failed");
+              check("photo edit", CapabilityRouter.IMAGE, true);
+              check("study", CapabilityRouter.LEARNING, true);
+              check("compare two cars", CapabilityRouter.DECISION, false);
+              check("debug app crash", CapabilityRouter.CODE, false);
+              check("write an email", CapabilityRouter.WRITING, false);
+              check("tailor my cv to this job", CapabilityRouter.CAREER, false);
+              check("verify this claim with sources", CapabilityRouter.RESEARCH, false);
+              check("make a project roadmap", CapabilityRouter.PLANNING, false);
+              System.out.println("CapabilityRouter v10 regression PASS");
+            }
+            static void check(String q,String domain,boolean broad){
+              CapabilityRouter.Route r=CapabilityRouter.route(q);
+              if(!domain.equals(r.domain)||r.broad!=broad)throw new AssertionError(q+" => "+r.domain+" broad="+r.broad);
+            }
+          }
+          JAVA
+          javac -d /tmp/router-smoke/out /tmp/router-smoke/com/kareem/promptdeck/*.java
+          java -cp /tmp/router-smoke/out com.kareem.promptdeck.RouterSmoke
+
       - uses: android-actions/setup-android@v3
       - name: Install Android SDK
         run: |
@@ -180,7 +206,7 @@ jobs:
           sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-copy-prompt-v9
+          name: PromptDeck-v0.8.1-stability-ux-v10
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

@@ -28,11 +28,11 @@ def method_span(src, marker):
 def replace_method(src,marker,block):
     a,b=method_span(src,marker);return src[:a]+block+src[b:]
 
-# Browse is navigation first, prompt list second.
+# Browse is navigation first, prompt list second. Every hierarchy level is a vertical list.
 s=replace_method(s,'  void renderBrowseResultsV6(',r'''  void renderBrowseResultsV6(LinearLayout target,String query){
     target.removeAllViews();askSelectionGoal="";String q=query==null?"":query.trim();
 
-    // Level 1: categories. Never dump 3,375 prompts on first entry.
+    // Level 1: vertical category list. Never dump 3,375 prompts on first entry.
     if(q.isEmpty()&&!discoverFavorites&&discoverCategory.isEmpty()){
       TextView intro=text("Browse by category",15,true,TEXT);intro.setPadding(dp(1),dp(10),0,dp(8));target.addView(intro);
       for(Group g:groups){
@@ -44,10 +44,10 @@ s=replace_method(s,'  void renderBrowseResultsV6(',r'''  void renderBrowseResult
       TextView hint=text("Or search above to find a prompt across the entire library.",11,false,MUTED);hint.setPadding(dp(1),dp(8),0,dp(4));target.addView(hint);return;
     }
 
-    // Level 2: subcategories. A category opens its structure before any prompt rows.
+    // Level 2: vertical subcategory list, same visual language as existing lists.
     if(q.isEmpty()&&!discoverFavorites&&!discoverCategory.isEmpty()&&discoverSubcategory.isEmpty()){
-      LinearLayout crumb=hbox();Button back=filterChip("‹  Categories",false);back.setOnClickListener(v->{discoverCategory="";discoverSubcategory="";browseLimit=30;home();});crumb.addView(back);target.addView(crumb);
-      TextView heading=text(discoverCategory,18,true,TEXT);heading.setPadding(dp(1),dp(12),0,dp(2));target.addView(heading);
+      Button back=ghost("‹  All categories");back.setOnClickListener(v->{discoverCategory="";discoverSubcategory="";browseLimit=30;home();});target.addView(back);
+      TextView heading=text(discoverCategory,18,true,TEXT);heading.setPadding(dp(1),dp(8),0,dp(2));target.addView(heading);
       TextView help=text("Choose what you want to do",12,false,MUTED);help.setPadding(dp(1),0,0,dp(8));target.addView(help);
       for(String sub:subcategoriesForV12(discoverCategory)){
         int n=subcategoryCountV12(discoverCategory,sub);if(n<=0)continue;
@@ -58,12 +58,15 @@ s=replace_method(s,'  void renderBrowseResultsV6(',r'''  void renderBrowseResult
       return;
     }
 
-    // Level 3: actual prompts. Search may enter here directly.
+    // Level 3: vertical prompt list. Search may enter here directly.
     ArrayList<Cmd> rows=new ArrayList<>();
     if(q.isEmpty()){
       for(Cmd c:all){if(c.custom)continue;if(discoverFavorites&&!isFavorite(c))continue;if(!discoverCategory.isEmpty()&&!discoverCategory.equals(c.category))continue;if(!discoverSubcategory.isEmpty()&&!discoverSubcategory.equals(c.subcategory))continue;rows.add(c);}
     }else{
       for(Cmd c:rankSmart(q,350)){if(c.custom)continue;if(discoverFavorites&&!isFavorite(c))continue;if(!discoverCategory.isEmpty()&&!discoverCategory.equals(c.category))continue;if(!discoverSubcategory.isEmpty()&&!discoverSubcategory.equals(c.subcategory))continue;rows.add(c);}
+    }
+    if(q.isEmpty()&&!discoverSubcategory.isEmpty()){
+      Button back=ghost("‹  "+discoverCategory);back.setOnClickListener(v->{discoverSubcategory="";browseLimit=30;home();});target.addView(back);
     }
     String scope=discoverFavorites?"Favorites":discoverCategory.isEmpty()?"Search results":discoverSubcategory.isEmpty()?discoverCategory:discoverCategory+"  ›  "+discoverSubcategory;
     TextView meta=text(scope+"  ·  "+rows.size(),10,true,TERTIARY);meta.setPadding(dp(1),dp(9),0,dp(5));target.addView(meta);
@@ -71,13 +74,20 @@ s=replace_method(s,'  void renderBrowseResultsV6(',r'''  void renderBrowseResult
     int limit=Math.min(browseLimit,rows.size());for(int i=0;i<limit;i++){Cmd c=rows.get(i);View row=commandRow(c,false);row.setOnClickListener(v->showPromptDialog(c));target.addView(row);}if(limit<rows.size()){Button more=secondary("Show more  ("+(rows.size()-limit)+" remaining)");more.setOnClickListener(v->{browseLimit+=30;home();});target.addView(more);}
   }''')
 
-# The old horizontal subcategory strip duplicates the new hierarchy. Hide it until a subcategory is selected.
+# Remove the horizontal subcategory chip strip completely from Browse.
 a,b=method_span(s,'  void home()');home=s[a:b]
 needle='if(!discoverCategory.isEmpty()){HorizontalScrollView subscroll=new HorizontalScrollView(this);'
 if needle in home:
-    home=home.replace(needle,'if(!discoverCategory.isEmpty()&&!discoverSubcategory.isEmpty()){HorizontalScrollView subscroll=new HorizontalScrollView(this);',1)
-else:
-    raise SystemExit('v12 home subcategory strip anchor missing')
+    start=home.find(needle); depth=0; brace=home.find('{',start); i=brace
+    while i<len(home):
+        if home[i]=='{': depth+=1
+        elif home[i]=='}':
+            depth-=1
+            if depth==0:
+                home=home[:start]+home[i+1:];break
+        i+=1
+elif 'HorizontalScrollView subscroll' in home:
+    raise SystemExit('unexpected subcategory strip form')
 s=s[:a]+home+s[b:]
 
 g=GRADLE.read_text(encoding='utf-8')
@@ -85,7 +95,7 @@ g=re.sub(r'versionCode\s+\d+','versionCode 36',g,count=1)
 GRADLE.write_text(g,encoding='utf-8')
 JAVA.write_text(s,encoding='utf-8')
 
-for token in ['Level 1: categories','Level 2: subcategories','Level 3: actual prompts','Choose what you want to do','‹  Categories','versionCode 36']:
+for token in ['vertical category list','vertical subcategory list','vertical prompt list','Choose what you want to do','‹  All categories','versionCode 36']:
     hay=s if token!='versionCode 36' else g
     if token not in hay: raise SystemExit('v13 gate missing: '+token)
-print('PromptDeck v13 applied: category-first Browse -> subcategory -> prompts')
+print('PromptDeck v13 applied: fully vertical Category -> Subcategory -> Prompt hierarchy')

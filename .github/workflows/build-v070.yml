@@ -15,6 +15,7 @@ on:
       - 'audit/apply_v081_hybrid_one_screen_v6.py'
       - 'audit/apply_v081_runtime_stability_v7.py'
       - 'audit/apply_v081_capability_router_v8.py'
+      - 'audit/fix_v081_capability_compile_v8.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -88,6 +89,7 @@ jobs:
           python3 audit/fix_v081_java_escapes.py
           python3 audit/apply_v081_capability_router_v8.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
 
       - name: Verify capability-first architecture and runtime gates
         run: |
@@ -135,7 +137,9 @@ jobs:
           assert 'c.id>=50000&&c.id<50200' in cap_rank
           ask=method(main,'void renderAskResultsV8')
           assert 'route.broad' in ask and 'renderCapabilityChooserV8' in ask
-          assert 'rankSmart(q,8)' in ask  # generic fallback only after capability routing
+          assert 'rankSmart(q,8)' in ask
+          assert 'setMinHeight(dp(68))' not in main
+          assert 'setMinimumHeight(dp(68))' in main
           assert 'seedProposalStackOnce();' not in method(main,'void stack()')
           assert 'starterPreview("Meeting Notes Summarizer"' not in main
           assert 'base("Prompt Library"' not in main

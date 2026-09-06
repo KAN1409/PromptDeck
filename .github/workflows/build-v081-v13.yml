@@ -1,0 +1,144 @@
+name: Build PromptDeck v0.8.1 v13 vertical browse
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/build-v081-v13.yml'
+      - 'audit/apply_v081_browse_hierarchy_v13.py'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PromptDeck
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build integrated prompt data
+        run: |
+          curl -L --fail --retry 3 https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 android/app/src/main/assets/imported_pdf_prompts_02.b64 android/app/src/main/assets/imported_pdf_prompts_03.b64 android/app/src/main/assets/imported_pdf_prompts_04.b64 android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
+
+      - name: Rebuild canonical base
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
+          python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
+
+      - name: Apply v0.8.1 evolution through v13
+        run: |
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_capability_router_v8.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_quality_upgrade_v11.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_taxonomy_v12.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_browse_hierarchy_v13.py
+          python3 audit/fix_v081_java_escapes.py
+
+      - name: Verify v13 browse hierarchy gates
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          main=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text(encoding='utf-8')
+          gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
+          pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
+          assert pack['expected_builtin_count']==3375
+          assert 'versionCode 36' in gradle and "versionName '0.8.1'" in gradle
+          for token in ['Level 1: vertical category list','Level 2: vertical subcategory list','Level 3: vertical prompt list','Browse by category','Choose what you want to do','‹  All categories']:
+              assert token in main, token
+          st=main.index('void home()'); en=main.index('void showMoreMenuV6',st) if 'void showMoreMenuV6' in main[st:] else main.index('void renderBrowseResultsV6',st)
+          home=main[st:en]
+          assert 'HorizontalScrollView subscroll' not in home
+          st=main.index('void renderBrowseResultsV6'); en=main.index('void showStackSheetMenu',st)
+          browse=main[st:en]
+          assert 'for(Group g:groups)' in browse
+          assert 'for(String sub:subcategoriesForV12(discoverCategory))' in browse
+          assert 'discoverCategory.equals(c.category)' in browse
+          assert 'discoverSubcategory.equals(c.subcategory)' in browse
+          assert not re.search(r'(?<!\\)\\s',main)
+          print('v13 gates PASS — vertical Category -> Subcategory -> Prompt hierarchy, 3375 canonical prompts')
+          PY
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Run CapabilityRouter regression suite
+        run: |
+          rm -rf /tmp/router-smoke && mkdir -p /tmp/router-smoke/com/kareem/promptdeck
+          cp android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java /tmp/router-smoke/com/kareem/promptdeck/
+          cat > /tmp/router-smoke/com/kareem/promptdeck/MainActivity.java <<'JAVA'
+          package com.kareem.promptdeck;
+          class MainActivity { static class Cmd { int id; String command,category,subcategory,description; } }
+          JAVA
+          cat > /tmp/router-smoke/com/kareem/promptdeck/RouterSmoke.java <<'JAVA'
+          package com.kareem.promptdeck;
+          public class RouterSmoke { public static void main(String[] args){ if(!CapabilityRouter.selfTest())throw new AssertionError("selfTest failed"); System.out.println("Router regression PASS"); } }
+          JAVA
+          javac -d /tmp/router-smoke/out /tmp/router-smoke/com/kareem/promptdeck/*.java
+          java -cp /tmp/router-smoke/out com.kareem.promptdeck.RouterSmoke
+
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Build APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+      - name: Verify APK
+        run: |
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          test -f "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/PromptDeck-v0.8.1-v13-badging.txt | head -20
+          cp "$APK" /tmp/PromptDeck-v0.8.1-v13.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1-v13.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.8.1-vertical-browse-v13
+          path: |
+            /tmp/PromptDeck-v0.8.1-v13.apk
+            /tmp/PromptDeck-v0.8.1-v13.sha256
+            /tmp/PromptDeck-v0.8.1-v13-badging.txt
+          if-no-files-found: error

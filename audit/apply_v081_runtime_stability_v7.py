@@ -96,8 +96,10 @@ required=['fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayo
 for token in required:
     hay=s if token!='versionCode 30' else g
     if token not in hay: raise SystemExit('v7 stability gate missing: '+token)
-rank=s[s.find('ArrayList<Cmd> rankSmart'):s.find('String expandIntent')]
-if 'instruction.toLowerCase' in rank or 'body.contains' in rank or 'int smartScore(Cmd c,String expanded)' in rank:
-    raise SystemExit('full prompt body scorer still present in interactive ranking path')
+ra,rb=method_span(s,'  ArrayList<Cmd> rankSmart(')
+fa,fb=method_span(s,'  int fastSmartScore(')
+active_rank=s[ra:rb]+s[fa:fb]
+if 'instruction' in active_rank or 'body.contains' in active_rank or 'smartScore(' in active_rank.replace('fastSmartScore(',''):
+    raise SystemExit('full prompt body scorer still used by active interactive ranking methods')
 JAVA.write_text(s,encoding='utf-8');GRADLE.write_text(g,encoding='utf-8')
 print('v0.8.1 runtime stability v7 applied: lightweight ranker + explicit hybrid back navigation')

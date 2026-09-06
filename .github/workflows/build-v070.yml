@@ -16,6 +16,7 @@ on:
       - 'audit/apply_v081_runtime_stability_v7.py'
       - 'audit/apply_v081_capability_router_v8.py'
       - 'audit/fix_v081_capability_compile_v8.py'
+      - 'audit/apply_v081_debug_copy_prompt_v9.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -90,8 +91,10 @@ jobs:
           python3 audit/apply_v081_capability_router_v8.py
           python3 audit/fix_v081_java_escapes.py
           python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
 
-      - name: Verify capability-first architecture and runtime gates
+      - name: Verify capability-first architecture, copy-prompt and runtime gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -101,9 +104,9 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375
-          assert "versionCode 31" in gradle
+          assert "versionCode 32" in gradle
           assert "versionName '0.8.1'" in gradle
-          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayout target,EditText goal)','if(!"landing".equals(discoverMode))','void renderAskResultsV8','void renderCapabilityChooserV8','void renderImageModeChooserV8','void renderCapabilityRecommendationV8','ArrayList<Cmd> rankCapabilityV8','presentationTitleV8(Cmd c)','presentationOutcomeV8(Cmd c)','CapabilityRouter.route(q)']
+          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayout target,EditText goal)','if(!"landing".equals(discoverMode))','void renderAskResultsV8','void renderCapabilityChooserV8','void renderImageModeChooserV8','void renderCapabilityRecommendationV8','ArrayList<Cmd> rankCapabilityV8','presentationTitleV8(Cmd c)','presentationOutcomeV8(Cmd c)','CapabilityRouter.route(q)','String composeStackPromptV9(String user)','void copyPromptTextV9(String value)','Button copyPrompt=secondary("Copy prompt")','copyPromptTextV9(composeStackPromptV9(contextDraft))']
           for token in required: assert token in main, token
           router_required=['z.equals("photo edit")','image.enhance','image.portrait','image.background','image.remove','image.light','image.frame','image.style','image.product','image.text','static boolean selfTest()','Route b=route("remove people from the background")']
           for token in router_required: assert token in router, token
@@ -138,13 +141,18 @@ jobs:
           ask=method(main,'void renderAskResultsV8')
           assert 'route.broad' in ask and 'renderCapabilityChooserV8' in ask
           assert 'rankSmart(q,8)' in ask
+          sheet=method(main,'void showStackSheet()')
+          assert 'Copy prompt' in sheet
+          assert 'composeStackPromptV9(contextDraft)' in sheet
+          build=method(main,'void build()')
+          assert 'composeStackPromptV9(user)' in build
           assert 'setMinHeight(dp(68))' not in main
           assert 'setMinimumHeight(dp(68))' in main
           assert 'seedProposalStackOnce();' not in method(main,'void stack()')
           assert 'starterPreview("Meeting Notes Summarizer"' not in main
           assert 'base("Prompt Library"' not in main
           assert not re.search(r'(?<!\\)\\s',main)
-          print('v0.8.1 CAPABILITY ROUTER v8 gates PASS — broad intent clarifies, curated image families rank, presentation metadata sanitized, 3375 canonical prompts')
+          print('v0.8.1 v9 gates PASS — capability router + exact Review & Run copy + 3375 canonical prompts')
           PY
 
       - uses: actions/setup-java@v4
@@ -172,7 +180,7 @@ jobs:
           sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-capability-router-v8
+          name: PromptDeck-v0.8.1-copy-prompt-v9
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

@@ -111,9 +111,25 @@ jobs:
           assert 'modeChoiceCard' in home and 'modeSwitch()' in home
           stack=main[main.index('void stack()'):main.index('void addMore()',main.index('void stack()'))]
           assert 'showStackSheet();' in stack
-          rank=main[main.index('ArrayList<Cmd> rankSmart'):main.index('String expandIntent',main.index('ArrayList<Cmd> rankSmart'))]
-          assert 'instruction.toLowerCase' not in rank
-          assert 'body.contains' not in rank
+          def method(src, marker):
+              st=src.index(marker); br=src.index('{',st); depth=0; ins=False; esc=False; quote=''; i=br
+              while i<len(src):
+                  ch=src[i]
+                  if ins:
+                      if esc: esc=False
+                      elif ch=='\\': esc=True
+                      elif ch==quote: ins=False
+                  else:
+                      if ch in ('"',"'"): ins=True; quote=ch
+                      elif ch=='{': depth+=1
+                      elif ch=='}':
+                          depth-=1
+                          if depth==0:return src[st:i+1]
+                  i+=1
+              raise AssertionError(marker)
+          active_rank=method(main,'ArrayList<Cmd> rankSmart')+method(main,'int fastSmartScore')
+          assert 'instruction' not in active_rank
+          assert 'body.contains' not in active_rank
           assert 'seedProposalStackOnce();' not in stack
           assert 'Button up=mini("↑")' not in main
           assert 'starterPreview("Meeting Notes Summarizer"' not in main

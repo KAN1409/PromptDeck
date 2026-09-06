@@ -13,6 +13,7 @@ on:
       - 'audit/apply_v081_organization_fix_v4.py'
       - 'audit/apply_v081_two_page_ui_v5.py'
       - 'audit/apply_v081_hybrid_one_screen_v6.py'
+      - 'audit/apply_v081_runtime_stability_v7.py'
       - 'audit/fix_v081_java_escapes.py'
       - 'audit/PROMPTDECK_V081_DESIGN_LOCK_CHECKLIST.md'
       - 'audit/chatgpt_native_final_data/**'
@@ -82,8 +83,10 @@ jobs:
           python3 audit/fix_v081_java_escapes.py
           python3 audit/apply_v081_hybrid_one_screen_v6.py
           python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
 
-      - name: Verify hybrid one-screen architecture and catalog gates
+      - name: Verify hybrid one-screen architecture and runtime-stability gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -92,9 +95,9 @@ jobs:
           gradle=Path('android/app/build.gradle').read_text(encoding='utf-8')
           pack=json.load(open('android/app/src/main/assets/chatgpt_native_final.json',encoding='utf-8'))
           assert pack['expected_builtin_count']==3375
-          assert "versionCode 29" in gradle
+          assert "versionCode 30" in gradle
           assert "versionName '0.8.1'" in gradle
-          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','BEST APPROACH','SUGGESTED WORKFLOW','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','workflowForGoal(String goal)','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','R.drawable.pd_mode_ask','R.drawable.pd_mode_browse']
+          required=['How do you want to start?','Ask PromptDeck','Browse all prompts','Find the best approach','BEST APPROACH','SUGGESTED WORKFLOW','View selectionBar()','void showStackSheet()','Review & Run','void renderBrowseResultsV6','workflowForGoal(String goal)','void showPromptDialog(Cmd c)','resolveTemplate(Cmd c,String user)','applyChatGPTNativeFinal()','applyProposalTaxonomy()','R.drawable.pd_mode_ask','R.drawable.pd_mode_browse','fastSmartScore(Cmd c,String[] toks)','runAskRecommendation(LinearLayout target,EditText goal)','if(!"landing".equals(discoverMode))']
           for token in required: assert token in main, token
           exact_categories=['Writing & Content','Research & Learning','Productivity & Planning','Career & Business','Technology & Development','Creativity & Design','Health & Lifestyle','Science & Education','Images & Visuals']
           group_block=main[main.index('final Group[] groups='):main.index('};',main.index('final Group[] groups='))+2]
@@ -108,6 +111,9 @@ jobs:
           assert 'modeChoiceCard' in home and 'modeSwitch()' in home
           stack=main[main.index('void stack()'):main.index('void addMore()',main.index('void stack()'))]
           assert 'showStackSheet();' in stack
+          rank=main[main.index('ArrayList<Cmd> rankSmart'):main.index('String expandIntent',main.index('ArrayList<Cmd> rankSmart'))]
+          assert 'instruction.toLowerCase' not in rank
+          assert 'body.contains' not in rank
           assert 'seedProposalStackOnce();' not in stack
           assert 'Button up=mini("↑")' not in main
           assert 'starterPreview("Meeting Notes Summarizer"' not in main
@@ -116,7 +122,7 @@ jobs:
           assert Path('android/app/src/main/res/drawable/pd_mode_ask.xml').exists()
           assert Path('android/app/src/main/res/drawable/pd_mode_browse.xml').exists()
           assert not re.search(r'(?<!\\)\\s',main)
-          print('v0.8.1 HYBRID ONE-SCREEN gates PASS — Ask PromptDeck or Browse, contextual Review & Run, 3375 canonical prompts')
+          print('v0.8.1 HYBRID v7 gates PASS — lightweight Ask ranking, explicit back-to-landing, contextual Review & Run, 3375 canonical prompts')
           PY
 
       - uses: actions/setup-java@v4
@@ -144,7 +150,7 @@ jobs:
           sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.1.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.1-hybrid-one-screen-v6
+          name: PromptDeck-v0.8.1-hybrid-stable-v7
           path: |
             /tmp/PromptDeck-v0.8.1.apk
             /tmp/PromptDeck-v0.8.1.sha256

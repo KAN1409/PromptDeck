@@ -1,0 +1,150 @@
+name: Build and test PromptDeck v15 corrected RC
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15']
+    paths:
+      - 'audit/apply_v081_final_consolidation_v15.py'
+      - '.github/workflows/build-test-v081-v15.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  v15:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+
+      - name: Build integrated prompt data
+        run: |
+          curl -L --fail --retry 3 https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 android/app/src/main/assets/imported_pdf_prompts_02.b64 android/app/src/main/assets/imported_pdf_prompts_03.b64 android/app/src/main/assets/imported_pdf_prompts_04.b64 android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
+
+      - name: Rebuild v14 baseline
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
+          python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_capability_router_v8.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_quality_upgrade_v11.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_taxonomy_v12.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_browse_hierarchy_v13.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_prompt_purity_v14.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_consolidation_v15.py
+          python3 audit/fix_v081_java_escapes.py
+
+      - name: v15 source gates
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          g=Path('android/app/build.gradle').read_text()
+          for x in ['PromptDeckCatalog','finalCatalogCleanupV15','externalModelCommandV15','consumeIncomingShareV15','onSaveInstanceState(Bundle out)']: assert x in s,x
+          assert 'new Thread(()->{try{load();' in s
+          assert 'versionCode 38' in g and "versionName '0.8.2-rc1'" in g
+          print('v15 source gates PASS')
+          PY
+
+      - uses: actions/setup-java@v4
+        with: {distribution: temurin, java-version: '17'}
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
+      - uses: gradle/actions/setup-gradle@v4
+        with: {gradle-version: '8.9'}
+      - name: Build corrected APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
+      - name: Verify APK
+        run: |
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          test -f "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK" | tee /tmp/signature.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/badging.txt
+          cp "$APK" /tmp/PromptDeck-v0.8.2-rc1-v15.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.2-rc1-v15.sha256
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm || true
+
+      - name: Run complete user-flow emulator suite
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            python3 audit/test_v14_comprehensive.py || true
+            adb shell dumpsys activity lastanr > /tmp/lastanr.txt || true
+            adb logcat -d -t 500 > /tmp/logcat-tail.txt || true
+
+      - name: Evaluate runtime verdict
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          p=pathlib.Path('/tmp/promptdeck-v14-comprehensive/emulator-results.json')
+          if not p.exists():
+              print('No emulator results produced');sys.exit(1)
+          d=json.loads(p.read_text());print(json.dumps(d,indent=2)[:12000])
+          critical={'01_install_and_launch','02_back_from_ask_returns_landing','03_ask_broad_photo_routes_to_capabilities','04_ask_specific_decision_no_crash','05_browse_is_vertical_category_subcategory_prompt','06_browse_back_navigation_level_by_level','07_midjourney_not_discoverable','10_incoming_share_text_is_consumed','11_workspace_state_survives_recreation'}
+          failed=[r for r in d['results'] if r['status']!='PASS' and r['name'] in critical]
+          if failed: raise SystemExit('critical runtime failures: '+', '.join(r['name'] for r in failed))
+          PY
+
+      - name: Upload corrected APK and QA evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.8.2-rc1-v15-corrected
+          path: |
+            /tmp/PromptDeck-v0.8.2-rc1-v15.apk
+            /tmp/PromptDeck-v0.8.2-rc1-v15.sha256
+            /tmp/signature.txt
+            /tmp/badging.txt
+            /tmp/lastanr.txt
+            /tmp/logcat-tail.txt
+            /tmp/promptdeck-v14-comprehensive/**
+          if-no-files-found: warn

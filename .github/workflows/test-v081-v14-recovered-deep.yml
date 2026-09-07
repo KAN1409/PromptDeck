@@ -1,0 +1,97 @@
+name: Test PromptDeck v0.8.1 v14 recovered deep
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test-v081-v14-recovered-deep.yml'
+      - 'audit/emulator_v14_recovered_suite.py'
+
+permissions:
+  contents: read
+
+jobs:
+  recovered-deep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build integrated prompt data
+        run: |
+          curl -L --fail --retry 3 https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 android/app/src/main/assets/imported_pdf_prompts_02.b64 android/app/src/main/assets/imported_pdf_prompts_03.b64 android/app/src/main/assets/imported_pdf_prompts_04.b64 android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
+      - name: Build exact v14 source
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
+          python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_capability_router_v8.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_quality_upgrade_v11.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_taxonomy_v12.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_browse_hierarchy_v13.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_prompt_purity_v14.py
+          python3 audit/fix_v081_java_escapes.py
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - uses: android-actions/setup-android@v3
+      - name: Install SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: '8.9' }
+      - name: Build debug APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+      - name: Enable KVM
+        run: sudo chmod 666 /dev/kvm || true
+      - name: Run recovered deep suite
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: python3 audit/emulator_v14_recovered_suite.py
+      - name: Upload recovered deep evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v14-recovered-deep-QA
+          path: /tmp/promptdeck-v14-recovered
+          if-no-files-found: warn

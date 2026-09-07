@@ -1,0 +1,204 @@
+name: Test PromptDeck v0.8.1 v14 comprehensive
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test-v081-v14-comprehensive.yml'
+      - 'audit/comprehensive_v14_static.py'
+      - 'audit/emulator_v14_smoke.py'
+      - 'audit/emulator_chatgpt_handoff.py'
+
+permissions:
+  contents: read
+
+jobs:
+  comprehensive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout PromptDeck
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build integrated prompt data
+        run: |
+          curl -L --fail --retry 3 https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 android/app/src/main/assets/imported_pdf_prompts_02.b64 android/app/src/main/assets/imported_pdf_prompts_03.b64 android/app/src/main/assets/imported_pdf_prompts_04.b64 android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
+
+      - name: Rebuild canonical base
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
+          python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
+
+      - name: Apply v0.8.1 evolution through v14
+        run: |
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_capability_router_v8.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_quality_upgrade_v11.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_taxonomy_v12.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_browse_hierarchy_v13.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_prompt_purity_v14.py
+          python3 audit/fix_v081_java_escapes.py
+
+      - name: Run comprehensive static/catalog audit
+        run: python3 audit/comprehensive_v14_static.py
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Run CapabilityRouter regression suite
+        run: |
+          rm -rf /tmp/router-smoke && mkdir -p /tmp/router-smoke/com/kareem/promptdeck
+          cp android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java /tmp/router-smoke/com/kareem/promptdeck/
+          cat > /tmp/router-smoke/com/kareem/promptdeck/MainActivity.java <<'JAVA'
+          package com.kareem.promptdeck;
+          class MainActivity { static class Cmd { int id; String command,category,subcategory,description; } }
+          JAVA
+          cat > /tmp/router-smoke/com/kareem/promptdeck/RouterSmoke.java <<'JAVA'
+          package com.kareem.promptdeck;
+          public class RouterSmoke { public static void main(String[] args){ if(!CapabilityRouter.selfTest())throw new AssertionError("selfTest failed"); System.out.println("Router regression PASS"); } }
+          JAVA
+          javac -d /tmp/router-smoke/out /tmp/router-smoke/com/kareem/promptdeck/*.java
+          java -cp /tmp/router-smoke/out com.kareem.promptdeck.RouterSmoke
+
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build PromptDeck APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
+      - name: Verify artifact structure and signature
+        run: |
+          set -e
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          test -f "$APK"
+          unzip -t "$APK" >/tmp/promptdeck-v14-comprehensive/apk-zip-test.txt
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK" | tee /tmp/promptdeck-v14-comprehensive/apksigner.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/promptdeck-v14-comprehensive/badging.txt
+          sha256sum "$APK" | tee /tmp/promptdeck-v14-comprehensive/apk.sha256
+
+      - name: Build ChatGPT receiver stub for intent verification
+        run: |
+          rm -rf /tmp/chatgptstub
+          mkdir -p /tmp/chatgptstub/app/src/main/java/com/openai/chatgpt
+          cat > /tmp/chatgptstub/settings.gradle <<'EOF'
+          pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
+          dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS); repositories { google(); mavenCentral() } }
+          rootProject.name='ChatGPTStub'
+          include ':app'
+          EOF
+          cat > /tmp/chatgptstub/build.gradle <<'EOF'
+          plugins { id 'com.android.application' version '8.7.3' apply false }
+          EOF
+          cat > /tmp/chatgptstub/app/build.gradle <<'EOF'
+          plugins { id 'com.android.application' }
+          android { namespace 'com.openai.chatgpt'; compileSdk 35
+            defaultConfig { applicationId 'com.openai.chatgpt'; minSdk 26; targetSdk 35; versionCode 1; versionName '1' }
+          }
+          EOF
+          cat > /tmp/chatgptstub/app/src/main/AndroidManifest.xml <<'EOF'
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android"><application android:theme="@android:style/Theme.Material.Light.NoActionBar"><activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.SEND"/><category android:name="android.intent.category.DEFAULT"/><data android:mimeType="text/plain"/></intent-filter></activity></application></manifest>
+          EOF
+          cat > /tmp/chatgptstub/app/src/main/java/com/openai/chatgpt/MainActivity.java <<'EOF'
+          package com.openai.chatgpt;
+          import android.app.*;import android.os.*;import android.content.*;import android.widget.*;
+          public class MainActivity extends Activity { public void onCreate(Bundle b){super.onCreate(b);TextView v=new TextView(this);String s=getIntent().getStringExtra(Intent.EXTRA_TEXT);v.setText("RECEIVED_PROMPT\n"+(s==null?"":s));v.setTextSize(12);v.setPadding(20,20,20,20);setContentView(v);} }
+          EOF
+          cd /tmp/chatgptstub && gradle --no-daemon assembleDebug
+
+      - name: Enable KVM access
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm || true
+          sudo chmod 666 /dev/kvm || true
+
+      - name: Run end-to-end emulator tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: |
+            python3 audit/emulator_v14_smoke.py
+            python3 audit/emulator_chatgpt_handoff.py
+
+      - name: Generate combined verdict
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          out=Path('/tmp/promptdeck-v14-comprehensive');out.mkdir(exist_ok=True)
+          def load(n):
+              p=out/n
+              try:return json.loads(p.read_text())
+              except:return None
+          static=load('report.json');emu=load('emulator-results.json');hand=load('chatgpt-handoff.json')
+          blockers=[]
+          if static and static.get('status')=='FAIL': blockers.append('static/catalog audit has critical/high findings')
+          if not emu: blockers.append('emulator suite did not produce results')
+          elif emu.get('failed',0): blockers.append(f"{emu['failed']} emulator user-flow tests failed")
+          if not hand: blockers.append('ChatGPT handoff test did not produce results')
+          elif hand.get('status')!='PASS': blockers.append('ChatGPT handoff test failed')
+          verdict='FAIL' if blockers else 'PASS'
+          data={'verdict':verdict,'blockers':blockers,'static_status':static.get('status') if static else None,'emulator':emu,'handoff':hand}
+          (out/'combined-verdict.json').write_text(json.dumps(data,indent=2))
+          (out/'combined-verdict.md').write_text('# PromptDeck v14 comprehensive test verdict\n\n**'+verdict+'**\n\n'+('\n'.join('- '+b for b in blockers) if blockers else 'All executed gates passed.')+'\n')
+          print(json.dumps(data,indent=2))
+          PY
+
+      - name: Upload complete QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.8.1-v14-comprehensive-QA
+          path: /tmp/promptdeck-v14-comprehensive
+          if-no-files-found: warn

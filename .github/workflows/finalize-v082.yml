@@ -37,20 +37,12 @@ jobs:
           x=re.sub(r'versionCode\s+\d+','versionCode 39',x,count=1)
           x=re.sub(r"versionName\s+'[^']+'","versionName '0.8.2'",x,count=1)
           g.write_text(x,encoding='utf-8')
-
-          w=Path('.github/workflows/accept-frozen-v15d.yml')
-          y=w.read_text(encoding='utf-8')
-          y=y.replace("versionCode 38","versionCode 39").replace("versionName '0.8.2-rc4'","versionName '0.8.2'")
-          y=y.replace("versionCode='38'","versionCode='39'").replace("versionName='0.8.2-rc4'","versionName='0.8.2'")
-          y=y.replace('PromptDeck-v0.8.2-rc4-v15d-frozen-debug.apk','PromptDeck-v0.8.2-final-debug.apk')
-          y=y.replace('PromptDeck-v0.8.2-rc4-v15d-frozen-release-unsigned.apk','PromptDeck-v0.8.2-final-release-unsigned.apk')
-          w.write_text(y,encoding='utf-8')
           PY
       - name: Commit final runtime
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/build.gradle .github/workflows/accept-frozen-v15d.yml
+          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/build.gradle
           git diff --cached --quiet && exit 0
           git commit -m 'release: finalize PromptDeck 0.8.2 source'
           git push origin HEAD:audit/final-consolidation-v15d

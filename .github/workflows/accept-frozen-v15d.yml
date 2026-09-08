@@ -1,0 +1,134 @@
+name: Accept frozen PromptDeck v15d source
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/accept-frozen-v15d.yml'
+      - 'audit/frozen_acceptance_v15d.py'
+      - 'android/app/src/main/java/**'
+      - 'android/app/src/main/AndroidManifest.xml'
+      - 'android/app/build.gradle'
+      - 'android/app/src/main/assets/final_catalog_v15.json'
+      - 'android/app/src/main/assets/final_catalog_v15_report.json'
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Verify frozen source directly
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          j=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          m=Path('android/app/src/main/AndroidManifest.xml').read_text()
+          g=Path('android/app/build.gradle').read_text()
+          cat=json.load(open('android/app/src/main/assets/final_catalog_v15.json',encoding='utf-8'))
+          assert len(cat)==3304
+          assert 'readAsset("final_catalog_v15.json")' in j
+          assert 'BUILTIN_CACHE_V15.size()' in j
+          assert 'onNewIntent(Intent intent)' in j
+          assert 'android:launchMode="singleTop"' in m
+          assert 'versionCode 38' in g and "versionName '0.8.2-rc4'" in g
+          names=' '.join((x.get('command','')+' '+x.get('description','')).lower() for x in cat)
+          for brand in ['midjourney','claude','anthropic','gemini','grok','deepseek','mistral','copilot','perplexity']:
+              assert brand not in names,brand
+          seen=set()
+          for x in cat:
+              key=re.sub(r'[^a-z0-9]+',' ',x['instruction'].lower()).strip()
+              assert key not in seen
+              seen.add(key)
+          print('Frozen-source static acceptance PASS')
+          PY
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;default;x86_64'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build debug and release directly from committed source
+        working-directory: android
+        run: gradle --no-daemon assembleDebug assembleRelease
+
+      - name: Verify build identities
+        run: |
+          DBG=android/app/build/outputs/apk/debug/app-debug.apk
+          REL=android/app/build/outputs/apk/release/app-release-unsigned.apk
+          test -f "$DBG"
+          test -f "$REL"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/debug-badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$REL" > /tmp/release-badging.txt
+          grep "versionCode='38'" /tmp/debug-badging.txt
+          grep "versionName='0.8.2-rc4'" /tmp/debug-badging.txt
+          if grep -q 'application-debuggable' /tmp/release-badging.txt; then
+            echo 'Release APK is debuggable' >&2
+            exit 1
+          fi
+          sha256sum "$DBG" > /tmp/PromptDeck-v15d-frozen-debug.sha256
+          sha256sum "$REL" > /tmp/PromptDeck-v15d-frozen-release-unsigned.sha256
+          cp "$DBG" /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-debug.apk
+          cp "$REL" /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-release-unsigned.apk
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm || true
+
+      - name: Run deterministic emulator acceptance
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            python3 audit/frozen_acceptance_v15d.py || true
+            adb shell dumpsys activity lastanr > /tmp/lastanr.txt || true
+            adb logcat -d -t 1600 > /tmp/logcat-tail.txt || true
+
+      - name: Evaluate product verdict
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path('/tmp/promptdeck-frozen-acceptance/results.json')
+          if not p.exists(): raise SystemExit('No acceptance results')
+          d=json.loads(p.read_text())
+          print(json.dumps(d,indent=2)[:20000])
+          failed=[r for r in d['results'] if r['status']!='PASS']
+          if failed: raise SystemExit('acceptance failures: '+', '.join(r['name'] for r in failed))
+          PY
+
+      - name: Upload frozen-source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v15d-frozen-acceptance
+          path: |
+            /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-debug.apk
+            /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-release-unsigned.apk
+            /tmp/PromptDeck-v15d-frozen-debug.sha256
+            /tmp/PromptDeck-v15d-frozen-release-unsigned.sha256
+            /tmp/debug-badging.txt
+            /tmp/release-badging.txt
+            /tmp/lastanr.txt
+            /tmp/logcat-tail.txt
+            /tmp/promptdeck-frozen-acceptance/**
+          if-no-files-found: warn

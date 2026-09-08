@@ -1,0 +1,54 @@
+name: Apply final known PromptDeck v15d fixes
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/fix-v15d-final-known.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/final-consolidation-v15d
+          fetch-depth: 1
+      - name: Fix prompt purity, payload guard, and About metadata
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java')
+          s=p.read_text(encoding='utf-8')
+          old='''  String composeStackPromptV9(String user){\n    String u=user==null?"":user.trim();StringBuilder p=new StringBuilder();p.append("Use the user's request/context as the source of truth.\\n\\n");if(!u.isEmpty())p.append("USER REQUEST / CONTEXT:\\n").append(u).append("\\n\\n");p.append("SELECTED PROMPT MODULES:\\n");for(int i=0;i<selected.size();i++){Cmd c=selected.get(i);p.append("\\nSTEP ").append(i+1).append(" — ").append(presentationTitleV8(c)).append("\\n");p.append(resolveTemplate(c,u)).append("\\n");}p.append("\\nEXECUTION RULES:\\n- Apply the selected modules in order, carrying forward only useful findings from earlier steps.\\n- Each module is scoped to its step and must not override or block later modules.\\n- Use tools or external capabilities only when they are actually available in the current ChatGPT conversation.\\n- If one essential input is missing and cannot reasonably be inferred, ask one concise clarifying question; otherwise make a reasonable assumption and state it when important.\\n- Produce one clear, coherent final answer rather than separate disconnected answers for each module.\\n- Show useful conclusions, evidence and verification where relevant, but do not expose private chain-of-thought.\\n");return p.toString();\n  }'''
+          new='''  String composeStackPromptV9(String user){\n    String u=user==null?"":user.trim();StringBuilder p=new StringBuilder();for(int i=0;i<selected.size();i++){if(i>0)p.append("\\n\\n");p.append(resolveTemplate(selected.get(i),u).trim());}if(!u.isEmpty()){if(p.length()>0)p.append("\\n\\n");p.append(u);}return p.toString();\n  }'''
+          if old not in s: raise SystemExit('composeStackPromptV9 anchor not found')
+          s=s.replace(old,new,1)
+          s=s.replace('''new AlertDialog.Builder(this).setTitle("PromptDeck 0.8.1").setMessage("3,375 ChatGPT-first prompts. Two-page interface: Discover and Stack.")''','''new AlertDialog.Builder(this).setTitle("PromptDeck 0.8.2").setMessage("3,304 ChatGPT-first prompts. Ask PromptDeck or browse the complete library, then build a prompt stack.")''',1)
+          old_send='''  void sendText(String text){Intent i=new Intent(Intent.ACTION_SEND);i.setType("text/plain");i.putExtra(Intent.EXTRA_TEXT,text);i.setPackage("com.openai.chatgpt");try{startActivity(i);}catch(Exception e){i.setPackage(null);startActivity(Intent.createChooser(i,"Send prompt"));}}'''
+          new_send='''  boolean payloadSafe(String text){return text==null||text.getBytes(StandardCharsets.UTF_8).length<=600000;}\n  void sendText(String text){if(!payloadSafe(text)){toast("Prompt is too large to send safely. Remove a prompt from the stack or shorten the request.");return;}Intent i=new Intent(Intent.ACTION_SEND);i.setType("text/plain");i.putExtra(Intent.EXTRA_TEXT,text);i.setPackage("com.openai.chatgpt");try{startActivity(i);}catch(Exception e){i.setPackage(null);startActivity(Intent.createChooser(i,"Send prompt"));}}'''
+          if old_send not in s: raise SystemExit('sendText anchor not found')
+          s=s.replace(old_send,new_send,1)
+          old_send2='''  void send(){if(finalPrompt==null)return;Intent i=new Intent(Intent.ACTION_SEND);i.setType("text/plain");i.putExtra(Intent.EXTRA_TEXT,finalPrompt.getText().toString());i.setPackage("com.openai.chatgpt");try{startActivity(i);}catch(Exception e){i.setPackage(null);startActivity(Intent.createChooser(i,"Send prompt"));}}'''
+          new_send2='''  void send(){if(finalPrompt==null)return;String text=finalPrompt.getText().toString();if(!payloadSafe(text)){toast("Prompt is too large to send safely. Remove a prompt from the stack or shorten the request.");return;}Intent i=new Intent(Intent.ACTION_SEND);i.setType("text/plain");i.putExtra(Intent.EXTRA_TEXT,text);i.setPackage("com.openai.chatgpt");try{startActivity(i);}catch(Exception e){i.setPackage(null);startActivity(Intent.createChooser(i,"Send prompt"));}}'''
+          if old_send2 not in s: raise SystemExit('send anchor not found')
+          s=s.replace(old_send2,new_send2,1)
+          for forbidden in ['USER REQUEST / CONTEXT:','SELECTED PROMPT MODULES:','EXECUTION RULES:']:
+              body=s[s.index('String composeStackPromptV9'):s.index('void copyPromptTextV9')]
+              assert forbidden not in body, forbidden
+          assert 'payloadSafe(String text)' in s
+          assert '3,304 ChatGPT-first prompts' in s
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit final known fixes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix: enforce prompt-only stack output and safe handoff payloads'
+          git push origin HEAD:audit/final-consolidation-v15d

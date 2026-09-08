@@ -1,0 +1,129 @@
+name: Freeze PromptDeck v15d runtime source
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/freeze-v15d-runtime.yml'
+      - 'audit/apply_v081_release_freeze_v15.py'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: audit/final-consolidation-v15d
+
+      - name: Rebuild prompt inputs deterministically
+        run: |
+          curl -L --fail --retry 3 https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 android/app/src/main/assets/imported_pdf_prompts_02.b64 android/app/src/main/assets/imported_pdf_prompts_03.b64 android/app/src/main/assets/imported_pdf_prompts_04.b64 android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
+
+      - name: Materialize the proven v15d application once
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
+          python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_capability_router_v8.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_quality_upgrade_v11.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_taxonomy_v12.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_browse_hierarchy_v13.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_prompt_purity_v14.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_consolidation_v15.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_catalog_v15b.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_catalog_v15c.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_catalog_v15d.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_release_freeze_v15.py
+          python3 audit/fix_v081_java_escapes.py
+
+      - name: Frozen-source gates
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          j=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          m=Path('android/app/src/main/AndroidManifest.xml').read_text()
+          g=Path('android/app/build.gradle').read_text()
+          cat=json.load(open('android/app/src/main/assets/final_catalog_v15.json',encoding='utf-8'))
+          assert len(cat)==3304
+          assert 'readAsset("final_catalog_v15.json")' in j
+          assert 'loadCommunityPrompts();' not in j[j.find('void load()'):j.find('void loadCommunityPrompts()')]
+          assert 'BUILTIN_CACHE_V15.size()' in j
+          assert 'onNewIntent(Intent intent)' in j
+          assert 'android:launchMode="singleTop"' in m
+          assert 'versionCode 38' in g and "versionName '0.8.2-rc4'" in g
+          names=' '.join((x.get('command','')+' '+x.get('description','')).lower() for x in cat)
+          for brand in ['midjourney','claude','anthropic','gemini','grok','deepseek','mistral','copilot','perplexity']:
+              assert brand not in names,brand
+          seen=set()
+          for x in cat:
+              k=re.sub(r'[^a-z0-9]+',' ',x['instruction'].lower()).strip()
+              assert k not in seen
+              seen.add(k)
+          print('Frozen runtime gates PASS:',len(cat),'prompts')
+          PY
+
+      - name: Commit the generated application as the source of truth
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            android/app/build.gradle \
+            android/app/src/main/AndroidManifest.xml \
+            android/app/src/main/java/com/kareem/promptdeck/MainActivity.java \
+            android/app/src/main/java/com/kareem/promptdeck/PromptLibraryActivity.java \
+            android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java \
+            android/app/src/main/assets/final_catalog_v15.json \
+            android/app/src/main/assets/final_catalog_v15_report.json
+          git diff --cached --stat
+          if git diff --cached --quiet; then
+            echo 'Frozen runtime already committed.'
+          else
+            git commit -m 'chore: freeze v15d generated runtime as source of truth [skip ci]'
+            git push origin HEAD:audit/final-consolidation-v15d
+          fi

@@ -182,9 +182,9 @@ def t09():
 
 def t10():
     home();tap('Browse all prompts');edit_slow('eli5');time.sleep(.8)
-    visible=' | '.join(txts()).lower()
-    if 'eli5' not in visible:raise AssertionError('eli5 result missing visible='+repr(txts()[:140]))
-    tap_clickable('eli5',exact=True);time.sleep(.7)
+    title="Explain Like I'm 5 (ELI5)"
+    if not has(title):raise AssertionError('ELI5 result missing visible='+repr(txts()[:140]))
+    tap_clickable(title,exact=True);time.sleep(.7)
     if not has('Copy prompt'):raise AssertionError('Copy prompt action missing visible='+repr(txts()[:140]))
 
 for name,fn in [

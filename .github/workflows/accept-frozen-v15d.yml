@@ -40,7 +40,8 @@ jobs:
           assert 'BUILTIN_CACHE_V15.size()' in j
           assert 'onNewIntent(Intent intent)' in j
           assert 'android:launchMode="singleTop"' in m
-          assert 'versionCode 38' in g and "versionName '0.8.2-rc4'" in g
+          assert 'versionCode 39' in g and "versionName '0.8.2'" in g
+          assert 'askGoal=x.toString()' in j
           names=' '.join((x.get('command','')+' '+x.get('description','')).lower() for x in cat)
           for brand in ['midjourney','claude','anthropic','gemini','grok','deepseek','mistral','copilot','perplexity']:
               assert brand not in names,brand
@@ -79,16 +80,16 @@ jobs:
           test -f "$REL"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/debug-badging.txt
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$REL" > /tmp/release-badging.txt
-          grep "versionCode='38'" /tmp/debug-badging.txt
-          grep "versionName='0.8.2-rc4'" /tmp/debug-badging.txt
+          grep "versionCode='39'" /tmp/debug-badging.txt
+          grep "versionName='0.8.2'" /tmp/debug-badging.txt
           if grep -q 'application-debuggable' /tmp/release-badging.txt; then
             echo 'Release APK is debuggable' >&2
             exit 1
           fi
-          sha256sum "$DBG" > /tmp/PromptDeck-v15d-frozen-debug.sha256
-          sha256sum "$REL" > /tmp/PromptDeck-v15d-frozen-release-unsigned.sha256
-          cp "$DBG" /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-debug.apk
-          cp "$REL" /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-release-unsigned.apk
+          sha256sum "$DBG" > /tmp/PromptDeck-v082-final-debug.sha256
+          sha256sum "$REL" > /tmp/PromptDeck-v082-final-release-unsigned.sha256
+          cp "$DBG" /tmp/PromptDeck-v0.8.2-final-debug.apk
+          cp "$REL" /tmp/PromptDeck-v0.8.2-final-release-unsigned.apk
 
       - name: Enable KVM
         run: |
@@ -123,12 +124,12 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v15d-frozen-acceptance
+          name: PromptDeck-v0.8.2-final-acceptance
           path: |
-            /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-debug.apk
-            /tmp/PromptDeck-v0.8.2-rc4-v15d-frozen-release-unsigned.apk
-            /tmp/PromptDeck-v15d-frozen-debug.sha256
-            /tmp/PromptDeck-v15d-frozen-release-unsigned.sha256
+            /tmp/PromptDeck-v0.8.2-final-debug.apk
+            /tmp/PromptDeck-v0.8.2-final-release-unsigned.apk
+            /tmp/PromptDeck-v082-final-debug.sha256
+            /tmp/PromptDeck-v082-final-release-unsigned.sha256
             /tmp/debug-badging.txt
             /tmp/release-badging.txt
             /tmp/lastanr.txt

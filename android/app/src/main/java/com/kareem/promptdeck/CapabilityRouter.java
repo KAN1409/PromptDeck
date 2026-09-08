@@ -53,18 +53,18 @@ final class CapabilityRouter {
   }
 
   static boolean broad(String domain,String q){
-    String z=norm(q);if(z.isEmpty())return true;String[] toks=z.split(" ");
+    String z=norm(q);if(z.isEmpty())return true;
     if(IMAGE.equals(domain)){
       if(z.equals("photo")||z.equals("image")||z.equals("picture")||z.equals("photo edit")||z.equals("edit photo")||z.equals("image edit")||z.equals("edit image")||z.equals("photo editing")||z.equals("image editing")||z.equals("edit my photo")||z.equals("edit a photo")||z.equals("create image")||z.equals("generate image"))return true;
-      return toks.length<=3&&has(z,"photo","image","picture")&&!has(z,"background","remove","retouch","upscale","restore","lighting","color","crop","blur","product","poster","thumbnail","vintage","cinematic");
+      return false;
     }
-    if(CAREER.equals(domain))return toks.length<=3&&has(z,"resume","cv","career","job");
-    if(DECISION.equals(domain))return toks.length<=3&&has(z,"decision","decide","choose","compare");
-    if(CODE.equals(domain))return toks.length<=3&&has(z,"code","coding","debug","bug");
-    if(RESEARCH.equals(domain))return toks.length<=2&&has(z,"research","verify");
-    if(PLANNING.equals(domain))return toks.length<=2&&has(z,"plan","planning","project");
-    if(LEARNING.equals(domain))return toks.length<=2&&has(z,"learn","study","explain");
-    if(WRITING.equals(domain))return toks.length<=2&&has(z,"write","rewrite","email","summary");
+    if(LEARNING.equals(domain))return z.equals("study")||z.equals("learn")||z.equals("learning")||z.equals("explain")||z.equals("help me study")||z.equals("teach me");
+    if(CAREER.equals(domain))return z.equals("resume")||z.equals("cv")||z.equals("career")||z.equals("job")||z.equals("help with my cv")||z.equals("help with my resume");
+    if(DECISION.equals(domain))return z.equals("compare")||z.equals("choose")||z.equals("decision")||z.equals("decide")||z.equals("help me decide");
+    if(CODE.equals(domain))return z.equals("code")||z.equals("coding")||z.equals("debug")||z.equals("bug")||z.equals("help with code");
+    if(RESEARCH.equals(domain))return z.equals("research")||z.equals("verify")||z.equals("do research");
+    if(PLANNING.equals(domain))return z.equals("plan")||z.equals("planning")||z.equals("project plan")||z.equals("help me plan");
+    if(WRITING.equals(domain))return z.equals("write")||z.equals("rewrite")||z.equals("writing")||z.equals("email")||z.equals("summary");
     return false;
   }
 
@@ -121,15 +121,39 @@ final class CapabilityRouter {
       case "image.product":return "Polish a product image for clean commercial presentation.";
       case "image.text":return "Turn the image into a clear poster, social visual or graphic.";
       case "image.create":return "Generate a new visual from your description.";
-      default:
-        if(id.startsWith("career."))return "Choose the career workflow that matches the outcome you need.";
-        if(id.startsWith("decision."))return "Structure the decision around evidence, criteria and trade-offs.";
-        if(id.startsWith("code."))return "Use the right technical workflow for this coding task.";
-        if(id.startsWith("research."))return "Choose how you want the information researched and validated.";
-        if(id.startsWith("planning."))return "Turn the goal into an actionable planning artifact.";
-        if(id.startsWith("learning."))return "Choose the learning format that will help most.";
-        if(id.startsWith("writing."))return "Choose the writing outcome you want ChatGPT to produce.";
-        return "Use the strongest prompt family for this outcome.";
+      case "learning.explain":return "Understand a topic with clear explanations, examples and analogies.";
+      case "learning.tutor":return "Learn interactively with questions, feedback and adaptive teaching.";
+      case "learning.study":return "Turn a subject and deadline into a practical study plan.";
+      case "learning.quiz":return "Test understanding with questions, answers and targeted review.";
+      case "career.createcv":return "Build a strong CV from your experience and target role.";
+      case "career.improvecv":return "Improve clarity, impact and positioning of an existing CV.";
+      case "career.ats":return "Check ATS fit, keywords and likely screening weaknesses.";
+      case "career.tailor":return "Adapt your CV to a specific job description without inventing experience.";
+      case "career.interview":return "Prepare likely questions, strong answers and interview strategy.";
+      case "decision.compare":return "Compare options consistently across the criteria that matter.";
+      case "decision.risk":return "Expose downsides, uncertainty, regret and important trade-offs.";
+      case "decision.matrix":return "Score options using explicit weighted criteria.";
+      case "decision.recommend":return "Recommend the strongest option and explain the trade-offs.";
+      case "code.debug":return "Diagnose the likely root cause and produce a testable fix.";
+      case "code.explain":return "Explain what the code does and how the important parts fit together.";
+      case "code.review":return "Review correctness, maintainability, security and edge cases.";
+      case "code.build":return "Turn requirements into an implementation plan and working code.";
+      case "code.optimize":return "Improve performance or structure without unnecessary rewrites.";
+      case "research.deep":return "Research the question systematically using relevant evidence.";
+      case "research.verify":return "Verify important claims and flag uncertainty or weak evidence.";
+      case "research.summarize":return "Condense evidence into the findings that actually matter.";
+      case "research.compare":return "Compare sources, claims and perspectives consistently.";
+      case "planning.plan":return "Turn a goal into clear steps, priorities and next actions.";
+      case "planning.roadmap":return "Organize work into milestones, phases and dependencies.";
+      case "planning.checklist":return "Convert the work into a concrete, usable checklist.";
+      case "planning.schedule":return "Map tasks onto a realistic timeline or schedule.";
+      case "writing.draft":return "Create a strong first draft from your goal and context.";
+      case "writing.rewrite":return "Improve clarity and flow while preserving the intended meaning.";
+      case "writing.summarize":return "Condense material into the most important information.";
+      case "writing.tone":return "Change tone or style without changing the core message.";
+      case "writing.email":return "Write a clear email suited to the recipient and purpose.";
+      case "writing.social":return "Create concise social content shaped for the platform and goal.";
+      default:return "Use the strongest prompt family for this outcome.";
     }
   }
 
@@ -200,14 +224,16 @@ final class CapabilityRouter {
 
   // Cheap deterministic smoke tests used by CI/source gates.
   static boolean selfTest(){
-    Route a=route("photo edit");
-    if(!IMAGE.equals(a.domain)||!EDIT.equals(a.mode)||!a.broad)return false;
-    Route b=route("remove people from the background");
-    if(!IMAGE.equals(b.domain)||b.broad||!b.capabilities.contains("image.remove"))return false;
-    Route c=route("restore and sharpen an old photo");
-    if(!c.capabilities.contains("image.enhance"))return false;
-    Route d=route("help with my CV");
-    if(!CAREER.equals(d.domain)||!d.broad)return false;
+    Route a=route("photo edit");if(!IMAGE.equals(a.domain)||!EDIT.equals(a.mode)||!a.broad)return false;
+    Route b=route("remove people from the background");if(!IMAGE.equals(b.domain)||b.broad||!b.capabilities.contains("image.remove"))return false;
+    Route c=route("study");if(!LEARNING.equals(c.domain)||!c.broad)return false;
+    Route d=route("explain quantum computing");if(!LEARNING.equals(d.domain)||d.broad||!d.capabilities.contains("learning.explain"))return false;
+    Route e=route("compare two cars");if(!DECISION.equals(e.domain)||e.broad||!e.capabilities.contains("decision.compare"))return false;
+    Route f=route("debug app crash");if(!CODE.equals(f.domain)||f.broad||!f.capabilities.contains("code.debug"))return false;
+    Route g=route("write an email");if(!WRITING.equals(g.domain)||g.broad||!g.capabilities.contains("writing.email"))return false;
+    Route h=route("tailor my cv to this job");if(!CAREER.equals(h.domain)||h.broad||!h.capabilities.contains("career.tailor"))return false;
+    Route i=route("verify this claim with sources");if(!RESEARCH.equals(i.domain)||i.broad||!i.capabilities.contains("research.verify"))return false;
+    Route j=route("make a project roadmap");if(!PLANNING.equals(j.domain)||j.broad||!j.capabilities.contains("planning.roadmap"))return false;
     return true;
   }
 }

@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
   }
 
   @Override protected void onSaveInstanceState(Bundle out){
-    super.onSaveInstanceState(out);out.putString("v15_mode",discoverMode);out.putString("v15_goal",askGoal);out.putString("v15_cap",askCapability);out.putString("v15_context",contextDraft);out.putString("v15_cat",discoverCategory);out.putString("v15_sub",discoverSubcategory);out.putBoolean("v15_fav",discoverFavorites);out.putInt("v15_limit",browseLimit);ArrayList<Integer> ids=new ArrayList<>();for(Cmd c:selected)ids.add(c.id);out.putIntegerArrayList("v15_selected",ids);
+    super.onSaveInstanceState(out);out.putString("v15_mode",discoverMode);out.putString("v15_goal",askGoal);out.putString("v15_cap",askCapability);out.putString("v15_selection_goal",askSelectionGoal);out.putString("v15_context",contextDraft);out.putString("v15_cat",discoverCategory);out.putString("v15_sub",discoverSubcategory);out.putString("v15_query",discoverPreset);out.putBoolean("v15_fav",discoverFavorites);out.putInt("v15_limit",browseLimit);ArrayList<Integer> ids=new ArrayList<>();for(Cmd c:selected)ids.add(c.id);out.putIntegerArrayList("v15_selected",ids);
   }
 
   @Override public void onBackPressed(){
@@ -254,8 +254,8 @@ public class MainActivity extends Activity {
   }
   void restoreWorkspaceV15(Bundle b){
     if(b==null)return;
-    discoverMode=b.getString("v15_mode",discoverMode);askGoal=b.getString("v15_goal",askGoal);askCapability=b.getString("v15_cap",askCapability);contextDraft=b.getString("v15_context",contextDraft);
-    discoverCategory=b.getString("v15_cat",discoverCategory);discoverSubcategory=b.getString("v15_sub",discoverSubcategory);discoverFavorites=b.getBoolean("v15_fav",discoverFavorites);browseLimit=b.getInt("v15_limit",browseLimit);
+    discoverMode=b.getString("v15_mode",discoverMode);askGoal=b.getString("v15_goal",askGoal);askCapability=b.getString("v15_cap",askCapability);askSelectionGoal=b.getString("v15_selection_goal",askSelectionGoal);contextDraft=b.getString("v15_context",contextDraft);
+    discoverCategory=b.getString("v15_cat",discoverCategory);discoverSubcategory=b.getString("v15_sub",discoverSubcategory);discoverPreset=b.getString("v15_query",discoverPreset);discoverFavorites=b.getBoolean("v15_fav",discoverFavorites);browseLimit=b.getInt("v15_limit",browseLimit);
     ArrayList<Integer> ids=b.getIntegerArrayList("v15_selected");if(ids!=null){selected.clear();for(Integer id:ids){for(Cmd c:all)if(c.id==id){selected.add(c);break;}}}
   }
   void consumeIncomingShareV15(){

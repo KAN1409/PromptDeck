@@ -58,6 +58,16 @@ def edit(value):
     adb('shell','input','keyevent','KEYCODE_CTRL_A',check=False);adb('shell','input','keyevent','KEYCODE_DEL',check=False)
     adb('shell','input','text',value.replace(' ','%s'));time.sleep(.25)
 
+def edit_slow(value):
+    n=next((n for n in nodes() if n.attrib.get('class','').endswith('EditText')),None)
+    if n is None: raise AssertionError('no edit field visible='+repr(txts()[:100]))
+    x,y=center(n);adb('shell','input','tap',str(x),str(y));time.sleep(.2)
+    adb('shell','input','keyevent','KEYCODE_CTRL_A',check=False);adb('shell','input','keyevent','KEYCODE_DEL',check=False);time.sleep(.2)
+    for ch in value:
+        token='%s' if ch==' ' else ch
+        adb('shell','input','text',token,check=False);time.sleep(.32)
+    time.sleep(.5)
+
 def shot(name):
     p=SC/(name+'.png');
     with open(p,'wb') as f: subprocess.run(['adb','exec-out','screencap','-p'],stdout=f)
@@ -171,8 +181,9 @@ def t09():
     if miss:raise AssertionError('missing data capabilities '+repr(miss)+' visible='+repr(txts()[:140]))
 
 def t10():
-    home();tap('Browse all prompts');edit('eli5');time.sleep(.8)
-    if not has('eli5'):raise AssertionError('eli5 result missing visible='+repr(txts()[:140]))
+    home();tap('Browse all prompts');edit_slow('eli5');time.sleep(.8)
+    visible=' | '.join(txts()).lower()
+    if 'eli5' not in visible:raise AssertionError('eli5 result missing visible='+repr(txts()[:140]))
     tap_clickable('eli5',exact=True);time.sleep(.7)
     if not has('Copy prompt'):raise AssertionError('Copy prompt action missing visible='+repr(txts()[:140]))
 

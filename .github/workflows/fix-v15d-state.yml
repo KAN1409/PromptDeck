@@ -1,0 +1,46 @@
+name: Fix PromptDeck v15d workspace state
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/fix-v15d-state.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-state:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/final-consolidation-v15d
+          fetch-depth: 1
+      - name: Patch committed runtime source
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java')
+          s=p.read_text(encoding='utf-8')
+          old='''discoverMode=b.getString("v15_mode",discoverMode);askGoal=b.getString("v15_goal",askGoal);askCapability=b.getString("v15_cap",askCapability);contextDraft=b.getString("v15_context",contextDraft);\n    discoverCategory=b.getString("v15_cat",discoverCategory);discoverSubcategory=b.getString("v15_sub",discoverSubcategory);discoverFavorites=b.getBoolean("v15_fav",discoverFavorites);browseLimit=b.getInt("v15_limit",browseLimit);'''
+          new='''discoverMode=b.getString("v15_mode",discoverMode);askGoal=b.getString("v15_goal",askGoal);askCapability=b.getString("v15_cap",askCapability);askSelectionGoal=b.getString("v15_selection_goal",askSelectionGoal);contextDraft=b.getString("v15_context",contextDraft);\n    discoverCategory=b.getString("v15_cat",discoverCategory);discoverSubcategory=b.getString("v15_sub",discoverSubcategory);discoverPreset=b.getString("v15_query",discoverPreset);discoverFavorites=b.getBoolean("v15_fav",discoverFavorites);browseLimit=b.getInt("v15_limit",browseLimit);'''
+          if old not in s: raise SystemExit('restore anchor not found')
+          s=s.replace(old,new,1)
+          old2='''super.onSaveInstanceState(out);out.putString("v15_mode",discoverMode);out.putString("v15_goal",askGoal);out.putString("v15_cap",askCapability);out.putString("v15_context",contextDraft);out.putString("v15_cat",discoverCategory);out.putString("v15_sub",discoverSubcategory);out.putBoolean("v15_fav",discoverFavorites);out.putInt("v15_limit",browseLimit);ArrayList<Integer> ids=new ArrayList<>();'''
+          new2='''super.onSaveInstanceState(out);out.putString("v15_mode",discoverMode);out.putString("v15_goal",askGoal);out.putString("v15_cap",askCapability);out.putString("v15_selection_goal",askSelectionGoal);out.putString("v15_context",contextDraft);out.putString("v15_cat",discoverCategory);out.putString("v15_sub",discoverSubcategory);out.putString("v15_query",discoverPreset);out.putBoolean("v15_fav",discoverFavorites);out.putInt("v15_limit",browseLimit);ArrayList<Integer> ids=new ArrayList<>();'''
+          if old2 not in s: raise SystemExit('save anchor not found')
+          s=s.replace(old2,new2,1)
+          for token in ['putString("v15_query",discoverPreset)','getString("v15_query",discoverPreset)','putString("v15_selection_goal",askSelectionGoal)','getString("v15_selection_goal",askSelectionGoal)']:
+              assert token in s, token
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit state fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix: preserve workspace query across recreation'
+          git push origin HEAD:audit/final-consolidation-v15d

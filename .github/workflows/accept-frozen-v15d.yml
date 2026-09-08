@@ -32,6 +32,7 @@ jobs:
           from pathlib import Path
           import json,re
           j=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          r=Path('android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java').read_text()
           m=Path('android/app/src/main/AndroidManifest.xml').read_text()
           g=Path('android/app/build.gradle').read_text()
           cat=json.load(open('android/app/src/main/assets/final_catalog_v15.json',encoding='utf-8'))
@@ -40,8 +41,12 @@ jobs:
           assert 'BUILTIN_CACHE_V15.size()' in j
           assert 'onNewIntent(Intent intent)' in j
           assert 'android:launchMode="singleTop"' in m
-          assert 'versionCode 39' in g and "versionName '0.8.2'" in g
+          assert 'versionCode 40' in g and "versionName '0.8.3'" in g
           assert 'askGoal=x.toString()' in j
+          assert 'Copy prompt' in j
+          assert 'View all matches' in j
+          assert 'DATA="DATA"' in r
+          assert 'data.analyze' in r and 'data.spreadsheet' in r and 'data.visualize' in r
           names=' '.join((x.get('command','')+' '+x.get('description','')).lower() for x in cat)
           for brand in ['midjourney','claude','anthropic','gemini','grok','deepseek','mistral','copilot','perplexity']:
               assert brand not in names,brand
@@ -80,16 +85,16 @@ jobs:
           test -f "$REL"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/debug-badging.txt
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$REL" > /tmp/release-badging.txt
-          grep "versionCode='39'" /tmp/debug-badging.txt
-          grep "versionName='0.8.2'" /tmp/debug-badging.txt
+          grep "versionCode='40'" /tmp/debug-badging.txt
+          grep "versionName='0.8.3'" /tmp/debug-badging.txt
           if grep -q 'application-debuggable' /tmp/release-badging.txt; then
             echo 'Release APK is debuggable' >&2
             exit 1
           fi
-          sha256sum "$DBG" > /tmp/PromptDeck-v082-final-debug.sha256
-          sha256sum "$REL" > /tmp/PromptDeck-v082-final-release-unsigned.sha256
-          cp "$DBG" /tmp/PromptDeck-v0.8.2-final-debug.apk
-          cp "$REL" /tmp/PromptDeck-v0.8.2-final-release-unsigned.apk
+          sha256sum "$DBG" > /tmp/PromptDeck-v083-hotfix-debug.sha256
+          sha256sum "$REL" > /tmp/PromptDeck-v083-hotfix-release-unsigned.sha256
+          cp "$DBG" /tmp/PromptDeck-v0.8.3-hotfix-debug.apk
+          cp "$REL" /tmp/PromptDeck-v0.8.3-hotfix-release-unsigned.apk
 
       - name: Enable KVM
         run: |
@@ -124,12 +129,12 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.8.2-final-acceptance
+          name: PromptDeck-v0.8.3-hotfix-acceptance
           path: |
-            /tmp/PromptDeck-v0.8.2-final-debug.apk
-            /tmp/PromptDeck-v0.8.2-final-release-unsigned.apk
-            /tmp/PromptDeck-v082-final-debug.sha256
-            /tmp/PromptDeck-v082-final-release-unsigned.sha256
+            /tmp/PromptDeck-v0.8.3-hotfix-debug.apk
+            /tmp/PromptDeck-v0.8.3-hotfix-release-unsigned.apk
+            /tmp/PromptDeck-v083-hotfix-debug.sha256
+            /tmp/PromptDeck-v083-hotfix-release-unsigned.sha256
             /tmp/debug-badging.txt
             /tmp/release-badging.txt
             /tmp/lastanr.txt

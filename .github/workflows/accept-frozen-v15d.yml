@@ -8,6 +8,7 @@ on:
       - '.github/workflows/accept-frozen-v15d.yml'
       - 'audit/frozen_acceptance_v15d.py'
       - 'android/app/src/main/java/**'
+      - 'android/app/src/main/res/**'
       - 'android/app/src/main/AndroidManifest.xml'
       - 'android/app/build.gradle'
       - 'android/app/src/main/assets/final_catalog_v15.json'
@@ -48,6 +49,8 @@ jobs:
               key=re.sub(r'[^a-z0-9]+',' ',x['instruction'].lower()).strip()
               assert key not in seen
               seen.add(key)
+          required=['pd_mode_ask.xml','pd_mode_browse.xml','pd_ic_content.xml','pd_ic_write.xml','pd_ic_research.xml','pd_ic_calendar.xml','pd_ic_briefcase.xml','pd_ic_code.xml','pd_ic_creative.xml','pd_ic_heart.xml','pd_ic_flask.xml','pd_ic_image.xml']
+          for f in required: assert Path('android/app/src/main/res/drawable',f).exists(),f
           print('Frozen-source static acceptance PASS')
           PY
 

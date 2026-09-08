@@ -147,6 +147,16 @@ def t07():
     adb('shell','settings','put','system','user_rotation','0',check=False);time.sleep(.25)
     if 'study' not in vis:raise AssertionError('workspace query lost after recreation')
 
+def t09():
+    home();tap('Ask PromptDeck');edit('analyze data');tap('Find the best approach');time.sleep(.7)
+    req=['Analyze data','Clean & structure data','Statistics & patterns','Charts & visualization','Spreadsheet analysis','Extract insights']
+    miss=[x for x in req if not has(x)]
+    if miss:raise AssertionError('missing data capabilities '+repr(miss)+' visible='+repr(txts()[:140]))
+
+def t10():
+    home();tap('Browse all prompts');edit('meta prompt');time.sleep(.8);tap('Meta Prompt');time.sleep(.5)
+    if not has('Copy prompt'):raise AssertionError('Copy prompt action missing')
+
 def t08():
     adb('shell','am','force-stop',PKG,check=False)
     out=adb('shell','am','start','-W','-n',ACT,check=False);wait_ui()
@@ -159,7 +169,7 @@ def t08():
 for name,fn in [
  ('01_install_launch_catalog_no_anr',t01),('02_back_navigation',t02),('03_ask_photo_capabilities',t03),
  ('04_vertical_browse_hierarchy',t04),('05_no_midjourney_search_result',t05),('06_cold_and_warm_share_in',t06),
- ('07_workspace_state_recreation',t07),('08_startup_time_and_memory',t08)]: run(name,fn)
+ ('07_workspace_state_recreation',t07),('08_startup_time_and_memory',t08),('09_data_analysis_routing',t09),('10_copy_prompt_action',t10)]: run(name,fn)
 
 summary={'tests':len(R),'passed':sum(x['status']=='PASS' for x in R),'failed':sum(x['status']=='FAIL' for x in R),'results':R}
 (OUT/'results.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')

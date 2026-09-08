@@ -8,7 +8,7 @@ import java.util.*;
  * Prompt ranking happens only after routing, never across the full catalog blindly.
  */
 final class CapabilityRouter {
-  static final String IMAGE="IMAGE", CAREER="CAREER", DECISION="DECISION", CODE="CODE",
+  static final String IMAGE="IMAGE", CAREER="CAREER", DECISION="DECISION", CODE="CODE", DATA="DATA",
       RESEARCH="RESEARCH", PLANNING="PLANNING", LEARNING="LEARNING", WRITING="WRITING", GENERAL="GENERAL";
   static final String EDIT="EDIT", CREATE="CREATE", UNKNOWN="UNKNOWN";
 
@@ -37,6 +37,7 @@ final class CapabilityRouter {
     if(has(z,"photo","image","picture","portrait","background","retouch","upscale","sharpen","blur","crop","visual","poster","thumbnail"))return IMAGE;
     if(has(z,"resume","cv","interview","career","job","ats","cover letter"))return CAREER;
     if(has(z,"compare","choose","decision","decide","recommend","versus","tradeoff","trade off"))return DECISION;
+    if(has(z,"data","dataset","spreadsheet","excel","csv","statistics","statistical","analyze data","analyse data","data analysis","dashboard","chart","visualization","visualisation","insights","trend"))return DATA;
     if(has(z,"debug","code","coding","error","bug","refactor","programming","api","sql"))return CODE;
     if(has(z,"research","sources","evidence","fact check","verify","investigate"))return RESEARCH;
     if(has(z,"plan","roadmap","schedule","checklist","project","organize","strategy"))return PLANNING;
@@ -61,6 +62,7 @@ final class CapabilityRouter {
     if(LEARNING.equals(domain))return z.equals("study")||z.equals("learn")||z.equals("learning")||z.equals("explain")||z.equals("help me study")||z.equals("teach me");
     if(CAREER.equals(domain))return z.equals("resume")||z.equals("cv")||z.equals("career")||z.equals("job")||z.equals("help with my cv")||z.equals("help with my resume");
     if(DECISION.equals(domain))return z.equals("compare")||z.equals("choose")||z.equals("decision")||z.equals("decide")||z.equals("help me decide");
+    if(DATA.equals(domain))return z.equals("data")||z.equals("analyze data")||z.equals("analyse data")||z.equals("data analysis")||z.equals("analyze my data")||z.equals("spreadsheet analysis");
     if(CODE.equals(domain))return z.equals("code")||z.equals("coding")||z.equals("debug")||z.equals("bug")||z.equals("help with code");
     if(RESEARCH.equals(domain))return z.equals("research")||z.equals("verify")||z.equals("do research");
     if(PLANNING.equals(domain))return z.equals("plan")||z.equals("planning")||z.equals("project plan")||z.equals("help me plan");
@@ -75,6 +77,7 @@ final class CapabilityRouter {
     }
     if(CAREER.equals(domain))return new String[]{"career.createcv","career.improvecv","career.ats","career.tailor","career.interview"};
     if(DECISION.equals(domain))return new String[]{"decision.compare","decision.risk","decision.matrix","decision.recommend"};
+    if(DATA.equals(domain))return new String[]{"data.analyze","data.clean","data.stats","data.visualize","data.spreadsheet","data.extract"};
     if(CODE.equals(domain))return new String[]{"code.debug","code.explain","code.review","code.build","code.optimize"};
     if(RESEARCH.equals(domain))return new String[]{"research.deep","research.verify","research.summarize","research.compare"};
     if(PLANNING.equals(domain))return new String[]{"planning.plan","planning.roadmap","planning.checklist","planning.schedule"};
@@ -94,6 +97,9 @@ final class CapabilityRouter {
       case "career.ats":return "ATS check"; case "career.tailor":return "Tailor to a job"; case "career.interview":return "Interview prep";
       case "decision.compare":return "Compare options"; case "decision.risk":return "Risk & trade-offs";
       case "decision.matrix":return "Decision matrix"; case "decision.recommend":return "Recommend the best";
+      case "data.analyze":return "Analyze data"; case "data.clean":return "Clean & structure data";
+      case "data.stats":return "Statistics & patterns"; case "data.visualize":return "Charts & visualization";
+      case "data.spreadsheet":return "Spreadsheet analysis"; case "data.extract":return "Extract insights";
       case "code.debug":return "Debug a problem"; case "code.explain":return "Explain code";
       case "code.review":return "Review code"; case "code.build":return "Build something"; case "code.optimize":return "Improve performance";
       case "research.deep":return "Deep research"; case "research.verify":return "Verify facts";
@@ -134,6 +140,12 @@ final class CapabilityRouter {
       case "decision.risk":return "Expose downsides, uncertainty, regret and important trade-offs.";
       case "decision.matrix":return "Score options using explicit weighted criteria.";
       case "decision.recommend":return "Recommend the strongest option and explain the trade-offs.";
+      case "data.analyze":return "Analyze a dataset systematically and surface the findings that matter.";
+      case "data.clean":return "Clean, normalize and structure messy data before analysis.";
+      case "data.stats":return "Find distributions, relationships, anomalies and statistically useful patterns.";
+      case "data.visualize":return "Choose clear charts and visual summaries that reveal the important story.";
+      case "data.spreadsheet":return "Analyze spreadsheet or CSV data, formulas, tables and business metrics.";
+      case "data.extract":return "Turn raw data into concise insights, implications and next actions.";
       case "code.debug":return "Diagnose the likely root cause and produce a testable fix.";
       case "code.explain":return "Explain what the code does and how the important parts fit together.";
       case "code.review":return "Review correctness, maintainability, security and edge cases.";
@@ -174,6 +186,12 @@ final class CapabilityRouter {
       case "career.interview":return "interview questions answers prep practice";
       case "decision.compare":return "compare options criteria pros cons tradeoffs"; case "decision.risk":return "risk regret tradeoffs downside uncertainty";
       case "decision.matrix":return "decision matrix weighted criteria score"; case "decision.recommend":return "recommend best option choose strongest";
+      case "data.analyze":return "analyze analysis data dataset metrics findings trends patterns insights";
+      case "data.clean":return "clean normalize structure data dataset missing duplicates transform";
+      case "data.stats":return "statistics statistical correlation distribution anomaly variance trend patterns";
+      case "data.visualize":return "chart charts graph visualization dashboard plot visual data";
+      case "data.spreadsheet":return "spreadsheet excel csv table formulas workbook data analysis";
+      case "data.extract":return "extract insights findings implications actions data summary";
       case "code.debug":return "debug diagnose error bug root cause fix"; case "code.explain":return "explain code understand walkthrough";
       case "code.review":return "review code quality security tests"; case "code.build":return "build implement code developer";
       case "code.optimize":return "optimize performance refactor improve";

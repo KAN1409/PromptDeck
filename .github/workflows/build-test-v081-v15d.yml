@@ -1,0 +1,163 @@
+name: Build and test PromptDeck v15d final consolidation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - 'audit/apply_v081_final_consolidation_v15.py'
+      - 'audit/apply_v081_final_catalog_v15b.py'
+      - 'audit/apply_v081_final_catalog_v15c.py'
+      - 'audit/apply_v081_final_catalog_v15d.py'
+      - 'audit/test_v15c_runtime.py'
+      - 'audit/run_v15d_runtime.py'
+      - '.github/workflows/build-test-v081-v15d.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  v15d:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - name: Build integrated prompt data
+        run: |
+          curl -L --fail --retry 3 https://raw.githubusercontent.com/f/prompts.chat/414b71ae0be4e25564543d4b5ecb3bcd1e7c9876/prompts.csv -o /tmp/prompts.csv
+          python3 tools/build_prompt_library.py /tmp/prompts.csv android/app/src/main/assets/prompts_library.json 2160
+          python3 tools/build_curated_photo_prompts.py android/app/src/main/assets/curated_photo_prompts.json
+          cat android/app/src/main/assets/imported_pdf_prompts_01.b64 android/app/src/main/assets/imported_pdf_prompts_02.b64 android/app/src/main/assets/imported_pdf_prompts_03.b64 android/app/src/main/assets/imported_pdf_prompts_04.b64 android/app/src/main/assets/imported_pdf_prompts_05.b64 > /tmp/imported_pdf_prompts.b64
+          base64 -d /tmp/imported_pdf_prompts.b64 | gunzip > android/app/src/main/assets/imported_pdf_prompts.json
+      - name: Rebuild through v15d
+        run: |
+          python3 tools/patch_main_v070.py
+          python3 tools/fix_legacy_java_escapes.py
+          python3 tools/patch_category_browser_v071.py
+          python3 tools/patch_curated_photo_v072.py
+          python3 tools/patch_smart_paste_v074.py
+          python3 tools/patch_imported_pdf_prompts_v075.py
+          python3 tools/patch_daily_gap_v076.py
+          python3 tools/patch_export_all_v077.py
+          python3 tools/patch_onepass_canonical_v078.py
+          python3 tools/patch_navigation_v2_v080.py
+          python3 audit/apply_v081_design_and_chatgpt_native.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_lock_v2.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_pixel_identical_v3.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_organization_fix_v4.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_two_page_ui_v5.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_hybrid_one_screen_v6.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_runtime_stability_v7.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_capability_router_v8.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/fix_v081_capability_compile_v8.py
+          python3 audit/apply_v081_debug_copy_prompt_v9.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_stability_ux_v10.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_quality_upgrade_v11.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_taxonomy_v12.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_browse_hierarchy_v13.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_prompt_purity_v14.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_consolidation_v15.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_catalog_v15b.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_catalog_v15c.py
+          python3 audit/fix_v081_java_escapes.py
+          python3 audit/apply_v081_final_catalog_v15d.py
+          python3 audit/fix_v081_java_escapes.py
+      - name: Final static gates
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          s=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          g=Path('android/app/build.gradle').read_text()
+          cat=json.load(open('android/app/src/main/assets/final_catalog_v15.json',encoding='utf-8'))
+          rep=json.load(open('android/app/src/main/assets/final_catalog_v15_report.json',encoding='utf-8'))
+          assert len(cat)==3304==rep['count']
+          assert 'BUILTIN_CACHE_READY_V15' in s and 'all.addAll(BUILTIN_CACHE_V15)' in s
+          assert 'readAsset("final_catalog_v15.json")' in s
+          assert 'String.format(Locale.US,"%,d",all.size())' in s
+          assert "versionName '0.8.2-rc4'" in g and 'versionCode 38' in g
+          names=' '.join((x.get('command','')+' '+x.get('description','')).lower() for x in cat)
+          for brand in ['midjourney','claude','anthropic','gemini','grok','deepseek','mistral','copilot','perplexity']: assert brand not in names,brand
+          seen=set()
+          for x in cat:
+              k=re.sub(r'[^a-z0-9]+',' ',x['instruction'].lower()).strip();assert k not in seen,'duplicate';seen.add(k)
+          assert not any(x['instruction'].lower().startswith('for this step in a larger workflow:') for x in cat)
+          print('Final static gates PASS',rep)
+          PY
+      - uses: actions/setup-java@v4
+        with: {distribution: temurin, java-version: '17'}
+      - uses: android-actions/setup-android@v3
+      - name: Install SDK
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;default;x86_64'
+      - uses: gradle/actions/setup-gradle@v4
+        with: {gradle-version: '8.9'}
+      - name: Build APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+      - name: Verify APK
+        run: |
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK" | tee /tmp/signature.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/badging.txt
+          cp "$APK" /tmp/PromptDeck-v0.8.2-rc4-v15d.apk
+          sha256sum "$APK" | tee /tmp/PromptDeck-v0.8.2-rc4-v15d.sha256
+          cp android/app/src/main/assets/final_catalog_v15_report.json /tmp/final_catalog_v15_report.json
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm || true
+      - name: Run final emulator tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            python3 audit/run_v15d_runtime.py || true
+            adb shell dumpsys activity lastanr > /tmp/lastanr.txt || true
+            adb logcat -d -t 1200 > /tmp/logcat-tail.txt || true
+      - name: Evaluate final verdict
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          p=pathlib.Path('/tmp/promptdeck-v15d-runtime/results.json')
+          if not p.exists():raise SystemExit('No runtime results')
+          d=json.loads(p.read_text());print(json.dumps(d,indent=2)[:20000])
+          failed=[r for r in d['results'] if r['status']!='PASS']
+          if failed:raise SystemExit('runtime failures: '+', '.join(r['name'] for r in failed))
+          PY
+      - name: Upload APK and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.8.2-rc4-v15d-final-consolidation
+          path: |
+            /tmp/PromptDeck-v0.8.2-rc4-v15d.apk
+            /tmp/PromptDeck-v0.8.2-rc4-v15d.sha256
+            /tmp/final_catalog_v15_report.json
+            /tmp/signature.txt
+            /tmp/badging.txt
+            /tmp/lastanr.txt
+            /tmp/logcat-tail.txt
+            /tmp/promptdeck-v15d-runtime/**
+          if-no-files-found: warn

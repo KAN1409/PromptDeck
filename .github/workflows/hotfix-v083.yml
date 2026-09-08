@@ -1,0 +1,127 @@
+name: Apply PromptDeck 0.8.3 hotfix
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/hotfix-v083.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/final-consolidation-v15d
+          fetch-depth: 1
+      - name: Apply routing and prompt-detail hotfix
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          router=Path('android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java')
+          r=router.read_text(encoding='utf-8')
+          old='''static final String IMAGE="IMAGE", CAREER="CAREER", DECISION="DECISION", CODE="CODE",\n      RESEARCH="RESEARCH", PLANNING="PLANNING", LEARNING="LEARNING", WRITING="WRITING", GENERAL="GENERAL";'''
+          new='''static final String IMAGE="IMAGE", CAREER="CAREER", DECISION="DECISION", CODE="CODE", DATA="DATA",\n      RESEARCH="RESEARCH", PLANNING="PLANNING", LEARNING="LEARNING", WRITING="WRITING", GENERAL="GENERAL";'''
+          if old not in r: raise SystemExit('router constants anchor missing')
+          r=r.replace(old,new,1)
+
+          old='''    if(has(z,"compare","choose","decision","decide","recommend","versus","tradeoff","trade off"))return DECISION;\n    if(has(z,"debug","code","coding","error","bug","refactor","programming","api","sql"))return CODE;'''
+          new='''    if(has(z,"compare","choose","decision","decide","recommend","versus","tradeoff","trade off"))return DECISION;\n    if(has(z,"data","dataset","spreadsheet","excel","csv","statistics","statistical","analyze data","analyse data","data analysis","dashboard","chart","visualization","visualisation","insights","trend"))return DATA;\n    if(has(z,"debug","code","coding","error","bug","refactor","programming","api","sql"))return CODE;'''
+          if old not in r: raise SystemExit('router domain anchor missing')
+          r=r.replace(old,new,1)
+
+          old='''    if(DECISION.equals(domain))return z.equals("compare")||z.equals("choose")||z.equals("decision")||z.equals("decide")||z.equals("help me decide");\n    if(CODE.equals(domain))return z.equals("code")||z.equals("coding")||z.equals("debug")||z.equals("bug")||z.equals("help with code");'''
+          new='''    if(DECISION.equals(domain))return z.equals("compare")||z.equals("choose")||z.equals("decision")||z.equals("decide")||z.equals("help me decide");\n    if(DATA.equals(domain))return z.equals("data")||z.equals("analyze data")||z.equals("analyse data")||z.equals("data analysis")||z.equals("analyze my data")||z.equals("spreadsheet analysis");\n    if(CODE.equals(domain))return z.equals("code")||z.equals("coding")||z.equals("debug")||z.equals("bug")||z.equals("help with code");'''
+          if old not in r: raise SystemExit('router broad anchor missing')
+          r=r.replace(old,new,1)
+
+          old='''    if(DECISION.equals(domain))return new String[]{"decision.compare","decision.risk","decision.matrix","decision.recommend"};\n    if(CODE.equals(domain))return new String[]{"code.debug","code.explain","code.review","code.build","code.optimize"};'''
+          new='''    if(DECISION.equals(domain))return new String[]{"decision.compare","decision.risk","decision.matrix","decision.recommend"};\n    if(DATA.equals(domain))return new String[]{"data.analyze","data.clean","data.stats","data.visualize","data.spreadsheet","data.extract"};\n    if(CODE.equals(domain))return new String[]{"code.debug","code.explain","code.review","code.build","code.optimize"};'''
+          if old not in r: raise SystemExit('router capabilities anchor missing')
+          r=r.replace(old,new,1)
+
+          old='''      case "decision.matrix":return "Decision matrix"; case "decision.recommend":return "Recommend the best";\n      case "code.debug":return "Debug a problem"; case "code.explain":return "Explain code";'''
+          new='''      case "decision.matrix":return "Decision matrix"; case "decision.recommend":return "Recommend the best";\n      case "data.analyze":return "Analyze data"; case "data.clean":return "Clean & structure data";\n      case "data.stats":return "Statistics & patterns"; case "data.visualize":return "Charts & visualization";\n      case "data.spreadsheet":return "Spreadsheet analysis"; case "data.extract":return "Extract insights";\n      case "code.debug":return "Debug a problem"; case "code.explain":return "Explain code";'''
+          if old not in r: raise SystemExit('router label anchor missing')
+          r=r.replace(old,new,1)
+
+          old='''      case "decision.recommend":return "Recommend the strongest option and explain the trade-offs.";\n      case "code.debug":return "Diagnose the likely root cause and produce a testable fix.";'''
+          new='''      case "decision.recommend":return "Recommend the strongest option and explain the trade-offs.";\n      case "data.analyze":return "Analyze a dataset systematically and surface the findings that matter.";\n      case "data.clean":return "Clean, normalize and structure messy data before analysis.";\n      case "data.stats":return "Find distributions, relationships, anomalies and statistically useful patterns.";\n      case "data.visualize":return "Choose clear charts and visual summaries that reveal the important story.";\n      case "data.spreadsheet":return "Analyze spreadsheet or CSV data, formulas, tables and business metrics.";\n      case "data.extract":return "Turn raw data into concise insights, implications and next actions.";\n      case "code.debug":return "Diagnose the likely root cause and produce a testable fix.";'''
+          if old not in r: raise SystemExit('router outcome anchor missing')
+          r=r.replace(old,new,1)
+
+          old='''      case "decision.matrix":return "decision matrix weighted criteria score"; case "decision.recommend":return "recommend best option choose strongest";\n      case "code.debug":return "debug diagnose error bug root cause fix"; case "code.explain":return "explain code understand walkthrough";'''
+          new='''      case "decision.matrix":return "decision matrix weighted criteria score"; case "decision.recommend":return "recommend best option choose strongest";\n      case "data.analyze":return "analyze analysis data dataset metrics findings trends patterns insights";\n      case "data.clean":return "clean normalize structure data dataset missing duplicates transform";\n      case "data.stats":return "statistics statistical correlation distribution anomaly variance trend patterns";\n      case "data.visualize":return "chart charts graph visualization dashboard plot visual data";\n      case "data.spreadsheet":return "spreadsheet excel csv table formulas workbook data analysis";\n      case "data.extract":return "extract insights findings implications actions data summary";\n      case "code.debug":return "debug diagnose error bug root cause fix"; case "code.explain":return "explain code understand walkthrough";'''
+          if old not in r: raise SystemExit('router terms anchor missing')
+          r=r.replace(old,new,1)
+          router.write_text(r,encoding='utf-8')
+
+          main=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java')
+          s=main.read_text(encoding='utf-8')
+          old='''if(cap.startsWith("decision."))return cat.equals("Productivity & Planning")||cat.equals("Research & Learning")?18:0;if(cap.startsWith("code."))return cat.equals("Technology & Development")?24:0;'''
+          new='''if(cap.startsWith("decision."))return cat.equals("Productivity & Planning")||cat.equals("Research & Learning")?18:0;if(cap.startsWith("data."))return cat.equals("Technology & Data")?30:cat.equals("Research & Analysis")?14:0;if(cap.startsWith("code."))return cat.equals("Technology & Development")?24:0;'''
+          if old not in s: raise SystemExit('category boost anchor missing')
+          s=s.replace(old,new,1)
+
+          s=s.replace('ArrayList<Cmd> ranked=rankCapabilityV11(cap,goal,6);','ArrayList<Cmd> ranked=rankCapabilityV11(cap,goal,20);',1)
+          s=s.replace('for(int i=1;i<Math.min(4,ranked.size());i++)','for(int i=1;i<Math.min(7,ranked.size());i++)',1)
+          old='''    Button back=secondary("Choose another capability");back.setOnClickListener(v->{askCapability="";CapabilityRouter.Route route=CapabilityRouter.route(goal);'''
+          new='''    Button allMatches=secondary("View all matches");allMatches.setOnClickListener(v->{discoverMode="browse";discoverCategory="";discoverSubcategory="";discoverFavorites=false;discoverPreset=goal;browseLimit=60;home();});target.addView(allMatches);\n    Button back=secondary("Choose another capability");back.setOnClickListener(v->{askCapability="";CapabilityRouter.Route route=CapabilityRouter.route(goal);'''
+          if old not in s: raise SystemExit('capability all matches anchor missing')
+          s=s.replace(old,new,1)
+
+          old='''ArrayList<Cmd> ranked=rankSmart(q,8);if(ranked.isEmpty()'''
+          new='''ArrayList<Cmd> ranked=rankSmart(q,60);if(ranked.isEmpty()'''
+          if old not in s: raise SystemExit('fallback rank anchor missing')
+          s=s.replace(old,new,1)
+          # replace the second remaining 4-result loop in fallback
+          old='''for(int i=1;i<Math.min(4,ranked.size());i++){Cmd c=ranked.get(i);View row=commandRow(c,false);row.setOnClickListener(v->showPromptDialog(c));target.addView(row);}\n  }'''
+          new='''for(int i=1;i<Math.min(7,ranked.size());i++){Cmd c=ranked.get(i);View row=commandRow(c,false);row.setOnClickListener(v->showPromptDialog(c));target.addView(row);}Button allMatches=secondary("View all matches");allMatches.setOnClickListener(v->{discoverMode="browse";discoverCategory="";discoverSubcategory="";discoverFavorites=false;discoverPreset=q;browseLimit=60;home();});target.addView(allMatches);\n  }'''
+          if old not in s: raise SystemExit('fallback all matches anchor missing')
+          s=s.replace(old,new,1)
+
+          old='''fav.setOnClickListener(v->{toggleFavorite(c);fav.setText(isFavorite(c)?"★  Favorited":"☆  Favorite");});content.addView(fav);scroll.addView(content);'''
+          new='''fav.setOnClickListener(v->{toggleFavorite(c);fav.setText(isFavorite(c)?"★  Favorited":"☆  Favorite");});content.addView(fav);Button copyPrompt=secondary("Copy prompt");copyPrompt.setOnClickListener(v->{String finalPrompt=buildSinglePrompt(c,"ask".equals(discoverMode)?askGoal:"");android.content.ClipboardManager cm=(android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE);if(cm!=null){cm.setPrimaryClip(android.content.ClipData.newPlainText("Prompt",finalPrompt));toast("Prompt copied");}});content.addView(copyPrompt);scroll.addView(content);'''
+          if old not in s: raise SystemExit('copy prompt anchor missing')
+          s=s.replace(old,new,1)
+          s=s.replace('PromptDeck 0.8.2','PromptDeck 0.8.3')
+          main.write_text(s,encoding='utf-8')
+
+          gradle=Path('android/app/build.gradle')
+          g=gradle.read_text(encoding='utf-8')
+          g=re.sub(r'versionCode\s+\d+','versionCode 40',g,count=1)
+          g=re.sub(r"versionName\s+'[^']+'","versionName '0.8.3'",g,count=1)
+          gradle.write_text(g,encoding='utf-8')
+
+          test=Path('audit/frozen_acceptance_v15d.py')
+          t=test.read_text(encoding='utf-8')
+          marker='''def t08():\n    adb('shell','am','force-stop',PKG,check=False)'''
+          if marker not in t: raise SystemExit('test insertion anchor missing')
+          addition='''def t09():\n    home();tap('Ask PromptDeck');edit('analyze data');tap('Find the best approach');time.sleep(.7)\n    req=['Analyze data','Clean & structure data','Statistics & patterns','Charts & visualization','Spreadsheet analysis','Extract insights']\n    miss=[x for x in req if not has(x)]\n    if miss:raise AssertionError('missing data capabilities '+repr(miss)+' visible='+repr(txts()[:140]))\n\ndef t10():\n    home();tap('Browse all prompts');edit('meta prompt');time.sleep(.8);tap('Meta Prompt');time.sleep(.5)\n    if not has('Copy prompt'):raise AssertionError('Copy prompt action missing')\n\n'''
+          t=t.replace(marker,addition+marker,1)
+          old_list=""" ('07_workspace_state_recreation',t07),('08_startup_time_and_memory',t08)]: run(name,fn)"""
+          new_list=""" ('07_workspace_state_recreation',t07),('08_startup_time_and_memory',t08),('09_data_analysis_routing',t09),('10_copy_prompt_action',t10)]: run(name,fn)"""
+          if old_list not in t: raise SystemExit('test list anchor missing')
+          t=t.replace(old_list,new_list,1)
+          test.write_text(t,encoding='utf-8')
+
+          assert 'DATA="DATA"' in router.read_text()
+          assert 'Copy prompt' in main.read_text()
+          assert 'View all matches' in main.read_text()
+          assert "versionCode 40" in gradle.read_text()
+          print('PromptDeck 0.8.3 hotfix prepared')
+          PY
+      - name: Commit hotfix source
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/src/main/java/com/kareem/promptdeck/CapabilityRouter.java android/app/build.gradle audit/frozen_acceptance_v15d.py
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix: data analysis routing and copy prompt'
+          git push origin HEAD:audit/final-consolidation-v15d

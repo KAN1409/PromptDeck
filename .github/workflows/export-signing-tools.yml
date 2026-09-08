@@ -1,0 +1,32 @@
+name: Export Android signing tools
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/export-signing-tools.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: android-actions/setup-android@v3
+      - name: Install build tools 35
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'build-tools;35.0.0'
+          mkdir -p /tmp/pd-sign-tools
+          cp "$ANDROID_HOME/build-tools/35.0.0/lib/apksigner.jar" /tmp/pd-sign-tools/
+          cp "$ANDROID_HOME/build-tools/35.0.0/zipalign" /tmp/pd-sign-tools/
+          cp "$ANDROID_HOME/build-tools/35.0.0/apksigner" /tmp/pd-sign-tools/
+          chmod +x /tmp/pd-sign-tools/zipalign /tmp/pd-sign-tools/apksigner
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-Android-signing-tools-35
+          path: /tmp/pd-sign-tools/**
+          if-no-files-found: error

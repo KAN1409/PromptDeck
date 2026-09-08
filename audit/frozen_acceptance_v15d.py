@@ -129,12 +129,10 @@ def t05():
     if bad:raise AssertionError('Midjourney result visible '+repr(bad[:8]))
 
 def t06():
-    # cold share
     adb('shell','am','force-stop',PKG,check=False)
     adb('shell','am','start','-W','-n',ACT,'-a','android.intent.action.SEND','-t','text/plain','--es','android.intent.extra.TEXT','cold_share_probe',check=False)
     wait_ui();time.sleep(.3)
     if 'cold_share_probe' not in ' | '.join(txts()).lower():raise AssertionError('cold share not consumed')
-    # warm share through singleTop/onNewIntent
     adb('shell','am','start','-W','-n',ACT,'-a','android.intent.action.SEND','-t','text/plain','--es','android.intent.extra.TEXT','warm_share_probe',check=False)
     wait_ui();time.sleep(.3)
     if 'warm_share_probe' not in ' | '.join(txts()).lower():raise AssertionError('warm share not consumed')
@@ -154,8 +152,10 @@ def t09():
     if miss:raise AssertionError('missing data capabilities '+repr(miss)+' visible='+repr(txts()[:140]))
 
 def t10():
-    home();tap('Browse all prompts');edit('meta prompt');time.sleep(.8);tap('Meta Prompt');time.sleep(.5)
-    if not has('Copy prompt'):raise AssertionError('Copy prompt action missing')
+    home();tap('Ask PromptDeck');edit('photo edit');tap('Find the best approach');time.sleep(.7)
+    tap('Enhance & restore');time.sleep(.7)
+    tap('Use this prompt');time.sleep(.6)
+    if not has('Copy prompt'):raise AssertionError('Copy prompt action missing visible='+repr(txts()[:140]))
 
 def t08():
     adb('shell','am','force-stop',PKG,check=False)

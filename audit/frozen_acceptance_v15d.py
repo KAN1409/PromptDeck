@@ -39,6 +39,18 @@ def tap(s):
     if n is None: raise AssertionError('missing '+s+' visible='+repr(txts()[:100]))
     x,y=center(n); adb('shell','input','tap',str(x),str(y)); time.sleep(.45)
 
+def tap_clickable(s,exact=False):
+    root=dump();q=s.lower();target=None
+    for n in root.iter('node'):
+        t=n.attrib.get('text','')
+        if (t.lower()==q if exact else q in t.lower()): target=n;break
+    if target is None: raise AssertionError('missing '+s+' visible='+repr([n.attrib.get('text','') for n in root.iter('node') if n.attrib.get('text')][:100]))
+    parents={c:p for p in root.iter() for c in p}
+    n=target
+    while n is not None and n.attrib.get('clickable')!='true': n=parents.get(n)
+    if n is None: n=target
+    x,y=center(n);adb('shell','input','tap',str(x),str(y));time.sleep(.55)
+
 def edit(value):
     n=next((n for n in nodes() if n.attrib.get('class','').endswith('EditText')),None)
     if n is None: raise AssertionError('no edit field visible='+repr(txts()[:100]))
@@ -52,10 +64,8 @@ def shot(name):
     return str(p)
 
 def external_system_anr():
-    try:
-        text=' | '.join(txts()).lower()
-    except Exception:
-        return None
+    try:text=' | '.join(txts()).lower()
+    except Exception:return None
     if "isn't responding" not in text:return None
     if 'promptdeck' in text:return 'APP'
     return text[:500]
@@ -145,18 +155,6 @@ def t07():
     adb('shell','settings','put','system','user_rotation','0',check=False);time.sleep(.25)
     if 'study' not in vis:raise AssertionError('workspace query lost after recreation')
 
-def t09():
-    home();tap('Ask PromptDeck');edit('analyze data');tap('Find the best approach');time.sleep(.7)
-    req=['Analyze data','Clean & structure data','Statistics & patterns','Charts & visualization','Spreadsheet analysis','Extract insights']
-    miss=[x for x in req if not has(x)]
-    if miss:raise AssertionError('missing data capabilities '+repr(miss)+' visible='+repr(txts()[:140]))
-
-def t10():
-    home();tap('Ask PromptDeck');edit('photo edit');tap('Find the best approach');time.sleep(.7)
-    tap('Enhance & restore');time.sleep(.7)
-    tap('Use this prompt');time.sleep(.6)
-    if not has('Copy prompt'):raise AssertionError('Copy prompt action missing visible='+repr(txts()[:140]))
-
 def t08():
     adb('shell','am','force-stop',PKG,check=False)
     out=adb('shell','am','start','-W','-n',ACT,check=False);wait_ui()
@@ -165,6 +163,18 @@ def t08():
     mem=adb('shell','dumpsys','meminfo',PKG,check=False)
     m2=re.search(r'TOTAL PSS:\s*(\d+)',mem) or re.search(r'TOTAL\s+(\d+)\s+',mem)
     if m2 and int(m2.group(1))>280000:raise AssertionError('startup PSS '+m2.group(1)+' KB')
+
+def t09():
+    home();tap('Ask PromptDeck');edit('analyze data');tap('Find the best approach');time.sleep(.7)
+    req=['Analyze data','Clean & structure data','Statistics & patterns','Charts & visualization','Spreadsheet analysis','Extract insights']
+    miss=[x for x in req if not has(x)]
+    if miss:raise AssertionError('missing data capabilities '+repr(miss)+' visible='+repr(txts()[:140]))
+
+def t10():
+    home();tap('Browse all prompts');edit('eli5');time.sleep(.8)
+    if not has('eli5'):raise AssertionError('eli5 result missing visible='+repr(txts()[:140]))
+    tap_clickable('eli5',exact=True);time.sleep(.7)
+    if not has('Copy prompt'):raise AssertionError('Copy prompt action missing visible='+repr(txts()[:140]))
 
 for name,fn in [
  ('01_install_launch_catalog_no_anr',t01),('02_back_navigation',t02),('03_ask_photo_capabilities',t03),

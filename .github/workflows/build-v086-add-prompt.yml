@@ -1,0 +1,82 @@
+name: Build PromptDeck v0.8.6 Add Prompt
+
+on:
+  push:
+    branches: [ audit/final-consolidation-v15d ]
+    paths:
+      - 'audit/fix_add_prompt_autoclass_v086.py'
+      - '.github/workflows/build-v086-add-prompt.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Apply Add Prompt fix
+        run: |
+          python3 audit/fix_add_prompt_autoclass_v086.py
+          python3 - <<'PY'
+          from pathlib import Path
+          j=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          g=Path('android/app/build.gradle').read_text()
+          assert '"Add a prompt"' in j
+          assert 'inferPromptCategoryV86' in j
+          assert 'inferPromptSubcategoryV86' in j
+          assert 'o.put("subcategory",actualSubcategory)' in j
+          assert 'pastePromptFromClipboardV16' not in j
+          assert 'versionCode 43' in g and "versionName '0.8.6'" in g
+          print('v0.8.6 source gate PASS')
+          PY
+
+      - name: Commit generated source
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/build.gradle
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat: restore Add Prompt auto-classification'
+            git push origin HEAD:audit/final-consolidation-v15d
+          fi
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build APKs
+        working-directory: android
+        run: gradle --no-daemon assembleDebug assembleRelease
+
+      - name: Verify identity
+        run: |
+          sdkmanager 'build-tools;35.0.0' >/dev/null
+          DBG=android/app/build/outputs/apk/debug/app-debug.apk
+          REL=android/app/build/outputs/apk/release/app-release-unsigned.apk
+          test -f "$DBG" && test -f "$REL"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/badging.txt
+          grep "versionCode='43'" /tmp/badging.txt
+          grep "versionName='0.8.6'" /tmp/badging.txt
+          cp "$DBG" /tmp/PromptDeck-v0.8.6-add-prompt-debug.apk
+          cp "$REL" /tmp/PromptDeck-v0.8.6-add-prompt-release-unsigned.apk
+          sha256sum /tmp/PromptDeck-v0.8.6-add-prompt-release-unsigned.apk > /tmp/release.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.8.6-add-prompt
+          path: |
+            /tmp/PromptDeck-v0.8.6-add-prompt-debug.apk
+            /tmp/PromptDeck-v0.8.6-add-prompt-release-unsigned.apk
+            /tmp/release.sha256
+            /tmp/badging.txt

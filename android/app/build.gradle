@@ -8,8 +8,8 @@ android {
         applicationId 'com.kareem.promptdeck'
         minSdk 26
         targetSdk 35
-        versionCode 41
-        versionName '0.8.4'
+        versionCode 43
+        versionName '0.8.6'
     }
 
     buildTypes {

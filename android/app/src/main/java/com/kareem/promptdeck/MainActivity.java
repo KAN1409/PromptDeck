@@ -443,24 +443,13 @@ public class MainActivity extends Activity {
     LinearLayout shell=vbox();shell.setBackgroundColor(BG);ScrollView sv=new ScrollView(this);sv.setFillViewport(true);sv.setBackgroundColor(BG);root=vbox();root.setPadding(dp(14),dp(8),dp(14),dp(18));sv.addView(root);shell.addView(sv,new LinearLayout.LayoutParams(-1,0,1));if(!selected.isEmpty())shell.addView(selectionBar(),new LinearLayout.LayoutParams(-1,dp(56)));setContentView(shell);sv.setOnApplyWindowInsetsListener((v,insets)->{int top=insets.getSystemWindowInsetTop();if(top>0)root.setPadding(dp(14),Math.max(dp(8),top+dp(3)),dp(14),dp(18));return insets;});LinearLayout top=hbox();top.setGravity(Gravity.CENTER_VERTICAL);ImageView mark=new ImageView(this);mark.setImageResource(R.drawable.promptdeck_mark);mark.setScaleType(ImageView.ScaleType.CENTER_INSIDE);LinearLayout.LayoutParams mp=new LinearLayout.LayoutParams(dp(30),dp(30));mp.setMargins(0,0,dp(7),0);top.addView(mark,mp);top.addView(text("PromptDeck",18,true,TEXT),new LinearLayout.LayoutParams(0,dp(32),1));TextView more=text("⋯",24,true,TEXT);more.setGravity(Gravity.CENTER);more.setOnClickListener(v->showMoreMenu());top.addView(more,new LinearLayout.LayoutParams(dp(38),dp(36)));root.addView(top);spacer(9);
   }
 
-  void pastePromptFromClipboardV16(){
-    try{
-      android.content.ClipboardManager cb=(android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-      if(cb==null||!cb.hasPrimaryClip()||cb.getPrimaryClip()==null||cb.getPrimaryClip().getItemCount()==0){toast("Clipboard is empty");return;}
-      CharSequence raw=cb.getPrimaryClip().getItemAt(0).coerceToText(this);
-      String pasted=raw==null?"":raw.toString().trim();
-      if(pasted.isEmpty()){toast("Clipboard is empty");return;}
-      askGoal=pasted;contextDraft=pasted;askCapability="";discoverMode="ask";
-      home();
-      toast("Prompt pasted and understood");
-    }catch(Exception e){toast("Couldn't read clipboard");}
-  }
+
 
   void home(){
     page="home";currentGroup=null;base("","",false);
-    if("landing".equals(discoverMode)){TextView h=text("How do you want to start?",23,true,TEXT);h.setPadding(0,0,0,dp(3));root.addView(h);TextView sub=text("Let PromptDeck choose the best approach, or explore all prompts yourself.",11,false,MUTED);sub.setPadding(0,0,0,dp(10));root.addView(sub);View ask=modeChoiceCard(R.drawable.pd_mode_ask,"Ask PromptDeck","Describe your goal and get the best prompt or workflow automatically.",ACCENT,()->{discoverMode="ask";home();});root.addView(ask);View paste=modeChoiceCard(R.drawable.pd_ic_content,"Paste a prompt","Paste from your clipboard and let PromptDeck understand it automatically.",PURPLE,()->pastePromptFromClipboardV16());root.addView(paste);View browse=modeChoiceCard(R.drawable.pd_mode_browse,"Browse all prompts","Search and explore the complete "+String.format(Locale.US,"%,d",BUILTIN_CACHE_V15.size())+"-prompt library yourself.",Color.rgb(45,203,140),()->{discoverMode="browse";home();});root.addView(browse);TextView hint=text("You can switch modes anytime. Your selected prompts stay in your workflow.",9,false,TERTIARY);hint.setGravity(Gravity.CENTER);hint.setPadding(dp(6),dp(10),dp(6),0);root.addView(hint);return;}
+    if("landing".equals(discoverMode)){TextView h=text("How do you want to start?",23,true,TEXT);h.setPadding(0,0,0,dp(3));root.addView(h);TextView sub=text("Let PromptDeck choose the best approach, or explore all prompts yourself.",11,false,MUTED);sub.setPadding(0,0,0,dp(10));root.addView(sub);View ask=modeChoiceCard(R.drawable.pd_mode_ask,"Ask PromptDeck","Describe your goal and get the best prompt or workflow automatically.",ACCENT,()->{discoverMode="ask";home();});root.addView(ask);View paste=modeChoiceCard(R.drawable.pd_ic_content,"Add a prompt","Paste a complete prompt and save it to your library automatically.",PURPLE,()->showBulkPaste());root.addView(paste);View browse=modeChoiceCard(R.drawable.pd_mode_browse,"Browse all prompts","Search and explore the complete "+String.format(Locale.US,"%,d",BUILTIN_CACHE_V15.size())+"-prompt library yourself.",Color.rgb(45,203,140),()->{discoverMode="browse";home();});root.addView(browse);TextView hint=text("You can switch modes anytime. Your selected prompts stay in your workflow.",9,false,TERTIARY);hint.setGravity(Gravity.CENTER);hint.setPadding(dp(6),dp(10),dp(6),0);root.addView(hint);return;}
     root.addView(modeSwitch());spacer(8);
-    if("ask".equals(discoverMode)){TextView h=text("What do you want ChatGPT to help you do?",20,true,TEXT);h.setPadding(0,0,0,dp(3));root.addView(h);TextView sub=text("Describe the outcome. PromptDeck will choose the strongest prompt or build a short workflow.",10,false,MUTED);sub.setPadding(0,0,0,dp(8));root.addView(sub);EditText goal=input("e.g. Compare two cars and recommend the better one for me...",3);goal.setMaxLines(5);goal.setImeOptions(EditorInfo.IME_ACTION_DONE);goal.setText(askGoal);root.addView(goal);Button pasteClipboard=secondary("Paste from clipboard");pasteClipboard.setOnClickListener(v->pastePromptFromClipboardV16());root.addView(pasteClipboard);Button find=primary("Find the best approach");root.addView(find);HorizontalScrollView examples=new HorizontalScrollView(this);examples.setHorizontalScrollBarEnabled(false);LinearLayout ex=hbox();String[] xs={"Compare options","Write an email","Plan a project","Explain a topic"};for(String x:xs){Button b=filterChip(x,false);b.setOnClickListener(v->{goal.setText(x);goal.setSelection(goal.length());});ex.addView(b);}examples.addView(ex);root.addView(examples);LinearLayout results=vbox();root.addView(results);if(!askGoal.isEmpty())renderAskResults(results,askGoal);find.setOnClickListener(v->runAskRecommendation(results,goal));goal.addTextChangedListener(new android.text.TextWatcher(){public void beforeTextChanged(CharSequence x,int st,int c,int a){}public void onTextChanged(CharSequence x,int st,int b,int c){askGoal=x.toString();}public void afterTextChanged(android.text.Editable e){}});goal.setOnEditorActionListener((v,action,event)->{if(action==EditorInfo.IME_ACTION_DONE){runAskRecommendation(results,goal);return true;}return false;});return;}
+    if("ask".equals(discoverMode)){TextView h=text("What do you want ChatGPT to help you do?",20,true,TEXT);h.setPadding(0,0,0,dp(3));root.addView(h);TextView sub=text("Describe the outcome. PromptDeck will choose the strongest prompt or build a short workflow.",10,false,MUTED);sub.setPadding(0,0,0,dp(8));root.addView(sub);EditText goal=input("e.g. Compare two cars and recommend the better one for me...",3);goal.setMaxLines(5);goal.setImeOptions(EditorInfo.IME_ACTION_DONE);goal.setText(askGoal);root.addView(goal);Button find=primary("Find the best approach");root.addView(find);HorizontalScrollView examples=new HorizontalScrollView(this);examples.setHorizontalScrollBarEnabled(false);LinearLayout ex=hbox();String[] xs={"Compare options","Write an email","Plan a project","Explain a topic"};for(String x:xs){Button b=filterChip(x,false);b.setOnClickListener(v->{goal.setText(x);goal.setSelection(goal.length());});ex.addView(b);}examples.addView(ex);root.addView(examples);LinearLayout results=vbox();root.addView(results);if(!askGoal.isEmpty())renderAskResults(results,askGoal);find.setOnClickListener(v->runAskRecommendation(results,goal));goal.addTextChangedListener(new android.text.TextWatcher(){public void beforeTextChanged(CharSequence x,int st,int c,int a){}public void onTextChanged(CharSequence x,int st,int b,int c){askGoal=x.toString();}public void afterTextChanged(android.text.Editable e){}});goal.setOnEditorActionListener((v,action,event)->{if(action==EditorInfo.IME_ACTION_DONE){runAskRecommendation(results,goal);return true;}return false;});return;}
     TextView h=text("Browse all prompts",20,true,TEXT);h.setPadding(0,0,0,dp(3));root.addView(h);TextView sub=text("Search directly, or narrow the full library by category.",10,false,MUTED);sub.setPadding(0,0,0,dp(7));root.addView(sub);EditText q=input("Search prompts...",1);q.setSingleLine(true);q.setText(discoverPreset);root.addView(q);LinearLayout filters=hbox();Button cat=filterChip(discoverCategory.isEmpty()?"All categories":discoverCategory,false);cat.setOnClickListener(v->showCategoryPicker());filters.addView(cat);if(!discoverCategory.isEmpty()){Button subcat=filterChip(discoverSubcategory.isEmpty()?"All subcategories":discoverSubcategory,!discoverSubcategory.isEmpty());subcat.setOnClickListener(v->showSubcategoryPickerV12());filters.addView(subcat);}Button fav=filterChip("Favorites",discoverFavorites);fav.setOnClickListener(v->{discoverFavorites=!discoverFavorites;discoverPreset=q.getText().toString();browseLimit=30;home();});filters.addView(fav);if(!discoverCategory.isEmpty()||!discoverSubcategory.isEmpty()||discoverFavorites){Button clear=filterChip("Clear",false);clear.setOnClickListener(v->{discoverCategory="";discoverSubcategory="";discoverFavorites=false;discoverPreset="";browseLimit=30;home();});filters.addView(clear);}root.addView(filters);LinearLayout results=vbox();root.addView(results);renderBrowseResultsV6(results,q.getText().toString());q.addTextChangedListener(new android.text.TextWatcher(){public void beforeTextChanged(CharSequence x,int st,int c,int a){}public void onTextChanged(CharSequence x,int st,int b,int c){discoverPreset=x.toString();browseLimit=30;renderBrowseResultsV6(results,x.toString());}public void afterTextChanged(android.text.Editable e){}});
   }
 
@@ -726,12 +715,38 @@ public class MainActivity extends Activity {
 
   void showBulkPaste(){
     LinearLayout box=vbox();box.setPadding(dp(18),dp(4),dp(18),0);
-    EditText category=input("Category (default: Photo Editing & Image Generation)",1);category.setText("Photo Editing & Image Generation");
-    EditText bulk=input("Paste anything here…\n\nSimple:\n/NeonCity → Cyberpunk night portrait\n\nOr full prompt blocks:\n/NeonPortrait\nCreate a dramatic cyberpunk portrait at night with neon reflections, rain, cinematic contrast...\n\n/StudioClean\nCreate a clean professional studio portrait with soft key light...",14);
-    box.addView(category);box.addView(bulk);
-    TextView note=text("Paste one complete prompt as-is and PromptDeck will create its command name and description automatically. For several prompts at once, start each one with /CommandName.",12,false,MUTED);note.setPadding(0,dp(4),0,dp(8));box.addView(note);
-    AlertDialog d=new AlertDialog.Builder(this).setTitle("Smart paste prompts").setView(box).setNegativeButton("Cancel",null).setPositiveButton("Parse & add",null).create();
-    d.setOnShowListener(z->d.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v->{String cat=category.getText().toString().trim();if(cat.isEmpty())cat="Photo Editing & Image Generation";int[] result=parseBulkCommands(bulk.getText().toString(),cat);if(result[0]==0){toast("Paste a prompt, or use /CommandName when pasting several prompts");return;}saveCustom();d.dismiss();library();toast("Added "+result[0]+" prompts"+(result[1]>0?" • skipped "+result[1]:""));}));d.show();
+    EditText bulk=input("Paste your complete prompt here...",10);bulk.setMinLines(8);bulk.setGravity(Gravity.TOP|Gravity.START);
+    try{android.content.ClipboardManager cb=(android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE);if(cb!=null&&cb.hasPrimaryClip()&&cb.getPrimaryClip()!=null&&cb.getPrimaryClip().getItemCount()>0){CharSequence x=cb.getPrimaryClip().getItemAt(0).coerceToText(this);if(x!=null&&!x.toString().trim().isEmpty())bulk.setText(x.toString().trim());}}catch(Exception ignored){}
+    box.addView(bulk);
+    TextView note=text("PromptDeck will create the title, choose the category and subcategory, and save the prompt to your library.",12,false,MUTED);note.setPadding(0,dp(8),0,dp(8));box.addView(note);
+    AlertDialog d=new AlertDialog.Builder(this).setTitle("Add a prompt").setView(box).setNegativeButton("Cancel",null).setPositiveButton("Add prompt",null).create();
+    d.setOnShowListener(z->d.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v->{String raw=bulk.getText().toString().trim();if(raw.isEmpty()){toast("Paste a prompt first");return;}int[] result=parseBulkCommands(raw,"");if(result[0]==0){toast("Couldn't add this prompt");return;}saveCustom();d.dismiss();library();toast("Prompt added to your library");}));d.show();
+  }
+
+  String inferPromptCategoryV86(String prompt){
+    String z=(prompt==null?"":prompt).toLowerCase(Locale.ROOT);
+    if(hasAny(z,"image","photo","portrait","background","retouch","upscale","visual","poster","thumbnail","logo","graphic design","render"))return "Images & Design";
+    if(hasAny(z,"health","medical","wellness","fitness","nutrition","diet","sleep","habit","relationship","lifestyle"))return "Health & Life";
+    if(hasAny(z,"learn","study","teach","explain","quiz","tutor","lesson","exam","flashcard","education"))return "Learning & Education";
+    if(hasAny(z,"code","coding","developer","software","debug","api","database","sql","android","python","javascript","data","dataset","spreadsheet","excel","csv","statistics","dashboard"))return "Technology & Data";
+    if(hasAny(z,"business","career","resume","cv","interview","marketing","sales","customer","meeting","workplace","strategy","proposal"))return "Work & Business";
+    if(hasAny(z,"plan","roadmap","schedule","checklist","prioritize","decision","compare options","recommend the best","trade-off","tradeoff"))return "Planning & Decisions";
+    if(hasAny(z,"research","verify","evidence","sources","investigate","fact-check","fact check","analyze","analysis","compare sources"))return "Research & Analysis";
+    if(hasAny(z,"brainstorm","creative","story","script","social media","content ideas","caption","campaign","concept"))return "Creativity & Content";
+    return "Writing & Communication";
+  }
+
+  String inferPromptSubcategoryV86(String prompt,String category){
+    String z=(prompt==null?"":prompt).toLowerCase(Locale.ROOT);
+    if("Images & Design".equals(category)){if(hasAny(z,"edit","retouch","remove","background","restore","upscale"))return "Image Editing";if(hasAny(z,"logo","poster","graphic","layout","brand"))return "Graphic Design";return "Image Generation";}
+    if("Technology & Data".equals(category)){if(hasAny(z,"data","dataset","spreadsheet","excel","csv","statistics","dashboard"))return "Data Analysis";if(hasAny(z,"debug","bug","error","fix"))return "Debugging";if(hasAny(z,"prompt engineering","ai workflow","agent"))return "AI & Prompting";return "Software Development";}
+    if("Research & Analysis".equals(category)){if(hasAny(z,"verify","fact-check","fact check","sources","evidence"))return "Verification";if(hasAny(z,"compare"))return "Comparative Analysis";return "Research";}
+    if("Planning & Decisions".equals(category)){if(hasAny(z,"decision","compare options","recommend","tradeoff","trade-off"))return "Decision Making";if(hasAny(z,"schedule","timeline"))return "Scheduling";return "Planning";}
+    if("Work & Business".equals(category)){if(hasAny(z,"resume","cv","interview","career","job"))return "Career";if(hasAny(z,"marketing","sales","campaign"))return "Marketing & Sales";return "Business";}
+    if("Learning & Education".equals(category)){if(hasAny(z,"quiz","exam","flashcard"))return "Study & Practice";return "Teaching & Explanation";}
+    if("Creativity & Content".equals(category)){if(hasAny(z,"story","script"))return "Storytelling";if(hasAny(z,"social media","caption"))return "Social Content";return "Ideation";}
+    if("Health & Life".equals(category)){if(hasAny(z,"fitness","workout"))return "Fitness";if(hasAny(z,"nutrition","diet"))return "Nutrition";return "Wellness & Life";}
+    if(hasAny(z,"email","message","reply"))return "Email & Messaging";if(hasAny(z,"rewrite","edit","polish","proofread"))return "Rewriting & Editing";return "General Writing";
   }
 
   int[] parseBulkCommands(String raw,String category){
@@ -751,18 +766,19 @@ public class MainActivity extends Activity {
     // No slash headers: treat the complete pasted text as one prompt and infer its command name.
     if(blocks.isEmpty()){
       String fullRaw=raw==null?"":raw.trim();
-      if(!fullRaw.isEmpty())blocks.add(new String[]{autoCommandName(fullRaw,category),"",fullRaw});
+      if(!fullRaw.isEmpty())blocks.add(new String[]{autoCommandName(fullRaw,inferPromptCategoryV86(fullRaw)),"",fullRaw});
     }
 
     for(String[] b:blocks){
       String name=b[0],inline=b[1],full=b[2];String instruction=!full.isEmpty()?full:inline;
       if(instruction==null||instruction.trim().isEmpty()){skipped++;continue;}
+      String actualCategory=(category==null||category.trim().isEmpty())?inferPromptCategoryV86(instruction):category.trim();String actualSubcategory=inferPromptSubcategoryV86(instruction,actualCategory);
       String base=name;int suffix=2;while(find(name)!=null)name=base+(suffix++);
-      String desc=!inline.isEmpty()&&!full.isEmpty()?inline:autoDescription(instruction,category);
+      String desc=!inline.isEmpty()&&!full.isEmpty()?inline:autoDescription(instruction,actualCategory);
       if(!inline.isEmpty()&&full.isEmpty())desc=inline;
       try{
-        JSONObject o=new JSONObject();o.put("id",nextId());o.put("command",name);o.put("category",category);
-        o.put("description",category.toLowerCase(Locale.ROOT).contains("photo")?photoDescription(desc):desc);
+        JSONObject o=new JSONObject();o.put("id",nextId());o.put("command",name);o.put("category",actualCategory);o.put("subcategory",actualSubcategory);
+        o.put("description","Images & Design".equals(actualCategory)?photoDescription(desc):desc);
         o.put("instruction",instruction);all.add(new Cmd(o,true));added++;
       }catch(Exception e){skipped++;}
     }

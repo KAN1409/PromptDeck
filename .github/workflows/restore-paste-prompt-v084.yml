@@ -1,0 +1,77 @@
+name: Restore Paste Prompt v0.8.4
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['audit/final-consolidation-v15d']
+    paths:
+      - '.github/workflows/restore-paste-prompt-v084.yml'
+      - 'audit/restore_paste_prompt_v084.py'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Restore Paste Prompt in frozen source
+        run: |
+          python3 audit/restore_paste_prompt_v084.py
+          python3 - <<'PY'
+          from pathlib import Path
+          j=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java').read_text()
+          g=Path('android/app/build.gradle').read_text()
+          assert 'void pastePromptFromClipboardV16()' in j
+          assert '"Paste a prompt"' in j
+          assert 'Paste from clipboard' in j
+          assert 'Prompt pasted and understood' in j
+          assert 'askGoal=pasted' in j and 'discoverMode="ask"' in j
+          assert 'versionCode 41' in g and "versionName '0.8.4'" in g
+          print('Paste Prompt source gate PASS')
+          PY
+      - name: Commit restored feature
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/build.gradle
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat: restore Paste Prompt clipboard flow'
+            git push origin HEAD:audit/final-consolidation-v15d
+          fi
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Build APKs
+        working-directory: android
+        run: gradle --no-daemon assembleDebug assembleRelease
+      - name: Verify APK identity
+        run: |
+          sdkmanager 'build-tools;35.0.0' >/dev/null
+          DBG=android/app/build/outputs/apk/debug/app-debug.apk
+          REL=android/app/build/outputs/apk/release/app-release-unsigned.apk
+          test -f "$DBG" && test -f "$REL"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/badging.txt
+          grep "versionCode='41'" /tmp/badging.txt
+          grep "versionName='0.8.4'" /tmp/badging.txt
+          cp "$DBG" /tmp/PromptDeck-v0.8.4-paste-prompt-update.apk
+          cp "$REL" /tmp/PromptDeck-v0.8.4-release-unsigned.apk
+          sha256sum /tmp/PromptDeck-v0.8.4-paste-prompt-update.apk > /tmp/PromptDeck-v0.8.4.sha256
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: PromptDeck-v0.8.4-paste-prompt-update
+          path: |
+            /tmp/PromptDeck-v0.8.4-paste-prompt-update.apk
+            /tmp/PromptDeck-v0.8.4-release-unsigned.apk
+            /tmp/PromptDeck-v0.8.4.sha256
+            /tmp/badging.txt

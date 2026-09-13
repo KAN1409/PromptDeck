@@ -838,5 +838,54 @@
     "description": "يصمم Prompt أقوى للمهمة نفسها",
     "instruction": "Design an improved prompt for the task. Preserve the user's real goal, add only useful context and constraints, specify the desired output, and avoid unnecessary role-play or verbosity.",
     "id": 120
+  },
+  {
+    "command": "fog",
+    "category": "Photography",
+    "description": "Creates a cinematic foggy atmosphere",
+    "instruction": "Transform the image into a realistic foggy scene. Add natural volumetric mist and atmospheric depth that fit the existing environment, preserve the subject, identity, pose, composition, clothing, objects, and camera perspective, and keep lighting and visibility physically plausible. Do not add unrelated elements.",
+    "id": 121
+  },
+  {
+    "command": "cinematic",
+    "category": "Photography",
+    "description": "Applies cinematic photography and color grading",
+    "instruction": "Give the image a premium cinematic photographic treatment while preserving the subject, identity, pose, scene, and composition. Use motivated directional light, controlled contrast, rich natural color, realistic skin tones, strong subject separation, subtle depth, and filmic color grading without artificial HDR, oversaturation, or changing scene content.",
+    "id": 122
+  },
+  {
+    "command": "longexposure",
+    "category": "Photography",
+    "description": "Creates realistic long-exposure motion",
+    "instruction": "Re-render the scene as a realistic long-exposure photograph while preserving the subject and composition. Apply physically plausible motion blur only to moving elements such as flowing water, clouds, traffic, or lights while keeping stationary subjects and structures naturally sharp. Preserve identity and scene geometry.",
+    "id": 123
+  },
+  {
+    "command": "traveldiary(location)",
+    "category": "Photography",
+    "description": "Creates a travel-diary editorial for a chosen location",
+    "instruction": "Create a polished travel-diary editorial composition based on the supplied image and the location provided in parentheses. Preserve the person's identity and recognizable appearance. Integrate authentic visual references, tasteful map or postcard motifs, location typography, and concise travel-note details into a cohesive premium scrapbook/editorial layout. Avoid inventing factual itinerary details unless provided.",
+    "id": 124
+  },
+  {
+    "command": "proshot",
+    "category": "Photography",
+    "description": "Upgrades a photo to professional-camera quality",
+    "instruction": "Enhance the image to look professionally photographed with a high-end camera and lens while preserving the exact subject, identity, pose, scene, and composition. Improve exposure, dynamic range, natural color, micro-detail, lens rendering, subject separation, and realistic depth of field. Avoid oversharpening, halos, plastic skin, HDR artifacts, or invented objects.",
+    "id": 125
+  },
+  {
+    "command": "droneshot",
+    "category": "Photography",
+    "description": "Reimagines the scene from a cinematic drone view",
+    "instruction": "Reimagine the supplied scene as a believable cinematic drone photograph from an elevated aerial perspective. Preserve the subject's identity, clothing, key environment, and spatial logic while expanding the surrounding landscape naturally. Use realistic scale, geometry, shadows, lens perspective, and photographic detail; do not introduce unrelated landmarks or objects.",
+    "id": 126
+  },
+  {
+    "command": "goldenhour",
+    "category": "Photography",
+    "description": "Transforms lighting into natural golden hour",
+    "instruction": "Transform the scene to realistic golden-hour lighting while preserving the subject, identity, pose, environment, and composition. Use a low warm sun direction consistent across the scene, soft long shadows, warm highlights, balanced skin tones, subtle atmospheric glow, and natural sky exposure without excessive orange tint, fake flare, or HDR.",
+    "id": 127
   }
 ]

@@ -1072,10 +1072,38 @@ public class MainActivity extends Activity {
   String familyKeyV11(Cmd c,String cap){
     String t=polishedTitleV11(c).toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9 ]"," ").replaceAll("\\s+"," ").trim();String[] w=t.split(" ");StringBuilder k=new StringBuilder(cap==null?"":cap);int n=0;for(String x:w){if(x.length()<4||x.equals("prompt")||x.equals("chatgpt")||x.equals("workflow"))continue;k.append('|').append(x);if(++n==2)break;}if(n==0)k.append('|').append(c.subcategory==null?"":c.subcategory.toLowerCase(Locale.ROOT));return k.toString();
   }
+  boolean capabilityCandidateV21(Cmd c,String cap){
+    if(c==null)return false;String cat=c.category==null?"":c.category;
+    if(cap.startsWith("image."))return imagePromptV8(c);
+    if(cap.startsWith("career."))return cat.equals("Work & Business")||cat.equals("Career & Business");
+    if(cap.startsWith("decision."))return cat.equals("Planning & Decisions")||cat.equals("Research & Analysis");
+    if(cap.startsWith("data."))return cat.equals("Technology & Data")||cat.equals("Research & Analysis");
+    if(cap.startsWith("code."))return cat.equals("Technology & Data")||cat.equals("Technology & Development");
+    if(cap.startsWith("research."))return cat.equals("Research & Analysis")||cat.equals("Research & Learning");
+    if(cap.startsWith("planning."))return cat.equals("Planning & Decisions")||cat.equals("Productivity & Planning");
+    if(cap.startsWith("learning."))return cat.equals("Learning & Education")||cat.equals("Research & Analysis")||cat.equals("Science & Education");
+    if(cap.startsWith("writing."))return cat.equals("Writing & Communication")||cat.equals("Creativity & Content")||cat.equals("Writing & Content");
+    return true;
+  }
+  String cheapSearchV21(Cmd c){
+    return ((c.command==null?"":c.command)+" "+(c.description==null?"":c.description)+" "+(c.category==null?"":c.category)+" "+(c.subcategory==null?"":c.subcategory)).toLowerCase(Locale.ROOT);
+  }
   ArrayList<Cmd> rankCapabilityV11(String cap,String query,int limit){
-    ArrayList<Cmd> pool=new ArrayList<>();final HashMap<Cmd,Integer> scores=new HashMap<>();for(Cmd c:all){int sc=qualityScoreV11(c,cap,query);int floor=cap.startsWith("image.")?38:24;if(sc>=floor){pool.add(c);scores.put(c,sc);}}
-    Collections.sort(pool,(a,b)->{int x=scores.get(a),y=scores.get(b);if(x!=y)return Integer.compare(y,x);return polishedTitleV11(a).compareToIgnoreCase(polishedTitleV11(b));});
-    ArrayList<Cmd> out=new ArrayList<>();HashSet<String> families=new HashSet<>(),titles=new HashSet<>();for(Cmd c:pool){String title=polishedTitleV11(c).toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+"," ").trim(),fam=familyKeyV11(c,cap);if(titles.contains(title)||families.contains(fam))continue;titles.add(title);families.add(fam);out.add(c);if(out.size()>=limit)break;}return out;
+    final String q=CapabilityRouter.norm(query);final String[] qWords=q.split(" ");final String[] capWords=CapabilityRouter.terms(cap).split(" ");
+    ArrayList<Cmd> candidates=new ArrayList<>();
+    for(Cmd c:all){
+      if(!capabilityCandidateV21(c,cap))continue;
+      String hay=cheapSearchV21(c);boolean useful=false;
+      for(String w:capWords)if(w.length()>2&&hay.contains(w)){useful=true;break;}
+      if(!useful)for(String w:qWords)if(w.length()>3&&hay.contains(w)){useful=true;break;}
+      if(useful||capabilityCategoryBoostV8(c,cap)>=30)candidates.add(c);
+    }
+    // Bound expensive presentation/regex scoring. Category routing already narrowed semantics.
+    if(candidates.size()>700)candidates=new ArrayList<>(candidates.subList(0,700));
+    ArrayList<Cmd> pool=new ArrayList<>();final HashMap<Cmd,Integer> scores=new HashMap<>();
+    for(Cmd c:candidates){int sc=qualityScoreV11(c,cap,query);int floor=cap.startsWith("image.")?38:24;if(sc>=floor){pool.add(c);scores.put(c,sc);}}
+    Collections.sort(pool,(a,b)->{int x=scores.get(a),y=scores.get(b);if(x!=y)return Integer.compare(y,x);return commandWordsV11(a).compareToIgnoreCase(commandWordsV11(b));});
+    ArrayList<Cmd> out=new ArrayList<>();HashSet<String> families=new HashSet<>(),titles=new HashSet<>();for(Cmd c:pool){String title=commandWordsV11(c).toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+"," ").trim(),fam=familyKeyV11(c,cap);if(titles.contains(title)||families.contains(fam))continue;titles.add(title);families.add(fam);out.add(c);if(out.size()>=limit)break;}return out;
   }
   String fitReasonV11(String cap,String query){
     String base=CapabilityRouter.outcome(cap);String q=query==null?"":query.trim();if(q.isEmpty())return base;return base+" PromptDeck routed your request to this capability before ranking individual prompts.";
@@ -1129,7 +1157,7 @@ public class MainActivity extends Activity {
     Button back=secondary("Choose another capability");back.setOnClickListener(v->{askCapability="";CapabilityRouter.Route route=CapabilityRouter.route(goal);if(CapabilityRouter.IMAGE.equals(route.domain)&&CapabilityRouter.UNKNOWN.equals(route.mode))renderImageModeChooserV8(target,goal);else renderCapabilityChooserV8(target,route.domain,goal,route.mode);});target.addView(back);
   }
   void renderCompoundWorkflowV8(LinearLayout target,String goal,CapabilityRouter.Route route){
-    target.removeAllViews();ArrayList<Cmd> flow=new ArrayList<>();ArrayList<String> usedCaps=new ArrayList<>();for(String cap:route.capabilities){ArrayList<Cmd> r=rankCapabilityV11(cap,goal,1);if(!r.isEmpty()&&!flow.contains(r.get(0))){flow.add(r.get(0));usedCaps.add(cap);}if(flow.size()>=4)break;}if(flow.size()<2){if(route.capabilities.isEmpty()){renderAskResultsV8(target,goal);return;}renderCapabilityRecommendationV8(target,goal,route.capabilities.get(0));return;}
+    target.removeAllViews();ArrayList<Cmd> flow=new ArrayList<>();ArrayList<String> usedCaps=new ArrayList<>();int capCount=0;for(String cap:route.capabilities){if(capCount++>=3)break;ArrayList<Cmd> r=rankCapabilityV11(cap,goal,1);if(!r.isEmpty()&&!flow.contains(r.get(0))){flow.add(r.get(0));usedCaps.add(cap);}if(flow.size()>=3)break;}if(flow.size()<2){if(route.capabilities.isEmpty()){renderAskResultsV8(target,goal);return;}renderCapabilityRecommendationV8(target,goal,route.capabilities.get(0));return;}
     TextView h=text("SUGGESTED WORKFLOW",10,true,TERTIARY);h.setLetterSpacing(.10f);h.setPadding(0,dp(10),0,dp(5));target.addView(h);LinearLayout card=surface(true);card.setPadding(dp(12),dp(10),dp(12),dp(10));for(int i=0;i<flow.size();i++){Cmd c=flow.get(i);String cap=usedCaps.get(i);LinearLayout row=hbox();row.setGravity(Gravity.CENTER_VERTICAL);TextView n=text(String.valueOf(i+1),9,true,TERTIARY);n.setGravity(Gravity.CENTER);row.addView(n,new LinearLayout.LayoutParams(dp(24),dp(36)));LinearLayout copy=vbox();copy.addView(text(CapabilityRouter.label(cap),12,true,TEXT));TextView sub=text(polishedTitleV11(c),9,false,MUTED);sub.setSingleLine(true);sub.setEllipsize(android.text.TextUtils.TruncateAt.END);copy.addView(sub);row.addView(copy,new LinearLayout.LayoutParams(0,dp(36),1));card.addView(row);}Button use=primary("Use this workflow");use.setOnClickListener(v->{beginAskSelectionV10(goal);for(Cmd c:flow)if(!selected.contains(c))selected.add(c);home();});card.addView(use);target.addView(card);TextView meta=text("Each step comes from a different capability family, so the workflow adds coverage instead of duplicate prompts.",9,false,MUTED);meta.setPadding(0,dp(5),0,dp(8));target.addView(meta);
   }
   void showRouteLoadingV20(LinearLayout target,String label){
@@ -1162,7 +1190,7 @@ public class MainActivity extends Activity {
 
   void renderCompoundWorkflowAsyncV20(LinearLayout target,String goal,CapabilityRouter.Route route){
     final int generation=++routeGenerationV20;showRouteLoadingV20(target,"Building the best workflow…");
-    new Thread(()->{ArrayList<Cmd> flow=new ArrayList<>();ArrayList<String> usedCaps=new ArrayList<>();for(String cap:route.capabilities){ArrayList<Cmd> r=rankCapabilityV11(cap,goal,1);if(!r.isEmpty()&&!flow.contains(r.get(0))){flow.add(r.get(0));usedCaps.add(cap);}if(flow.size()>=4)break;}runOnUiThread(()->{if(routeStillValidV20(generation))renderCompoundWorkflowPreparedV20(target,goal,flow,usedCaps);});},"PromptDeckRankFlow").start();
+    new Thread(()->{ArrayList<Cmd> flow=new ArrayList<>();ArrayList<String> usedCaps=new ArrayList<>();int capCount=0;for(String cap:route.capabilities){if(capCount++>=3)break;ArrayList<Cmd> r=rankCapabilityV11(cap,goal,1);if(!r.isEmpty()&&!flow.contains(r.get(0))){flow.add(r.get(0));usedCaps.add(cap);}if(flow.size()>=3)break;}runOnUiThread(()->{if(routeStillValidV20(generation))renderCompoundWorkflowPreparedV20(target,goal,flow,usedCaps);});},"PromptDeckRankFlow").start();
   }
 
   void renderFallbackPreparedV20(LinearLayout target,String q,ArrayList<Cmd> ranked){

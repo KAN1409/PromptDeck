@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 
+# v2 fixes the runtime/category mismatch found after the first capability-router build.
 src=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java')
 gradle=Path('android/app/build.gradle')
 s=src.read_text(encoding='utf-8')
@@ -36,7 +37,6 @@ old='''  int groupIconRes(Group g){String x=g.title;if(x.equals("Writing & Conte
 new='''  int groupIconRes(Group g){String x=g.title;if(x.equals("Writing & Communication"))return R.drawable.pd_ic_write;if(x.equals("Research & Analysis"))return R.drawable.pd_ic_research;if(x.equals("Planning & Decisions"))return R.drawable.pd_ic_calendar;if(x.equals("Work & Business"))return R.drawable.pd_ic_briefcase;if(x.equals("Technology & Data"))return R.drawable.pd_ic_code;if(x.equals("Creativity & Content"))return R.drawable.pd_ic_creative;if(x.equals("Health & Life"))return R.drawable.pd_ic_heart;if(x.equals("Learning & Education"))return R.drawable.pd_ic_flask;return R.drawable.pd_ic_image;}\n'''
 must_replace(old,new,'groupIconRes')
 
-# Make use/stack actions feed recency so Home becomes genuinely adaptive.
 s=s.replace('use.setOnClickListener(v->{beginAskSelectionV10(goal);if(!selected.contains(c))selected.add(c);home();});','use.setOnClickListener(v->{beginAskSelectionV10(goal);rememberRecent(c);if(!selected.contains(c))selected.add(c);home();});')
 s=s.replace('use.setOnClickListener(v->{beginAskSelectionV10(goal);if(!selected.contains(first))selected.add(first);home();});','use.setOnClickListener(v->{beginAskSelectionV10(goal);rememberRecent(first);if(!selected.contains(first))selected.add(first);home();});')
 s=s.replace('run.setOnClickListener(v->{sheet.dismiss();sendText(buildSinglePrompt(c,"ask".equals(discoverMode)?askGoal:""));});','run.setOnClickListener(v->{rememberRecent(c);sheet.dismiss();sendText(buildSinglePrompt(c,"ask".equals(discoverMode)?askGoal:""));});')
@@ -49,7 +49,6 @@ g=re.sub(r'versionCode\s+\d+','versionCode 47',g,count=1)
 g=re.sub(r"versionName\s+'[^']+'","versionName '0.9.1-capability-router-fix'",g,count=1)
 gradle.write_text(g,encoding='utf-8')
 
-# Regression gates for taxonomy drift.
 out=src.read_text(encoding='utf-8')
 checks=[
   'cat.equals("Work & Business")',

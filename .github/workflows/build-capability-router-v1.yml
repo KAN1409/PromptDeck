@@ -4,8 +4,7 @@ on:
   push:
     branches: [ ux/capability-router-v1 ]
     paths:
-      - 'audit/apply_capability_router_v1.py'
-      - 'audit/fix_capability_router_v2.py'
+      - 'audit/fix_router_anr_v3.py'
       - '.github/workflows/build-capability-router-v1.yml'
 
 permissions:
@@ -19,13 +18,10 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Apply capability-router UX shell
-        run: python3 audit/apply_capability_router_v1.py
+      - name: Apply ANR-safe routing fix
+        run: python3 audit/fix_router_anr_v3.py
 
-      - name: Apply capability-router routing fix
-        run: python3 audit/fix_capability_router_v2.py
-
-      - name: Verify UX and routing source gates
+      - name: Verify UX and ANR source gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -33,25 +29,19 @@ jobs:
           g=Path('android/app/build.gradle').read_text()
           for token in [
               'What do you want to accomplish?', 'Find anything', 'Explore the full library',
-              'primaryNavV18', 'Work with an image', 'Plan or decide',
+              'renderCapabilityRecommendationAsyncV20', 'renderCompoundWorkflowAsyncV20',
+              'renderFallbackAsyncV20', 'PromptDeckRankFlow', 'routeStillValidV20',
               'cat.equals("Work & Business")', 'cat.equals("Planning & Decisions")',
               'cat.equals("Technology & Data")', 'cat.equals("Research & Analysis")',
               'cat.equals("Learning & Education")', 'cat.equals("Writing & Communication")',
-              '"Images & Design".equals(cat)', 'if(cap.startsWith("image.")&&!imagePromptV8(c))return -1000;',
-              'for(String r:refiners)'
+              '"Images & Design".equals(cat)'
           ]:
               assert token in s, token
-          stale = [
-              'if(cap.startsWith("career."))return cat.equals("Career & Business")?24:0',
-              'if(cap.startsWith("research."))return cat.equals("Research & Learning")?24:0',
-              'if(cap.startsWith("writing."))return cat.equals("Writing & Content")?24:0',
-              'if(cap.startsWith("image.")&&!(c.id>=50000&&c.id<50200))return -1000;'
-          ]
-          for token in stale:
-              assert token not in s, 'stale routing logic remains: '+token
-          assert 'versionCode 47' in g
-          assert "versionName '0.9.1-capability-router-fix'" in g
-          print('Capability-router UX + routing regression gates PASS')
+          assert 'renderCompoundWorkflowV8(target,q,route)' not in s
+          assert 'renderCapabilityRecommendationV8(target,q,askCapability)' not in s
+          assert 'versionCode 48' in g
+          assert "versionName '0.9.2-anr-fix'" in g
+          print('Capability-router ANR regression gates PASS')
           PY
 
       - name: Commit generated source
@@ -60,7 +50,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/build.gradle
           if ! git diff --cached --quiet; then
-            git commit -m 'fix: align capability router with canonical taxonomy'
+            git commit -m 'fix: keep capability ranking off the UI thread'
             git push origin HEAD:ux/capability-router-v1
           fi
 
@@ -89,15 +79,15 @@ jobs:
           test -f "$DBG" && test -f "$REL"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/badging.txt
           grep "package: name='com.kareem.promptdeck'" /tmp/badging.txt
-          grep "versionCode='47'" /tmp/badging.txt
-          grep "versionName='0.9.1-capability-router-fix'" /tmp/badging.txt
-          cp "$DBG" /tmp/PromptDeck-v0.9.1-capability-router-fix-debug.apk
-          cp "$REL" /tmp/PromptDeck-v0.9.1-capability-router-fix-release-unsigned.apk
+          grep "versionCode='48'" /tmp/badging.txt
+          grep "versionName='0.9.2-anr-fix'" /tmp/badging.txt
+          cp "$DBG" /tmp/PromptDeck-v0.9.2-anr-fix-debug.apk
+          cp "$REL" /tmp/PromptDeck-v0.9.2-anr-fix-release-unsigned.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.9.1-capability-router-fix
+          name: PromptDeck-v0.9.2-anr-fix
           path: |
-            /tmp/PromptDeck-v0.9.1-capability-router-fix-debug.apk
-            /tmp/PromptDeck-v0.9.1-capability-router-fix-release-unsigned.apk
+            /tmp/PromptDeck-v0.9.2-anr-fix-debug.apk
+            /tmp/PromptDeck-v0.9.2-anr-fix-release-unsigned.apk
             /tmp/badging.txt

@@ -56,25 +56,31 @@ prompts = [
 def norm(s):
     return re.sub(r'\s+', ' ', (s or '').strip().lower())
 
-seen_body = {norm(x.get('instruction','')) for x in catalog if isinstance(x, dict)}
 seen_cmd = {x.get('command','') for x in catalog if isinstance(x, dict)}
 max_id = max([int(x.get('id',0) or 0) for x in catalog if isinstance(x, dict)] or [0])
-added = []
+added = 0
+present = []
 for item in prompts:
-    if norm(item['instruction']) in seen_body:
+    existing = next((x for x in catalog if isinstance(x, dict) and x.get('command') == item['command']), None)
+    if existing is not None:
+        if norm(existing.get('instruction','')) != norm(item['instruction']):
+            raise SystemExit(f"Command collision with different prompt body: {item['command']}")
+        existing['category'] = 'Images & Design'
+        existing['subcategory'] = 'Color & Mood'
+        existing['description'] = item['description']
+        existing['instruction'] = item['instruction']
+        existing['source'] = source
+        present.append(item['command'])
         continue
-    command = item['command']
-    if command in seen_cmd:
-        base = command + 'Akash'
-        command = base
-        n = 2
-        while command in seen_cmd:
-            command = f'{base}{n}'
-            n += 1
+
+    body_match = next((x for x in catalog if isinstance(x, dict) and norm(x.get('instruction','')) == norm(item['instruction'])), None)
+    if body_match is not None:
+        raise SystemExit(f"Prompt body already exists under unexpected command: {body_match.get('command','')}")
+
     max_id += 1
     out = {
         'id': max_id,
-        'command': command,
+        'command': item['command'],
         'category': 'Images & Design',
         'subcategory': 'Color & Mood',
         'description': item['description'],
@@ -82,12 +88,12 @@ for item in prompts:
         'source': source,
     }
     catalog.append(out)
-    seen_body.add(norm(item['instruction']))
-    seen_cmd.add(command)
-    added.append(command)
+    seen_cmd.add(item['command'])
+    present.append(item['command'])
+    added += 1
 
-if len(added) != 8:
-    raise SystemExit(f'Expected 8 new prompts, added {len(added)}: {added}')
+if len(present) != 8:
+    raise SystemExit(f'Expected 8 canonical prompts present, found {len(present)}: {present}')
 
 catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 
@@ -96,13 +102,15 @@ g = re.sub(r'versionCode\s+\d+', 'versionCode 45', g, count=1)
 g = re.sub(r"versionName\s+'[^']+'", "versionName '0.8.8'", g, count=1)
 gradle_path.write_text(g, encoding='utf-8')
 
-# Static gates
+# Static gates: safe to run repeatedly after the catalog has already been updated.
 check = json.loads(catalog_path.read_text(encoding='utf-8'))
-for name in [p['command'] for p in prompts]:
-    if not any(x.get('command') == name for x in check):
-        raise SystemExit(f'Missing prompt {name}')
-if not all(any(x.get('instruction') == p['instruction'] and x.get('category') == 'Images & Design' and x.get('subcategory') == 'Color & Mood' for x in check) for p in prompts):
-    raise SystemExit('One or more color grading prompt payloads are incorrect')
+for p in prompts:
+    matches = [x for x in check if isinstance(x, dict) and x.get('command') == p['command']]
+    if len(matches) != 1:
+        raise SystemExit(f"Expected exactly one canonical prompt {p['command']}, found {len(matches)}")
+    x = matches[0]
+    if x.get('instruction') != p['instruction'] or x.get('category') != 'Images & Design' or x.get('subcategory') != 'Color & Mood' or x.get('source') != source:
+        raise SystemExit(f"Canonical payload mismatch for {p['command']}")
 if 'versionCode 45' not in gradle_path.read_text() or "versionName '0.8.8'" not in gradle_path.read_text():
     raise SystemExit('Version gate failed')
-print('Added 8 Akashgraphxic color grading prompts; PromptDeck 0.8.8 (45)')
+print(f'Color grading pack verified: 8 canonical prompts present, {added} newly added; PromptDeck 0.8.8 (45)')

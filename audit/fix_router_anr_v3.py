@@ -6,21 +6,19 @@ src=Path('android/app/src/main/java/com/kareem/promptdeck/MainActivity.java')
 gradle=Path('android/app/build.gradle')
 s=src.read_text(encoding='utf-8')
 
-# Add an async generation token once.
 needle='String page="home"; Group currentGroup=null; String contextDraft=""; String discoverCategory=""; String discoverSubcategory=""; boolean discoverFavorites=false; String discoverPreset=""; String discoverMode="landing"; String askGoal=""; String askCapability=""; String askSelectionGoal=""; int browseLimit=30; HashMap<Integer,HashMap<String,String>> promptVars=new HashMap<>();'
 if 'int routeGenerationV20=0;' not in s:
     if needle not in s: raise SystemExit('state field anchor missing')
     s=s.replace(needle,needle+' int routeGenerationV20=0;',1)
 
-# Capability chooser taps must use async recommendation rendering.
 s=s.replace('renderCapabilityRecommendationV8(target,goal,left);','renderCapabilityRecommendationAsyncV20(target,goal,left);')
 s=s.replace('renderCapabilityRecommendationV8(target,goal,right);','renderCapabilityRecommendationAsyncV20(target,goal,right);')
 
-start=s.find('  void renderAskResultsV8(LinearLayout target,String goal){')
-end=s.find('\n\n  void renderAskResults(LinearLayout target,String goal)',start)
-if start<0 or end<0: raise SystemExit('renderAskResultsV8 block missing')
-
-replacement=r'''  void showRouteLoadingV20(LinearLayout target,String label){
+if 'void showRouteLoadingV20(' not in s:
+    start=s.find('  void renderAskResultsV8(LinearLayout target,String goal){')
+    end=s.find('\n\n  void renderAskResults(LinearLayout target,String goal)',start)
+    if start<0 or end<0: raise SystemExit('renderAskResultsV8 block missing')
+    replacement=r'''  void showRouteLoadingV20(LinearLayout target,String label){
     target.removeAllViews();LinearLayout box=surface(true);box.setPadding(dp(12),dp(12),dp(12),dp(12));
     ProgressBar p=new ProgressBar(this);LinearLayout row=hbox();row.setGravity(Gravity.CENTER_VERTICAL);row.addView(p,new LinearLayout.LayoutParams(dp(28),dp(28)));TextView t=text(label,11,false,MUTED);LinearLayout.LayoutParams tp=new LinearLayout.LayoutParams(0,-2,1);tp.setMargins(dp(10),0,0,0);row.addView(t,tp);box.addView(row);target.addView(box);
   }
@@ -70,10 +68,8 @@ replacement=r'''  void showRouteLoadingV20(LinearLayout target,String label){
     if(route.capabilities.size()==1){askCapability=route.capabilities.get(0);renderCapabilityRecommendationAsyncV20(target,q,askCapability);return;}
     renderFallbackAsyncV20(target,q);
   }'''
+    s=s[:start]+replacement+s[end:]
 
-s=s[:start]+replacement+s[end:]
-
-# Avoid expensive ranking in the Browse text watcher on every keystroke; debounce lightly.
 old='''q.addTextChangedListener(new android.text.TextWatcher(){public void beforeTextChanged(CharSequence x,int st,int c,int a){}public void onTextChanged(CharSequence x,int st,int b,int c){discoverPreset=x.toString();browseLimit=30;renderBrowseResultsV6(results,x.toString());}public void afterTextChanged(android.text.Editable e){}});'''
 if old in s:
     s=s.replace(old,'''final android.os.Handler browseHandlerV20=new android.os.Handler(android.os.Looper.getMainLooper());final Runnable[] browseTaskV20=new Runnable[1];q.addTextChangedListener(new android.text.TextWatcher(){public void beforeTextChanged(CharSequence x,int st,int c,int a){}public void onTextChanged(CharSequence x,int st,int b,int c){discoverPreset=x.toString();browseLimit=30;if(browseTaskV20[0]!=null)browseHandlerV20.removeCallbacks(browseTaskV20[0]);final String next=x.toString();browseTaskV20[0]=()->renderBrowseResultsV6(results,next);browseHandlerV20.postDelayed(browseTaskV20[0],180);}public void afterTextChanged(android.text.Editable e){}});''',1)
@@ -86,7 +82,7 @@ g=re.sub(r"versionName\s+'[^']+'","versionName '0.9.2-anr-fix'",g,count=1)
 gradle.write_text(g,encoding='utf-8')
 
 out=src.read_text(encoding='utf-8')
-for token in ['renderCapabilityRecommendationAsyncV20','renderCompoundWorkflowAsyncV20','renderFallbackAsyncV20','PromptDeckRankFlow','routeStillValidV20','versionName']:
+for token in ['renderCapabilityRecommendationAsyncV20','renderCompoundWorkflowAsyncV20','renderFallbackAsyncV20','PromptDeckRankFlow','routeStillValidV20']:
     if token not in out: raise SystemExit('ANR gate missing: '+token)
 if 'renderCompoundWorkflowV8(target,q,route)' in out or 'renderCapabilityRecommendationV8(target,q,askCapability)' in out:
     raise SystemExit('synchronous Ask routing remains')

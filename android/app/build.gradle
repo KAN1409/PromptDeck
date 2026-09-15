@@ -8,8 +8,8 @@ android {
         applicationId 'com.kareem.promptdeck'
         minSdk 26
         targetSdk 35
-        versionCode 46
-        versionName '0.9.0-capability-router'
+        versionCode 47
+        versionName '0.9.1-capability-router-fix'
     }
 
     buildTypes {

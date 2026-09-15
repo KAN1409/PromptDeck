@@ -5,6 +5,7 @@ on:
     branches: [ ux/capability-router-v1 ]
     paths:
       - 'audit/fix_router_anr_v3.py'
+      - 'audit/fix_router_perf_v4.py'
       - '.github/workflows/build-capability-router-v1.yml'
 
 permissions:
@@ -21,7 +22,10 @@ jobs:
       - name: Apply ANR-safe routing fix
         run: python3 audit/fix_router_anr_v3.py
 
-      - name: Verify UX and ANR source gates
+      - name: Apply router performance fix
+        run: python3 audit/fix_router_perf_v4.py
+
+      - name: Verify UX and performance source gates
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -31,6 +35,7 @@ jobs:
               'What do you want to accomplish?', 'Find anything', 'Explore the full library',
               'renderCapabilityRecommendationAsyncV20', 'renderCompoundWorkflowAsyncV20',
               'renderFallbackAsyncV20', 'PromptDeckRankFlow', 'routeStillValidV20',
+              'capabilityCandidateV21', 'cheapSearchV21', 'candidates.size()>700', 'capCount++>=3',
               'cat.equals("Work & Business")', 'cat.equals("Planning & Decisions")',
               'cat.equals("Technology & Data")', 'cat.equals("Research & Analysis")',
               'cat.equals("Learning & Education")', 'cat.equals("Writing & Communication")',
@@ -39,9 +44,9 @@ jobs:
               assert token in s, token
           assert 'renderCompoundWorkflowV8(target,q,route)' not in s
           assert 'renderCapabilityRecommendationV8(target,q,askCapability)' not in s
-          assert 'versionCode 48' in g
-          assert "versionName '0.9.2-anr-fix'" in g
-          print('Capability-router ANR regression gates PASS')
+          assert 'versionCode 49' in g
+          assert "versionName '0.9.3-router-performance'" in g
+          print('Capability-router performance regression gates PASS')
           PY
 
       - name: Commit generated source
@@ -50,7 +55,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add android/app/src/main/java/com/kareem/promptdeck/MainActivity.java android/app/build.gradle
           if ! git diff --cached --quiet; then
-            git commit -m 'fix: keep capability ranking off the UI thread'
+            git commit -m 'fix: bound capability ranking work'
             git push origin HEAD:ux/capability-router-v1
           fi
 
@@ -79,15 +84,15 @@ jobs:
           test -f "$DBG" && test -f "$REL"
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$DBG" > /tmp/badging.txt
           grep "package: name='com.kareem.promptdeck'" /tmp/badging.txt
-          grep "versionCode='48'" /tmp/badging.txt
-          grep "versionName='0.9.2-anr-fix'" /tmp/badging.txt
-          cp "$DBG" /tmp/PromptDeck-v0.9.2-anr-fix-debug.apk
-          cp "$REL" /tmp/PromptDeck-v0.9.2-anr-fix-release-unsigned.apk
+          grep "versionCode='49'" /tmp/badging.txt
+          grep "versionName='0.9.3-router-performance'" /tmp/badging.txt
+          cp "$DBG" /tmp/PromptDeck-v0.9.3-router-performance-debug.apk
+          cp "$REL" /tmp/PromptDeck-v0.9.3-router-performance-release-unsigned.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: PromptDeck-v0.9.2-anr-fix
+          name: PromptDeck-v0.9.3-router-performance
           path: |
-            /tmp/PromptDeck-v0.9.2-anr-fix-debug.apk
-            /tmp/PromptDeck-v0.9.2-anr-fix-release-unsigned.apk
+            /tmp/PromptDeck-v0.9.3-router-performance-debug.apk
+            /tmp/PromptDeck-v0.9.3-router-performance-release-unsigned.apk
             /tmp/badging.txt
